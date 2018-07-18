@@ -18,7 +18,7 @@
         </ul>
     </div>
     <div id="content">
-        Place The content of Index or home Here.
+        Place The header content of Index or home Here.
     </div>
 </body>
 <footer>This is The footer.
