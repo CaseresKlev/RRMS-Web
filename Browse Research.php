@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>BUKSU Local Plagiarism Detection</title>
+    <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <script src="main.js"></script>
@@ -18,9 +18,7 @@
         </ul>
     </div>
     <div id="content">
-        Place The content of Index or home Here.
+        Place The content Here for Browse Research.
     </div>
-</body>
-<footer>This is The footer.
-</footer>
+    </body>
 </html>
