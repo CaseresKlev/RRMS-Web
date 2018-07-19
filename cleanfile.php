@@ -2,8 +2,9 @@
 
 include 'openDocs.php';
 include 'indexing.php';
+//include 'dbconfig.php';
 
-$kv_texts = kv_read_word('./Caseres_Debug/VOID MAIN-CHAPTER 3-Compiled.docx');
+$kv_texts = kv_read_word('./Caseres_Debug/Allex Allain Book.docx');
 if($kv_texts !== false) {		
     $temp = nl2br($kv_texts);
     //$res = split('/<br[^>][" "]*>/i',$temp);
@@ -30,15 +31,16 @@ if($kv_texts !== false) {
 			//echo "<------------>" . $p . "<------------><br />";
 				foreach($pharWords as $word){
 					//echo $word . " " . strlen($word) . "<br />";
-					cleanWord($word);
-				}
-			
+					if (strlen($word)>0){
+						//echo $word . " " . strlen($word) . "<br />";
+						cleanWord($word);
+					}
+				}	
 		}
-
-		
 		//echo "Sentence: " . $counter++ . " :" . $w;
 	}
-	echo "Counts: " . $counter . "<br/>";	
+	echo "<h1>Done</h1>";
+	//echo "Counts: " . $counter . "<br/>";	
 }
 else {
 	echo "Cant Read that file.";
