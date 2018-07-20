@@ -54,8 +54,8 @@
                       <li><a> Delete </a></li>
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-user"></i> ADVISER </a>
-                  <li><a><i class="fa fa-envelope"></i> ACCOUNTS </a>         
+                  <li><a><i class="glyphicon glyphicon-user"></i> ADVISER </a>
+                  <li><a><i class="glyphicon glyphicon-envelope"></i> ACCOUNTS </a>         
                   <li><a href="javascript:void(0)"><i class="fa fa-laptop"></i> LOGOUT <span class="label label-success pull-right"></a></li>
                 </ul>
               </div>

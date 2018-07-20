@@ -48,7 +48,6 @@
               <div class="menu_section">
                 <ul class="nav side-menu">
                   <li><a><i class="fa fa-group"></i> MY BOOKS <span class="fa fa-chevron-down"></span></a>
-                  </li>
                   <li><a><i class="fa fa-user"></i> MY BIO </a>
                   <li><a><i class="fa fa-envelope"></i> REVISIONS </a>         
                   <li><a href="javascript:void(0)"><i class="fa fa-laptop"></i> LOGOUT <span class="label label-success pull-right"></a></li>
