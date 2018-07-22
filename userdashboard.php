@@ -47,10 +47,10 @@
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
               <div class="menu_section">
                 <ul class="nav side-menu">
-                  <li><a><i class="fa fa-group"></i> MY BOOKS <span class="fa fa-chevron-down"></span></a>
-                  <li><a><i class="fa fa-user"></i> MY BIO </a>
-                  <li><a><i class="fa fa-envelope"></i> REVISIONS </a>         
-                  <li><a href="javascript:void(0)"><i class="fa fa-laptop"></i> LOGOUT <span class="label label-success pull-right"></a></li>
+                  <li><a><span class="glyphicon glyphicon-book"></span> MY BOOKS <span "caret"></span></a>
+                  <li><a><span class="glyphicon glyphicon-tag"></span> MY BIO </a>
+                  <li><a><span class="glyphicon glyphicon-pencil"></span> REVISIONS </a>         
+                  <li><a href="javascript:void(0)"><span class="glyphicon glyphicon-off"></span> LOGOUT <span class="label label-success pull-right"></a></li>
                 </ul>
               </div>
 

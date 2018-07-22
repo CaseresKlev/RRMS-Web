@@ -48,15 +48,15 @@
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
               <div class="menu_section">
                 <ul class="nav side-menu">
-                  <li><a><i class="fa fa-group"></i> MY CLASS <span class="fa fa-chevron-down"></span></a>
+                  <li><a><span class="glyphicon glyphicon-user"></span> MY CLASS <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a> Add </a></li>
                       <li><a> Delete </a></li>
                     </ul>
                   </li>
-                  <li><a><i class="glyphicon glyphicon-user"></i> ADVISER </a>
-                  <li><a><i class="glyphicon glyphicon-envelope"></i> ACCOUNTS </a>         
-                  <li><a href="javascript:void(0)"><i class="fa fa-laptop"></i> LOGOUT <span class="label label-success pull-right"></a></li>
+                  <li><a><span class="glyphicon glyphicon-user"></span> ADVISER </a>
+                  <li><a><span class="glyphicon glyphicon-envelope"></span> ACCOUNTS </a>         
+                  <li><a href="javascript:void(0)"><span class="glyphicon glyphicon-off"></span> LOGOUT <span class="label label-success pull-right"></a></li>
                 </ul>
               </div>
 
