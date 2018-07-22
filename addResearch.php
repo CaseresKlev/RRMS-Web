@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,40 +16,43 @@
             <li><a href = "Login.php">Login</a></li>
         </ul>
     </div>
+
     <form id="regForm" action="add.php" method="post">
-      <h1>Book Details:</h1>
+
       <!-- One "tab" for each step in the form: -->
-      <div class="Browse">
-        <input type="file" id="myFile" accept="image/*">
 
-
-  <script>
-  function myFunction() {
-      var x = document.getElementById("myFile");
-      x.disabled = true;
-  }
-  </script>
-
-      </div>
-      <div class="Browse">
-        <input type="file" id="myFile">
-
-
-  <script>
-  function myFunction() {
-      var x = document.getElementById("myFile");
-      x.disabled = true;
-  }
-  </script>
-
-      </div>
       <div class="tab">
+          <h1>Book Details:</h1>
+        <div class="Browse">
+          <input type="file" id="myFile" accept="image/*">
+
+
+    <script>
+    function myFunction() {
+        var x = document.getElementById("myFile");
+        x.disabled = true;
+    }
+    </script>
+
+        </div>
+        <div class="Browse">
+          <input type="file" id="myFile">
+
+
+    <script>
+    function myFunction() {
+        var x = document.getElementById("myFile");
+        x.disabled = true;
+    }
+    </script>
+
+        </div>
         <p><input placeholder="Book title" oninput="this.className = ''" name="book_title"></p>
         <p><textarea rows="6" cols="102" placeholder="Abstract" oninput="this.className = ''" name="abstract"></textarea></p>
         <p><input type="date" name="pubdate" placeholder="">  </p>
         <p><select name="category"></p>
           <?php include 'dbconfig.php';
-          $query= "SELECT * FROM `category`";
+          $query= "SELECT * FROM category";
           $result= $conn->query($query);
 
           if ($result->num_rows > 0) {
@@ -68,9 +68,17 @@
 
 
       </div>
-   <div class="tab">Add Author:
-        <p><input placeholder="name" oninput="this.className = ''" name="email"></p>
-        <p><input placeholder="Surename" oninput="this.className = ''" name="phone"></p>
+   <div class="tab"><h1>Add Author:</h1>
+        <p><input placeholder="First name" oninput="this.className = ''" name="fname"></p>
+        <p><input placeholder="Middle name" oninput="this.className = ''" name="mname"></p>
+        <p><input placeholder="Last name" oninput="this.className = ''" name="lname"></p>
+        <p><input placeholder="Suffix" oninput="this.className = ''" name="suffix"></p>
+        <p><input placeholder="Address" oninput="this.className = ''" name="add"></p>
+        <p><input placeholder="Email" oninput="this.className = ''" name="email"></p>
+      </div>
+      </div>
+      </div>
+      </div>
       </div>
         <!--
       <div class="tab">Birthday:
@@ -86,6 +94,7 @@
         <div style="float:right;">
           <button type="button" id="btn-submit" onclick="nextPrev(-1)">Previous</button>
           <button type="button"name="btn-submit" id="nextBtn" onclick="nextPrev(1)">Next</button>
+          
         </div>
       </div>
       <!-- Circles which indicates the steps of the form: -->

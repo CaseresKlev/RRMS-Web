@@ -28,7 +28,7 @@ input[type=date], select, textarea{
 }
 
 body {
-  background-color: #f1f1f1;
+  background-color: #80ff80;
 }
 
 #regForm {
@@ -51,6 +51,7 @@ input,textarea,select {
   font-family: Raleway;
   border: 1px solid #aaaaaa;
 
+
 }
 
 /* Mark input boxes that gets an error on validation: */
@@ -58,9 +59,14 @@ input.invalid {
   background-color: #ffdddd;
 }
 
+
 /* Hide all steps by default: */
 .tab {
-  display: none;
+  /*display: inline-block;*/
+  width: 50%;
+  position: absolute;
+  float: left;
+  box-sizing: border-box;
 }
 
 button {
@@ -71,6 +77,10 @@ button {
   font-size: 17px;
   font-family: Raleway;
   cursor: pointer;
+}
+#column{
+  float: left;
+  width: 50%;
 }
 
 button:hover {
@@ -123,6 +133,9 @@ input[type=submit] {
 /*style for content */
 #content{
   position:sticky;
+}
+.tabauthor{
+
 }
 h1 {
     text-align: center;
