@@ -23,5 +23,5 @@
             echo "0 results";
         }
         */
-        $conn->close();
+        //$conn->close();
 ?>

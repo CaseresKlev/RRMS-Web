@@ -34,13 +34,15 @@ if($kv_texts !== false) {
 					if (strlen($word)>0){
 						//echo $word . " " . strlen($word) . "<br />";
 						cleanWord($word);
+						$counter = $counter + 1;
+						//echo "\tCounts: " . $counter . "<br/>";	
 					}
 				}	
 		}
 		//echo "Sentence: " . $counter++ . " :" . $w;
 	}
 	echo "<h1>Done</h1>";
-	//echo "Counts: " . $counter . "<br/>";	
+	
 }
 else {
 	echo "Cant Read that file.";
