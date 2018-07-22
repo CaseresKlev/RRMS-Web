@@ -23,17 +23,10 @@
         foreach($tempAr as $letters){
             $cleanEntry .= $letters;
         }
-        //echo $cleanEntry . " " . strlen($cleanEntry). "<br />";
-        //INSERT INTO `dictionary` (`id`, `word`, `index_count`) VALUES (NULL, 'a', '0')
-        //
-        //echo $query . "<br />";
-        //$conn = getCon();
-        
-        //$query = "SELECT id FROM `dictionary` WHERE word = \"$cleanEntry\"";
+
         $query = "SELECT id FROM `dictionary` WHERE word = '$cleanEntry';";
         
         if (strlen($cleanEntry)>0){
-            //echo strlen($cleanEntry) . "\t";
             $id = $conn->query($query);
             if ($id->num_rows > 0){
                 foreach ($id as $idnum){
