@@ -69,12 +69,36 @@
 
       </div>
    <div class="tab"><h1>Add Author:</h1>
-        <p><input placeholder="First name" oninput="this.className = ''" name="fname"></p>
+      <!--  <p><input placeholder="First name" oninput="this.className = ''" name="fname"></p>
         <p><input placeholder="Middle name" oninput="this.className = ''" name="mname"></p>
         <p><input placeholder="Last name" oninput="this.className = ''" name="lname"></p>
         <p><input placeholder="Suffix" oninput="this.className = ''" name="suffix"></p>
         <p><input placeholder="Address" oninput="this.className = ''" name="add"></p>
-        <p><input placeholder="Email" oninput="this.className = ''" name="email"></p>
+        <p><input placeholder="Email" oninput="this.className = ''" name="email"></p>-->
+        <table width="100%">
+          <th>FIRST NAME</th>
+            <th>MIDDLE NAME</th>
+              <th>LAST NAME</th>
+                <th>SUFFIX</th>
+                <th>ADDRRESS</th>
+                <th>CONTACT</th>
+                <th>EMAIL</th>
+        </table><br><br>
+
+          <p>Insert Author details</p>
+          <p><input placeholder="First name" oninput="this.className = ''" name="fname"></p>
+            <p><input placeholder="Middle name" oninput="this.className = ''" name="mname"></p>
+            <p><input placeholder="Last name" oninput="this.className = ''" name="lname"></p>
+            <p><input placeholder="Suffix" oninput="this.className = ''" name="suffix"></p>
+            <p><input placeholder="Address" oninput="this.className = ''" name="add"></p>
+            <p><input placeholder="Email" oninput="this.className = ''" name="email"></p>
+
+
+
+
+
+        <button type="button" id="btnAdd" onclick="">ADD</button>
+
       </div>
       </div>
       </div>
@@ -92,9 +116,9 @@
       </div>-->
       <div style="overflow:auto;">
         <div style="float:right;">
-          <button type="button" id="btn-submit" onclick="nextPrev(-1)">Previous</button>
+
+          <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
           <button type="button"name="btn-submit" id="nextBtn" onclick="nextPrev(1)">Next</button>
-          
         </div>
       </div>
       <!-- Circles which indicates the steps of the form: -->
@@ -123,9 +147,11 @@
     }
     if (n == (x.length - 1)) {
       document.getElementById("nextBtn").innerHTML = "Submit";
+
     } else {
       document.getElementById("nextBtn").innerHTML = "Next";
     }
+
     //... and run a function that will display the correct step indicator:
     fixStepIndicator(n)
   }
