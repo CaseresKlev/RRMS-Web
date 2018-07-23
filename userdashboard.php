@@ -6,14 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title> User </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <!--<link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <!-- <script src="main.js"></script>
 	<!-- Bootstrap -->
-    <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css">
+    <!--<link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css">
     <!-- Font Awesome -->
-    <link rel="stylesheet" type="text/css" media="screen" href="css/font.min.css">
+    <!--<link rel="stylesheet" type="text/css" media="screen" href="css/font.min.css">
     <!-- bootstrap-progressbar -->
-    <link rel="stylesheet" type="text/css" media="screen" href="css/progressbar.min.css">
+    <!--<link rel="stylesheet" type="text/css" media="screen" href="css/progressbar.min.css">
     <!-- Custom Theme Style -->
     <link rel="stylesheet" type="text/css" media="screen" href="css/custom.min.css">
 	
@@ -24,7 +24,7 @@
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-              <a href="userdashboard.php" class="site_title"> <span> RRMS </span></a>
+              <a href="userdashboard.php" class="site_title" size= "100%"><span> RRMS </span></a>
             </div>
 
             <div class="clearfix"></div>
