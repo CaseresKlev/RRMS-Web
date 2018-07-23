@@ -9,11 +9,11 @@
     <!--<link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <!-- <script src="main.js"></script>
 	<!-- Bootstrap -->
-    <!--<link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css">
     <!-- Font Awesome -->
-    <!--<link rel="stylesheet" type="text/css" media="screen" href="css/font.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/font.min.css">
     <!-- bootstrap-progressbar -->
-    <!--<link rel="stylesheet" type="text/css" media="screen" href="css/progressbar.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/progressbar.min.css">
     <!-- Custom Theme Style -->
     <link rel="stylesheet" type="text/css" media="screen" href="css/custom.min.css">
 	
