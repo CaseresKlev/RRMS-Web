@@ -85,8 +85,8 @@
                 <th>EMAIL</th>
         </table><br><br>
 
-          <p>Insert Author details</p>
-          <p><input placeholder="First name" oninput="this.className = ''" name="fname"></p>
+            <p>Insert Author details</p>
+            <p><input placeholder="First name" oninput="this.className = ''" name="fname"></p>
             <p><input placeholder="Middle name" oninput="this.className = ''" name="mname"></p>
             <p><input placeholder="Last name" oninput="this.className = ''" name="lname"></p>
             <p><input placeholder="Suffix" oninput="this.className = ''" name="suffix"></p>
