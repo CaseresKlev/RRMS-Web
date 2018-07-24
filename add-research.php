@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html style="width=70%">
+<html>
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -57,7 +57,10 @@ function showCurrentPage(n,page){
 
 </script>
 </head>
-<body>
+<body style="width=70%">
+    <div id="content">
+    <?php include "header.php";?>
+    </div>
 <h1>Add Research Information</h1>
 
 <form action="">
@@ -91,7 +94,7 @@ function showCurrentPage(n,page){
                 </p>
                 <p class="para">
                     Category:<br/>
-                    <select name="category">
+                    <select name="category" style="width:100%">
                     <?php include_once 'connection.php';
                         $dbconfig = new dbconfig();
                         $conn = $dbconfig->getCon();
@@ -233,5 +236,6 @@ function showCurrentPage(n,page){
 <button type="button" id="btn_next" onclick="setPage('next')">Next</button>
 <button type="button" id="btn_submit" onclick="" style="display: none">Submit</button>
 </span>
+</div>
 </body>
 </html>
