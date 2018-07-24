@@ -18,21 +18,6 @@
     display: table;
     clear: both;
 }
-<<<<<<< HEAD
-
-=======
-input[type=date], select, textarea{
-  width: 50%;
-  padding: 12px;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  resize: vertical;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
->>>>>>> ac7b1328a789038c4e5739d0df4bc9ab086ab281
 input[type=text], input[type=file], textarea{
   width: 50%;
   padding: 12px;
@@ -45,7 +30,9 @@ input[type=text], input[type=file], textarea{
   margin-right: auto;
   margin: 0 auto;
   text-align: left;
-} */
+} 
+
+
 div.para{
   text-align: center;
   left: 35px;
