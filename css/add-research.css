@@ -18,7 +18,21 @@
     display: table;
     clear: both;
 }
+<<<<<<< HEAD
 /*
+=======
+input[type=date], select, textarea{
+  width: 50%;
+  padding: 12px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: vertical;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+>>>>>>> ac7b1328a789038c4e5739d0df4bc9ab086ab281
 input[type=text], input[type=file], textarea{
   width: 50%;
   padding: 12px;
@@ -44,10 +58,15 @@ div.para{
   background-color: #ffffff;
   margin: 100px auto;
   font-family: Raleway;
-  padding: 40px;
-  width: 100%;
+  padding: 20px;
+  max-width: 70%;
   min-width: 300px;
+<<<<<<< HEAD
 }*/
+=======
+
+}
+>>>>>>> ac7b1328a789038c4e5739d0df4bc9ab086ab281
 
 h1 {
   text-align: center;
@@ -69,4 +88,8 @@ button {
 
 body{
   background-color: #FAEBD7;
+  width: 100%;
+}
+html{
+  align-content: center;
 }
