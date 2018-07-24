@@ -73,13 +73,13 @@ function showCurrentPage(n,page){
             <div class="browse">
                 <p>
                     <center>Choose Cover:</center><br/>
-                    <input type="file" id="myCover" accept="image/*">
+                    <input type="file" id="myCover" name="cover" accept="image/*">
                 </p>
             </div>
             <div id="bookDet">
                 <p class="para">
                     Title:<br>
-                  <center>  <input type="text" name="tittle" placeholder="Book title"><br></center>
+                  <center>  <input type="text" placeholder="Book title"  name="title"><br></center>
                 </p>
                 <p class="para">
                     Abstract:<br>
@@ -91,7 +91,7 @@ function showCurrentPage(n,page){
                 </p>
                 <p class="para">
                     Category:<br/>
-                    <select name="category">
+                    <select name="department">
                     <?php include_once 'connection.php';
                         $dbconfig = new dbconfig();
                         $conn = $dbconfig->getCon();
@@ -109,12 +109,12 @@ function showCurrentPage(n,page){
                     </select>
                 </p>
                 <p id="para">
-                    Key Words:<br/>
+                    Key Words:<strong style="color:red">One Keywords per Line</strong></note><br/><br/>
                     <textarea rows="6" cols="102" placeholder="Key Words" name="keywords"></textarea><br/>
                 </p>
                 <p id="para">
-                    Web Reference:<br/>
-                    <textarea rows="6" cols="102" placeholder="Key Words" name="keywords"></textarea><br/>
+                 Reference: <strong style="color:red">One Refrence per Line</strong></note><br/>
+                    <textarea rows="6" cols="102" placeholder="Key Words" name="reference"></textarea><br/>
                 </p>
             </div>
     </div>
@@ -124,31 +124,31 @@ function showCurrentPage(n,page){
                 <div class="column">
                     <p>
                          <center>First Name</center><br/>
-                        <input type="text" placeholder="First name" id="fname" oninput="this.className = ''" name="fname">
+                        <input type="text" placeholder="First name" id="fname" oninput="this.className = ''" name="aut_fname">
                     </p>
                     <p>
                         <center>Middle Name</center><br/>
-                        <input type="text" placeholder="Middle name" id="mname" oninput="this.className = ''" name="mname">
+                        <input type="text" placeholder="Middle name" id="mname" oninput="this.className = ''" name="aut_mname">
                     </p>
                     <p>
                         <center>Last Name</center><br/>
-                        <input type="text"placeholder="Last name" id="lname" oninput="this.className = ''" name="lname">
+                        <input type="text"placeholder="Last name" id="lname" oninput="this.className = ''" name="aut_lname">
                     </p>
                     <p>
                         <center>Suffix</center><br/>
-                        <input type="text" placeholder="Suffix" id="suf" oninput="this.className = ''" name="suffix">
+                        <input type="text" placeholder="Suffix" id="suf" oninput="this.className = ''" name="aut_suffix">
                     </p>
                     <p>
                         <center>Address</center><br/>
-                        <input type="text" placeholder="Address" id="add" oninput="this.className = ''" name="add">
+                        <input type="text" placeholder="Address" id="add" oninput="this.className = ''" name="aut_add">
                     </p>
                     <p>
                         <center>Contact</center><br/>
-                        <input type="text" placeholder="Email" id="contact" oninput="this.className = ''" name="email">
+                        <input type="text" placeholder="Email" id="contact" oninput="this.className = ''" name="aut_contact">
                     </p>
                     <p>
                         <center>Email</center><br/>
-                        <input type="text" placeholder="Email" id="email"oninput="this.className = ''" name="email">
+                        <input type="text" placeholder="Email" id="email"oninput="this.className = ''" name="aut_email">
                     </p>
                          <center>
                         <button type="button" onclick="loadToTable()">Add Author</button>
@@ -157,7 +157,7 @@ function showCurrentPage(n,page){
                 </div>
                 <div class="column">
                     <p>Author List</p>
-                    <table width="100%" id="author-table">
+                    <table width="100%" id="author-table" name="aut_list">
                         <th>FIRST NAME</th>
                         <th>MIDDLE NAME</th>
                         <th>LAST NAME</th>
