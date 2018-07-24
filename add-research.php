@@ -60,14 +60,14 @@ function showCurrentPage(n,page){
 <body>
 <h1>Add Research Information</h1>
 
-<form action="prepare.php">
+<form action="prepare.php" method="POST" enctype="multipart/form-data">
     <div id="enclosure">
         <div id = "page1" style="height=500px">
 
             <div class="browse">
                 <p>
                      <center>Choose Word File:</center><br/>
-                    <input type="file" id="myFile" name="fileup" accept="pdf/*">
+                    <input type="file" id="myFile" name="file" accept="Documents/docx">
                 </p>
             </div>
             <div class="browse">
@@ -228,10 +228,10 @@ function showCurrentPage(n,page){
     </div>
     </div>
     <span style="float: right">
-<button type="button" id="btn_prev" onclick="setPage('prev')" style="display: none">Previous</button>
-<button type="button" id="btn_next" onclick="setPage('next')">Next</button>
-<input type="submit" id="btn_submit" style="display: none">
-</span>
+        <button type="button" id="btn_prev" onclick="setPage('prev')" style="display: none">Previous</button>
+        <button type="button" id="btn_next" onclick="setPage('next')">Next</button>
+        <button type="submit" id="btn_submit" style="display: none" name="submit">Submit</button>
+    </span>
 </form>
 
 </body>
