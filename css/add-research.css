@@ -18,6 +18,10 @@
     display: table;
     clear: both;
 }
+<<<<<<< HEAD
+=======
+/*
+>>>>>>> parent of c7ee970... Merge branch 'master' of https://github.com/CaseresKlev/RRMS-Web-Repo
 input[type=text], input[type=file], textarea{
   width: 50%;
   padding: 12px;
@@ -45,15 +49,10 @@ div.para{
   background-color: #ffffff;
   margin: 100px auto;
   font-family: Raleway;
-  padding: 20px;
-  max-width: 70%;
+  padding: 40px;
+  width: 100%;
   min-width: 300px;
-<<<<<<< HEAD
 }*/
-=======
-
-}
->>>>>>> ac7b1328a789038c4e5739d0df4bc9ab086ab281
 
 h1 {
   text-align: center;
@@ -75,8 +74,4 @@ button {
 
 body{
   background-color: #FAEBD7;
-  width: 100%;
-}
-html{
-  align-content: center;
 }
