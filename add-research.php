@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html style="width=70%">
+<html>
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,8 +16,6 @@
         alert("load");
         showCurrentPage(n, "page" + n);
     }());
-
-
 function setPage(action) {
     if(action == "prev"){
         if(n>1){
@@ -26,15 +24,12 @@ function setPage(action) {
     }else{
         n +=1;
     }
-
     var page = "page" + n;
-
    for (i=1; i<=3; i++){
     document.getElementById("page" +i).style.display = "none";
    }
    showCurrentPage(n,page);
 }
-
 function showCurrentPage(n,page){
     //alert(n);
     document.getElementById(page).style.display = "block";
@@ -43,7 +38,6 @@ function showCurrentPage(n,page){
     }else{
         document.getElementById("btn_prev").style.display = "inline-block";
     }
-
     if (n==3){
         document.getElementById("btn_next").style.display = "none";
         document.getElementById("btn_submit").style.display = "inline-block";
@@ -52,8 +46,6 @@ function showCurrentPage(n,page){
         document.getElementById("btn_submit").style.display = "none";
     }
 }
-
-
 </script>
 </head>
 <body>
@@ -94,7 +86,6 @@ function showCurrentPage(n,page){
                     <?php include 'dbconfig.php';
                         $query= "SELECT * FROM category";
                          $result= $conn->query($query);
-
                          if ($result->num_rows > 0) {
                              while ($row=$result->fetch_assoc()) { ?>
                             <option><?php echo $row["cat_name"]; ?>   </option>
