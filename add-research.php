@@ -26,7 +26,7 @@ function setPage(action) {
     }else{
         n +=1;
     }
-    
+
     var page = "page" + n;
 
    for (i=1; i<=3; i++){
@@ -62,33 +62,33 @@ function showCurrentPage(n,page){
 <form>
     <div id="enclosure">
         <div id = "page1" style="height=500px">
-            <p>Research information</p>
+
             <div class="browse">
                 <p>
-                     Choose Word File:<br/>
+                     <center>Choose Word File:</center><br/>
                     <input type="file" id="myFile" accept="image/*">
                 </p>
             </div>
             <div class="browse">
                 <p>
-                    Choose Cover:<br/>
+                    <center>Choose Cover:</center><br/>
                     <input type="file" id="myCover" accept="image/*">
                 </p>
             </div>
             <div id="bookDet">
-                <p>
-                    Tittle:<br>
-                    <input type="text" name="tittle" placeholder="Book title"><br>
+                <p class="para">
+                    Title:<br>
+                  <center>  <input type="text" name="tittle" placeholder="Book title"><br></center>
                 </p>
-                <p> 
+                <p class="para">
                     Abstract:<br>
                     <textarea rows="6" cols="102" placeholder="Abstract" name="abstract"></textarea><br/>
                 </p>
-                <p>
+                <p class="para">
                     Publication Date:<br/>
-                    <input type="date" name="pubdate" placeholder=""><br/> 
+                    <input type="date" name="pubdate" placeholder=""><br/>
                 </p>
-                <p>
+                <p class="para">
                     Category:<br/>
                     <select name="category">
                     <?php include 'dbconfig.php';
@@ -104,15 +104,15 @@ function showCurrentPage(n,page){
                          ?>
                     </select>
                 </p>
-                <p>
+                <p id="para">
                     Key Words:<br/>
                     <textarea rows="6" cols="102" placeholder="Key Words" name="keywords"></textarea><br/>
                 </p>
-                <p>
+                <p id="para">
                     Web Reference:<br/>
                     <textarea rows="6" cols="102" placeholder="Key Words" name="keywords"></textarea><br/>
                 </p>
-            </div>       
+            </div>
     </div>
     <div id = "page2" style="display:none">
         <p>Insert Author details</p>
@@ -120,28 +120,28 @@ function showCurrentPage(n,page){
                 <div class="column">
 
                     <p>
-                         First Name<br/>
-                        <input placeholder="First name" oninput="this.className = ''" name="fname">
+                         <center>First Name</center><br/>
+                        <input type="text" placeholder="First name" oninput="this.className = ''" name="fname">
                     </p>
                     <p>
-                        Middle Name<br/>
-                        <input placeholder="Middle name" oninput="this.className = ''" name="mname">
+                        <center>Middle Name</center><br/>
+                        <input type="text" placeholder="Middle name" oninput="this.className = ''" name="mname">
                     </p>
                     <p>
-                        Last Name<br/>
-                        <input placeholder="Last name" oninput="this.className = ''" name="lname">
+                        <center>Last Name</center><br/>
+                        <input type="text"placeholder="Last name" oninput="this.className = ''" name="lname">
                     </p>
                     <p>
-                        Suffix<br/>
-                        <input placeholder="Suffix" oninput="this.className = ''" name="suffix">
+                        <center>Suffix</center><br/>
+                        <input type="text" placeholder="Suffix" oninput="this.className = ''" name="suffix">
                     </p>
                     <p>
-                        Address<br/>
-                        <input placeholder="Address" oninput="this.className = ''" name="add">
+                        <center>Address</center><br/>
+                        <input type="text" placeholder="Address" oninput="this.className = ''" name="add">
                     </p>
                     <p>
-                        Email<br/>
-                        <input placeholder="Email" oninput="this.className = ''" name="email">
+                        <center>Email</center><br/>
+                        <input type="text" placeholder="Email" oninput="this.className = ''" name="email">
                     </p>
                     <p>
                         <Button type="submit" name="btnAddAuthor">Add Author</Button>
@@ -164,29 +164,34 @@ function showCurrentPage(n,page){
     <div id = "page3" style="display:none">
         <p>Page 3</p>
         <p>
-                         First Name<br/>
-                        <input placeholder="First name" oninput="this.className = ''" name="fname">
+                        <center> First Name</center><br/>
+                        <input type="text"placeholder="First name" oninput="this.className = ''" name="fname">
                     </p>
                     <p>
-                        Middle Name<br/>
-                        <input placeholder="Middle name" oninput="this.className = ''" name="mname">
+                      <center>  Middle Name</center><br/>
+                        <input type="text" placeholder="Middle name" oninput="this.className = ''" name="mname">
                     </p>
                     <p>
-                        Last Name<br/>
-                        <input placeholder="Last name" oninput="this.className = ''" name="lname">
+                        <center>Last Name</center><br/>
+                        <input type="text" placeholder="Last name" oninput="this.className = ''" name="lname">
                     </p>
                     <p>
-                        Suffix<br/>
-                        <input placeholder="Suffix" oninput="this.className = ''" name="suffix">
+                        <center>Suffix</center><br/>
+                        <input type="text" placeholder="Suffix" oninput="this.className = ''" name="suffix">
                     </p>
                     <p>
-                        Address<br/>
-                        <input placeholder="Address" oninput="this.className = ''" name="add">
+                        <center>Address</center><br/>
+                        <input type="text" placeholder="Address" oninput="this.className = ''" name="add">
                     </p>
                     <p>
-                        Email<br/>
-                        <input placeholder="Email" oninput="this.className = ''" name="email">
+                        <center>Email</center><br/>
+                        <input type="text" placeholder="Email" oninput="this.className = ''" name="email">
                     </p>
+                    <p>
+
+                      <form action="/actionpage.php">
+                      <center> <input type="checkbox"name="vehicle3" value="Boat" checked> I want others download my file.</center><br><br>
+                     </form>
     </div>
     <div id = "page3" style="display:none">
         <p>Adviser Details</p>
@@ -212,7 +217,9 @@ function showCurrentPage(n,page){
                     </p>
                     <p>
                         Email<br/>
-                        <input placeholder="Email" oninput="this.className = ''" name="email">
+                        <input placeholder="Emails" oninput="this.className = ''" name="email">
+                    </p>
+
                     </p>
     </div>
     </div>
