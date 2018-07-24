@@ -48,8 +48,9 @@ div.para{
   margin: 100px auto;
   font-family: Raleway;
   padding: 40px;
-  width: 100%;
+  max-width:70%;
   min-width: 300px;
+
 }
 
 h1 {
@@ -67,9 +68,9 @@ button {
   font-size: 17px;
   font-family: Raleway;
   cursor: pointer;
-  margin-top: 20%;
+
 }
 
 body{
-  background-color: #FAEBD7;
+  background-color: #b3ecff;
 }
