@@ -60,7 +60,7 @@ function showCurrentPage(n,page){
 <body>
 <h1>Add Research Information</h1>
 
-<form action="">
+<form action="prepare.php">
     <div id="enclosure">
         <div id = "page1" style="height=500px">
 
@@ -231,7 +231,7 @@ function showCurrentPage(n,page){
 <span style="float: right">
 <button type="button" id="btn_prev" onclick="setPage('prev')" style="display: none">Previous</button>
 <button type="button" id="btn_next" onclick="setPage('next')">Next</button>
-<button type="button" id="btn_submit" onclick="" style="display: none">Submit</button>
+<button type="button" id="btn_submit" style="display: none">Submit</button>
 </span>
 </body>
 </html>
