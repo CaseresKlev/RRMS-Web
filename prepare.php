@@ -1,7 +1,8 @@
 <?php
 
 //Book Details
-//$file
+$file = $_FILES['fileup']['temp_name'];
+echo $file;
 
 
 ?>

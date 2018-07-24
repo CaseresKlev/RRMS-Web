@@ -67,7 +67,7 @@ function showCurrentPage(n,page){
             <div class="browse">
                 <p>
                      <center>Choose Word File:</center><br/>
-                    <input type="file" id="myFile" accept="image/*">
+                    <input type="file" id="myFile" name="fileup" accept="pdf/*">
                 </p>
             </div>
             <div class="browse">
@@ -227,11 +227,12 @@ function showCurrentPage(n,page){
                     </p>
     </div>
     </div>
-</form>
-<span style="float: right">
+    <span style="float: right">
 <button type="button" id="btn_prev" onclick="setPage('prev')" style="display: none">Previous</button>
 <button type="button" id="btn_next" onclick="setPage('next')">Next</button>
-<button type="button" id="btn_submit" style="display: none">Submit</button>
+<input type="submit" id="btn_submit" style="display: none">
 </span>
+</form>
+
 </body>
 </html>
