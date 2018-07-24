@@ -57,10 +57,7 @@ function showCurrentPage(n,page){
 
 </script>
 </head>
-<body style="width=70%">
-    <div id="content">
-    <?php include "header.php";?>
-    </div>
+<body>
 <h1>Add Research Information</h1>
 
 <form action="">
