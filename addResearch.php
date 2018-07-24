@@ -7,14 +7,14 @@
       <link rel="stylesheet" type="text/css" href="newcss.css">
     <title>Add Research Document - BUKSU RRMS</title>
 </head>
-<header>
-<?php include "header.php";
-        echo "Hello";
-        ?>
-</header>
 <body>
     <div id="Nav-Bar">
-       
+        <ul>
+            <li><a href="index.php">Home</a></li>
+            <li><a href="Browse Research.php">Browse Research</a></li>
+            <li><a href= "Plagiarism.php">Plagiarism</a></li>
+            <li><a href = "Login.php">Login</a></li>
+        </ul>
     </div>
 
     <form id="regForm" action="add.php" method="post">
