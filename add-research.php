@@ -6,8 +6,9 @@
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="css/add-research.css" />
-    <script src="main.js"></script>
+    <script src="js/add-research.js"></script>
     <script>
+    /*
     var n = 1;
     (function () {
         for (i=1; i<=3; i++){
@@ -52,14 +53,14 @@ function showCurrentPage(n,page){
         document.getElementById("btn_submit").style.display = "none";
     }
 }
-
+*/
 
 </script>
 </head>
 <body>
 <h1>Add Research Information</h1>
 
-<form>
+<form action="">
     <div id="enclosure">
         <div id = "page1" style="height=500px">
 
@@ -91,8 +92,11 @@ function showCurrentPage(n,page){
                 <p class="para">
                     Category:<br/>
                     <select name="category">
-                    <?php include 'dbconfig.php';
-                        $query= "SELECT * FROM category";
+                    <?php include_once 'connection.php';
+                        $dbconfig = new dbconfig();
+                        $conn = $dbconfig->getCon();
+                        $query= "SELECT * FROM department";
+                        
                          $result= $conn->query($query);
 
                          if ($result->num_rows > 0) {
@@ -118,38 +122,42 @@ function showCurrentPage(n,page){
         <p>Insert Author details</p>
             <div class="row">
                 <div class="column">
-
                     <p>
                          <center>First Name</center><br/>
-                        <input type="text" placeholder="First name" oninput="this.className = ''" name="fname">
+                        <input type="text" placeholder="First name" id="fname" oninput="this.className = ''" name="fname">
                     </p>
                     <p>
                         <center>Middle Name</center><br/>
-                        <input type="text" placeholder="Middle name" oninput="this.className = ''" name="mname">
+                        <input type="text" placeholder="Middle name" id="mname" oninput="this.className = ''" name="mname">
                     </p>
                     <p>
                         <center>Last Name</center><br/>
-                        <input type="text"placeholder="Last name" oninput="this.className = ''" name="lname">
+                        <input type="text"placeholder="Last name" id="lname" oninput="this.className = ''" name="lname">
                     </p>
                     <p>
                         <center>Suffix</center><br/>
-                        <input type="text" placeholder="Suffix" oninput="this.className = ''" name="suffix">
+                        <input type="text" placeholder="Suffix" id="suf" oninput="this.className = ''" name="suffix">
                     </p>
                     <p>
                         <center>Address</center><br/>
-                        <input type="text" placeholder="Address" oninput="this.className = ''" name="add">
+                        <input type="text" placeholder="Address" id="add" oninput="this.className = ''" name="add">
+                    </p>
+                    <p>
+                        <center>Contact</center><br/>
+                        <input type="text" placeholder="Email" id="contact" oninput="this.className = ''" name="email">
                     </p>
                     <p>
                         <center>Email</center><br/>
-                        <input type="text" placeholder="Email" oninput="this.className = ''" name="email">
+                        <input type="text" placeholder="Email" id="email"oninput="this.className = ''" name="email">
                     </p>
-                    <p>
-                        <Button type="submit" name="btnAddAuthor">Add Author</Button>
-                    </p>
+                         <center>
+                        <button type="button" onclick="loadToTable()">Add Author</button>
+                        </center>
+
                 </div>
                 <div class="column">
                     <p>Author List</p>
-                    <table width="100%">
+                    <table width="100%" id="author-table">
                         <th>FIRST NAME</th>
                         <th>MIDDLE NAME</th>
                         <th>LAST NAME</th>
@@ -189,9 +197,7 @@ function showCurrentPage(n,page){
                     </p>
                     <p>
 
-                      <form action="/actionpage.php">
                       <center> <input type="checkbox"name="vehicle3" value="Boat" checked> I want others download my file.</center><br><br>
-                     </form>
     </div>
     <div id = "page3" style="display:none">
         <p>Adviser Details</p>
@@ -218,8 +224,6 @@ function showCurrentPage(n,page){
                     <p>
                         Email<br/>
                         <input placeholder="Emails" oninput="this.className = ''" name="email">
-                    </p>
-
                     </p>
     </div>
     </div>
