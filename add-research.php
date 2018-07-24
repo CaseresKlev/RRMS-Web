@@ -87,7 +87,7 @@ function showCurrentPage(n,page){
                 </p>
                 <p class="para">
                     Publication Date:<br/>
-                    <input type="date" name="pubdate" placeholder=""><br/>
+                    <p><input type="date" width="100%" name="pubdate" placeholder=""></p>
                 </p>
                 <p class="para">
                     Category:<br/>
@@ -96,12 +96,12 @@ function showCurrentPage(n,page){
                         $dbconfig = new dbconfig();
                         $conn = $dbconfig->getCon();
                         $query= "SELECT * FROM department";
-                        
+
                          $result= $conn->query($query);
 
                          if ($result->num_rows > 0) {
                              while ($row=$result->fetch_assoc()) { ?>
-                            <option><?php echo $row["cat_name"]; ?>   </option>
+                            <option><?php echo $row["cat_name"]; ?></option>
                         <?php
                              }
                          }
