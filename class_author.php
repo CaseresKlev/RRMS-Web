@@ -9,7 +9,6 @@ class Author{
         $this->address = $address;
         $this->contact = $contact;
         $this->email = $email;
-    }
-    
+    } 
 }
 ?>

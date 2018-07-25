@@ -60,26 +60,41 @@ function showCurrentPage(n,page){
 <body>
 <h1>Add Research Information</h1>
 
-<form action="prepare.php">
+<form action="prepare.php" method="POST" enctype="multipart/form-data">
     <div id="enclosure">
         <div id = "page1" style="height=500px">
 
             <div id="browse">
                 <p>
+<<<<<<< HEAD
                     <strong> Choose Word File:</strong><br/>
                     <input type="file" id="myFile" name="fileup" accept="pdf/*"required>
+=======
+                     <center>Choose Word File:</center><br/>
+                    <input type="file" id="myFile" name="file" accept="Documents/docx">
+>>>>>>> 523a82ef0a0424117b83bbc1693c4f041a1ca1da
                 </p>
             </div>
             <div class="browse">
                 <p>
+<<<<<<< HEAD
                   <strong>  Choose Cover:</strong><br/>
                     <input type="file" id="myCover" accept="image/*">
+=======
+                    <center>Choose Cover:</center><br/>
+                    <input type="file" id="myCover" name="cover" accept="image/*">
+>>>>>>> 523a82ef0a0424117b83bbc1693c4f041a1ca1da
                 </p>
             </div>
             <div id="bookDet">
                 <p class="para">
+<<<<<<< HEAD
                   <strong>  Title:</strong><br>
                   <center>  <input type="text" name="tittle" placeholder="Book title"><br></center>
+=======
+                    Title:<br>
+                  <center>  <input type="text" placeholder="Book title"  name="title"><br></center>
+>>>>>>> 523a82ef0a0424117b83bbc1693c4f041a1ca1da
                 </p>
                 <p class="para">
                     <strong>Abstract:</strong><br>
@@ -90,8 +105,13 @@ function showCurrentPage(n,page){
                     <p><input type="date" width="100%" name="pubdate" placeholder="" required></p>
                 </p>
                 <p class="para">
+<<<<<<< HEAD
                     <strong>Category:</strong><br/>
                     <select name="category">
+=======
+                    Category:<br/>
+                    <select name="department">
+>>>>>>> 523a82ef0a0424117b83bbc1693c4f041a1ca1da
                     <?php include_once 'connection.php';
                         $dbconfig = new dbconfig();
                         $conn = $dbconfig->getCon();
@@ -109,12 +129,21 @@ function showCurrentPage(n,page){
                     </select>
                 </p>
                 <p id="para">
+<<<<<<< HEAD
                   <strong>  Key Words:</strong><br/>
                     <textarea rows="6" cols="102" placeholder="Key Words" name="keywords"></textarea><br/>
                 </p>
                 <p id="para">
                   <strong>  Web Reference:</strong><br/>
                     <textarea rows="6" cols="102" placeholder="Key Words" name="keywords"required></textarea><br/>
+=======
+                    Key Words:<strong style="color:red">One Keywords per Line</strong></note><br/><br/>
+                    <textarea rows="6" cols="102" placeholder="Key Words" name="keywords"></textarea><br/>
+                </p>
+                <p id="para">
+                 Reference: <strong style="color:red">One Refrence per Line</strong></note><br/>
+                    <textarea rows="6" cols="102" placeholder="Key Words" name="reference"></textarea><br/>
+>>>>>>> 523a82ef0a0424117b83bbc1693c4f041a1ca1da
                 </p>
             </div>
     </div>
@@ -123,6 +152,7 @@ function showCurrentPage(n,page){
             <div class="row">
                 <div class="column">
                     <p>
+<<<<<<< HEAD
                          First Name<br/>
                         <input type="text" placeholder="First name" id="fname" oninput="this.className = ''" name="fname">
                     </p>
@@ -149,6 +179,34 @@ function showCurrentPage(n,page){
                     <p>
                         Email<br/>
                         <input type="text" placeholder="Email" id="email"oninput="this.className = ''" name="email">
+=======
+                         <center>First Name</center><br/>
+                        <input type="text" placeholder="First name" id="fname" oninput="this.className = ''" name="aut_fname">
+                    </p>
+                    <p>
+                        <center>Middle Name</center><br/>
+                        <input type="text" placeholder="Middle name" id="mname" oninput="this.className = ''" name="aut_mname">
+                    </p>
+                    <p>
+                        <center>Last Name</center><br/>
+                        <input type="text"placeholder="Last name" id="lname" oninput="this.className = ''" name="aut_lname">
+                    </p>
+                    <p>
+                        <center>Suffix</center><br/>
+                        <input type="text" placeholder="Suffix" id="suf" oninput="this.className = ''" name="aut_suffix">
+                    </p>
+                    <p>
+                        <center>Address</center><br/>
+                        <input type="text" placeholder="Address" id="add" oninput="this.className = ''" name="aut_add">
+                    </p>
+                    <p>
+                        <center>Contact</center><br/>
+                        <input type="text" placeholder="Email" id="contact" oninput="this.className = ''" name="aut_contact">
+                    </p>
+                    <p>
+                        <center>Email</center><br/>
+                        <input type="text" placeholder="Email" id="email"oninput="this.className = ''" name="aut_email">
+>>>>>>> 523a82ef0a0424117b83bbc1693c4f041a1ca1da
                     </p>
                          <center>
                         <button type="button" onclick="loadToTable()">Add Author</button>
@@ -157,7 +215,7 @@ function showCurrentPage(n,page){
                 </div>
                 <div class="column">
                     <p>Author List</p>
-                    <table width="100%" id="author-table">
+                    <table width="100%" id="author-table" name="aut_list">
                         <th>FIRST NAME</th>
                         <th>MIDDLE NAME</th>
                         <th>LAST NAME</th>
@@ -228,12 +286,19 @@ function showCurrentPage(n,page){
 
     </div>
     <span style="float: right">
+<<<<<<< HEAD
 <button type="button" id="btn_prev" onclick="setPage('prev')" style="display: none">Previous</button>
 <button type="button" id="btn_next" onclick="setPage('next')">Next</button>
 <button type="submit" id="btn_submit" style="display: none">Submit</button>
 </span>
     </div>
 
+=======
+        <button type="button" id="btn_prev" onclick="setPage('prev')" style="display: none">Previous</button>
+        <button type="button" id="btn_next" onclick="setPage('next')">Next</button>
+        <button type="submit" id="btn_submit" style="display: none" name="submit">Submit</button>
+    </span>
+>>>>>>> 523a82ef0a0424117b83bbc1693c4f041a1ca1da
 </form>
 
 </body>
