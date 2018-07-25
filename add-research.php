@@ -89,56 +89,6 @@
                 </p>
     </fieldset>
     <br/>
-        <!--
-        <p>Insert Author details</p>
-            <div class="row">
-                <div class="column">
-                    <p>
-                         <center>First Name</center><br/>
-                        <input type="text" placeholder="First name" id="fname" oninput="this.className = ''" name="aut_fname">
-                    </p>
-                    <p>
-                        <center>Middle Name</center><br/>
-                        <input type="text" placeholder="Middle name" id="mname" oninput="this.className = ''" name="aut_mname">
-                    </p>
-                    <p>
-                        <center>Last Name</center><br/>
-                        <input type="text"placeholder="Last name" id="lname" oninput="this.className = ''" name="aut_lname">
-                    </p>
-                    <p>
-                        <center>Suffix</center><br/>
-                        <input type="text" placeholder="Suffix" id="suf" oninput="this.className = ''" name="aut_suffix">
-                    </p>
-                    <p>
-                        <center>Address</center><br/>
-                        <input type="text" placeholder="Address" id="add" oninput="this.className = ''" name="aut_add">
-                    </p>
-                    <p>
-                        <center>Contact</center><br/>
-                        <input type="text" placeholder="Email" id="contact" oninput="this.className = ''" name="aut_contact">
-                    </p>
-                    <p>
-                        <center>Email</center><br/>
-                        <input type="text" placeholder="Email" id="email"oninput="this.className = ''" name="aut_email">
-                    </p>
-                         <center>
-                        <button type="button" onclick="loadToTable()">Add Author</button>
-                        </center>
-
-                </div>
-                <div class="column">
-                    <p>Author List</p>
-                    <table width="100%" id="author-table" name="aut_list">
-                        <th>FIRST NAME</th>
-                        <th>MIDDLE NAME</th>
-                        <th>LAST NAME</th>
-                        <th>SUFFIX</th>
-                        <th>ADDRRESS</th>
-                        <th>CONTACT</th>
-                        <th>EMAIL</th>
-                    </table>
-                </div>
-            </div>-->
     </div>
     <div id = "page3" style="display:none">
         <p>Page 3</p>
