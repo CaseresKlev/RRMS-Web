@@ -64,8 +64,9 @@ function showCurrentPage(n,page){
     <div id="enclosure">
         <div id = "page1" style="height=500px">
 
-            <div id="browse">
+            <div class="browse">
                 <p>
+<<<<<<< HEAD
 <<<<<<< HEAD
                     <strong> Choose Word File:</strong><br/>
                     <input type="file" id="myFile" name="fileup" accept="pdf/*"required>
@@ -73,12 +74,20 @@ function showCurrentPage(n,page){
                      <center>Choose Word File:</center><br/>
                     <input type="file" id="myFile" name="file" accept="Documents/docx">
 >>>>>>> 523a82ef0a0424117b83bbc1693c4f041a1ca1da
+=======
+                     <center>Choose Word File:</center><br/>
+                    <input type="file" id="myFile" name="fileup" accept="pdf/*">
+>>>>>>> parent of 8c103b9... revise (jul 24/12pm)
                 </p>
             </div>
             <div class="browse">
                 <p>
 <<<<<<< HEAD
+<<<<<<< HEAD
                   <strong>  Choose Cover:</strong><br/>
+=======
+                    <center>Choose Cover:</center><br/>
+>>>>>>> parent of 8c103b9... revise (jul 24/12pm)
                     <input type="file" id="myCover" accept="image/*">
 =======
                     <center>Choose Cover:</center><br/>
@@ -89,7 +98,11 @@ function showCurrentPage(n,page){
             <div id="bookDet">
                 <p class="para">
 <<<<<<< HEAD
+<<<<<<< HEAD
                   <strong>  Title:</strong><br>
+=======
+                    Title:<br>
+>>>>>>> parent of 8c103b9... revise (jul 24/12pm)
                   <center>  <input type="text" name="tittle" placeholder="Book title"><br></center>
 =======
                     Title:<br>
@@ -97,16 +110,20 @@ function showCurrentPage(n,page){
 >>>>>>> 523a82ef0a0424117b83bbc1693c4f041a1ca1da
                 </p>
                 <p class="para">
-                    <strong>Abstract:</strong><br>
+                    Abstract:<br>
                     <textarea rows="6" cols="102" placeholder="Abstract" name="abstract"></textarea><br/>
                 </p>
                 <p class="para">
-                    <strong>Publication Date:</strong><br/>
-                    <p><input type="date" width="100%" name="pubdate" placeholder="" required></p>
+                    Publication Date:<br/>
+                    <p><input type="date" width="100%" name="pubdate" placeholder=""></p>
                 </p>
                 <p class="para">
 <<<<<<< HEAD
+<<<<<<< HEAD
                     <strong>Category:</strong><br/>
+=======
+                    Category:<br/>
+>>>>>>> parent of 8c103b9... revise (jul 24/12pm)
                     <select name="category">
 =======
                     Category:<br/>
@@ -130,6 +147,7 @@ function showCurrentPage(n,page){
                 </p>
                 <p id="para">
 <<<<<<< HEAD
+<<<<<<< HEAD
                   <strong>  Key Words:</strong><br/>
                     <textarea rows="6" cols="102" placeholder="Key Words" name="keywords"></textarea><br/>
                 </p>
@@ -144,6 +162,14 @@ function showCurrentPage(n,page){
                  Reference: <strong style="color:red">One Refrence per Line</strong></note><br/>
                     <textarea rows="6" cols="102" placeholder="Key Words" name="reference"></textarea><br/>
 >>>>>>> 523a82ef0a0424117b83bbc1693c4f041a1ca1da
+=======
+                    Key Words:<br/>
+                    <textarea rows="6" cols="102" placeholder="Key Words" name="keywords"></textarea><br/>
+                </p>
+                <p id="para">
+                    Web Reference:<br/>
+                    <textarea rows="6" cols="102" placeholder="Key Words" name="keywords"></textarea><br/>
+>>>>>>> parent of 8c103b9... revise (jul 24/12pm)
                 </p>
             </div>
     </div>
@@ -153,31 +179,35 @@ function showCurrentPage(n,page){
                 <div class="column">
                     <p>
 <<<<<<< HEAD
+<<<<<<< HEAD
                          First Name<br/>
+=======
+                         <center>First Name</center><br/>
+>>>>>>> parent of 8c103b9... revise (jul 24/12pm)
                         <input type="text" placeholder="First name" id="fname" oninput="this.className = ''" name="fname">
                     </p>
                     <p>
-                        Middle Name<br/>
+                        <center>Middle Name</center><br/>
                         <input type="text" placeholder="Middle name" id="mname" oninput="this.className = ''" name="mname">
                     </p>
                     <p>
-                        Last Name<br/>
+                        <center>Last Name</center><br/>
                         <input type="text"placeholder="Last name" id="lname" oninput="this.className = ''" name="lname">
                     </p>
                     <p>
-                      Suffix<br/>
+                        <center>Suffix</center><br/>
                         <input type="text" placeholder="Suffix" id="suf" oninput="this.className = ''" name="suffix">
                     </p>
                     <p>
-                        Address<br/>
+                        <center>Address</center><br/>
                         <input type="text" placeholder="Address" id="add" oninput="this.className = ''" name="add">
                     </p>
                     <p>
-                        Contact<br/>
+                        <center>Contact</center><br/>
                         <input type="text" placeholder="Email" id="contact" oninput="this.className = ''" name="email">
                     </p>
                     <p>
-                        Email<br/>
+                        <center>Email</center><br/>
                         <input type="text" placeholder="Email" id="email"oninput="this.className = ''" name="email">
 =======
                          <center>First Name</center><br/>
@@ -230,27 +260,27 @@ function showCurrentPage(n,page){
     <div id = "page3" style="display:none">
         <p>Page 3</p>
         <p>
-                       First Name<br/>
+                        <center> First Name</center><br/>
                         <input type="text"placeholder="First name" oninput="this.className = ''" name="fname">
                     </p>
                     <p>
-                       Middle Name<br/>
+                      <center>  Middle Name</center><br/>
                         <input type="text" placeholder="Middle name" oninput="this.className = ''" name="mname">
                     </p>
                     <p>
-                        Last Name<br/>
+                        <center>Last Name</center><br/>
                         <input type="text" placeholder="Last name" oninput="this.className = ''" name="lname">
                     </p>
                     <p>
-                        Suffix<br/>
+                        <center>Suffix</center><br/>
                         <input type="text" placeholder="Suffix" oninput="this.className = ''" name="suffix">
                     </p>
                     <p>
-                        Address<br/>
+                        <center>Address</center><br/>
                         <input type="text" placeholder="Address" oninput="this.className = ''" name="add">
                     </p>
                     <p>
-                        Email
+                        <center>Email</center><br/>
                         <input type="text" placeholder="Email" oninput="this.className = ''" name="email">
                     </p>
                     <p>
@@ -283,14 +313,15 @@ function showCurrentPage(n,page){
                         Email<br/>
                         <input placeholder="Emails" oninput="this.className = ''" name="email">
                     </p>
-
+    </div>
     </div>
     <span style="float: right">
 <<<<<<< HEAD
 <button type="button" id="btn_prev" onclick="setPage('prev')" style="display: none">Previous</button>
 <button type="button" id="btn_next" onclick="setPage('next')">Next</button>
-<button type="submit" id="btn_submit" style="display: none">Submit</button>
+<input type="submit" id="btn_submit" style="display: none">
 </span>
+<<<<<<< HEAD
     </div>
 
 =======
@@ -299,6 +330,8 @@ function showCurrentPage(n,page){
         <button type="submit" id="btn_submit" on_click="test()" style="display: none" name="submit">Submit</button>
     </span>
 >>>>>>> 523a82ef0a0424117b83bbc1693c4f041a1ca1da
+=======
+>>>>>>> parent of 8c103b9... revise (jul 24/12pm)
 </form>
 
 </body>
