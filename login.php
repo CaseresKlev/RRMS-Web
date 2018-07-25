@@ -1,12 +1,12 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html style="width=70%">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Login - BUKSU RRMS</title>
-	<link rel="stylesheet" href="login.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="login.css"/>
 </head>
 <body>
     <!-- <div id="Nav-Bar">
