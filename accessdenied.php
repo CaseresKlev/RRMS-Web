@@ -12,12 +12,12 @@
 
 <div id="content">
 
-	<div class="header">
-	
+	<div class="header2">
+
 	<h1> ACCESS DENIED !! </h1>
-	
+
 	</div>
-	
+
 </div>
 </body>
 </html>
