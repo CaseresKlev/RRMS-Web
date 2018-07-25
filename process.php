@@ -15,7 +15,7 @@
 			if($result->num_rows>0){
 				while($row=$result->fetch_assoc()) {
 					if($row['count(id)']==1){
-						header('location: header.php');
+						header('location: instructordashboard.php');
 					}
 					else {
 						header('location: accessdenied.php');
