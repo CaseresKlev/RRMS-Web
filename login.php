@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-=======
-
-
-
-
->>>>>>> be1ea39b5d98139e5d103708657735dd1a6c8e18
 
 <!DOCTYPE html>
 <html lang="en">
@@ -17,13 +10,7 @@
 </head>
 <body>
 
-<<<<<<< HEAD
-<form method="post" action="login.php">
-	<?php echo display_error(); ?>
-</form>
-=======
 
->>>>>>> be1ea39b5d98139e5d103708657735dd1a6c8e18
     <!-- <div id="Nav-Bar">
         <ul>
             <li><a href="index.php">Home</a></li>
