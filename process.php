@@ -7,7 +7,7 @@
 			
 			$dbconfig = new dbconfig();
             $conn = $dbconfig->getCon();
-            $query= "SELECT count(id) FROM `authentication` WHERE username='$username' and password='$password'";
+            $query= "SELECT count(id), type FROM `authentication` WHERE username='$username' and password='$password'";
 
 
 			$result = $conn->query($query);
@@ -15,7 +15,12 @@
 			if($result->num_rows>0){
 				while($row=$result->fetch_assoc()) {
 					if($row['count(id)']==1){
-						header('location: instructordashboard.php');
+						if($row['type']=="admin"){
+							header('location: instructordashboard.php');
+						}else{
+							header('location: userdashboard.php');
+						}
+						
 					}
 					else {
 						header('location: accessdenied.php');

@@ -1,6 +1,7 @@
 <?php
 //Book Details
 if(isset($_POST['submit'])){
+
     ///----FINAL VALUE----///
     $FileFullpath;
     $CoverFullpath;
@@ -10,29 +11,12 @@ if(isset($_POST['submit'])){
     $dept =  $_POST['department'];
     $keywords = $_POST['keywords'];
     $ref = $_POST['reference'];
-   /*
-    $html = str_get_html('add-research.php');
-    echo $html;
-    */
+   
     ///array of keywords perline
     $keywordsArray = explode("\n", $keywords);
 
     //array of reference perline
     $refAr = explode("\n", $ref);
-
-    //authur array ///
-    /*if(is_array($_POST["fname"])){
-        $subject = implode(", ", $_POST["fname"]);
-        print_r($subject);
-    }else{
-        echo "No value";
-    }*/
-    $name = $_POST['fname'];
-    foreach( $name as $key  ) {
-        echo "The name is " .$key[0];
-    }
-    
-
 
     ///------------------///
     ///----FILE DOCX-----///
@@ -103,7 +87,7 @@ if(isset($_POST['submit'])){
     $autemail = $_POST['aut_email'];
     */
     ///-------------///
-    /*
+ 
     echo "Title: " . $title . "<br/>";
     echo "Abstract: " . $abstract . "<br/>";
     echo "pubdate: " . $pubdate . "<br/>";
@@ -114,7 +98,7 @@ if(isset($_POST['submit'])){
     echo "Refrence:  ";
     print_r($refAr);
     echo "<br/>";
-    */
+
 }
     
 ?>
