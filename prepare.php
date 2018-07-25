@@ -17,8 +17,14 @@ if(isset($_POST['submit'])){
     */
     ///array of keywords perline
     $keywordsArray = explode("\n", $keywords);
+
     //array of reference perline
     $refAr = explode("\n", $ref);
+
+    //authur array ///
+    
+
+
     ///------------------///
     ///----FILE DOCX-----///
     $file = $_FILES['file'];

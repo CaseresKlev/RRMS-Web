@@ -8,46 +8,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="css/add-research.css" />
     <script src="js/add-research.js"></script>
     <script>
-    /*
-    var n = 1;
-    (function () {
-        for (i=1; i<=3; i++){
-             document.getElementById("page" +i).style.display = "none";
-        }
-        alert("load");
-        showCurrentPage(n, "page" + n);
-    }());
-function setPage(action) {
-    if(action == "prev"){
-        if(n>1){
-            n -=1;
-        }
-    }else{
-        n +=1;
-    }
-    var page = "page" + n;
-   for (i=1; i<=3; i++){
-    document.getElementById("page" +i).style.display = "none";
-   }
-   showCurrentPage(n,page);
-}
-function showCurrentPage(n,page){
-    //alert(n);
-    document.getElementById(page).style.display = "block";
-    if (n==1){
-        document.getElementById("btn_prev").style.display = "none";
-    }else{
-        document.getElementById("btn_prev").style.display = "inline-block";
-    }
-    if (n==3){
-        document.getElementById("btn_next").style.display = "none";
-        document.getElementById("btn_submit").style.display = "inline-block";
-    }else{
-        document.getElementById("btn_next").style.display = "inline-block";
-        document.getElementById("btn_submit").style.display = "none";
-    }
-}
-*/
+        window.onload = addInput;
 </script>
 </head>
 <body>
@@ -59,37 +20,37 @@ function showCurrentPage(n,page){
 
             <div class="browse">
                 <p>
-                     <center>Choose Word File:</center><br/>
+                    <label for="myFile">Choose Word File</label>
                     <input type="file" id="myFile" name="file" accept="Documents/docx">
                 </p>
             </div>
             <div class="browse">
                 <p>
-                    <center>Choose Cover:</center><br/>
+                    <label for="myCover">Choose Cover</label>
                     <input type="file" id="myCover" name="cover" accept="image/*">
                 </p>
             </div>
             <div id="bookDet">
                 <p class="para">
-                    Title:<br>
-                  <center>  <input type="text" placeholder="Book title"  name="title"><br></center>
+                Title
+                  <input type="text" placeholder="Book title" id="title" name="title">
                 </p>
                 <p class="para">
                     Abstract:<br>
-                    <textarea rows="6" cols="102" placeholder="Abstract" name="abstract"></textarea><br/>
+                    <textarea rows="6" cols="102" placeholder="Abstract" name="abstract"></textarea>
                 </p>
                 <p class="para">
-                    Publication Date:<br/>
-                    <p><input type="date" width="100%" name="pubdate" placeholder=""></p>
+                    Publication Date
+                    <input type="date" width="100%" name="pubdate" placeholder="">
                 </p>
                 <p class="para">
-                    Category:<br/>
+                    Category:
                     <select name="department">
                     <?php include_once 'connection.php';
                         $dbconfig = new dbconfig();
                         $conn = $dbconfig->getCon();
                         $query= "SELECT * FROM department";
-                         $result= $conn->query($query);
+                        $result= $conn->query($query);
                          if ($result->num_rows > 0) {
                              while ($row=$result->fetch_assoc()) { ?>
                             <option><?php echo $row["cat_name"]; ?></option>
@@ -100,65 +61,34 @@ function showCurrentPage(n,page){
                     </select>
                 </p>
                 <p id="para">
-                    Key Words:<strong style="color:red">One Keywords per Line</strong></note><br/><br/>
+                    Key Words:<strong style="color:red">&emsp;One Keywords per Line</strong></note>
                     <textarea rows="6" cols="102" placeholder="Key Words" name="keywords"></textarea><br/>
                 </p>
                 <p id="para">
-                 Reference: <strong style="color:red">One Refrence per Line</strong></note><br/>
+                 References: <strong style="color:red">&ensp;One Refrence per Line</strong></note><br/>
                     <textarea rows="6" cols="102" placeholder="Key Words" name="reference"></textarea><br/>
                 </p>
             </div>
     </div>
     <div id = "page2" style="display:none">
-        <p>Insert Author details</p>
-            <div class="row">
-                <div class="column">
-                    <p>
-                         <center>First Name</center><br/>
-                        <input type="text" placeholder="First name" id="fname" oninput="this.className = ''" name="aut_fname">
-                    </p>
-                    <p>
-                        <center>Middle Name</center><br/>
-                        <input type="text" placeholder="Middle name" id="mname" oninput="this.className = ''" name="aut_mname">
-                    </p>
-                    <p>
-                        <center>Last Name</center><br/>
-                        <input type="text"placeholder="Last name" id="lname" oninput="this.className = ''" name="aut_lname">
-                    </p>
-                    <p>
-                        <center>Suffix</center><br/>
-                        <input type="text" placeholder="Suffix" id="suf" oninput="this.className = ''" name="aut_suffix">
-                    </p>
-                    <p>
-                        <center>Address</center><br/>
-                        <input type="text" placeholder="Address" id="add" oninput="this.className = ''" name="aut_add">
-                    </p>
-                    <p>
-                        <center>Contact</center><br/>
-                        <input type="text" placeholder="Email" id="contact" oninput="this.className = ''" name="aut_contact">
-                    </p>
-                    <p>
-                        <center>Email</center><br/>
-                        <input type="text" placeholder="Email" id="email"oninput="this.className = ''" name="aut_email">
-                    </p>
-                         <center>
-                        <button type="button" onclick="loadToTable()">Add Author</button>
-                        </center>
+        <fieldset>
+            <legend>Authours Info</legend>
+                <table name="aut_list" id="aut_list">
 
-                </div>
-                <div class="column">
-                    <p>Author List</p>
-                    <table width="100%" id="author-table" name="aut_list">
-                        <th>FIRST NAME</th>
-                        <th>MIDDLE NAME</th>
-                        <th>LAST NAME</th>
-                        <th>SUFFIX</th>
-                        <th>ADDRRESS</th>
-                        <th>CONTACT</th>
-                        <th>EMAIL</th>
-                    </table>
-                </div>
-            </div>
+                    <th>FIRST NAME</th>
+                    <th>MIDDLE NAME</th>
+                    <th>LAST NAME</th>
+                    <th>SUFFIX</th>
+                    <th>ADDRRESS</th>
+                    <th>CONTACT</th>
+                    <th>EMAIL</th>
+                </table>
+                <p>
+                <button type="button" onclick = "addInput()">Add Author</button>
+                <button type="submit" id="btn_submit" name="submit">Submit</button>
+                </p>
+    </fieldset>
+    <br/>
     </div>
     <div id = "page3" style="display:none">
         <p>Page 3</p>
@@ -223,6 +153,7 @@ function showCurrentPage(n,page){
         <button type="button" id="btn_next" onclick="setPage('next')">Next</button>
         <button type="submit" id="btn_submit" style="display: none" name="submit">Submit</button>
     </span>
+    <br/>
     </div>
 </form>
 
