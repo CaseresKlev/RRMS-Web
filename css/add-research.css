@@ -1,7 +1,4 @@
-<<<<<<< HEAD
 
-=======
->>>>>>> parent of 2e77b45... With Latest DB
 * {
     box-sizing: border-box;
 }
@@ -21,7 +18,7 @@
     clear: both;
 }
 input[type=text], input[type=file], input[type=date],textarea, select{
-  width: 50%;
+  width: 100%;
   padding: 12px;
   border: 2px solid #ccc;
   border-radius: 4px;
@@ -32,15 +29,16 @@ input[type=text], input[type=file], input[type=date],textarea, select{
   margin-right: auto;
   margin: 0 auto;
   text-align: left;
+
 }
 
 
 div.para{
-  text-align: center;
-  left: 35px;
+  text-align: left;
+
 }
 #bookDet{
-  text-align: center;
+  text-align: left;
 
 }
 #enclosure {
@@ -50,6 +48,7 @@ div.para{
   padding: 40px;
   max-width:70%;
   min-width: 300px;
+  text-align: left;
 
 }
 
@@ -68,9 +67,14 @@ button {
   font-size: 17px;
   font-family: Raleway;
   cursor: pointer;
+  top: 20%;
+  border-bottom: 10%;
 
 }
 
 body{
   background-color: #b3ecff;
+}
+.browse{
+  text-align: left;
 }

@@ -17,8 +17,6 @@
         alert("load");
         showCurrentPage(n, "page" + n);
     }());
-
-
 function setPage(action) {
     if(action == "prev"){
         if(n>1){
@@ -27,15 +25,12 @@ function setPage(action) {
     }else{
         n +=1;
     }
-
     var page = "page" + n;
-
    for (i=1; i<=3; i++){
     document.getElementById("page" +i).style.display = "none";
    }
    showCurrentPage(n,page);
 }
-
 function showCurrentPage(n,page){
     //alert(n);
     document.getElementById(page).style.display = "block";
@@ -44,7 +39,6 @@ function showCurrentPage(n,page){
     }else{
         document.getElementById("btn_prev").style.display = "inline-block";
     }
-
     if (n==3){
         document.getElementById("btn_next").style.display = "none";
         document.getElementById("btn_submit").style.display = "inline-block";
@@ -54,105 +48,48 @@ function showCurrentPage(n,page){
     }
 }
 */
-
 </script>
 </head>
 <body>
 <h1>Add Research Information</h1>
 
-<form action="prepare.php" method="POST" enctype="multipart/form-data">
+<form action="prepare.php">
     <div id="enclosure">
         <div id = "page1" style="height=500px">
 
-            <div class="browse">
+            <div id="browse">
                 <p>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
                     <strong> Choose Word File:</strong><br/>
                     <input type="file" id="myFile" name="fileup" accept="pdf/*"required>
-=======
-                     <center>Choose Word File:</center><br/>
-                    <input type="file" id="myFile" name="file" accept="Documents/docx">
->>>>>>> 523a82ef0a0424117b83bbc1693c4f041a1ca1da
-=======
-                     <center>Choose Word File:</center><br/>
-                    <input type="file" id="myFile" name="fileup" accept="pdf/*">
->>>>>>> parent of 8c103b9... revise (jul 24/12pm)
-=======
-                     <center>Choose Word File:</center><br/>
-                    <input type="file" id="myFile" name="fileup" accept="pdf/*">
->>>>>>> parent of 8c103b9... revise (jul 24/12pm)
                 </p>
             </div>
             <div class="browse">
                 <p>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
                   <strong>  Choose Cover:</strong><br/>
-=======
-                    <center>Choose Cover:</center><br/>
->>>>>>> parent of 8c103b9... revise (jul 24/12pm)
-=======
-                    <center>Choose Cover:</center><br/>
->>>>>>> parent of 8c103b9... revise (jul 24/12pm)
                     <input type="file" id="myCover" accept="image/*">
-=======
-                    <center>Choose Cover:</center><br/>
-                    <input type="file" id="myCover" name="cover" accept="image/*">
->>>>>>> 523a82ef0a0424117b83bbc1693c4f041a1ca1da
                 </p>
             </div>
             <div id="bookDet">
                 <p class="para">
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
                   <strong>  Title:</strong><br>
-=======
-                    Title:<br>
->>>>>>> parent of 8c103b9... revise (jul 24/12pm)
-=======
-                    Title:<br>
->>>>>>> parent of 8c103b9... revise (jul 24/12pm)
                   <center>  <input type="text" name="tittle" placeholder="Book title"><br></center>
-=======
-                    Title:<br>
-                  <center>  <input type="text" placeholder="Book title"  name="title"><br></center>
->>>>>>> 523a82ef0a0424117b83bbc1693c4f041a1ca1da
                 </p>
                 <p class="para">
-                    Abstract:<br>
+                    <strong>Abstract:</strong><br>
                     <textarea rows="6" cols="102" placeholder="Abstract" name="abstract"></textarea><br/>
                 </p>
                 <p class="para">
-                    Publication Date:<br/>
-                    <p><input type="date" width="100%" name="pubdate" placeholder=""></p>
+                    <strong>Publication Date:</strong><br/>
+                    <p><input type="date" width="100%" name="pubdate" placeholder="" required></p>
                 </p>
                 <p class="para">
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
                     <strong>Category:</strong><br/>
-=======
-                    Category:<br/>
->>>>>>> parent of 8c103b9... revise (jul 24/12pm)
-=======
-                    Category:<br/>
->>>>>>> parent of 8c103b9... revise (jul 24/12pm)
                     <select name="category">
-=======
-                    Category:<br/>
-                    <select name="department">
->>>>>>> 523a82ef0a0424117b83bbc1693c4f041a1ca1da
                     <?php include_once 'connection.php';
                         $dbconfig = new dbconfig();
                         $conn = $dbconfig->getCon();
                         $query= "SELECT * FROM department";
-
                          $result= $conn->query($query);
-
                          if ($result->num_rows > 0) {
                              while ($row=$result->fetch_assoc()) { ?>
                             <option><?php echo $row["cat_name"]; ?></option>
@@ -163,39 +100,12 @@ function showCurrentPage(n,page){
                     </select>
                 </p>
                 <p id="para">
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
                   <strong>  Key Words:</strong><br/>
                     <textarea rows="6" cols="102" placeholder="Key Words" name="keywords"></textarea><br/>
                 </p>
                 <p id="para">
                   <strong>  Web Reference:</strong><br/>
                     <textarea rows="6" cols="102" placeholder="Key Words" name="keywords"required></textarea><br/>
-=======
-                    Key Words:<strong style="color:red">One Keywords per Line</strong></note><br/><br/>
-                    <textarea rows="6" cols="102" placeholder="Key Words" name="keywords"></textarea><br/>
-                </p>
-                <p id="para">
-                 Reference: <strong style="color:red">One Refrence per Line</strong></note><br/>
-                    <textarea rows="6" cols="102" placeholder="Key Words" name="reference"></textarea><br/>
->>>>>>> 523a82ef0a0424117b83bbc1693c4f041a1ca1da
-=======
-                    Key Words:<br/>
-                    <textarea rows="6" cols="102" placeholder="Key Words" name="keywords"></textarea><br/>
-                </p>
-                <p id="para">
-                    Web Reference:<br/>
-                    <textarea rows="6" cols="102" placeholder="Key Words" name="keywords"></textarea><br/>
->>>>>>> parent of 8c103b9... revise (jul 24/12pm)
-=======
-                    Key Words:<br/>
-                    <textarea rows="6" cols="102" placeholder="Key Words" name="keywords"></textarea><br/>
-                </p>
-                <p id="para">
-                    Web Reference:<br/>
-                    <textarea rows="6" cols="102" placeholder="Key Words" name="keywords"></textarea><br/>
->>>>>>> parent of 8c103b9... revise (jul 24/12pm)
                 </p>
             </div>
     </div>
@@ -204,69 +114,32 @@ function showCurrentPage(n,page){
             <div class="row">
                 <div class="column">
                     <p>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
                          First Name<br/>
-=======
-                         <center>First Name</center><br/>
->>>>>>> parent of 8c103b9... revise (jul 24/12pm)
-=======
-                         <center>First Name</center><br/>
->>>>>>> parent of 8c103b9... revise (jul 24/12pm)
                         <input type="text" placeholder="First name" id="fname" oninput="this.className = ''" name="fname">
                     </p>
                     <p>
-                        <center>Middle Name</center><br/>
+                        Middle Name<br/>
                         <input type="text" placeholder="Middle name" id="mname" oninput="this.className = ''" name="mname">
                     </p>
                     <p>
-                        <center>Last Name</center><br/>
+                        Last Name<br/>
                         <input type="text"placeholder="Last name" id="lname" oninput="this.className = ''" name="lname">
                     </p>
                     <p>
-                        <center>Suffix</center><br/>
+                      Suffix<br/>
                         <input type="text" placeholder="Suffix" id="suf" oninput="this.className = ''" name="suffix">
                     </p>
                     <p>
-                        <center>Address</center><br/>
+                        Address<br/>
                         <input type="text" placeholder="Address" id="add" oninput="this.className = ''" name="add">
                     </p>
                     <p>
-                        <center>Contact</center><br/>
+                        Contact<br/>
                         <input type="text" placeholder="Email" id="contact" oninput="this.className = ''" name="email">
                     </p>
                     <p>
-                        <center>Email</center><br/>
+                        Email<br/>
                         <input type="text" placeholder="Email" id="email"oninput="this.className = ''" name="email">
-=======
-                         <center>First Name</center><br/>
-                        <input type="text" placeholder="First name" id="fname" oninput="this.className = ''" name="aut_fname">
-                    </p>
-                    <p>
-                        <center>Middle Name</center><br/>
-                        <input type="text" placeholder="Middle name" id="mname" oninput="this.className = ''" name="aut_mname">
-                    </p>
-                    <p>
-                        <center>Last Name</center><br/>
-                        <input type="text"placeholder="Last name" id="lname" oninput="this.className = ''" name="aut_lname">
-                    </p>
-                    <p>
-                        <center>Suffix</center><br/>
-                        <input type="text" placeholder="Suffix" id="suf" oninput="this.className = ''" name="aut_suffix">
-                    </p>
-                    <p>
-                        <center>Address</center><br/>
-                        <input type="text" placeholder="Address" id="add" oninput="this.className = ''" name="aut_add">
-                    </p>
-                    <p>
-                        <center>Contact</center><br/>
-                        <input type="text" placeholder="Email" id="contact" oninput="this.className = ''" name="aut_contact">
-                    </p>
-                    <p>
-                        <center>Email</center><br/>
-                        <input type="text" placeholder="Email" id="email"oninput="this.className = ''" name="aut_email">
->>>>>>> 523a82ef0a0424117b83bbc1693c4f041a1ca1da
                     </p>
                          <center>
                         <button type="button" onclick="loadToTable()">Add Author</button>
@@ -275,7 +148,7 @@ function showCurrentPage(n,page){
                 </div>
                 <div class="column">
                     <p>Author List</p>
-                    <table width="100%" id="author-table" name="aut_list">
+                    <table width="100%" id="author-table">
                         <th>FIRST NAME</th>
                         <th>MIDDLE NAME</th>
                         <th>LAST NAME</th>
@@ -290,27 +163,27 @@ function showCurrentPage(n,page){
     <div id = "page3" style="display:none">
         <p>Page 3</p>
         <p>
-                        <center> First Name</center><br/>
+                       First Name<br/>
                         <input type="text"placeholder="First name" oninput="this.className = ''" name="fname">
                     </p>
                     <p>
-                      <center>  Middle Name</center><br/>
+                       Middle Name<br/>
                         <input type="text" placeholder="Middle name" oninput="this.className = ''" name="mname">
                     </p>
                     <p>
-                        <center>Last Name</center><br/>
+                        Last Name<br/>
                         <input type="text" placeholder="Last name" oninput="this.className = ''" name="lname">
                     </p>
                     <p>
-                        <center>Suffix</center><br/>
+                        Suffix<br/>
                         <input type="text" placeholder="Suffix" oninput="this.className = ''" name="suffix">
                     </p>
                     <p>
-                        <center>Address</center><br/>
+                        Address<br/>
                         <input type="text" placeholder="Address" oninput="this.className = ''" name="add">
                     </p>
                     <p>
-                        <center>Email</center><br/>
+                        Email
                         <input type="text" placeholder="Email" oninput="this.className = ''" name="email">
                     </p>
                     <p>
@@ -343,28 +216,15 @@ function showCurrentPage(n,page){
                         Email<br/>
                         <input placeholder="Emails" oninput="this.className = ''" name="email">
                     </p>
-    </div>
+
     </div>
     <span style="float: right">
-<<<<<<< HEAD
 <button type="button" id="btn_prev" onclick="setPage('prev')" style="display: none">Previous</button>
 <button type="button" id="btn_next" onclick="setPage('next')">Next</button>
-<input type="submit" id="btn_submit" style="display: none">
+<button type="submit" id="btn_submit" style="display: none">Submit</button>
 </span>
-<<<<<<< HEAD
-<<<<<<< HEAD
     </div>
 
-=======
-        <button type="button" id="btn_prev" onclick="setPage('prev')" style="display: none">Previous</button>
-        <button type="button" id="btn_next" onclick="setPage('next')">Next</button>
-        <button type="submit" id="btn_submit" on_click="test()" style="display: none" name="submit">Submit</button>
-    </span>
->>>>>>> 523a82ef0a0424117b83bbc1693c4f041a1ca1da
-=======
->>>>>>> parent of 8c103b9... revise (jul 24/12pm)
-=======
->>>>>>> parent of 8c103b9... revise (jul 24/12pm)
 </form>
 
 </body>
