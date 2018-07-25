@@ -1,12 +1,18 @@
-* { margin: 0; padding: 0; }
+* { margin: 0; padding: 0; 
+}
+
+/* css */
+
+html { height: 100%; 
+    font-size: 62.5%; 
+}
 
 
 
-html { height: 100%; font-size: 62.5% }
-
-
-
-body { height: 100%; background-color: #FFFFFF; font: 1.2em Verdana, Arial, Helvetica, sans-serif; }
+body { height: 100%; 
+    background-color: rgb(32, 23, 160); 
+    font: 1.2em Verdana, Arial, Helvetica, sans-serif; 
+}
 
 
 
@@ -16,19 +22,35 @@ body { height: 100%; background-color: #FFFFFF; font: 1.2em Verdana, Arial, Helv
 
 
 
-table.form { margin-left: 250px; margin-top: 100px; border-collapse: collapse; border: 1px solid #DDDDDD; }
+table.form { margin-left: 250px;
+    margin-top: 100px; 
+    border-collapse: collapse;
+    border: 1px solid #DDDDDD; 
+}
 
 
 
-table.form th, table.form td { padding: 4px 5px 10px; text-align: left; font-weight: normal; }
+table.form th, table.form td { 
+    padding: 4px 5px 10px;
+    text-align: left;
+    font-weight: normal;
+}
 
 
 
-table.form label { font-family: Verdana, Arial, Helvetica, sans-serif; color: #181818; margin-right: 12px; }
+table.form label { font-family: Verdana, Arial, Helvetica, sans-serif;
+    color: #181818;
+    margin-right: 12px;
+}
 
-table.form td span { font-size: 0.9em; color: #181818; margin-left: 8px; }
+table.form td span { font-size: 0.9em;
+    color: #181818;
+    margin-left: 8px;
+}
 
-table.form td samp { font: 1em Verdana, Arial, Helvetica, sans-serif; color: #000000; }
+table.form td samp { font: 1em Verdana, Arial, Helvetica, sans-serif;
+    color: #000000;
+}
 
 
 
@@ -40,17 +62,21 @@ table.form textarea { width: 400px; height: 160px; }
 
 
 
-table.form input.inp-text, table.form input.answer, table.form textarea
-
-{ border: 1px solid #909090; padding: 2px; }
-
-
-
-table.form th.message-up { vertical-align: top !important; }
+table.form input.inp-text, table.form input.answer, table.form textarea { border: 1px solid #909090;
+    padding: 2px;
+}
 
 
 
-table.form label.invisible { visibility: hidden; }
+table.form th.message-up {
+    vertical-align: top !important;
+}
+
+
+
+table.form label.invisible { 
+    visibility: hidden;
+}
 
 
 
