@@ -68,6 +68,7 @@ function showCurrentPage(n,page){
                 <p>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     <strong> Choose Word File:</strong><br/>
                     <input type="file" id="myFile" name="fileup" accept="pdf/*"required>
 =======
@@ -78,13 +79,21 @@ function showCurrentPage(n,page){
                      <center>Choose Word File:</center><br/>
                     <input type="file" id="myFile" name="fileup" accept="pdf/*">
 >>>>>>> parent of 8c103b9... revise (jul 24/12pm)
+=======
+                     <center>Choose Word File:</center><br/>
+                    <input type="file" id="myFile" name="fileup" accept="pdf/*">
+>>>>>>> parent of 8c103b9... revise (jul 24/12pm)
                 </p>
             </div>
             <div class="browse">
                 <p>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                   <strong>  Choose Cover:</strong><br/>
+=======
+                    <center>Choose Cover:</center><br/>
+>>>>>>> parent of 8c103b9... revise (jul 24/12pm)
 =======
                     <center>Choose Cover:</center><br/>
 >>>>>>> parent of 8c103b9... revise (jul 24/12pm)
@@ -99,7 +108,11 @@ function showCurrentPage(n,page){
                 <p class="para">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                   <strong>  Title:</strong><br>
+=======
+                    Title:<br>
+>>>>>>> parent of 8c103b9... revise (jul 24/12pm)
 =======
                     Title:<br>
 >>>>>>> parent of 8c103b9... revise (jul 24/12pm)
@@ -120,7 +133,11 @@ function showCurrentPage(n,page){
                 <p class="para">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     <strong>Category:</strong><br/>
+=======
+                    Category:<br/>
+>>>>>>> parent of 8c103b9... revise (jul 24/12pm)
 =======
                     Category:<br/>
 >>>>>>> parent of 8c103b9... revise (jul 24/12pm)
@@ -148,6 +165,7 @@ function showCurrentPage(n,page){
                 <p id="para">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                   <strong>  Key Words:</strong><br/>
                     <textarea rows="6" cols="102" placeholder="Key Words" name="keywords"></textarea><br/>
                 </p>
@@ -170,6 +188,14 @@ function showCurrentPage(n,page){
                     Web Reference:<br/>
                     <textarea rows="6" cols="102" placeholder="Key Words" name="keywords"></textarea><br/>
 >>>>>>> parent of 8c103b9... revise (jul 24/12pm)
+=======
+                    Key Words:<br/>
+                    <textarea rows="6" cols="102" placeholder="Key Words" name="keywords"></textarea><br/>
+                </p>
+                <p id="para">
+                    Web Reference:<br/>
+                    <textarea rows="6" cols="102" placeholder="Key Words" name="keywords"></textarea><br/>
+>>>>>>> parent of 8c103b9... revise (jul 24/12pm)
                 </p>
             </div>
     </div>
@@ -180,7 +206,11 @@ function showCurrentPage(n,page){
                     <p>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                          First Name<br/>
+=======
+                         <center>First Name</center><br/>
+>>>>>>> parent of 8c103b9... revise (jul 24/12pm)
 =======
                          <center>First Name</center><br/>
 >>>>>>> parent of 8c103b9... revise (jul 24/12pm)
@@ -322,6 +352,7 @@ function showCurrentPage(n,page){
 <input type="submit" id="btn_submit" style="display: none">
 </span>
 <<<<<<< HEAD
+<<<<<<< HEAD
     </div>
 
 =======
@@ -330,6 +361,8 @@ function showCurrentPage(n,page){
         <button type="submit" id="btn_submit" on_click="test()" style="display: none" name="submit">Submit</button>
     </span>
 >>>>>>> 523a82ef0a0424117b83bbc1693c4f041a1ca1da
+=======
+>>>>>>> parent of 8c103b9... revise (jul 24/12pm)
 =======
 >>>>>>> parent of 8c103b9... revise (jul 24/12pm)
 </form>
