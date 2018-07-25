@@ -1,6 +1,4 @@
-<?php include('functions.php') 
 
-?>
 
 
 
@@ -16,10 +14,7 @@
 </head>
 <body>
 
-<form method="post" action="login.php">
-	<?php echo display_error(); ?>
-//...
-</form>
+
     <!-- <div id="Nav-Bar">
         <ul>
             <li><a href="index.php">Home</a></li>
