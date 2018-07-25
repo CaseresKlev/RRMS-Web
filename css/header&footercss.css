@@ -7,7 +7,7 @@ body {
   font-family: Arial;
 }
 
-.header {
+.header, .footer {
   position: center;
   overflow: hidden;
   background-color: #4682B4;
@@ -56,20 +56,17 @@ body {
 }
 /* end of header */
 /* Footer */
-body { 
-  margin: auto;
-}
 .footer {
 	margin: auto;
-   position: fixed;
-   left: 0;
-   bottom: 0;
-   width: 70%;
-   color: white;
-   text-align: center;
-   position: center;
-  overflow: hidden;
-  background-color: #4682B4;
-  padding: 20px 10px;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 70%;
+	color: white;
+	text-align: center;
+	position: center;
+	overflow: hidden;
+	background-color: #4682B4;
+	padding: 20px 10px;
 }
 /* end of footer */
