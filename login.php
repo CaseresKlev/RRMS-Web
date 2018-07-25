@@ -24,7 +24,7 @@
 	<h2>LOG IN</h2>
 </div>
 		
-		<form method="post" action="register.php">
+		<form method="post" action="process.php">
 	<div class="input-group">
 		<label>Username</label>
 		<input type="text" name="username" value="">
@@ -35,7 +35,7 @@
 	</div> -->
 	<div class="input-group">
 		<label>Password</label>
-		<input type="password" name="password_1">
+		<input type="password" name="password">
 	</div>
 	<!-- <div class="input-group">
 		<label>Confirm password</label>

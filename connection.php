@@ -20,14 +20,4 @@ class dbconfig{
     }
 }
 
-$dbconfig = new dbconfig();
-$conn = $dbconfig->getCon();
-$query = "SELECT * FROM `book`";
-$result = $conn->query($query);
-if($result->num_rows>0){
-    while($rows=$result->fetch_assoc()){
-        echo $rows['book_title'] . "<br/>";
-    }
-}
-
 ?>
