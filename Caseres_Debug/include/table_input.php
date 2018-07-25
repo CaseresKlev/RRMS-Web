@@ -99,19 +99,11 @@
             <th>ADDRRESS</th>
             <th>CONTACT</th>
             <th>EMAIL</th>
-      <!--  <tr>
-            <td><input type="text" name="fname[]"></td>
-            <td><input type="text" name="mname[]"></td>
-            <td><input type="text" name="lname[]"></td>
-            <td><input type="text" name="suff[]"></td>
-            <td><input type="text" name="add[]"></td>
-            <td><input type="text" name="contact[]"></td>
-            <td><input type="text" name="email[]"></td>
-            
-        </tr> -->
     </table>
+    <p>
     <button type="button" onclick = "addInput()">Add Author</button>
     <button type="submit" id="btn_submit" name="submit">Submit</button>
+    </p>
     </form>
     </fieldset>
     </body>

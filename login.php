@@ -1,9 +1,3 @@
-<?php include('functions.php') 
-
-?>
-
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -18,7 +12,6 @@
 
 <form method="post" action="login.php">
 	<?php echo display_error(); ?>
-//...
 </form>
     <!-- <div id="Nav-Bar">
         <ul>
