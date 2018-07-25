@@ -19,11 +19,10 @@
  
  
  
- $result = mysql_query("SELECT $id from login WHERE username= '$username' and password= '$password'")
+ $result = mysql_query("SELECT * from login WHERE username= '$username' and password= '$password'")
 	or die("Failed to query database".mysql_error());
 $row = mysql_fetch_array($result);
 if ($row['username'] == $username && $row['password'] == $password ){
-	header('location: instuctordashboard.php');
 	echo "Login success! Welcome".$row['username'];
 } else {
 	echo "Failed to login";
