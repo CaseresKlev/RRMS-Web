@@ -9,6 +9,10 @@ var n = 1;
     showCurrentPage(n, "page" + n);
 }());
 
+function test(){
+    alert("Submit detected");
+}
+
 
 function setPage(action) {
 if(action == "prev"){

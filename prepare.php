@@ -12,7 +12,10 @@ if(isset($_POST['submit'])){
     $dept =  $_POST['department'];
     $keywords = $_POST['keywords'];
     $ref = $_POST['reference'];
-
+   /*
+    $html = str_get_html('add-research.php');
+    echo $html;
+    */
     ///array of keywords perline
     $keywordsArray = explode("\n", $keywords);
 
@@ -85,13 +88,16 @@ if(isset($_POST['submit'])){
     ///-----------------///
 
     ///----Author----///
+    /*
     $autFname = $_POST['aut_fname'];
     $autMname = $_POST['aut_mname'];
     $autlname = $_POST['aut_lname'];
     $suff = $_POST['aut_suffix'];
     $authadd = $_POST['aut_contact'];
     $autemail = $_POST['aut_email'];
-
+    */
+    $aut_list = $_POST['aut_list'];
+    print_r($aut_list);
 
     ///-------------///
     echo "Title: " . $title . "<br/>";

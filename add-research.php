@@ -230,7 +230,7 @@ function showCurrentPage(n,page){
     <span style="float: right">
         <button type="button" id="btn_prev" onclick="setPage('prev')" style="display: none">Previous</button>
         <button type="button" id="btn_next" onclick="setPage('next')">Next</button>
-        <button type="submit" id="btn_submit" style="display: none" name="submit">Submit</button>
+        <button type="submit" id="btn_submit" on_click="test()" style="display: none" name="submit">Submit</button>
     </span>
 </form>
 
