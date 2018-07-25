@@ -1,93 +1,89 @@
-* { margin: 0; padding: 0; }
-
-/* css */
-
-html { height: 100%; font-size: 62.5% }
-
-
-
-body { height: 100%; background-color: #FFFFFF; font: 1.2em Verdana, Arial, Helvetica, sans-serif; }
-
-
-
-
-
-/* ==================== Form style sheet ==================== */
-
-
-
-table.form { margin-left: 250px; margin-top: 100px; border-collapse: collapse; border: 1px solid #DDDDDD; }
-
-
-
-table.form th, table.form td { padding: 4px 5px 10px; text-align: left; font-weight: normal; }
-
-
-
-table.form label { font-family: Verdana, Arial, Helvetica, sans-serif; color: #181818; margin-right: 12px; }
-
-table.form td span { font-size: 0.9em; color: #181818; margin-left: 8px; }
-
-table.form td samp { font: 1em Verdana, Arial, Helvetica, sans-serif; color: #000000; }
-
-
-
-table.form input { width: 340px; }
-
-table.form input.answer { width: 53px; }
-
-table.form textarea { width: 400px; height: 160px; }
-
-
-
-table.form input.inp-text, table.form input.answer, table.form textarea
-
-{ border: 1px solid #909090; padding: 2px; }
-
-
-
-table.form th.message-up { vertical-align: top !important; }
-
-
-
-table.form label.invisible { visibility: hidden; }
-
-
-
-table.form td.submit-button-right { text-align: right !important; }
-
-table.form input.submit-text { font: 1.4em Georgia, "Times New Roman", Times, serif; letter-spacing: 1px; width: auto; }
-
-
-
-table.form label.email { border-bottom: 1px dotted #000000; }
-
-
-
-/* ==================== Form style sheet END ==================== */
-
-.thanks-text{margin-left: 250px; margin-top: 100px;}
-
-.tut{padding:60px 0 0 0; font: 1.4em Georgia, "Times New Roman", Times, serif; }
-
-
-
-.send_btn {
-
-    background: none repeat scroll 0 0 #0D92E1;
-
-    border: medium none;
-
-    color: #FFFFFF;
-
-    cursor: pointer;
-
-    font: bold 15px/43px Arial,Helvetica,sans-serif;
-
-    height: 35px;
-
-    width: 100px !important;
-
-	padding: 5px 15px 5px 15px;
-
+* { margin: 0px; padding: 0px; }
+body {
+	font-size: 120%;
+	background: #F8F8FF;
+}
+.header {
+	width: 40%;
+	margin: 50px auto 0px;
+	color: white;
+	background: #5F9EA0;
+	text-align: center;
+	border: 1px solid #B0C4DE;
+	border-bottom: none;
+	border-radius: 10px 10px 0px 0px;
+	padding: 20px;
+}
+form, .content {
+	width: 40%;
+	margin: 0px auto;
+	padding: 20px;
+	border: 1px solid #B0C4DE;
+	background: white;
+	border-radius: 0px 0px 10px 10px;
+}
+.input-group {
+	margin: 10px 0px 10px 0px;
+}
+.input-group label {
+	display: block;
+	text-align: left;
+	margin: 3px;
+}
+.input-group input {
+	height: 30px;
+	width: 93%;
+	padding: 5px 10px;
+	font-size: 16px;
+	border-radius: 5px;
+	border: 1px solid gray;
+}
+#user_type {
+	height: 40px;
+	width: 98%;
+	padding: 5px 10px;
+	background: white;
+	font-size: 16px;
+	border-radius: 5px;
+	border: 1px solid gray;
+}
+.btn {
+	padding: 10px;
+	font-size: 15px;
+	color: white;
+	background: #5F9EA0;
+	border: none;
+	border-radius: 5px;
+}
+.error {
+	width: 92%; 
+	margin: 0px auto; 
+	padding: 10px; 
+	border: 1px solid #a94442; 
+	color: #a94442; 
+	background: #f2dede; 
+	border-radius: 5px; 
+	text-align: left;
+}
+.success {
+	color: #3c763d; 
+	background: #dff0d8; 
+	border: 1px solid #3c763d;
+	margin-bottom: 20px;
+}
+.profile_info img {
+	display: inline-block; 
+	width: 50px; 
+	height: 50px; 
+	margin: 5px;
+	float: left;
+}
+.profile_info div {
+	display: inline-block; 
+	margin: 5px;
+}
+.profile_info:after {
+	content: "";
+	display: block;
+	clear: both;
 }
