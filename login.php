@@ -9,8 +9,6 @@
 	<link rel="stylesheet" href="login.css">
 </head>
 <body>
-
-
     <!-- <div id="Nav-Bar">
         <ul>
             <li><a href="index.php">Home</a></li>
