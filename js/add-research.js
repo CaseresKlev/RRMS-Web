@@ -53,6 +53,7 @@
                 var email = $("input[name='email[]']").map(function(){return $(this).val();}).get();
 
 
+
                 //validation of author details
                 var authorList = new Array();
                 var aut;
@@ -66,8 +67,9 @@
                 }
 
 
-                
-                    alert(authorList);
+                /// Book File ///
+                var book = $("#myFile").val();
+                alert(book);
                 
                 
 
@@ -79,7 +81,8 @@
                     pubdate:pubdate,
                     dept:dept,
                     kw:kw,
-                    autlist:authorList
+                    autlist:authorList,
+                    book:book
 
                     }, function(data){
                     alert(data);
