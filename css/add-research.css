@@ -1,11 +1,12 @@
-<<<<<<< HEAD
 
-=======
->>>>>>> parent of 2e77b45... With Latest DB
 * {
     box-sizing: border-box;
 }
 
+#bot-nav{
+  background-color: green;
+  display: inline-grid;
+}
 /* Create two equal columns that floats next to each other */
 .column {
     float: left;
@@ -81,3 +82,5 @@ body{
 .browse{
   text-align: left;
 }
+
+

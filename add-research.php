@@ -6,10 +6,21 @@
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="css/add-research.css" />
-    <script src="js/add-research.js"></script>
+    <script src="jquery/jquery.js"></script>
     <script>
-        window.onload = addInput;
-</script>
+        //this script for jquery functions
+
+        //call jquery when page is ready
+        $(document).ready(function(){
+
+            ///place all your jquery functions here///
+            //val = 1;
+            $("#prev").click(function(){
+                //alert($(this).text() + " " + val);
+                //val = val+1;
+            })
+        });
+    </script>
 </head>
 <body>
 <h1>Add Research Information</h1>
@@ -85,7 +96,6 @@
                 </table>
                 <p>
                 <button type="button" onclick = "addInput()">Add Author</button>
-                <button type="submit" id="btn_submit" name="submit">Submit</button>
                 </p>
     </fieldset>
     <br/>
@@ -120,38 +130,10 @@
 
                       <center> <input type="checkbox"name="vehicle3" value="Boat" checked> I want others download my file.</center><br><br>
     </div>
-    <div id = "page3" style="display:none">
-        <p>Adviser Details</p>
-                    <p>
-                         First Name<br/>
-                        <input placeholder="First name" oninput="this.className = ''" name="fname">
-                    </p>
-                    <p>
-                        Middle Name<br/>
-                        <input placeholder="Middle name" oninput="this.className = ''" name="mname">
-                    </p>
-                    <p>
-                        Last Name<br/>
-                        <input placeholder="Last name" oninput="this.className = ''" name="lname">
-                    </p>
-                    <p>
-                        Suffix<br/>
-                        <input placeholder="Suffix" oninput="this.className = ''" name="suffix">
-                    </p>
-                    <p>
-                        Address<br/>
-                        <input placeholder="Address" oninput="this.className = ''" name="add">
-                    </p>
-                    <p>
-                        Email<br/>
-                        <input placeholder="Emails" oninput="this.className = ''" name="email">
-                    </p>
-    </div>
-
     <span style="float: right">
-        <button type="button" id="btn_prev" onclick="setPage('prev')" style="display: none">Previous</button>
-        <button type="button" id="btn_next" onclick="setPage('next')">Next</button>
-        <button type="submit" id="btn_submit" style="display: none" name="submit">Submit</button>
+        <div id="bot-nav" class="prev">Previous</div>
+        <div id="bot-nav" class="prev">Next</div>
+        <div id="bot-nav" class="prev">Submit</div>
     </span>
     <br/>
     </div>

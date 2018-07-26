@@ -1,4 +1,10 @@
 * { margin: 0px; padding: 0px; }
+
+#bot-nav{
+  background-color: green;
+  display: inline-grid;
+}
+
 body {
 	font-size: 120%;
 	background: #F8F8FF;
