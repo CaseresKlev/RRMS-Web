@@ -3,10 +3,6 @@
     box-sizing: border-box;
 }
 
-#bot-nav{
-  background-color: green;
-  display: inline-grid;
-}
 /* Create two equal columns that floats next to each other */
 .column {
     float: left;

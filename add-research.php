@@ -6,26 +6,13 @@
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="css/add-research.css" />
-    <script src="jquery/jquery.js"></script>
-    <script>
-        //this script for jquery functions
-
-        //call jquery when page is ready
-        $(document).ready(function(){
-
-            ///place all your jquery functions here///
-            //val = 1;
-            $("#prev").click(function(){
-                //alert($(this).text() + " " + val);
-                //val = val+1;
-            })
-        });
-    </script>
+    
 </head>
-<body>
-<h1>Add Research Information</h1>
 
-<form action="prepare.php" method="POST" enctype="multipart/form-data">
+<body>
+    <h1>Add Research Information</h1>
+
+<form  method="POST" enctype="multipart/form-data">
     <div id="enclosure">
         <div id = "page1" style="height=500px">
 
@@ -48,15 +35,15 @@
                 </p>
                 <p class="para">
                     Abstract:<br>
-                    <textarea rows="6" cols="102" placeholder="Abstract" name="abstract"></textarea>
+                    <textarea rows="6" cols="102" placeholder="Abstract" name="abstract" id="abstract"></textarea>
                 </p>
                 <p class="para">
                     Publication Date
-                    <input type="date" width="100%" name="pubdate" placeholder="">
+                    <input type="date" width="100%" name="pubdate" id="pubdate" placeholder="">
                 </p>
                 <p class="para">
                     Category:
-                    <select name="department">
+                    <select name="department" id="department">
                     <?php include_once 'connection.php';
                         $dbconfig = new dbconfig();
                         $conn = $dbconfig->getCon();
@@ -73,7 +60,7 @@
                 </p>
                 <p id="para">
                     Key Words:<strong style="color:red">&emsp;One Keywords per Line</strong></note>
-                    <textarea rows="6" cols="102" placeholder="Key Words" name="keywords"></textarea><br/>
+                    <textarea rows="6" cols="102" placeholder="Key Words" name="keywords" id="keywords"></textarea><br/>
                 </p>
                 <p id="para">
                  References: <strong style="color:red">&ensp;One Refrence per Line</strong></note><br/>
@@ -86,16 +73,16 @@
             <legend>Authours Info</legend>
                 <table name="aut_list" id="aut_list">
 
-                    <th>FIRST NAME</th>
-                    <th>MIDDLE NAME</th>
-                    <th>LAST NAME</th>
-                    <th>SUFFIX</th>
-                    <th>ADDRRESS</th>
-                    <th>CONTACT</th>
-                    <th>EMAIL</th>
+                    <th>First Name</th>
+                    <th>Middle Name</th>
+                    <th>Last Name</th>
+                    <th>Suffix</th>
+                    <th>Address</th>
+                    <th>Contact</th>
+                    <th>Email</th>
                 </table>
                 <p>
-                <button type="button" onclick = "addInput()">Add Author</button>
+                <button type="button" id="addField">Add Field</button>
                 </p>
     </fieldset>
     <br/>
@@ -116,7 +103,7 @@
                     </p>
                     <p>
                         <center>Suffix</center><br/>
-                        <input type="text" placeholder="Suffix" oninput="this.className = ''" name="suffix">
+                        <input type="text" placeholder="Suffix" oninput="this.className = ''" name="suf">
                     </p>
                     <p>
                         <center>Address</center><br/>
@@ -131,13 +118,17 @@
                       <center> <input type="checkbox"name="vehicle3" value="Boat" checked> I want others download my file.</center><br><br>
     </div>
     <span style="float: right">
-        <div id="bot-nav" class="prev">Previous</div>
-        <div id="bot-nav" class="prev">Next</div>
-        <div id="bot-nav" class="prev">Submit</div>
+        <button type="button" id="prev">Previous</button>
+        <button type="button" id="next">Next</button>
+        <button type="button" id="submit">Submit</button>
     </span>
     <br/>
     </div>
+    
 </form>
 
+<script src="js/jquery.js"></script>
+<script src="js/add-research.js"></script>
 </body>
+
 </html>
