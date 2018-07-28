@@ -1,9 +1,16 @@
 * { margin: 0px; padding: 0px; }
+
+#bot-nav{
+  background-color: green;
+  display: inline-grid;
+}
+
 body {
 	font-size: 120%;
 	background: #F8F8FF;
+	width: 100%;
 }
-.header {
+.header2 {
 	width: 40%;
 	margin: 50px auto 0px;
 	color: white;

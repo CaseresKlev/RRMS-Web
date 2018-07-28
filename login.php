@@ -9,22 +9,17 @@
 	<link rel="stylesheet" type="text/css" href="css/login.css">
 </head>
 <body>
-    <!-- <div id="Nav-Bar">
-        <ul>
-            <li><a href="index.php">Home</a></li>
-            <li><a href="Browse Research.php">Browse Research</a></li>
-            <li><a href= "Plagiarism.php">Plagiarism</a></li>
-            <li><a href = "Login.php">Login</a></li>
-        </ul>
-    </div> -->
+    <?php
+		include('header.php');
+	?>
     <div id="content">
         <!-- Place The login Dialog Here.-->
-		
-		<div class="header">
+
+		<div class="header2">
 	<h2>LOG IN</h2>
 </div>
-		
-		<form method="post" action="register.php">
+
+		<form method="post" action="process.php">
 	<div class="input-group">
 		<label>Username</label>
 		<input type="text" name="username" value="">
@@ -35,7 +30,7 @@
 	</div> -->
 	<div class="input-group">
 		<label>Password</label>
-		<input type="password" name="password_1">
+		<input type="password" name="password">
 	</div>
 	<!-- <div class="input-group">
 		<label>Confirm password</label>
@@ -49,5 +44,6 @@
 	</p> -->
 </form>
     </div>
+  
 </body>
 </html>

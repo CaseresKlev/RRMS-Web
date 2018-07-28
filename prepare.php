@@ -17,8 +17,14 @@ if(isset($_POST['submit'])){
     */
     ///array of keywords perline
     $keywordsArray = explode("\n", $keywords);
+
     //array of reference perline
     $refAr = explode("\n", $ref);
+
+    //authur array ///
+    
+
+
     ///------------------///
     ///----FILE DOCX-----///
     $file = $_FILES['file'];
@@ -87,8 +93,7 @@ if(isset($_POST['submit'])){
     $authadd = $_POST['aut_contact'];
     $autemail = $_POST['aut_email'];
     */
-    $aut_list = $_POST['aut_list'];
-    print_r($aut_list);
+
     ///-------------///
     echo "Title: " . $title . "<br/>";
     echo "Abstract: " . $abstract . "<br/>";

@@ -1,32 +1,29 @@
 <?php
+			
+			
+			$username = $_POST['username'];
+			$password = $_POST['password'];
+			include_once 'connection.php';
+			
+			$dbconfig = new dbconfig();
+            $conn = $dbconfig->getCon();
+            $query= "SELECT count(id) FROM `authentication` WHERE username='$username' and password='$password'";
 
 
-
- $username = $_POST['user'];
- $password = $_POST['pass'];
- 
- 
- $username = stripcslashes($username);
- $password = stripcslashes($password);
- $username = mysql_real_escape_string($username);
- $password = mysql_real_escape_string($password);
- 
- 
- mysql_connect("localhost", "root", "");
- mysql_select_db("db_rrms");
- 
- 
- 
- 
- 
- $result = mysql_query("SELECT * from login WHERE username= '$username' and password= '$password'")
-	or die("Failed to query database".mysql_error());
-$row = mysql_fetch_array($result);
-if ($row['username'] == $username && $row['password'] == $password ){
-	echo "Login success! Welcome".$row['username'];
-} else {
-	echo "Failed to login";
-}
+			$result = $conn->query($query);
+			
+			if($result->num_rows>0){
+				while($row=$result->fetch_assoc()) {
+					if($row['count(id)']==1){
+						header('location: instructordashboard.php');
+					}
+					else {
+						header('location: accessdenied.php');
+					}
+				}
+			}
+						
+			
 
 
 ?>
