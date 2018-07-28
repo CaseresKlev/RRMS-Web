@@ -9,6 +9,8 @@
 </head>
 <body>
 
+
+<div class="main-con">
   <div class="search-container">
       <form action="searchcontent.php">
         <input type="text" placeholder="Search.." name="search">
@@ -27,6 +29,7 @@
             <span class="checkmark"></span>
         </label>
   </div>
+</div>
 
     <!-- <div class="radio">
       <form action="">
