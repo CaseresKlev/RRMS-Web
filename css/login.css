@@ -1,4 +1,10 @@
 * { margin: 0px; padding: 0px; }
+
+#bot-nav{
+  background-color: green;
+  display: inline-grid;
+}
+
 body {
 	font-size: 120%;
 	background: #F8F8FF;
@@ -55,6 +61,8 @@ form, .content {
 	background: #5F9EA0;
 	border: none;
 	border-radius: 5px;
+
+
 }
 .error {
 	width: 92%;

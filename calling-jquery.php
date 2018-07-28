@@ -10,6 +10,11 @@
 </head>
 
 <body>
+    
+    <div id="div">
+        Click me!
+    </div>
+
     <h1>Add Research Information</h1>
 
 <form  method="POST" enctype="multipart/form-data">
@@ -35,15 +40,15 @@
                 </p>
                 <p class="para">
                     Abstract:<br>
-                    <textarea rows="6" cols="102" placeholder="Abstract" name="abstract" id="abstract"></textarea>
+                    <textarea rows="6" cols="102" placeholder="Abstract" name="abstract"></textarea>
                 </p>
                 <p class="para">
                     Publication Date
-                    <input type="date" width="100%" name="pubdate" id="pubdate" placeholder="">
+                    <input type="date" width="100%" name="pubdate" placeholder="">
                 </p>
                 <p class="para">
                     Category:
-                    <select name="department" id="department">
+                    <select name="department">
                     <?php include_once 'connection.php';
                         $dbconfig = new dbconfig();
                         $conn = $dbconfig->getCon();
@@ -60,7 +65,7 @@
                 </p>
                 <p id="para">
                     Key Words:<strong style="color:red">&emsp;One Keywords per Line</strong></note>
-                    <textarea rows="6" cols="102" placeholder="Key Words" name="keywords" id="keywords"></textarea><br/>
+                    <textarea rows="6" cols="102" placeholder="Key Words" name="keywords"></textarea><br/>
                 </p>
                 <p id="para">
                  References: <strong style="color:red">&ensp;One Refrence per Line</strong></note><br/>
@@ -103,7 +108,7 @@
                     </p>
                     <p>
                         <center>Suffix</center><br/>
-                        <input type="text" placeholder="Suffix" oninput="this.className = ''" name="suf">
+                        <input type="text" placeholder="Suffix" oninput="this.className = ''" name="suffix">
                     </p>
                     <p>
                         <center>Address</center><br/>
