@@ -68,8 +68,25 @@
 
 
                 /// Book File ///
-                var book = $("#myFile").val();
-                alert(book);
+                $("#myFile").fileupload({
+
+                    //options in file upload
+                    url: 'temp.php',
+                    dataType: 'json',
+                    autoUpload: false
+
+                }).on('fileuploadadd', function(e, data){
+                    //alert("fileadded!");
+
+                    //we use regex expresion to check the file extension
+                    // the allowed files shoud be a .docx or doc file
+                    var allowedFile = /.\.(docx|doc)$/i;
+                    console.log(data);
+                }).on('fileuploaddone', function(e, data){
+
+                }).on('fileuploadprogressall', function(e, data){
+
+                });
                 
                 
 

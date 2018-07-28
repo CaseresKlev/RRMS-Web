@@ -9,7 +9,7 @@
 		$keywordsArray = $_POST['kw'];
 
 		// POST AUTHOUR //
-		$autlist = $_POST['autlist'];
+		//$autlist = $_POST['autlist'];
 
 		 //implementation of array
 		/*foreach ($autlist as $kw) {
@@ -21,7 +21,7 @@
 
 
 		///----FILE DOCX-----///
-    $file = $_FILES['book'];
+   /* $file = $_FILES['book'];
     $filename = $_FILES['book']['name'];
     $filesize = $_FILES['book']['size'];
     $filetype = $_FILES['book']['type'];
@@ -56,6 +56,6 @@
         echo "File is Not Valid!";
     }
 
-	
+	*/
 
 ?>
