@@ -7,10 +7,11 @@
     <title>IMAGE DETAILS</title>
     <link rel="stylesheet"type="text/css"href="imagedetails.css">
   </head>
-<body>
   <?php
     include("header.php");
     ?>
+
+<body>
 
   <div class="box">
     <div style="height:229px;"class="imgbox">
