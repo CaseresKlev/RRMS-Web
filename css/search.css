@@ -52,11 +52,6 @@ body {
   }
 }
 
-  /**.radio {
-    margin-left: 30%;
-    margin-top: 3%;
-  } **/
-
 
   /* The container */
 .container {
@@ -136,3 +131,8 @@ body {
   margin-left: 50%;
   margin-top: -2.7%;
 }
+
+ .main-con {
+   margin-top: 7%;
+   margin-left: 3%;
+ }
