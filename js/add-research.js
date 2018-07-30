@@ -1,4 +1,4 @@
-           // 'use-strict';
+
 
             ///place all your jquery functions here///
             page = 1;
@@ -34,10 +34,6 @@
                 });*/
            // })
 
-
-
-           ///<------------ submit on jquery---------->////
-           
            $("#submit").click(function(){
 
                 //book details variable
@@ -46,7 +42,6 @@
                 var pubdate = $("#pubdate").val();
                 var dept = $("#department").val();
                 var kw = $("#keywords").val().split("\n");
-                
 
                 //author details variables
                 var fname = $("input[name='fname[]']").map(function(){return $(this).val();}).get();
@@ -59,19 +54,21 @@
 
 
 
-                
-
-
+                //validation of author details
+                var authorList = new Array();
+                var aut;
+                for(i=0; i<fname.length; i++){
+                    if (fname[i].length == 0 || mname[i].length == 0 || lname[i].length == 0 || add[i].length == 0 || contact[i].length == 0 || email[i].length == 0){
+                        alert("misiing");
+                    }else{
+                      aut   = fname[i] + "," + mname[i] + "," + lname[i] + "," + suf[i] + "," + add[i] + "," + contact[i] + "," + email[i];
+                        authorList.push(aut);
+                    }
+                }
 
 
                 /// Book File ///
-
-               // var fileSelect = document.getElementById("myFile");
-                //var file = fileSelect.file;
-                
-
-                
-                /*$("#myFile").fileupload({
+                $("#myFile").fileupload({
 
                     //options in file upload
                     url: 'temp.php',
@@ -84,61 +81,35 @@
                     //we use regex expresion to check the file extension
                     // the allowed files shoud be a .docx or doc file
                     var allowedFile = /.\.(docx|doc)$/i;
-                    console.log("hellow");
+                    console.log(data);
                 }).on('fileuploaddone', function(e, data){
 
                 }).on('fileuploadprogressall', function(e, data){
 
-                }); */
-
-                 
-                /*
-                    alert(title);
-                    alert(abs);
-                    alert(pubdate);
-                    alert(dept);
-                    alert(kw);
-                    alert(authorList);
-                */
-                //validation of author details
-                //var authorList = new Array();
-                var autArr = new Array();
-                var aut;
-                for(i=0; i<fname.length; i++){
-                    if (fname[i].length == 0 || mname[i].length == 0 || lname[i].length == 0 || add[i].length == 0 || contact[i].length == 0 || email[i].length == 0){
-                        alert("misiing");
-                    }else{
-                      aut   = fname[i] + "," + mname[i] + "," + lname[i] + "," + suf[i] + "," + add[i] + "," + contact[i] + "," + email[i];
-                        autArr.push(aut);
-                    }
-                }
-                alert(fname);
+                });
                 
-                //ajax post 
+                
+
+                //ajax post
                 $.post("temp.php", 
                     {
-                    title: title,        //tittle
-                    abstract: abs,       //abstract
-                    pubdate: pubdate,    //pubdate
-                    department: dept,          //department
-                    keywords: kw,
-                    gg:"helow",              //keywords
-                    authors : autArr  //authour array
-                    //firtsname: fname
-                    //book:book
+                    title:title,
+                    abstract:abs,
+                    pubdate:pubdate,
+                    dept:dept,
+                    kw:kw,
+                    autlist:authorList,
+                    book:book
 
                     }, function(data){
-                    $("#here").html(data);
-                });
+                    alert(data);
+                })
            })
-           ///<------------end of submit on jquery---------->////
 
 
             $("#addField").click(function(){
                 initInput();
             })
-
-             
 
 
             //page handling

@@ -128,13 +128,10 @@
 </form>
 
 <script src="js/jquery-3.3.1.js"></script>
-<script type="text/javascript" src="js/jquery.form.min.js"></script>
-<script type="text/javascript" src="js/add-research.js"></script>
-<!--<script type="text/javascript" scr="js/vendor/jquery.ui.widget.js"></script>
+<script type="text/javascript" scr="js/vendor/jquery.ui.widget.js"></script>
 <script type="text/javascript" src="js/jquery.iframe-transport.js"></script>
-<script type="text/javascript" src="js/jquery.fileupload.js"></script>-->
-
-
+<script type="text/javascript" src="js/jquery.fileupload.js"></script>
+<script type="text/javascript" src="js/add-research.js"></script>
 </body>
 
 </html>

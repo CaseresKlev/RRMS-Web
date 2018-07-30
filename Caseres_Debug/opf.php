@@ -9,9 +9,7 @@
 <body>
     <form id="upload" action="upload.php" class="group" enctype="multipart/form-data" method="POST">
         <label for="file">Chose a file to upload</label><br>
-        <input type="file" name="file" id="pictures"><br>
-        <label for="cover">Chose Cover</label><br>
-        <input type="file" name="cover" id="pictures"><br>
+        <input type="file" name="fileup" id="pictures"><br>
         <input type="submit">
     </form>
 </body>
