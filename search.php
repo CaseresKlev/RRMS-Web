@@ -9,26 +9,27 @@
 </head>
 <body>
 
+
+<div class="main-con">
   <div class="search-container">
       <form action="searchcontent.php">
         <input type="text" placeholder="Search.." name="search">
         <button type="submit">Submit</button>
       </form>
-
-
-
-<label class="container" id="title">Title
-  <input type="radio" checked="checked" name="radio">
-  <span class="checkmark"></span>
-</label>
-<label class="container" id="content">Content
-  <input type="radio" name="radio">
-  <span class="checkmark"></span>
-</label>
-<label class="container" id="key">Keywords
-  <input type="radio" name="radio">
-  <span class="checkmark"></span>
-</label>
+        <label class="container" id="title">Title
+            <input type="radio" checked="checked" name="radio">
+            <span class="checkmark"></span>
+        </label>
+        <label class="container" id="content">Content
+            <input type="radio" name="radio">
+            <span class="checkmark"></span>
+        </label>
+        <label class="container" id="key">Keywords
+            <input type="radio" name="radio">
+            <span class="checkmark"></span>
+        </label>
+  </div>
+</div>
 
     <!-- <div class="radio">
       <form action="">

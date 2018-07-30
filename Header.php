@@ -8,9 +8,9 @@
 
 <body style= "width: 70%">
 <div class="header" style= "width= 100%">
+	<div class= "subheader"><span><img class="logo1" src="img/1.png"> <img class= "logo2" src="img/BukSU Logo.png"></span></div>
+  <div class="banner"><span> Research Record Management System</span></div>	
 
-  <strong><center><a class="banner">Research Record Management System</a></center></strong>
-  
   <div class="nav">
 	<a href="#home">Home</a>
     <a href="#contact">Contact</a>
