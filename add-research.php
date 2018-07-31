@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html style="width=70%">
 <head>
@@ -7,16 +9,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="css/add-research.css" />
     
+    <!--<script>
+        var main = function(){
+            $("#entry").on('submit',function(e){
+            e.preventDefault();   
+            $(this).ajaxSubmit(
+                {
+                    beforeSend:function(){
+                        $("#prog").show();
+                        $("#prog").attr('value','0'); 
+                    },
+                    
+                    uploadProgress:function(event,position,total,percentCompelete){
+                        $("#prog").attr('value',percentCompelete); 
+                        $("#percent").html(percentCompelete+'%');
+                    },
+               
+                    success:function(data){
+                        $("#here").html(data);
+                    }
+            });
+   });
+};
+
+$(document).ready(main);
+
+</script> -->
+    
 </head>
 
 <body>
     <h1>Add Research Information</h1>
 
-<form  method="POST" enctype="multipart/form-data">
+<form  method="POST" enctype="multipart/form-data" id="entry">
     <div id="enclosure">
         <div id = "page1" style="height=500px">
 
-            <div class="browse">
+            <!--<div class="browse">
                 <p>
                     <label for="myFile">Choose Word File</label>
                     <input type="file" id="myFile" name="file" accept="Documents/docx">
@@ -27,7 +56,7 @@
                     <label for="myCover">Choose Cover</label>
                     <input type="file" id="myCover" name="cover" accept="image/*">
                 </p>
-            </div>
+            </div>-->
             <div id="bookDet">
                 <p class="para">
                 Title
@@ -64,9 +93,17 @@
                 </p>
                 <p id="para">
                  References: <strong style="color:red">&ensp;One Refrence per Line</strong></note><br/>
-                    <textarea rows="6" cols="102" placeholder="Key Words" name="reference"></textarea><br/>
+                    <textarea rows="6" cols="102" placeholder="Key Words" name="reference" id="reference"></textarea><br/>
                 </p>
-            </div>
+                <p class="para">
+                    Status:
+                    <select name="status" id="status">
+                        <option>Unpublish</option>
+                        <option>Published</option>
+                        <option>On-Going</option>
+                    </select>
+                </p>
+        </div>
     </div>
     <div id = "page2" style="display:none">
         <fieldset>
@@ -126,12 +163,10 @@
     </div>
     
 </form>
+<div id="debug"></div>
 
 <script src="js/jquery-3.3.1.js"></script>
-<script type="text/javascript" scr="js/vendor/jquery.ui.widget.js"></script>
-<script type="text/javascript" src="js/jquery.iframe-transport.js"></script>
-<script type="text/javascript" src="js/jquery.fileupload.js"></script>
-<script type="text/javascript" src="js/add-research.js"></script>
+<script src="js/add-research.js"></script>
 </body>
 
 </html>

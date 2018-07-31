@@ -38,20 +38,36 @@
 
                 //book details variable
                 var title = $("#title").val();
+                //alert(title);
                 var abs = $("#abstract").val();
+                //alert(abs);
                 var pubdate = $("#pubdate").val();
+                //alert(pubdate);
                 var dept = $("#department").val();
+                //alert(dept);
                 var kw = $("#keywords").val().split("\n");
+                //alert(kw);
+                var ref = $("#reference").val().split("\n");
+                //alert(ref);
+
+                var stat = $("#status").val();
+                alert(stat);
 
                 //author details variables
                 var fname = $("input[name='fname[]']").map(function(){return $(this).val();}).get();
+                //alert(fname);
                 var mname = $("input[name='mname[]']").map(function(){return $(this).val();}).get();
+                //alert(mname);
                 var lname = $("input[name='lname[]']").map(function(){return $(this).val();}).get();
+                //alert(lname);
                 var suf = $("input[name='suf[]']").map(function(){return $(this).val();}).get();
+                //alert(suf);
                 var add = $("input[name='add[]']").map(function(){return $(this).val();}).get();
+                //alert(add);
                 var contact = $("input[name='contact[]']").map(function(){return $(this).val();}).get();
+                //alert(contact);
                 var email = $("input[name='email[]']").map(function(){return $(this).val();}).get();
-
+               // alert(email);
 
 
                 //validation of author details
@@ -59,7 +75,7 @@
                 var aut;
                 for(i=0; i<fname.length; i++){
                     if (fname[i].length == 0 || mname[i].length == 0 || lname[i].length == 0 || add[i].length == 0 || contact[i].length == 0 || email[i].length == 0){
-                        alert("misiing");
+                        //alert("misiing");
                     }else{
                       aut   = fname[i] + "," + mname[i] + "," + lname[i] + "," + suf[i] + "," + add[i] + "," + contact[i] + "," + email[i];
                         authorList.push(aut);
@@ -67,44 +83,39 @@
                 }
 
 
-                /// Book File ///
-                $("#myFile").fileupload({
-
-                    //options in file upload
-                    url: 'temp.php',
-                    dataType: 'json',
-                    autoUpload: false
-
-                }).on('fileuploadadd', function(e, data){
-                    //alert("fileadded!");
-
-                    //we use regex expresion to check the file extension
-                    // the allowed files shoud be a .docx or doc file
-                    var allowedFile = /.\.(docx|doc)$/i;
-                    console.log(data);
-                }).on('fileuploaddone', function(e, data){
-
-                }).on('fileuploadprogressall', function(e, data){
-
-                });
-                
-                
+                    
 
                 //ajax post
-                $.post("temp.php", 
-                    {
+               $.ajax({
+                url:"temp.php",
+                type:"POST",
+                cache:false,
+                data:{           // multiple data sent using ajax
                     title:title,
                     abstract:abs,
                     pubdate:pubdate,
                     dept:dept,
                     kw:kw,
-                    autlist:authorList,
-                    book:book
+                    ref:ref,
+                    stat: stat,
+                    firstname: fname,
+                    middlename: mname,
+                    lastname: lname,
+                    suffix: suf,
+                    address: add,
+                    contact: contact,
+                    email: email
 
-                    }, function(data){
-                    alert(data);
-                })
-           })
+                },   
+                success: function (data) {
+                    $("#debug").html(data);        
+                }
+            });
+
+
+           }) 
+
+
 
 
             $("#addField").click(function(){
