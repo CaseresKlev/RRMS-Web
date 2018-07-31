@@ -8,6 +8,7 @@
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="css/add-research.css" />
+
     
     <!--<script>
         var main = function(){
@@ -108,7 +109,7 @@ $(document).ready(main);
     <div id = "page2" style="display:none">
         <fieldset>
             <legend>Authours Info</legend>
-                <table name="aut_list" id="aut_list">
+                <table name="aut_list" id="aut_list" style="display: none;">
 
                     <th>First Name</th>
                     <th>Middle Name</th>
@@ -119,7 +120,38 @@ $(document).ready(main);
                     <th>Email</th>
                 </table>
                 <p>
-                <button type="button" id="addField">Add Field</button>
+                    <table>
+                        <tr>
+                            <td>
+                                <p style="font-size: 18px;">Select Author:</p>
+                            </td>
+                            <td>
+                                <input type="text" id="autSearch" class="sea" onfocus="this.value=''" list="authorName">
+                                <datalist id="authorName">
+                                    <?php 
+                                        $dbconfig = new dbconfig();
+                                        $conn = $dbconfig->getCon();
+                                        $query= "SELECT * FROM author";
+                                        $result = $conn->query($query);
+                                        if($result->num_rows > 0){
+                                            while($row = $result->fetch_assoc()){
+                                                $tempName = $row['a_fname'] . "-" . $row['a_mname'] . "-" . $row['a_lname'] . "-" . $row['a_suffix'];
+
+                                    ?>
+                                    <option value="<?php echo $tempName ?>" name="<?php echo $tempName ?>">
+                                    <?php }
+
+                                        } ?>
+
+                                </datalist>
+                            </td>
+                            <td>
+                                <button type="button" id="addField">Add Author</button>
+                            </td>
+                        </tr>
+
+                    </table>
+
                 </p>
     </fieldset>
     <br/>
