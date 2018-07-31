@@ -118,38 +118,48 @@
                 }
             }
 
-            if($result){
-                echo "Book Loaded";
-            }
-        }
+            ////--------------Author Insertion--------------------////
+            //LOAD THE AUTHORS IF THE BOOK IS VALID ELSE DONT LOAD THE AUTHOR //
 
-        ////--------------End of Book Insertion--------------------////
+            //prepare the arrays of authors//
 
-        ////--------------Author Insertion--------------------////
+            $autorID = array();
+            for($i=0; $i<count($fname); $i++){
+                //echo "<br/>First Name: " . $fname[$i] . " Middlename: " . $mname[$i] ." Lastname: " . $lname[$i] . " Suffix: " .$suf[$i] . " Address: " . $add[$i] . " Contact: " . $contact[$i] . " Email: " . $email[$i];
 
-        //prepare the arrays of authors//
-
-        $autorID = array();
-        for($i=0; $i<count($fname); $i++){
-            //echo "<br/>First Name: " . $fname[$i] . " Middlename: " . $mname[$i] ." Lastname: " . $lname[$i] . " Suffix: " .$suf[$i] . " Address: " . $add[$i] . " Contact: " . $contact[$i] . " Email: " . $email[$i];
-
-            $query= "SELECT a_id FROM author where a_fname='$fname[$i]' and a_mname='$mname[$i]' and a_lname='$lname[$i]' and a_suffix='$suf[$i]'";
-            echo $query;
-            $dbconfig = new dbconfig();
-            $conn = $dbconfig->getCon();
-            $result = $conn ->query($query);
-            if($result->num_rows>0){
-                while($row=$result->fetch_assoc()){
+                $query= "SELECT a_id FROM author where a_fname='$fname[$i]' and a_mname='$mname[$i]' and a_lname='$lname[$i]' and a_suffix='$suf[$i]'";
+                //echo $query;
+                $dbconfig = new dbconfig();
+                $conn = $dbconfig->getCon();
+                $result = $conn ->query($query);
+                if($result->num_rows>0){
+                    while($row=$result->fetch_assoc()){
+                    
+                    $conn->query($query);
                     array_push($autorID, $row['a_id']);
                 }
             }
 
 
-        }
+            }
 
-        print_r($autorID);
+            //insert junction Author Book
+            foreach ($autorID as $key){
+            
+                $query = "INSERT INTO `junc_authorbook` (`id`, `book_id`, `aut_id`) VALUES (NULL, $book_id, $key)";
+                // echo $query;
+                $dbconfig = new dbconfig();
+                $conn = $dbconfig->getCon();
+                $conn ->query($query);
+                echo "Loaded <br/>";
+            }
 
-        
+            ///------------END OF AUTHOR INSERTION-----------///
+            }
+
+        ////--------------End of Book Insertion--------------------////
+
+
         
 
         

@@ -191,11 +191,13 @@ $(document).ready(main);
         <button type="button" id="next">Next</button>
         <button type="button" id="submit">Submit</button>
     </span>
+    <div id="debug" style="text-align: center; font-weight: bold; font-size: 24pt; color: red; width: 100%;"></div>
     <br/>
     </div>
+
     
 </form>
-<div id="debug"></div>
+
 
 <script src="js/jquery-3.3.1.js"></script>
 <script src="js/add-research.js"></script>
