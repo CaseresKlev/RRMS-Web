@@ -3,7 +3,7 @@
             ///place all your jquery functions here///
             page = 1;
             setPage();
-            initInput();
+            //initInput();
 
             $("#next").click(function(){
                 
@@ -119,12 +119,19 @@
 
 
             $("#addField").click(function(){
-                initInput();
+                var name = $("#autSearch").val();
+                if(name.length>0){
+                    initInput(name);
+                }else{
+                    alert("Please Select Author");
+                }
+                
             })
 
 
             //page handling
             function setPage(){
+                $("#aut_list").show();
                 if(page==1){
                     $("#prev").hide();
                     $("#submit").hide();
@@ -147,42 +154,71 @@
             }
 
             //init author info field
-            function initInput(){
+            function initInput(name){
+                var nameArr = name.split("-");
+                var finalName = null;
+                $.ajax({
+                    url:"getAuthor.php",
+                    type:"POST",
+                    cache:false,
+                    data: {name:nameArr},
+                    success: function(data){
+                        finalName = data.split("?");
+                        //alert(finalName);
+                                        //alert(finalName);
                 var fname = document.createElement("input");
                 fname.type = "text";
                 fname.name = "fname[]";
                 fname.placeholder = "First Name";
+                fname.readOnly = true;
+                fname.value = finalName[0];
 
                 var mname = document.createElement("input");
                 mname.type = "text";
                 mname.name = "mname[]";
                 mname.placeholder = "Middle Name";
+                mname.readOnly = true;
+                mname.value = finalName[1];
+
 
                 var lname = document.createElement("input");
                 lname.type = "text";
                 lname.name = "lname[]";
                 lname.placeholder = "Lastname";
+                lname.readOnly = true;
+                lname.value = finalName[2];
 
                 var suf = document.createElement("input");
                 suf.type = "text";
                 suf.name = "suf[]";
                 suf.placeholder = "Suffix (e.g: Jr. / Sr.)";
+                suf.readOnly = true;
+                suf.value = finalName[3];
 
                 var add = document.createElement("input");
                 add.type = "text";
                 add.name = "add[]";
                 add.placeholder = "Address";
+                add.readOnly = true;
+                add.value = finalName[4];
 
                 var contact = document.createElement("input");
                 contact.type = "text";
                 contact.name = "contact[]";
                 contact.placeholder = "Contact";
+                contact.readOnly = true;
+                contact.value = finalName[5];
 
                 var email = document.createElement("input");
                 email.type = "text";
                 email.name = "email[]";
                 email.placeholder = "Email";
-        
+                email.readOnly = true;
+                email.value = finalName[6];
+
+               // <?php    }
+                //} ?>
+
                 var table = document.getElementById("aut_list");
                 var row = table.insertRow(1);
 
@@ -206,4 +242,29 @@
 
                 var emailCon = row.insertCell(6);
                 emailCon.appendChild(email);
+
+                //var x = document.getElementById("authorName").options.namedItem(name).value;
+                //
+                //var x = document.getElementById("authorName").options.length;
+                document.getElementById('autSearch').value = '';
+                //(data);
+                document.getElementById("authorName").options.namedItem(name).remove();
+                }
+                });
+
+
+              /*  <?php 
+                include_once 'connection.php'; 
+                    $dbconfig = new dbconfig();
+                    $conn = $dbconfig->getCon();
+                    $query= "SELECT * FROM author";
+                    $result = $conn->query($query);
+                    if($result->num_rows > 0){
+                        while($row = $result->fetch_assoc()){
+
+
+
+                ?> */
+
+
             }
