@@ -2,7 +2,7 @@ body{
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  background: #99ff66;
+  background: #b3ffb3;
 }
 .box{
   position: absolute;
@@ -24,7 +24,7 @@ body{
 .box .imgBx img{
   max-width: 100%;
   border-style: double;
-  border-color: green;
+  border-color:#6699ff;
   float: left;
 }
 .box .content{

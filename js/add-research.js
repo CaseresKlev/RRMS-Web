@@ -1,136 +1,136 @@
-           // 'use-strict';
+// 'use-strict';
 
-            ///place all your jquery functions here///
-            page = 1;
-            setPage();
-            initInput();
+///place all your jquery functions here///
+page = 1;
+setPage();
+initInput();
 
-            $("#next").click(function(){
-                
-                if(page<3){
-                    page++;
-                    setPage();
-                }
-            })
+$('#next').click(function () {
 
-            //previouse button click
-            $("#prev").click(function(){
-                if(page>1){
-                    page--;
-                    setPage();
-                }
-            })
+    if (page < 3) {
+      page++;
+      setPage();
+    }
+  });
 
-           /// $("#submit").click(function(){
-               /* var values = $("input[name='fname[]']").map(function(){
+//previouse button click
+$('#prev').click(function () {
+    if (page > 1) {
+      page--;
+      setPage();
+    }
+  });
+
+/// $("#submit").click(function(){
+/* var values = $("input[name='fname[]']").map(function(){
                     return $(this).val();
                 }).get();
                 alert(values); */
 
-                //var title = $("#title").val();
-               // echo("hellow");
-                /*$.post('temp.php',{posttitle:title}, function(data){
+//var title = $("#title").val();
+// echo("hellow");
+/*$.post('temp.php',{posttitle:title}, function(data){
                     alert(data);
                 });*/
-           // })
+// })
 
 
 
-           ///<------------ submit on jquery---------->////
-           
-           $("#submit").click(function(){
+///<------------ submit on jquery---------->////
 
-                //book details variable
-                var title = $("#title").val();
-                var abs = $("#abstract").val();
-                var pubdate = $("#pubdate").val();
-                var dept = $("#department").val();
-                var kw = $("#keywords").val().split("\n");
-                
+$('#submit').click(function () {
 
-                //author details variables
-                var fname = $("input[name='fname[]']").map(function(){return $(this).val();}).get();
-                var mname = $("input[name='mname[]']").map(function(){return $(this).val();}).get();
-                var lname = $("input[name='lname[]']").map(function(){return $(this).val();}).get();
-                var suf = $("input[name='suf[]']").map(function(){return $(this).val();}).get();
-                var add = $("input[name='add[]']").map(function(){return $(this).val();}).get();
-                var contact = $("input[name='contact[]']").map(function(){return $(this).val();}).get();
-                var email = $("input[name='email[]']").map(function(){return $(this).val();}).get();
+    //book details variable
+    var title = $('#title').val();
+    var abs = $('#abstract').val();
+    var pubdate = $('#pubdate').val();
+    var dept = $('#department').val();
+    var kw = $('#keywords').val().split('\n');
 
 
-
-                
+    //author details variables
+    var fname = $("input[name='fname[]']").map(function () {return $(this).val();}).get();
+    var mname = $("input[name='mname[]']").map(function () {return $(this).val();}).get();
+    var lname = $("input[name='lname[]']").map(function () {return $(this).val();}).get();
+    var suf = $("input[name='suf[]']").map(function () {return $(this).val();}).get();
+    var add = $("input[name='add[]']").map(function () {return $(this).val();}).get();
+    var contact = $("input[name='contact[]']").map(function () {return $(this).val();}).get();
+    var email = $("input[name='email[]']").map(function () {return $(this).val();}).get();
 
 
 
 
-                /// Book File ///
 
-               // var fileSelect = document.getElementById("myFile");
-                //var file = fileSelect.file;
-                
 
-                
-                /*$("#myFile").fileupload({
 
-                    //options in file upload
-                    url: 'temp.php',
-                    dataType: 'json',
-                    autoUpload: false
 
-                }).on('fileuploadadd', function(e, data){
-                    //alert("fileadded!");
+    /// Book File ///
 
-                    //we use regex expresion to check the file extension
-                    // the allowed files shoud be a .docx or doc file
-                    var allowedFile = /.\.(docx|doc)$/i;
-                    console.log("hellow");
-                }).on('fileuploaddone', function(e, data){
+    // var fileSelect = document.getElementById("myFile");
+    //var file = fileSelect.file;
 
-                }).on('fileuploadprogressall', function(e, data){
 
-                }); */
 
-                 
-                /*
-                    alert(title);
-                    alert(abs);
-                    alert(pubdate);
-                    alert(dept);
-                    alert(kw);
-                    alert(authorList);
-                */
-                //validation of author details
-                //var authorList = new Array();
-                var autArr = new Array();
-                var aut;
-                for(i=0; i<fname.length; i++){
-                    if (fname[i].length == 0 || mname[i].length == 0 || lname[i].length == 0 || add[i].length == 0 || contact[i].length == 0 || email[i].length == 0){
-                        alert("misiing");
-                    }else{
-                      aut   = fname[i] + "," + mname[i] + "," + lname[i] + "," + suf[i] + "," + add[i] + "," + contact[i] + "," + email[i];
-                        autArr.push(aut);
-                    }
-                }
-                alert(fname);
-                
-                //ajax post 
-                $.post("temp.php", 
-                    {
-                    title: title,        //tittle
-                    abstract: abs,       //abstract
-                    pubdate: pubdate,    //pubdate
-                    department: dept,          //department
-                    keywords: kw,
-                    gg:"helow",              //keywords
-                    authors : autArr  //authour array
-                    //firtsname: fname
-                    //book:book
+    /*$("#myFile").fileupload({
 
-                    }, function(data){
-                    $("#here").html(data);
-                });
-           })
+              //options in file upload
+              url: 'temp.php',
+              dataType: 'json',
+              autoUpload: false
+
+          }).on('fileuploadadd', function(e, data){
+              //alert("fileadded!");
+
+              //we use regex expresion to check the file extension
+              // the allowed files shoud be a .docx or doc file
+              var allowedFile = /.\.(docx|doc)$/i;
+              console.log("hellow");
+          }).on('fileuploaddone', function(e, data){
+
+          }).on('fileuploadprogressall', function(e, data){
+
+          }); */
+
+
+    /*
+              alert(title);
+              alert(abs);
+              alert(pubdate);
+              alert(dept);
+              alert(kw);
+              alert(authorList);
+          */
+    //validation of author details
+    //var authorList = new Array();
+    var autArr = new Array();
+     var aut;
+     for(i=0; i<fname.length; i++){
+         if (fname[i].length == 0 || mname[i].length == 0 || lname[i].length == 0 || add[i].length == 0 || contact[i].length == 0 || email[i].length == 0){
+             alert("misiing");
+         }else{
+           aut   = fname[i] + "," + mname[i] + "," + lname[i] + "," + suf[i] + "," + add[i] + "," + contact[i] + "," + email[i];
+             autArr.push(aut);
+         }
+     }
+     alert(fname);
+
+     //ajax post
+     $.post("temp.php",
+         {
+         title: title,        //tittle
+         abstract: abs,       //abstract
+         pubdate: pubdate,    //pubdate
+         department: dept,          //department
+         keywords: kw,
+         gg:"helow",              //keywords
+         authors : autArr  //authour array
+         //firtsname: fname
+         //book:book
+
+         }, function(data){
+         $("#here").html(data);
+     });
+})
            ///<------------end of submit on jquery---------->////
 
 
@@ -138,7 +138,7 @@
                 initInput();
             })
 
-             
+
 
 
             //page handling
@@ -200,7 +200,7 @@
                 email.type = "text";
                 email.name = "email[]";
                 email.placeholder = "Email";
-        
+
                 var table = document.getElementById("aut_list");
                 var row = table.insertRow(1);
 
