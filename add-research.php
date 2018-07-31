@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html style="width=70%">
 <head>
@@ -6,17 +8,45 @@
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="css/add-research.css" />
+
+    
+    <!--<script>
+        var main = function(){
+            $("#entry").on('submit',function(e){
+            e.preventDefault();   
+            $(this).ajaxSubmit(
+                {
+                    beforeSend:function(){
+                        $("#prog").show();
+                        $("#prog").attr('value','0'); 
+                    },
+                    
+                    uploadProgress:function(event,position,total,percentCompelete){
+                        $("#prog").attr('value',percentCompelete); 
+                        $("#percent").html(percentCompelete+'%');
+                    },
+               
+                    success:function(data){
+                        $("#here").html(data);
+                    }
+            });
+   });
+};
+
+$(document).ready(main);
+
+</script> -->
     
 </head>
 
 <body>
     <h1>Add Research Information</h1>
 
-<form  method="POST" enctype="multipart/form-data">
+<form  method="POST" enctype="multipart/form-data" id="entry">
     <div id="enclosure">
         <div id = "page1" style="height=500px">
 
-            <div class="browse">
+            <!--<div class="browse">
                 <p>
                     <label for="myFile">Choose Word File</label>
                     <input type="file" id="myFile" name="file" accept="Documents/docx">
@@ -27,7 +57,7 @@
                     <label for="myCover">Choose Cover</label>
                     <input type="file" id="myCover" name="cover" accept="image/*">
                 </p>
-            </div>
+            </div>-->
             <div id="bookDet">
                 <p class="para">
                 Title
@@ -64,14 +94,22 @@
                 </p>
                 <p id="para">
                  References: <strong style="color:red">&ensp;One Refrence per Line</strong></note><br/>
-                    <textarea rows="6" cols="102" placeholder="Key Words" name="reference"></textarea><br/>
+                    <textarea rows="6" cols="102" placeholder="Key Words" name="reference" id="reference"></textarea><br/>
                 </p>
-            </div>
+                <p class="para">
+                    Status:
+                    <select name="status" id="status">
+                        <option>Unpublish</option>
+                        <option>Published</option>
+                        <option>On-Going</option>
+                    </select>
+                </p>
+        </div>
     </div>
     <div id = "page2" style="display:none">
         <fieldset>
             <legend>Authours Info</legend>
-                <table name="aut_list" id="aut_list">
+                <table name="aut_list" id="aut_list" style="display: none;">
 
                     <th>First Name</th>
                     <th>Middle Name</th>
@@ -82,7 +120,38 @@
                     <th>Email</th>
                 </table>
                 <p>
-                <button type="button" id="addField">Add Field</button>
+                    <table>
+                        <tr>
+                            <td>
+                                <p style="font-size: 18px;">Select Author:</p>
+                            </td>
+                            <td>
+                                <input type="text" id="autSearch" class="sea" onfocus="this.value=''" list="authorName">
+                                <datalist id="authorName">
+                                    <?php 
+                                        $dbconfig = new dbconfig();
+                                        $conn = $dbconfig->getCon();
+                                        $query= "SELECT * FROM author";
+                                        $result = $conn->query($query);
+                                        if($result->num_rows > 0){
+                                            while($row = $result->fetch_assoc()){
+                                                $tempName = $row['a_fname'] . "-" . $row['a_mname'] . "-" . $row['a_lname'] . "-" . $row['a_suffix'];
+
+                                    ?>
+                                    <option value="<?php echo $tempName ?>" name="<?php echo $tempName ?>">
+                                    <?php }
+
+                                        } ?>
+
+                                </datalist>
+                            </td>
+                            <td>
+                                <button type="button" id="addField">Add Author</button>
+                            </td>
+                        </tr>
+
+                    </table>
+
                 </p>
     </fieldset>
     <br/>
@@ -122,19 +191,16 @@
         <button type="button" id="next">Next</button>
         <button type="button" id="submit">Submit</button>
     </span>
+    <div id="debug" style="text-align: center; font-weight: bold; font-size: 24pt; color: red; width: 100%;"></div>
     <br/>
     </div>
+
     
 </form>
 
+
 <script src="js/jquery-3.3.1.js"></script>
-<script type="text/javascript" src="js/jquery.form.min.js"></script>
-<script type="text/javascript" src="js/add-research.js"></script>
-<!--<script type="text/javascript" scr="js/vendor/jquery.ui.widget.js"></script>
-<script type="text/javascript" src="js/jquery.iframe-transport.js"></script>
-<script type="text/javascript" src="js/jquery.fileupload.js"></script>-->
-
-
+<script src="js/add-research.js"></script>
 </body>
 
 </html>

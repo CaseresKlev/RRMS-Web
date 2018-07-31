@@ -55,8 +55,6 @@ if(isset($_POST['submit'])){
         echo "File is Not Valid!";
     }
     ///-----------------///
-
-    
     ///----COVER FILE----///
     $Cover = $_FILES['cover'];
     $Covername = $_FILES['cover']['name'];

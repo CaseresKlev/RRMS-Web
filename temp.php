@@ -1,61 +1,168 @@
 <?php
-	
-		// POST BOOK //
+        include_once 'connection.php';
+        
+        $title = $_POST['title'];
+        //echo "Tittle: $title </br>";
 
-		$title = $_POST['title'];
-		$abs = $_POST['abstract'];
-		$pubdate = $_POST['pubdate'];
-		$dept = $_POST['dept'];
-		$keywordsArray = $_POST['kw'];
+        $abs = $_POST['abstract'];
+        //echo "abstract: $abs </br>";
 
-		// POST AUTHOUR //
-		$autlist = $_POST['autlist'];
+        $pubdate = $_POST['pubdate'];
+        //echo "pubdate: $pubdate </br>";
 
-		 //implementation of array
-		foreach ($autlist as $kw) {
-			//author
-			$autor = explode(",", $kw);
-			echo "first Name: " . $autor[0] . " Mname: " . $autor[1] . "lname: " . $autor[2] . " suf: " . $autor[3] . "add: " . $autor[4] . " contact: " . $autor[5] . " email: " . $autor[6];
-		}
-		//echo $kw . " From DB";
+        $dept = $_POST['dept'];
+        //echo "Department: $dept </br>";
 
-
-		///----FILE DOCX-----///
-   /* $file = $_FILES['book'];
-    $filename = $_FILES['book']['name'];
-    $filesize = $_FILES['book']['size'];
-    $filetype = $_FILES['book']['type'];
-    $error = $_FILES['book']['error'];
-    //$filesize = $_FILES['book']['size'];
-    $fileext = explode(".",$filename);
-    $extension = strtolower(end($fileext));
+        $keywordsArray = $_POST['kw'];
+        //echo "Array of Keywords: ";
+        //print_r($keywordsArray);
+        //echo "<br/>";
 
 
-    echo $filename;
-    echo $filesize;
-    echo $filetype;
-    echo $error;
+        $referencesArray=$_POST['ref'];
+        //echo "Array of References: ";
+        //print_r($referencesArray);
+        //echo "<br/>";
 
-    $allowedFile = array('docx', 'doc');
-    if(in_array($extension, $allowedFile)){
-            if($error===0){
-                //45MB Allowed
-                if($filesize<45000000){
-                    $newFileName = uniqid('',true) . "." . $extension;
-                    $serverPath = "book/" . $newFileName;
-                    
-                    $FileFullpath = $serverPath;
-                    echo "Book: " . $FileFullpath . "<br/>";
-                }else{
-                    echo "File Exceeded in Maximu File size"; 
-                }
-            }else{
-                echo "There was error Uploading your File!";
+        $stat = $_POST['stat'];
+        //echo "Status: $stat </br>";
+
+
+        $fname = $_POST['firstname'];
+        //echo "Author Fname: ";
+        //print_r($fname);
+        //echo "<br/>";
+
+        $mname = $_POST['middlename'];
+        //echo "Author middlename: ";
+        //print_r($mname);
+        //echo "<br/>";
+
+        $lname = $_POST['lastname'];
+        //echo "Author lastname: ";
+        //print_r($lname);
+        //echo "<br/>";
+
+        $suf = $_POST['suffix'];
+        //echo "Author Suffix: ";
+        //print_r($suf);
+        //echo "<br/>";
+
+        $add = $_POST['address'];
+        //echo "Author address: ";
+        //print_r($add);
+        //echo "<br/>";
+
+        $contact = $_POST['contact'];
+        //echo "Author Contact: ";
+        //print_r($contact);
+        //echo "<br/>";
+
+        $email = $_POST['email'];
+        //echo "Author email: ";
+        //print_r($email);
+        //echo "<br/>";
+
+        $dbconfig = new dbconfig();
+        $conn = $dbconfig->getCon();
+
+        //note get department id
+        //keywords id
+        //reference id
+        //dugangan anh form ug published
+        //set cover to null
+
+
+        //get the department id
+        $query = "SELECT id FROM `department` WHERE cat_name = \"$dept\"";
+        $dbconfig = new dbconfig();
+        $conn = $dbconfig->getCon();
+        $result = $conn->query($query);
+        $deptid = null;
+
+        if($result->num_rows>0){
+            while ($row=$result->fetch_assoc()) {
+                $deptid = $row['id'];
             }
-    }else{
-        echo "File is Not Valid!";
-    }
+            
+        }
+        
+        ////--------------Book Insertion--------------------////
 
-	*/
+        //check if tittle already existed
+        $query = "SELECT book_id FROM `book` WHERE book_title = '$title'";
+        $dbconfig = new dbconfig();
+        $conn = $dbconfig->getCon();
+        $result = $conn ->query($query);
 
+        $book_id = null;
+
+        //if not on db then load to db and return id
+        if($result->num_rows>0){
+            echo "Book Already Exsist!";
+        }else{
+            //query for book details insertion
+            $query = "INSERT INTO `book` (`book_id`, `book_title`, `abstract`, `pub_date`, `department`, `rev_count`, `status`, `enabled`, `views_count`, `cover`, `docloc`) VALUES (NULL, '$title', '$abs', '$pubdate', '$deptid', '0', '$stat', '0', '0', '', '')";
+       // echo "<br/>" . $query;
+            $dbconfig = new dbconfig();
+            $conn = $dbconfig->getCon();
+            $result = $conn ->query($query);
+
+            $query = "SELECT book_id FROM `book` WHERE book_title = '$title'";
+            $dbconfig = new dbconfig();
+            $conn = $dbconfig->getCon();
+            $result = $conn ->query($query);
+            if($result->num_rows>0){
+                while ($row=$result->fetch_assoc()) {
+                    $book_id = $row['book_id'];
+                }
+            }
+
+            ////--------------Author Insertion--------------------////
+            //LOAD THE AUTHORS IF THE BOOK IS VALID ELSE DONT LOAD THE AUTHOR //
+
+            //prepare the arrays of authors//
+
+            $autorID = array();
+            for($i=0; $i<count($fname); $i++){
+                //echo "<br/>First Name: " . $fname[$i] . " Middlename: " . $mname[$i] ." Lastname: " . $lname[$i] . " Suffix: " .$suf[$i] . " Address: " . $add[$i] . " Contact: " . $contact[$i] . " Email: " . $email[$i];
+
+                $query= "SELECT a_id FROM author where a_fname='$fname[$i]' and a_mname='$mname[$i]' and a_lname='$lname[$i]' and a_suffix='$suf[$i]'";
+                //echo $query;
+                $dbconfig = new dbconfig();
+                $conn = $dbconfig->getCon();
+                $result = $conn ->query($query);
+                if($result->num_rows>0){
+                    while($row=$result->fetch_assoc()){
+                    
+                    $conn->query($query);
+                    array_push($autorID, $row['a_id']);
+                }
+            }
+
+
+            }
+
+            //insert junction Author Book
+            foreach ($autorID as $key){
+            
+                $query = "INSERT INTO `junc_authorbook` (`id`, `book_id`, `aut_id`) VALUES (NULL, $book_id, $key)";
+                // echo $query;
+                $dbconfig = new dbconfig();
+                $conn = $dbconfig->getCon();
+                $conn ->query($query);
+                echo "Loaded <br/>";
+            }
+
+            ///------------END OF AUTHOR INSERTION-----------///
+            }
+
+        ////--------------End of Book Insertion--------------------////
+
+
+        
+
+        
+
+    
 ?>
