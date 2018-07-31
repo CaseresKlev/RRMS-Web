@@ -18,15 +18,13 @@
    $result = $conn->query($query);
    if($result-> num_rows > 0){
      while ($row = $result->fetch_assoc()) {
-       echo $row['cover'];
-     }
-   }
-   echo $query;
 
     ?>
-   <img src="img/1.jpg">
+    <p><a href="<?php echo "loadimage.php?book_id=2"?>"><?php echo $row['book_title'];?></a></p>
+   <img src="<?php echo $row['cover']; ?>">
 
-
+ <?php }
+} ?>
  </body>
 
 
