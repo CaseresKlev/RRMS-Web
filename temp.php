@@ -115,6 +115,47 @@
             if($result->num_rows>0){
                 while ($row=$result->fetch_assoc()) {
                     $book_id = $row['book_id'];
+<<<<<<< HEAD
+                }
+            }
+
+            if($result){
+                echo "Book Loaded";
+            }
+        }
+
+        ////--------------End of Book Insertion--------------------////
+
+        ////--------------Author Insertion--------------------////
+
+        //prepare the arrays of authors//
+
+        $autorID = array();
+        for($i=0; $i<count($fname); $i++){
+            //echo "<br/>First Name: " . $fname[$i] . " Middlename: " . $mname[$i] ." Lastname: " . $lname[$i] . " Suffix: " .$suf[$i] . " Address: " . $add[$i] . " Contact: " . $contact[$i] . " Email: " . $email[$i];
+
+            $query= "SELECT a_id FROM author where a_fname='$fname[$i]' and a_mname='$mname[$i]' and a_lname='$lname[$i]' and a_suffix='$suf[$i]'";
+            echo $query;
+            $dbconfig = new dbconfig();
+            $conn = $dbconfig->getCon();
+            $result = $conn ->query($query);
+            if($result->num_rows>0){
+                while($row=$result->fetch_assoc()){
+                    array_push($autorID, $row['a_id']);
+                }
+            }
+
+
+        }
+
+        print_r($autorID);
+
+        
+        
+
+        
+
+=======
                 }
             }
 
@@ -171,5 +212,6 @@
 
         
 
+>>>>>>> 129f992aef26d5b3476984b92e4bd426b493b4df
     
 ?>

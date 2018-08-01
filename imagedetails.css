@@ -2,7 +2,11 @@ body{
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+<<<<<<< HEAD
+  background: #99ff66;
+=======
   background: #b3ffb3;
+>>>>>>> 129f992aef26d5b3476984b92e4bd426b493b4df
 }
 .box{
   position: absolute;
@@ -24,7 +28,11 @@ body{
 .box .imgBx img{
   max-width: 100%;
   border-style: double;
+<<<<<<< HEAD
+  border-color: green;
+=======
   border-color:#6699ff;
+>>>>>>> 129f992aef26d5b3476984b92e4bd426b493b4df
   float: left;
 }
 .box .content{

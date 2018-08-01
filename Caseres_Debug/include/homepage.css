@@ -5,7 +5,7 @@
 .img_box{
     width:100%;
     height:100%;
-
+    
 }
 
 #cover{
@@ -23,7 +23,7 @@
 
 #con-div.image{
     height: 400px;
-
+    
 }
 
 #con-div.title{
@@ -45,5 +45,7 @@
     /*display: grid;*/
     clear: both;
     width: 500px;
-    float: right;
 }
+
+
+
