@@ -30,12 +30,12 @@ body{
 }
 .responsive{
 	padding: 6px;
-	float: right;
+	float: left;
 	width: 24%;
 	margin-right: auto;
 	margin-left: auto;
 }
-@media screen and (max-width:800px){	
+@media screen and (max-width:800px){
 	.responsive{
 		width: 49.99999%;
 		margin: 6px 0;
