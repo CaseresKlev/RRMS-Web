@@ -10,7 +10,7 @@
 		<center><h1>Book shelves</h1></center>
 	</div>
 	<div class="container">
-		<?php ?>
+		<?php  ?>
 	<div class="responsive">
 		<div class="gallery">
 			<a href="#" target="_blank">
