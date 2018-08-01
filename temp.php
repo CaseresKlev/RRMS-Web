@@ -118,6 +118,8 @@
                 }
             }
 
+            echo "Done Inserting Book Details <br/>";
+
             ////--------------Author Insertion--------------------////
             //LOAD THE AUTHORS IF THE BOOK IS VALID ELSE DONT LOAD THE AUTHOR //
 
@@ -142,6 +144,7 @@
 
 
             }
+             echo "Done Inserting Author <br/>";
 
             //insert junction Author Book
             foreach ($autorID as $key){
@@ -151,7 +154,7 @@
                 $dbconfig = new dbconfig();
                 $conn = $dbconfig->getCon();
                 $conn ->query($query);
-                echo "Loaded <br/>";
+                echo "Done setting constraint on AuthorBook <br/>";
             }
 
             ///------------END OF AUTHOR INSERTION-----------///
@@ -159,9 +162,124 @@
 
             ///------------START OF KEYWORDS INSERTION-------///
 
+            
+
+            $kw = array();
+            foreach ($keywordsArray as $key ) {
+                //echo "Keywords: " . $key;
+
+                //valid keywords isf existed///
+                $query = "SELECT id FROM `keywords` WHERE key_words='$key'";
+                $dbconfig = new dbconfig();
+                $conn = $dbconfig->getCon();
+                $result = $conn ->query($query);
+                if($result->num_rows>0){
+
+                    //if found. get the keywords id and put into array. 
+                    while($row = $result->fetch_assoc()){
+                        array_push($kw, $row['id']);
+                    }
+                    //echo "keywords: " . $key . " Found! <br/>";
+                }else{
+
+                    // else not found then load to db and get the keywords i.d
+
+                    //load to kewords table
+                    $query = "INSERT INTO `keywords` (`id`, `key_words`) VALUES (NULL, '$key')";
+                    $dbconfig = new dbconfig();
+                    $conn = $dbconfig->getCon();
+                    $result = $conn ->query($query);
+
+                    //if load to db then get id then push to aray
+                    if($result){
+                        $query = "SELECT id FROM `keywords` WHERE key_words='$key'";
+                        $dbconfig = new dbconfig();
+                        $conn = $dbconfig->getCon();
+                        $result = $conn ->query($query);
+
+                        while($row1 = $result->fetch_assoc()){
+                            array_push($kw, $row1['id']);
+                        }
+                    }
+   
+                }
+                //echo "Loaded <br/>";
+            }
+            echo "Done Inserting Keywords <br/>";
+
+            //insert book and key on junction table
+            foreach ($kw as $key) {
+                        $query = "INSERT INTO `junc_bookkeywords` (`id`, `book_id`, `keywords_id`) VALUES (NULL, '13', '3')";
+                        $dbconfig = new dbconfig();
+                        $conn = $dbconfig->getCon();
+                        $result = $conn ->query($query);
+                        
+            }
+
+            echo "Done setting constraint Book-Keywords <br/>";
+
+            ///------------END OF Keywords INSERTION--------///
 
 
-            ///------------END OF RESEACRH INSERTION--------///
+            ///--------------START OF REFERENCES INSERTION------------///
+
+            $refID = array();
+            foreach($referencesArray as $key){
+
+                //check references if existed///
+                $query = "SELECT id FROM `ref` WHERE link='$key'";
+                $dbconfig = new dbconfig();
+                $conn = $dbconfig->getCon();
+                $result = $conn ->query($query);
+
+                if($result->num_rows>0){
+                     while($row = $result->fetch_assoc()){
+                        array_push($refID, $row['id']);
+                    }
+                }else{
+                     // else not found then load to db and get the reference i.d
+
+                    //load to ref table
+                    $query = "INSERT INTO `ref` (`id`, `link`) VALUES (NULL, '$key')";
+                    $dbconfig = new dbconfig();
+                    $conn = $dbconfig->getCon();
+                    $result = $conn ->query($query);
+
+                    //if load to db then get id then push to aray
+                    if($result){
+                        $query = "SELECT id FROM `ref` WHERE link='$key'";
+                        $dbconfig = new dbconfig();
+                        $conn = $dbconfig->getCon();
+                        $result = $conn ->query($query);
+
+                        while($row1 = $result->fetch_assoc()){
+                            array_push($refID, $row1['id']);
+                        }
+                    }
+
+                }
+
+            }
+
+            //insert book and refernce on junction table
+            foreach ($refID as $key) {
+                        $query = "INSERT INTO `junk_bookref` (`id`, `book_id`, `webref_id`) VALUES (NULL, '$book_id', '$key')";
+                        $dbconfig = new dbconfig();
+                        $conn = $dbconfig->getCon();
+                        $conn ->query($query);
+                        
+            }
+
+            echo "Done setting constraint Book-References <br/>";
+
+
+
+            
+
+
+            ///-----------END OF REFERNCES INSERTION----------------////
+            echo "All process done 100% <br/>";
+            
             }
 
         ////--------------End of Book Insertion--------------------////
