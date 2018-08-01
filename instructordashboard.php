@@ -16,7 +16,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="css/progressbar.min.css">
     <!-- Custom Theme Style -->
     <link rel="stylesheet" type="text/css" media="screen" href="css/custom.min.css">
-	
+
 </head>
 
   <body class="nav-md">
@@ -40,7 +40,7 @@
                 <h2> Instructor </h2>
               </div>
             </div>
-            <!-- /menu profile quick info -->
+            <!--/menu profile quick info-->
 
             <br />
 
@@ -55,7 +55,7 @@
                     </ul>
                   </li>
                   <li><a><span class="glyphicon glyphicon-user"></span> ADVISER </a>
-                  <li><a><span class="glyphicon glyphicon-envelope"></span> ACCOUNTS </a>         
+                  <li><a><span class="glyphicon glyphicon-envelope"></span> ACCOUNTS </a>
                   <li><a href="javascript:void(0)"><span class="glyphicon glyphicon-off"></span> LOGOUT <span class="label label-success pull-right"></a></li>
                 </ul>
               </div>
@@ -63,7 +63,7 @@
             </div>
           </div>
         </div>
-       
+
         <!-- page content -->
         <div class="right_col" role="main">
           <!-- top tiles -->
@@ -82,12 +82,12 @@
     <script src="js/jquery.min.js"></script>
     <!-- Bootstrap -->
     <script src="js/bootstrap.min.js"></script>
-  
+
     <!-- bootstrap-progressbar -->
     <script src="js/bootstrap-progressbar.min.js"></script>
 
     <!-- Custom Theme Scripts -->
     <script src="js/custom.min.js"></script>
-	
+
   </body>
 </html>

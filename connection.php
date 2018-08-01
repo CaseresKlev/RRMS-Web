@@ -8,16 +8,19 @@ class dbconfig{
         private $conn = null;
 
    public function __construct(){
-        
+
         $this->conn = new mysqli($this->server, $this->uname, $this->upass,$this->dbName);
         if ($this->conn->connect_error) {
             die("Connection failed: " . $this->conn->connect_error);
-        }     
+        }
     }
 
     public function getCon(){
         return $this->conn;
     }
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 129f992aef26d5b3476984b92e4bd426b493b4df
 ?>
