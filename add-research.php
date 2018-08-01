@@ -127,7 +127,7 @@ $(document).ready(main);
                                 <p style="font-size: 18px;">Select Author:</p>
                             </td>
                             <td>
-                                <input type="text" id="autSearch" class="sea" onfocus="this.value=''" list="authorName">
+                               <!-- <input type="text" id="autSearch" class="sea" onfocus="this.value=''" list="authorName">
                                 <datalist id="authorName">
                                     <?php 
                                         $dbconfig = new dbconfig();
@@ -144,7 +144,9 @@ $(document).ready(main);
 
                                         } ?>
 
-                                </datalist>
+                                </datalist>-->
+                                <input type="text" id="autSearch" class="sea" onfocus="this.value=''">
+                                
                             </td>
                             <td>
                                 <button type="button" id="addField">Add Author</button>
@@ -190,7 +192,7 @@ $(document).ready(main);
         <br/>
     </span>
 </div>
-    <div id="debug" style="text-align: center; font-weight: bold; font-size: 14pt; color: red; width: 100%;"></div>
+    <div id="debug" style="text-align: center; font-weight: bold; font-size: 14pt; color: red; width: 300px;"></div>
         <br/>
     </div>
   </form>      

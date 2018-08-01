@@ -1,6 +1,25 @@
 
 
             ///place all your jquery functions here///
+            var local_source = [
+
+            {id: 1, value: "c++"},
+
+
+
+
+            ];
+
+            $("#autSearch").autocomplete({
+                source: local_source,
+                messages: {
+                 noResults: '',
+                 results: function() {}
+                }
+            });
+
+            //$("#debug").html("hellow");
+            //$("#debug").dialog();
             page = 1;
             setPage();
             //initInput();
