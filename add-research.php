@@ -39,11 +39,17 @@ $(document).ready(main);
     
 </head>
 
-<body>
-    <h1>Add Research Information</h1>
 
-<form  method="POST" enctype="multipart/form-data" id="entry">
+<body>
+    <header>
+    <?php include_once 'header.php'; ?>
+</header>
+    
+    <h1>Add Research Information</h1>
+<div id="content" style="width:aut">
     <div id="enclosure">
+<form  method="POST" enctype="multipart/form-data" id="entry">
+    
         <div id = "page1" style="height=500px">
 
             <!--<div class="browse">
@@ -193,10 +199,12 @@ $(document).ready(main);
     </span>
     <div id="debug" style="text-align: center; font-weight: bold; font-size: 24pt; color: red; width: 100%;"></div>
     <br/>
-    </div>
+    
 
     
 </form>
+</div>
+</div>
 <div id="debug"></div>
 
 
