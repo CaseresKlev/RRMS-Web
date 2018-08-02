@@ -6,6 +6,17 @@ body {
 	margin: auto;
   font-family: Arial;
 }
+@media screen and (max-width:800px){
+	.responsive{
+		width: 49.99999%;
+		margin: 6px 0;
+	}
+}
+@media screen and (max-width:485px){
+	.responsive{
+		width: 100%;
+	}
+}
 
 .header {
   overflow: hidden;

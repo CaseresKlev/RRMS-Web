@@ -19,8 +19,5 @@ class dbconfig{
         return $this->conn;
     }
 }
-<<<<<<< HEAD
 
-=======
->>>>>>> 129f992aef26d5b3476984b92e4bd426b493b4df
 ?>

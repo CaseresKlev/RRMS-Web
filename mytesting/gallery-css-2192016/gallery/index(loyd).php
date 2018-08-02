@@ -5,12 +5,14 @@
 	<title>Gallery Images</title>
 	<link href="style.css" rel="stylesheet"/>
 </head>
+
+<header><?php include_once 'header.php'; ?></header>
 <body>
 	<div class="title">
 		<center><h1>Book shelves</h1></center>
 	</div>
 	<div class="container">
-		<?php ?>
+		<?php  ?>
 	<div class="responsive">
 		<div class="gallery">
 			<a href="#" target="_blank">
