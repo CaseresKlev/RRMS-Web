@@ -27,7 +27,7 @@
 		?>
 	<div class="responsive">
 		<div class="gallery">
-			<a href="imagedetails.php?book_id= <?php echo $row['book_id']; ?>">
+			<a href="bookdetails.php?book_id= <?php echo $row['book_id']; ?>">
 				<img src="images/1.jpg" alt="1"/>
 			</a>
 			<div class="title"><strong><?php echo $row['book_title'];?></strong></div>

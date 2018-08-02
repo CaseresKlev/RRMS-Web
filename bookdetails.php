@@ -9,6 +9,19 @@
     <?php include_once 'header.php';?>
   </header>
 <body>
+
+  <?php
+  include_once 'connection.php';
+  $dbconfig = new dbconfig();
+  $conn = $dbconfig->getCon();
+  $id = $_GET['book_id'];
+  $query = "select * from book where book_id = $id";
+  $result = $conn->query($query);
+  if($result-> num_rows > 0){
+    while ($row = $result->fetch_assoc()) {
+
+   ?>
+
   <div class="wrapper">
 <table width="100%" height="326">
   <tr >
@@ -17,7 +30,7 @@
     <td id="col2">
       <table height=100%>
         <tr>
-          <td id="booktitle" class"det"><strong>BUKSU Research Record Management System</strong>
+          <td id="booktitle" class"det"><strong><?php echo $row['book_title']; ?></strong>
             <hr>
           </td>
 
@@ -32,7 +45,7 @@
 
         </td>
         <tr class"det">
-          <td>Publication Date: 07-29-2018</td>
+          <td>Publication Date: <?php echo $row['pub_date']; ?></td>
         </tr>
         <tr class"det">
           <td>Revision: 2</td>
@@ -41,7 +54,7 @@
           <td>Status: Unpublish</td>
         </tr>
         <tr class"det">
-          <td>Views: 356</td>
+          <td>Views:<?php echo " " .  $row['views_count']; ?></td>
         </tr>
         <tr >
           <td>Keywords: fdf,dfdf,fdfdf</td>
@@ -73,11 +86,13 @@
     <td colspan="2">
       <hr>
       <strong style="font-size: 20pt;"><em>Abstract:</em></strong><br/>
-      <p>&emsp;Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+      <p>&emsp;<?php echo $row['abstract'];?>
       </p>
     </td>
 
   </tr>
+<?php }
+} ?>
   <tr>
     <td colspan="2">
       <hr>
