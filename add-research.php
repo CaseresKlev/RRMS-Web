@@ -39,17 +39,11 @@ $(document).ready(main);
     
 </head>
 
-
 <body>
-    <header>
-    <?php include_once 'header.php'; ?>
-</header>
-    
     <h1>Add Research Information</h1>
-<div id="content" style="width:aut">
-    <div id="enclosure">
+
 <form  method="POST" enctype="multipart/form-data" id="entry">
-    
+    <div id="enclosure">
         <div id = "page1" style="height=500px">
 
             <!--<div class="browse">
@@ -110,8 +104,9 @@ $(document).ready(main);
                         <option>On-Going</option>
                     </select>
                 </p>
+            </div>
         </div>
-    </div>
+
     <div id = "page2" style="display:none">
         <fieldset>
             <legend>Authours Info</legend>
@@ -163,49 +158,43 @@ $(document).ready(main);
     <br/>
     </div>
     <div id = "page3" style="display:none">
-        <p>Page 3</p>
         <p>
-                        <center> First Name</center><br/>
-                        <input type="text"placeholder="First name" oninput="this.className = ''" name="fname">
+                        First Name:<br/>
+                        <input type="text"placeholder="First name" oninput="this.className = ''" id="adv_fname" name="fname">
                     </p>
                     <p>
-                      <center>  Middle Name</center><br/>
-                        <input type="text" placeholder="Middle name" oninput="this.className = ''" name="mname">
+                      Middle Name:<br/>
+                        <input type="text" placeholder="Middle name" oninput="this.className = ''" id="adv_mname" name="mname">
                     </p>
                     <p>
-                        <center>Last Name</center><br/>
-                        <input type="text" placeholder="Last name" oninput="this.className = ''" name="lname">
+                        Last Name:<br/>
+                        <input type="text" placeholder="Last name" oninput="this.className = ''" id="adv_lname" name="lname">
                     </p>
                     <p>
-                        <center>Suffix</center><br/>
-                        <input type="text" placeholder="Suffix" oninput="this.className = ''" name="suf">
+                        Suffix:<br/>
+                        <input type="text" placeholder="Suffix" oninput="this.className = ''" id="adv_suff" name="suf">
                     </p>
                     <p>
-                        <center>Address</center><br/>
-                        <input type="text" placeholder="Address" oninput="this.className = ''" name="add">
+                        Email:<br/>
+                        <input type="text" placeholder="Email" oninput="this.className = ''" id="adv_email" name="email">
                     </p>
                     <p>
-                        <center>Email</center><br/>
-                        <input type="text" placeholder="Email" oninput="this.className = ''" name="email">
-                    </p>
-                    <p>
-
                       <center> <input type="checkbox"name="vehicle3" value="Boat" checked> I want others download my file.</center><br><br>
+                    </p>
     </div>
+
     <span style="float: right">
         <button type="button" id="prev">Previous</button>
         <button type="button" id="next">Next</button>
         <button type="button" id="submit">Submit</button>
+        <br/>
     </span>
-    <div id="debug" style="text-align: center; font-weight: bold; font-size: 24pt; color: red; width: 100%;"></div>
-    <br/>
-    
+</div>
+    <div id="debug" style="text-align: center; font-weight: bold; font-size: 14pt; color: red; width: 100%;"></div>
+        <br/>
+    </div>
+  </form>      
 
-    
-</form>
-</div>
-</div>
-<div id="debug"></div>
 
 
 <script src="js/jquery-3.3.1.js"></script>
