@@ -51,7 +51,7 @@
                 //alert(ref);
 
                 var stat = $("#status").val();
-                alert(stat);
+               // alert(stat);
 
                 //author details variables
                 var fname = $("input[name='fname[]']").map(function(){return $(this).val();}).get();
@@ -68,6 +68,19 @@
                 //alert(contact);
                 var email = $("input[name='email[]']").map(function(){return $(this).val();}).get();
                // alert(email);
+
+
+               //adviser details
+               var adv_fname = $("#adv_fname").val();
+               alert(adv_fname);
+               var adv_mname = $("#adv_mname").val();
+               alert(adv_mname);
+               var adv_lname = $("#adv_lname").val();
+               alert(adv_lname);
+               var adv_suff = $("#adv_suff").val();
+               alert(adv_suff);
+               var adv_email = $("#adv_email").val();
+               alert(adv_email);
 
 
                 //validation of author details
@@ -261,12 +274,6 @@
                     $result = $conn->query($query);
                     if($result->num_rows > 0){
                         while($row = $result->fetch_assoc()){
-<<<<<<< HEAD
-
-
-
-=======
->>>>>>> 129f992aef26d5b3476984b92e4bd426b493b4df
                 ?> */
 
 
