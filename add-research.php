@@ -119,35 +119,31 @@ $(document).ready(main);
                     <th>Address</th>
                     <th>Contact</th>
                     <th>Email</th>
+                    <th></th>
+
+                    <tr id="row">
+                        <td><input type="text" placeholder="First Name" oninput="this.className = ''" id="fname" name="fname[]"></td>
+                        <td><input type="text" placeholder="Middle name" oninput="this.className = ''" id="mname" name="mname[]"></td>
+                        <td><input type="text" placeholder="Last name" oninput="this.className = ''" id="lname" name="lname[]"></td>
+                        <td style="width: 70px;">
+                            <select id="sufname" name="suf[]">  
+                                <option></option>
+                                <option>JR</option>
+                                <option>IV</option>
+                                <option>III</option>
+                             </select>
+                        </td>
+                        <td><input type="text" placeholder="Address" oninput="this.className = ''" id="add" name="add[]"></td>
+                        <td><input type="text" placeholder="Contact" oninput="this.className = ''" id="con" name="contact[]"></td>
+                        <td><input type="text" placeholder="Email" oninput="this.className = ''" id="email" name="email[]"></td>
+                    </tr>
+
                 </table>
                 <p>
                     <table>
                         <tr>
                             <td>
-                                <p style="font-size: 18px;">Select Author:</p>
-                            </td>
-                            <td>
-                                <input type="text" id="autSearch" class="sea" onfocus="this.value=''" list="authorName">
-                                <datalist id="authorName">
-                                    <?php 
-                                        $dbconfig = new dbconfig();
-                                        $conn = $dbconfig->getCon();
-                                        $query= "SELECT * FROM author";
-                                        $result = $conn->query($query);
-                                        if($result->num_rows > 0){
-                                            while($row = $result->fetch_assoc()){
-                                                $tempName = $row['a_fname'] . "-" . $row['a_mname'] . "-" . $row['a_lname'] . "-" . $row['a_suffix'];
-
-                                    ?>
-                                    <option value="<?php echo $tempName ?>" name="<?php echo $tempName ?>">
-                                    <?php }
-
-                                        } ?>
-
-                                </datalist>
-                            </td>
-                            <td>
-                                <button type="button" id="addField">Add Author</button>
+                                <button type="button" id="addField">Add Fields</button>
                             </td>
                         </tr>
 
@@ -158,25 +154,30 @@ $(document).ready(main);
     <br/>
     </div>
     <div id = "page3" style="display:none">
-        <p>
+                    <p>
                         First Name:<br/>
-                        <input type="text"placeholder="First name" oninput="this.className = ''" id="adv_fname" name="fname">
+                        <input type="text"placeholder="First name" oninput="this.className = ''" id="adv_fname">
                     </p>
                     <p>
                       Middle Name:<br/>
-                        <input type="text" placeholder="Middle name" oninput="this.className = ''" id="adv_mname" name="mname">
+                        <input type="text" placeholder="Middle name" oninput="this.className = ''" id="adv_mname">
                     </p>
                     <p>
                         Last Name:<br/>
-                        <input type="text" placeholder="Last name" oninput="this.className = ''" id="adv_lname" name="lname">
+                        <input type="text" placeholder="Last name" oninput="this.className = ''" id="adv_lname">
                     </p>
                     <p>
                         Suffix:<br/>
-                        <input type="text" placeholder="Suffix" oninput="this.className = ''" id="adv_suff" name="suf">
+                        <select name="status" id="adv_suff">
+                            <option></option>
+                            <option>JR</option>
+                            <option>IV</option>
+                            <option>III</option>
+                        </select>
                     </p>
                     <p>
                         Email:<br/>
-                        <input type="text" placeholder="Email" oninput="this.className = ''" id="adv_email" name="email">
+                        <input type="text" placeholder="Email" oninput="this.className = ''" id="adv_email">
                     </p>
                     <p>
                       <center> <input type="checkbox"name="vehicle3" value="Boat" checked> I want others download my file.</center><br><br>
