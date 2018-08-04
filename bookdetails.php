@@ -23,7 +23,7 @@
    ?>
 
   <div class="wrapper">
-<table width="100%" height="326">
+<table bgcolor="#ffffff" width="100%" height="326">
   <tr >
 
     <td width="40%"height="350px" id="col1"> <img src="img/1.jpg" style="display:block"; width="100%" height="100%"></td>
@@ -45,7 +45,7 @@
 
         </td>
         <tr class"det">
-          <td>Publication Date: <?php echo $row['pub_date']; ?></td>
+          <td>Date Submitted: <?php echo $row['pub_date']; ?></td>
         </tr>
         <tr class"det">
           <td>Revision: 2</td>
@@ -108,7 +108,13 @@
     </td>
 
   </tr>
+
 </table>
+
 </div>
+<div class="foot">
+    <footer><?php include_once 'footer.php';?></footer >
+  </div>
 </body>
+
 </html>

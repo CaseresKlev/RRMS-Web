@@ -139,11 +139,11 @@ form {
 /* end of header */
 /* Footer */
 .footer {
-	bottom: 0;
+	bottom: -353px;
 	width: 70%;
 	color: white;
 	text-align: center;
-	position: fixed;
+	position: absolute;
 	overflow: hidden;
 	background-color: #4682B4;
 	padding: 20px 10px;
