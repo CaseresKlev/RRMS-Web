@@ -10,7 +10,7 @@
 
   </head>
 
-      <body>
+      <body background="cover.jpg">
         <!--start of php -->
         <?php
         include_once 'connection.php';
