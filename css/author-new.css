@@ -1,0 +1,48 @@
+/* ANNE */
+
+* {
+    box-sizing: border-box;
+}
+
+#annebody {
+  background-color: #d3d3d3;
+  max-width: 100%;
+  margin: auto;
+}
+
+
+ .anneauthor {
+   margin: auto;
+   padding: inherit;
+   padding-left: 6%;
+   padding-top: 10%;
+   text-align: left;
+   float: left;
+ }
+
+ .anneauthor p {
+   font-size: larger;
+   color: grey;
+
+ }
+
+.vertiline {
+  border-left: 3px solid black;
+  height: 100%;
+  position: absolute;
+  left: 40%;
+  margin-left: -3px;
+  top: 0;
+}
+
+.annebooks {
+  text-align: right;
+  margin-right: 32%;
+  margin-top: 10%;
+  float: right;
+}
+
+.annelist {
+  float: right;
+  margin-right: 40%;
+}

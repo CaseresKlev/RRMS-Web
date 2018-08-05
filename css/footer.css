@@ -1,4 +1,4 @@
-body {
+.footer_body {
 	width: 100%;
 }
 
@@ -29,7 +29,7 @@ body {
 
 /* The company logo */
 
-.footer-distributed h3{
+.footer-distributed #footer-title{
 	color:  #ffffff;
 	margin: 0;
 	font-size: 25px;
@@ -61,7 +61,7 @@ body {
 /* Footer Center */
 
 .footer-distributed .footer-center{
-	width: 35%;
+	width: 30%;
 	padding-left: 1%;
 }
 
@@ -89,6 +89,7 @@ body {
 	font-size: 14px;
 	vertical-align: middle;
 	margin:0;
+	padding: 5px 5px 20px 5px;
 }
 
 .footer-distributed .footer-center p span{
@@ -107,7 +108,7 @@ body {
 /* Footer Right */
 
 .footer-distributed .footer-right{
-	width: 25%;
+	width: 30%;
 }
 
 .footer-distributed .footer-company-about{
@@ -121,12 +122,13 @@ body {
 .footer-distributed .footer-company-about span{
 	display: block;
 	color:  #ffffff;
-	font-size: 14px	;
+	font-size: 18px	;
 	font-weight: bold;
 	margin-bottom: 20px;
 }
-img {
+#footer-contactus {
 	width: 5%;
+	padding: 18px 10px 0px 5px;
 }
 
 /* If you don't want the footer to be responsive, remove these media queries */
@@ -146,5 +148,16 @@ img {
 	.footer-distributed .footer-center i{
 		margin-left: 0;
 	}
-
+.footer-distributed .footer-center p{
+	display: inline-block;
+	color: #ffffff;
+	font-size: 14px;
+	vertical-align: middle;
+	margin:0;
+	padding: 5px 5px 30px 5px;
+}
+#footer-contactus {
+	width: 5%;
+	    padding: 5px 10px 0px 5px;
+}
 }

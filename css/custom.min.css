@@ -1,8 +1,9 @@
 .detail a, a:hover,.site_title:focus,.site_title:hover,a,a:focus,a:hover{
 	text-decoration:none;
 	}
-.left_col{
+.left_col.scroll-view {
 	background:#2A3F54;
+	width: 240px;
 	}
 .nav-sm .container.body .col-md-3.left_col{
 	min-height:100%;
@@ -21,6 +22,13 @@
 .site_title,.x_title h2{
 	overflow:hidden;
 	}
+.site_title span {
+	margin-top: 3%;
+	font-family: Century Gothic;
+	font-size: 18px;
+	text-align: justify;
+	color: white;
+}
 .nav-sm .hidden-small{
 	visibility:hidden
 	}
@@ -109,6 +117,8 @@
 	}
 .menu_section>ul{
 	margin-top:10px;
+	text-decoration: none;
+	font-family: Century Gothic;
 	}
 .profile_pic{
 	width:35%;
@@ -120,22 +130,27 @@
 	margin-left:15%;
 	z-index:1000;
 	position:inherit;
-	margin-top:20px;
+	margin-top:95%;
+	border-radius: 50%;
 	border:1px solid rgba(52,73,94,.44);
 	padding:4px;
 	}
 .profile_info{
+	font-family: Century Gothic;
 	padding:25px 10px 10px;
 	width:65%;
 	float:left;
+	position: absolute;
+	margin-top: 18%;
+	margin-left: 40%;
 	}
 .profile_info span{
-	font-size:13px;
+	font-size:15px;
 	line-height:30px;
 	color:#BAB8B8;
 	}
 .profile_info h2{
-	font-size:14px;
+	font-size:16px;
 	color:#ECF0F1;
 	margin:0;
 	font-weight:300;
@@ -174,6 +189,17 @@
 .nav-sm li li span.fa{
 	display:inline-block;
 	}
+.nav.side-menu a {
+	color: white;
+	text-decoration: none;
+	font-family: Century Gothic;
+}
+.nav.side-menu ul {
+	font-size: 15px;
+}
+.nav.child_menu {
+	margin-left: 15%;
+}
 .nav_menu{
 	float:left;
 	background:#EDEDED;
@@ -188,8 +214,8 @@
 	}
 }
 .nav-md .container.body .col-md-3.left_col{
-	min-height:100%;
-	width:230px;
+	min-height:115%;
+	width: 180px;
 	padding:0;
 	position:absolute;
 	display:-ms-flexbox;
@@ -208,7 +234,9 @@ body .container.body .right_col{
 	margin-left:230px;
 	}
 .nav_title{
-	width:230px;
+	margin-top: 10%;
+	margin-left: 10%;
+	width: 160px;
 	float:left;
 	background:#2A3F54;
 	border-radius:0;
@@ -219,12 +247,10 @@ body .container.body .right_col{
 	width:100%;
 	margin:0;
 	}
-.nav-md .container.body .col-md-3.left_col{
-	display:none;
-	}
+
 .nav-md .container.body .right_col{
-	width:100%;
-	padding-right:0;
+	float: right;
+	width: 66%; 
 	}
 .right_col{
 	padding:10px!important;
@@ -251,9 +277,6 @@ body .container.body .right_col{
 	width:100%;
 	padding:0;
 	}
-.top_nav .nav .open>a,.top_nav .nav .open>a:focus,.top_nav .nav .open>a:hover,.top_nav .nav>li>a:focus,.top_nav .nav>li>a:hover{
-	background:#D9DEE4;
-	}
 body{
 	color:#73879C;
 	background:#2A3F54;
@@ -267,6 +290,7 @@ body{
 	margin-left:230px;
 	}
 .main_menu_side{
+	text-decoration: none;
 	padding:0;
 	}
 .clearfix:after,form:after{
