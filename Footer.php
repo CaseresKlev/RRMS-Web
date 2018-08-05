@@ -14,12 +14,12 @@
 
 </head>
 
-<<<<<<< HEAD
+
 		<body class="footerbody">
-=======
+
 	<body class= "footer_body">
 
->>>>>>> 0e143b5bcbc42e9e7a05d556d11ff5622508e83a
+
 		<!-- The content of your page would go here. -->
 
 		<footer class="footer-distributed">
@@ -34,7 +34,7 @@
 					<a href="#about">About</a>
 					·
 					<a href="#faq">FAQ</a>
-					
+
 				</p> </br> </br> </br>
 			</div>
 

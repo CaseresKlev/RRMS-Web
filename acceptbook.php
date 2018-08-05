@@ -7,14 +7,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" type="text/css" href="css/indexing(loyd).css">
-  
+
   <title>Indexing</title>
 
 </head>
 
 <body>
 
-  <?php 
+  <?php
     include_once 'connection.php';
 
     $bookid = $_GET['book_id'];
@@ -32,13 +32,13 @@
   <form id="fileForm" enctype="multipart/form-data">
     <div class="rrms">
       <h2><?php echo $row['book_title'];?></h2>
-     Date: <?php $date = split("-", $row['pub_date']); echo $date[0]; ?>
+     Date: <?php echo $row['pub_date']; ?>
     </div>
 
     <div class="auth">
       <h4>Author:
         <i>
-        <?php 
+        <?php
         $bookid = $_GET['book_id'];
         $dbconfig = new dbconfig();
         $conn = $dbconfig->getCon();
@@ -48,24 +48,24 @@
         if($result->num_rows>0){
           while($row=$result->fetch_assoc()){
 
-         
+
 
       ?>
       <a href="author.php?a_id=<?php echo $row['a_id']; ?>"><?php echo $row['a_lname'] . "," . $row['a_fname']; ?></a> ; &nbsp;
        <?php }
       }?>
-        
+
       </i></h4>
     </div>
 
 
-    <input type="text" id="bookid" name='bookid' value="<?php echo $row['book_id'];?>" readonly style="display: none;"> 
+    <input type="text" id="bookid" name='bookid' value="<?php echo $row['book_id'];?>" readonly style="display: none;">
     <div class="Browse">
       <label for="file">Select file:</label>
       <input type="file" name="file" id="file">
     </div>
 
-    <?php 
+    <?php
      }
     }
     ?>
@@ -76,7 +76,7 @@
 
     <br/>
     <div class="note">Task: <i id="log"></i></div>
-    
+
 
     <div class="progressbar">
         <div id="myProgress">
@@ -89,10 +89,10 @@
   <strong>Note!</strong> Indexing your Files may take sometimes. Please dont close your browser.
 </div>
 <br/>
-<div id="error" style="width: 100%; text-align: center; color: red;  font-size: 14pt; display: none" >kjhgfcdgvhb<br/></div> 
+<div id="error" style="width: 100%; text-align: center; color: red;  font-size: 14pt; display: none" >kjhgfcdgvhb<br/></div>
 
 
-  <button type="button" id="submit" style="float: right;">Submit</button> 
+  <button type="button" id="submit" style="float: right;">Submit</button>
 
 <br/>
 </form>

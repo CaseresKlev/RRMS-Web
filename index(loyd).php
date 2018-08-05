@@ -29,7 +29,7 @@
 	<div class="responsive">
 		<div class="gallery">
 			<a href="bookdetails.php?book_id= <?php echo $row['book_id']; ?>">
-				<img src="images/1.jpg" alt="1"/>
+				<img src="<?php echo $row['cover']; ?>"alt="1"/>
 			</a>
 			<div class="title"><strong><?php echo $row['book_title'];?></strong></div>
 
@@ -44,16 +44,14 @@
 
 
 
-<<<<<<< HEAD
-=======
 
 
 </div>
->>>>>>> 0e143b5bcbc42e9e7a05d556d11ff5622508e83a
+
 
 
 </body>
 		<footer>
-				<?php include_once 'footer.php'; ?>
+
 	</footer>
 </html>

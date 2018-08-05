@@ -7,6 +7,7 @@
     include_once 'connection.php';
 
     $bookid = $_POST['bookid'];
+    echo "#log-".$bookid;
 
     $file = $_FILES['file'];
     $tempfile = $_FILES['file']['tmp_name'];
@@ -23,7 +24,7 @@
     //cover
 
     $coverLoc = "fhrdghj";
-    
+
 
     if(!empty($_FILES['cover'])){
         $cover = $_FILES['cover'];
@@ -35,7 +36,7 @@
         $coversize = $_FILES['cover']['size'];
         $coverext = explode(".",$covername);
         $coverextension = strtolower(end($coverext));
-        $coverallowed = array('jpg', 'png' , 'jpeg'); 
+        $coverallowed = array('jpg', 'png' , 'jpeg');
         if(in_array($coverextension, $coverallowed)){
             if($error===0){
                 //2MB Allowed
@@ -47,14 +48,14 @@
                     }
 
                 }else{
-                    echo "#error-Cover Exceeded 2MB size"; 
+                    echo "#error-Cover Exceeded 2MB size";
                 }
             }else{
                 echo "#error-There was error Uploading your Cover!";
             }
     }else{
         echo "#error-Cover is Not Valid!";
-    }                   
+    }
     }else{
          $coverLoc = "cover/default-book-cover.png";
     }
@@ -67,7 +68,7 @@
                 if($filesize<45000000){
                     $newFileName = uniqid('',true) . "." . $extension;
                     $serverPath = "book/" . $newFileName;
-                    
+
                     $FileFullpath = $serverPath; /// only for database
                     //echo "Book: " . $FileFullpath . " Cover: " . $coverLoc;
                     //echo "<br/>TempFile: " . $tempfile . "<br/>";
@@ -76,11 +77,12 @@
                         $dbconfig = new dbconfig();
                         $conn = $dbconfig->getCon();
 
-                        
+
 
                         $query= "UPDATE `book` SET `enabled` = '1', `cover` = '$coverLoc', `docloc` = '$FileFullpath' WHERE `book`.`book_id` = $bookid";
-                        echo "#log-$query";
-                        echo "#log-Uploading your document";
+                        //  echo $query;
+                        echo "#log-" . $query;
+                        //echo "#log-Uploading your document";
                         $result = $conn ->query($query);
                         if($result){
                           echo "#log-Upload Done";
@@ -89,7 +91,7 @@
                     //echo $FileFullpath . " Book ID: " . $bookid;
                     //startIndexing($FileFullpath);
                 }else{
-                    echo "#error-File Exceeded in Maximu File size"; 
+                    echo "#error-File Exceeded in Maximu File size";
                 }
             }else{
                 echo "#error-There was error Uploading your File!";
@@ -97,7 +99,7 @@
     }else{
         //echo "File is Not Valid!";
       echo "#error-File is Not Valid!";
-    } 
+    }
 
 
 
@@ -112,20 +114,20 @@
 		$kv_texts = kv_read_word($serverFile);
 
     //echo $kv_texts;
-    
-		if($kv_texts !== false) {		
+
+		if($kv_texts !== false) {
     		$temp = nl2br($kv_texts);
     		//$res = split('/<br[^>][" "]*>/i',$temp);
 			//$res = preg_split('/\s+/',$temp);
 			$noTags = strip_tags($temp);
 			$phar = preg_split('[\n]', $noTags);
 			//$res = preg_split('/[\s]+/',$noTags); <----------
-   			// $res = preg_split('[\n]',$temp); 
+   			// $res = preg_split('[\n]',$temp);
    			$counter = 0;
    			$pattern = '/[.,]/';
 
     		foreach($phar as $p){
-		
+
 				//valid paragraphs should only contain > 15 words or greater
 				$pharWords = preg_split("/\s+/", $p);
 
@@ -143,47 +145,47 @@
               //--------------------------------------------------------------
               //echo $word;
 
-						//echo "\tCounts: " . $counter . "<br/>";	
+						//echo "\tCounts: " . $counter . "<br/>";
 						}
-					}	
+					}
 				}
 				//echo "Sentence: " . $counter++ . " :" . $w;
 			}
 			echo "<h1>Done</h1>";
-	
+
 		}else {
 			echo "#error-Cant Read that file.";
 		}
-    
+
 
 	}
 
 
-		function kv_read_word($input_file){	
-    
-    		$kv_strip_texts = ''; 
-        	$kv_texts = ''; 	
+		function kv_read_word($input_file){
+
+    		$kv_strip_texts = '';
+        	$kv_texts = '';
 
    			if(!$input_file || !file_exists($input_file)) return false;
-       
+
    				$zip = zip_open($input_file);
-       
+
    			if (!$zip || is_numeric($zip)) return false;
-   
+
 
    			while ($zip_entry = zip_read($zip)) {
-           
+
        			if (zip_entry_open($zip, $zip_entry) == FALSE) continue;
-           
+
        			if (zip_entry_name($zip_entry) != "word/document.xml") continue;
 
        			$kv_texts .= zip_entry_read($zip_entry, zip_entry_filesize($zip_entry));
-           
+
        			zip_entry_close($zip_entry);
    			}
-   
+
    			zip_close($zip);
-       
+
 
    			$kv_texts = str_replace('</w:r></w:p></w:tc><w:tc>', " ", $kv_texts);
    			$kv_texts = str_replace('</w:r></w:p>', "\r\n", $kv_texts);
@@ -217,7 +219,7 @@
             echo $cleanEntry . " ";
 
         	//$query = "SELECT id FROM `dictionary` WHERE word = '$cleanEntry';";
-        
+
         /*	if (strlen($cleanEntry)>0){
             	$id = $conn->query($query);
 
