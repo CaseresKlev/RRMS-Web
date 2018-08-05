@@ -1,9 +1,11 @@
 
 
             ///place all your jquery functions here///
-            page = 1;
+            var page = 1;
+            var fields = 1;
+
             setPage();
-            //initInput();
+            
 
             $("#next").click(function(){
                 
@@ -51,7 +53,7 @@
                 //alert(ref);
 
                 var stat = $("#status").val();
-                alert(stat);
+               // alert(stat);
 
                 //author details variables
                 var fname = $("input[name='fname[]']").map(function(){return $(this).val();}).get();
@@ -60,14 +62,31 @@
                 //alert(mname);
                 var lname = $("input[name='lname[]']").map(function(){return $(this).val();}).get();
                 //alert(lname);
-                var suf = $("input[name='suf[]']").map(function(){return $(this).val();}).get();
+                var suf = $("select[name='suf[]']").map(function(){return $(this).val();}).get();
                 //alert(suf);
                 var add = $("input[name='add[]']").map(function(){return $(this).val();}).get();
                 //alert(add);
                 var contact = $("input[name='contact[]']").map(function(){return $(this).val();}).get();
-                //alert(contact);
+               // alert(contact);
                 var email = $("input[name='email[]']").map(function(){return $(this).val();}).get();
                // alert(email);
+
+
+               //adviser details
+               var adv_fname = $("#adv_fname").val();
+               //alert(adv_fname);
+
+               var adv_mname = $("#adv_mname").val();
+               //alert(adv_mname);
+
+               var adv_lname = $("#adv_lname").val();
+               //alert(adv_lname);
+
+               var adv_suff = $("#adv_suff").val();
+               //alert(adv_suff);
+
+               var adv_email = $("#adv_email").val();
+               //alert(adv_email);
 
 
                 //validation of author details
@@ -104,7 +123,12 @@
                     suffix: suf,
                     address: add,
                     contact: contact,
-                    email: email
+                    email: email,
+                    adv_fname : adv_fname,
+                    adv_mname : adv_mname,
+                    adv_lname : adv_lname,
+                    adv_suff : adv_suff,
+                    adv_email : adv_email
 
                 },   
                 success: function (data) {
@@ -119,13 +143,30 @@
 
 
             $("#addField").click(function(){
-                var name = $("#autSearch").val();
-                if(name.length>0){
-                    initInput(name);
-                }else{
-                    alert("Please Select Author");
-                }
-                
+                var row = '<tr id="row'+ fields + '"> \
+                             <td><input type="text" placeholder="First Name" oninput="this.className = \'\'" id="adv_mname" name="fname[]"></td> \
+                             <td><input type="text" placeholder="Middle name" oninput="this.className = \'\'" id="adv_mname" name="mname[]"></td> \
+                             <td><input type="text" placeholder="Last name" oninput="this.className = \'\'" id="adv_mname" name="lname[]"></td> \
+                             <td><select id="sufname" name="suf[]">  \
+                             <option></option> \
+                             <option>JR</option> \
+                             <option>IV</option> \
+                             <option>III</option> \
+                             </select></td> \
+                             <td><input type="text" placeholder="Address" oninput="this.className = \'\'" id="adv_mname" name="add[]"></td> \
+                             <td><input type="text" placeholder="Contact" oninput="this.className = \'\'" id="adv_mname" name="contact[]"></td> \
+                             <td><input type="text" placeholder="Email" oninput="this.className = \'\'" id="adv_mname" name="email[]"></td> \
+                             <td><button type="button" name="remove" id="'+fields+'" class="btn_remove">Remove</button></td>\
+                             </tr>';
+                             fields = fields + 1;
+
+                $("#aut_list").append(row);    
+            });
+
+            //remove field handling
+             $(document).on('click', '.btn_remove', function(){
+                var btn_id = $(this).attr("id");
+                $('#row'+btn_id+'').remove();
             })
 
 
@@ -154,10 +195,10 @@
             }
 
             //init author info field
-            function initInput(name){
-                var nameArr = name.split("-");
-                var finalName = null;
-                $.ajax({
+            function initInput(){
+                //alert("hellow");
+
+               /* $.ajax({
                     url:"getAuthor.php",
                     type:"POST",
                     cache:false,
@@ -165,56 +206,70 @@
                     success: function(data){
                         finalName = data.split("?");
                         //alert(finalName);
-                                        //alert(finalName);
-                var fname = document.createElement("input");
+                                        //alert(finalName); */
+                /*var fname = document.createElement("input");
                 fname.type = "text";
                 fname.name = "fname[]";
+                fname.id="fname" + fields;
                 fname.placeholder = "First Name";
-                fname.readOnly = true;
-                fname.value = finalName[0];
+
+
 
                 var mname = document.createElement("input");
                 mname.type = "text";
                 mname.name = "mname[]";
+                mname.id="mname" + fields;
                 mname.placeholder = "Middle Name";
-                mname.readOnly = true;
-                mname.value = finalName[1];
+
+
 
 
                 var lname = document.createElement("input");
                 lname.type = "text";
                 lname.name = "lname[]";
+                lname.id="lname" + fields;
                 lname.placeholder = "Lastname";
-                lname.readOnly = true;
-                lname.value = finalName[2];
+
+
 
                 var suf = document.createElement("input");
                 suf.type = "text";
                 suf.name = "suf[]";
+                suf.id="suf" + fields;
                 suf.placeholder = "Suffix (e.g: Jr. / Sr.)";
-                suf.readOnly = true;
-                suf.value = finalName[3];
+
+
 
                 var add = document.createElement("input");
                 add.type = "text";
                 add.name = "add[]";
+                add.id="add" + fields;
                 add.placeholder = "Address";
-                add.readOnly = true;
-                add.value = finalName[4];
+
+
 
                 var contact = document.createElement("input");
                 contact.type = "text";
                 contact.name = "contact[]";
+                contact.id="contact" + fields;
                 contact.placeholder = "Contact";
-                contact.readOnly = true;
-                contact.value = finalName[5];
+
+
 
                 var email = document.createElement("input");
                 email.type = "text";
                 email.name = "email[]";
+                email.id="email" + fields;
                 email.placeholder = "Email";
-                email.readOnly = true;
-                email.value = finalName[6];
+
+                var btnRem = document.createElement("button");
+                btnRem.type = "button";
+                btnRem.name = "remove";
+                btnRem.id = "btnRem";
+                btnRem.class = "btnRemove";
+                btnRem.innerHTML = "Remove";
+
+
 
                // <?php    }
                 //} ?>
@@ -243,14 +298,18 @@
                 var emailCon = row.insertCell(6);
                 emailCon.appendChild(email);
 
+                var removeCon = row.insertCell(7);
+                removeCon.appendChild(btnRem);
+
                 //var x = document.getElementById("authorName").options.namedItem(name).value;
                 //
                 //var x = document.getElementById("authorName").options.length;
-                document.getElementById('autSearch').value = '';
+                //document.getElementById('autSearch').value = '';
                 //(data);
-                document.getElementById("authorName").options.namedItem(name).remove();
+                //document.getElementById("authorName").options.namedItem(name).remove();
+                */
                 }
-                });
+
 
 
               /*  <?php 
@@ -261,13 +320,5 @@
                     $result = $conn->query($query);
                     if($result->num_rows > 0){
                         while($row = $result->fetch_assoc()){
-<<<<<<< HEAD
-
-
-
-=======
->>>>>>> 129f992aef26d5b3476984b92e4bd426b493b4df
                 ?> */
 
-
-            }

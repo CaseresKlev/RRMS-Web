@@ -2,7 +2,7 @@
 * {
 	box-sizing: border-box;
 }
-body { 
+body {
 	margin: auto;
   font-family: Arial;
 }
@@ -68,9 +68,10 @@ body {
 }
 .nav a.login {
 	float: right;
-    padding: 5px 15px 5px 15px;
-    border-radius: 3px;
-    line-height: 100%;
+    padding: 8px 15px 5px 15px;
+    border-radius: 4px;
+    line-height: 165%;
+    margin-top: -1.2%;
     text-decoration: none;
     color: white;
     text-align: center;
@@ -136,4 +137,32 @@ form {
 	}
 }
 /* end of header */
-
+/* Footer */
+.footer {
+	bottom: -353px;
+	width: 70%;
+	color: white;
+	text-align: center;
+	position: absolute;
+	overflow: hidden;
+	background-color: #4682B4;
+	padding: 20px 10px;
+	float: center;
+}
+.getstarted {
+	float: left;
+	margin-left: 5%;
+	margin-top: 0%;
+}
+.learn {
+	float: left;
+	margin-left: 20%;
+}
+/* end of footer */
+<<<<<<< HEAD
+<<<<<<< HEAD
+/*TAPAYAN*/
+=======
+>>>>>>> b95a31433a2c978f6836c211468727e22f8cb5e2
+=======
+>>>>>>> 129f992aef26d5b3476984b92e4bd426b493b4df

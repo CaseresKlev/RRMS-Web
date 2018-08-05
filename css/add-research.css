@@ -1,14 +1,6 @@
 
-
-
 * {
     box-sizing: border-box;
-}
-
-#content{
-  width: 70%;
-  height: auto;
-  border: 1px solid red;
 }
 
 /* Create two equal columns that floats next to each other */
