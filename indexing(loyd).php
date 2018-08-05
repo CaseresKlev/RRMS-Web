@@ -14,7 +14,7 @@
 <body>
 
 
-  <form id="regForm" action="#" method="post">
+  <form id="regForm" action="actionpage.php" method="post">
     <div class="rrms">
       <h4>Research Record Management System </h4>
     </div>
@@ -46,7 +46,7 @@
           <label for="files"><br/>Select Cover (Optional):</label>
         <input type="file" id="myFile" accept="image/*">
 
-
+      </div>
   <script>
   function myFunction() {
       var x = document.getElementById("myFile");
@@ -61,27 +61,27 @@
 
        <div class="progressbar">
          <div id="myProgress">
-  <div id="myBar"></div>
+           <div id="myBar"></div>
 
-</script>
 
-</div>
+
+          </div>
 <br/>
 
-       </div>
-<div class="alert">
+        </div>
+       <div class="alert">
   <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
   <strong>Note!</strong> Indexing your Files may take sometimes. Please dont close your browser.
 </div>
 <br/>
-<div class="button">
+  <div class="button">
 
-<input type="button" class="button" value="Submit">
+    <input type="submit" class="button" value="Submit">
 
-
-</div>
-<br/>
-</body>
+  </div>
+  <br/>
+</form>
+  </body>
 
 
 
