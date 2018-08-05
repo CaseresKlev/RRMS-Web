@@ -17,7 +17,7 @@
 		include_once 'connection.php';
 		$dbconfig= new dbconfig();
 		$con= $dbconfig -> getCon();
-		$query= "SELECT book_id, book_title FROM `book` WHERE 1 ORDER BY pub_date ASC";
+		$query= "SELECT book_id, book_title, cover, docloc FROM `book` WHERE 1 ORDER BY pub_date ASC;";
 		$result = $con -> query($query);
 		if ($result->num_rows>0) {
 
@@ -33,7 +33,37 @@
 			</a>
 			<div class="title"><strong><?php echo $row['book_title'];?></strong></div>
 
-			<div class="title"><i>loyd anthony et. al</i></div>
+			<div class="title">
+
+				<?php
+				//for author
+				$dbconfig= new dbconfig();
+				$con= $dbconfig -> getCon();
+				$query= "SELECT DISTINCT(a_id) as 'a_id' , a_lname as 'a_lname', SUBSTRING(a_fname, 1, 1) as 'a_fname' FROM author INNER JOIN junc_authorbook on author.a_id = junc_authorbook.aut_id";
+				$result = $con -> query($query);
+				$autorList ="";
+				if($result->num_rows>0){
+					while ($row = $result->fetch_assoc()) {
+						$autorList .= $row['a_lname'] . ", " . $row['a_fname'] . "; ";
+						// use this ---> echo $row['a_lname'] . ", " . $row['a_fname'] . ";";;
+					}
+				}
+
+				//end for authors
+				//echo $autorList;
+				$splitArr = explode(";", $autorList);
+				?>
+				 <i><?php
+				 if(count($splitArr)>2){
+					 echo $splitArr[0] . " et. al";
+				 }else{
+					 echo $splitArr[0];
+				 }
+
+
+				 ?></i>
+
+			 </div>
 		</div>
 		<hr>
 	</div>
