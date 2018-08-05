@@ -8,34 +8,6 @@
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="css/add-research.css" />
-
-    
-    <!--<script>
-        var main = function(){
-            $("#entry").on('submit',function(e){
-            e.preventDefault();   
-            $(this).ajaxSubmit(
-                {
-                    beforeSend:function(){
-                        $("#prog").show();
-                        $("#prog").attr('value','0'); 
-                    },
-                    
-                    uploadProgress:function(event,position,total,percentCompelete){
-                        $("#prog").attr('value',percentCompelete); 
-                        $("#percent").html(percentCompelete+'%');
-                    },
-               
-                    success:function(data){
-                        $("#here").html(data);
-                    }
-            });
-   });
-};
-
-$(document).ready(main);
-
-</script> -->
     
 </head>
 
