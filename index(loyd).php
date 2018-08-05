@@ -7,7 +7,8 @@
 </head>
 
 <header><?php include_once 'header.php'; ?></header>
-<body>
+<body class="indexbody">
+
 	<div class="title">
 
 	</div>
@@ -39,12 +40,14 @@
 
 	<?php }
 }?>
+			</div>
 
 
 
-</div>
 
 
 </body>
-
+		<footer>
+				<?php include_once 'footer.php'; ?>
+	</footer>
 </html>

@@ -14,8 +14,7 @@
 
 </head>
 
-	<body>
-
+		<body class="footerbody">
 		<!-- The content of your page would go here. -->
 
 		<footer class="footer-distributed">
@@ -58,6 +57,6 @@
 
 		</footer>
 
-	</body>
+<body>
 
 </html>

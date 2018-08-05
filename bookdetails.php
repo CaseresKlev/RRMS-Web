@@ -113,7 +113,7 @@
 
 </div>
 <div class="foot">
-    <footer><?php include_once 'footer.php';?></footer >
+ 
   </div>
 </body>
 
