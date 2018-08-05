@@ -79,8 +79,8 @@
                         
 
                         $query= "UPDATE `book` SET `enabled` = '1', `cover` = '$coverLoc', `docloc` = '$FileFullpath' WHERE `book`.`book_id` = $bookid";
-                        echo "#log-$query";
-                        echo "#log-Uploading your document";
+                        //echo "#log-" . $query;
+                        //echo "#log-Uploading your document";
                         $result = $conn ->query($query);
                         if($result){
                           echo "#log-Upload Done";

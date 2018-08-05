@@ -59,7 +59,7 @@
     </div>
 
 
-    <input type="text" id="bookid" name='bookid' value="<?php echo $row['book_id'];?>" readonly style="display: none;"> 
+    <input type="text" id="bookid" name='bookid' value= "<?php echo $bookid ?>" readonly style="display: none;"> 
     <div class="Browse">
       <label for="file">Select file:</label>
       <input type="file" name="file" id="file">
