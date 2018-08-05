@@ -14,44 +14,47 @@
 
 </head>
 
+<<<<<<< HEAD
 		<body class="footerbody">
+=======
+	<body class= "footer_body">
+
+>>>>>>> 0e143b5bcbc42e9e7a05d556d11ff5622508e83a
 		<!-- The content of your page would go here. -->
 
 		<footer class="footer-distributed">
 
 			<div class="footer-left">
 
-				<h3> Research Record Management System </h3>
+				<h3 id= "footer-title"> Research Record Management System </h3>
 
 				<p class="footer-links">
 					<a href="#home">Home</a>
 					·
 					<a href="#about">About</a>
 					·
-					<a href="#faq">Faq</a>
-					·
-					<a href="#contact">Contact</a>
+					<a href="#faq">FAQ</a>
+					
 				</p> </br> </br> </br>
 			</div>
 
 			<div class="footer-center">
 
 				<div>
-					<img src= "location-icon.png">
+					<img id= "footer-contactus" src= "C:\xampp\htdocs\RRMS-Web\img/location-icon.png">
 					<p>Fortich Street, </br> Malaybalay City, Bukidnon</p>
 				</div>
 
 				<div>
-                    <img src= "Phone-icon.png">
-					<p>+63-88-813-2717</p>
+                    <img id= "footer-contactus" src= "C:\xampp\htdocs\RRMS-Web\img/Phone-icon.png"> <p>+63-88-813-2717</p>
 				</div>
 			</div>
 
 			<div class="footer-right">
 
 				<p class="footer-company-about">
-				<span>About the Developers</span></p> </br></br></br></br></br></br>
-				<p class="footer-company-name">Copyright © 2018 Research Record Management System. All Rights Reserved</p>
+				<span> About the Developers </span></p> </br></br></br></br></br></br>
+				<p class="footer-company-name"> Copyright©2018 Research Record Management System. All Rights Reserved </p>
 
 			</div>
 

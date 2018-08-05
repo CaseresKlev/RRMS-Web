@@ -1,17 +1,17 @@
-/* ANNE */
+/* TAPAYAN */
 
-body {
+.header_body {
   background: #F8F8FF;
   width: 70%;
 }
-.search-container {
+.header_search-container {
    margin: 20px auto;
 	width: 100%;
 
 
  }
 
-.search-container input[type=text] {
+.header_search-container input[type=text] {
 	padding: 7px;
     margin-top: 0%;
     font-size: 17px;
@@ -20,7 +20,7 @@ body {
 	margin-bottom: 5px;
 }
 
-.search-container button {
+.header_search-container button {
 	float: right;
     padding: 6px;
     margin-top: 0%;
@@ -32,15 +32,15 @@ body {
     cursor: pointer;
 }
 
-.search-container button:hover {
+.header_search-container button:hover {
   background: #ccc;
 }
 
 @media screen and (max-width: 600px) {
-  .search-container {
+.header_search-container {
     float: none;
   }
-  .search-container input[type=text], .search-container button {
+.header_search-container input[type=text], .header_search-container button {
     float: none;
     display: block;
     text-align: left;
@@ -49,14 +49,14 @@ body {
     padding: 14px;
 	
   }
-  .search-container input[type=text] {
+.header_search-container input[type=text] {
     border: 1px solid #ccc;
   }
 }
 
 
   /* The container */
-.container {
+.tbl-search_container {
     display: block;
     position: relative;
     padding-left: 35px;
@@ -70,14 +70,14 @@ body {
 }
 
 /* Hide the browser's default radio button */
-.container input {
+.tbl-search_container input {
     position: absolute;
     opacity: 0;
     cursor: pointer;
 }
 
 /* Create a custom radio button */
-.checkmark {
+.tbl-search_checkmark {
     position: absolute;
     top: -2px;
     left: 5px;
@@ -88,29 +88,29 @@ body {
 }
 
 /* On mouse-over, add a grey background color */
-.container:hover input ~ .checkmark {
+.tbl-search_container:hover input ~ .tbl-search_checkmark {
     background-color: #ccc;
 }
 
 /* When the radio button is checked, add a blue background */
-.container input:checked ~ .checkmark {
+.tbl-search_container input:checked ~ .tbl-search_checkmark {
     background-color: #2196F3;
 }
 
 /* Create the indicator (the dot/circle - hidden when not checked) */
-.checkmark:after {
+.tbl-search_checkmark:after {
     content: "";
     position: absolute;
     display: none;
 }
 
 /* Show the indicator (dot/circle) when checked */
-.container input:checked ~ .checkmark:after {
+.tbl-search_container input:checked ~ .tbl-search_checkmark:after {
     display: block;
 }
 
 /* Style the indicator (dot/circle) */
-.container .checkmark:after {
+.tbl-search_container .tbl-search_checkmark:after {
  	top: 6px;
     left: 6px;
 	width: 8px;
@@ -119,17 +119,17 @@ body {
 	background: white;
 }
 
-#title {
+#search_title {
   margin-left: 135%;
   margin-top: 2%;
 }
 
-#content {
+#search_content {
   margin-left: 50%;
   margin-top: 2%;
 }
 
-#key {
+#search_key {
   margin-left: 0%;
   margin-top: 2%;
 }
@@ -138,7 +138,7 @@ body {
    margin-top: 7%;
    margin-left: 3%;
  }
-.btn {
+.header_btn {
 	float: right;
     background-color: DodgerBlue;
     border: none;
@@ -150,6 +150,6 @@ body {
     cursor: pointer;
 	border-radius: 0px;
 }
-.btn:hover {
+.header_btn:hover {
     background-color: RoyalBlue;
 }

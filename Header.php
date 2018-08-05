@@ -3,25 +3,24 @@
 <title> Header </title>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href= "css/header&footercss.css">
-<link rel="stylesheet" href= "css/search.css">
+<link rel="stylesheet" href= "css/header.css">
 <link rel="stylesheet" href= "css/search2.css">
 
 </head>
 
-<body style= "'width: 70%">
+<body class= "header_body" style= "'width: 70%">
 <div class="header" style= "width= 100%">
 	<div class= "subheader"><span><img class="logo1" src="img/1.png"> <img class= "logo2" src="img/BukSU Logo.png"></span></div>
-  <div class="banner"><span> Research Record Management System</span></div>	
+  <div class="header_banner"><span> Research Record Management System</span></div>	
 
-  <div class="nav">
+  <div class="header_nav">
 	<a id= "navi" href="#home">Home</a>
     <a id= "navi" href="#books">Books</a>
     <a id= "navi" href="#plagiarism">Plagiarism</a>
-	<a class="login" href="#login">Login</a>
-	<button class= "btn"> Search </button>
+	<a class="header_login" href="#login">Login</a>
+	<button class= "header_btn"> Search </button>
   </div>
-  <div style= "display: none;" class="search-container">
+  <div style= "display: none;" class="header_search-container">
 	
 		<form action="searchcontent.php">
 		<table id="tbl_search">
@@ -38,20 +37,20 @@
 			<tr> 
 				<td>
 					
-					<label class="container" id="title"> Title <input type="radio" checked="checked" name="radio">
-						<span class="checkmark"></span>
+					<label class="tbl-search_container" id="search_title"> Title <input type="radio" checked="checked" name="radio">
+						<span class="tbl-search_checkmark"></span>
 					</label>
 				</td>
 				<td> 
 					
-					<label class="container" id="content"> Content <input type="radio" name="radio">
-						<span class="checkmark"></span>
+					<label class="tbl-search_container" id="search_content"> Content <input type="radio" name="radio">
+						<span class="tbl-search_checkmark"></span>
 					</label>
 				</td>
 				<td> 
 					
-					<label class="container" id="key"> Keywords <input type="radio" name="radio">
-						<span class="checkmark"></span>
+					<label class="tbl-search_container" id="search_key"> Keywords <input type="radio" name="radio">
+						<span class="tbl-search_checkmark"></span>
 					</label>
 				</td>
 			</tr>
