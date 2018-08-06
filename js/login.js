@@ -20,8 +20,17 @@ $("#submit").click(function() {
         password:upass,
       },
       success: function(data) {
-        $("#msg").html(data);
-        $("#msg").show();
+        var str= data.split(":");
+      
+        if (str[0]==="Success") {
+          window.location.replace("index(loyd).php");
+
+
+        }else {
+          $("#msg").html(data);
+          $("#msg").show();
+        }
+
       }
 
     });

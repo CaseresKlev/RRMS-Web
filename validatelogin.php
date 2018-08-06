@@ -1,5 +1,3 @@
-<!-- ANNE -->
-
 <?php
 
 session_start();
@@ -7,7 +5,7 @@ session_start();
   $uname = $_POST['username'];
   $upass = $_POST['password'];
 
-  #echo $uname . " " . $upass;
+
 
   include_once 'connection.php';
   $dbconfig = new dbconfig();
@@ -23,11 +21,11 @@ session_start();
       $_SESSION["type"] = $row['type'];
     }
 
-echo $_SESSION["id"] . " " . $_SESSION["g_name"] . " " . $_SESSION["activate"] . " " . $_SESSION["type"];
 
+  echo "Success:login";
   }
   else {
-    echo "Your username and password do not match. Please try again.";
+    echo "Error:Your username and password do not match. Please try again.";
   }
 
 

@@ -74,7 +74,7 @@ font-weight: 500;
   float: right;
 }
 
-.boxx-login input[type="button"]:hover, input[type="reset"]:hover{
+.boxx-login input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover{
   background: #2ecc71;
 }
 
@@ -88,4 +88,7 @@ font-weight: 500;
   float: none;
   text-align: center;
   padding: 20px;
+}
+#link-login:hover, a:hover{
+color: green;
 }
