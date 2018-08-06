@@ -12,7 +12,10 @@
 <body id="annebody">
 
   <?php
+      include_once 'header.php';
+   ?>
 
+  <?php
 
   $auth_id = $_GET['aut_id'];
 
