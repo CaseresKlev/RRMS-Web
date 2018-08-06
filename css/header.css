@@ -155,7 +155,7 @@ ul{
 }
 
 
-.header_nav1 ul {
+#nav-ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -163,11 +163,11 @@ ul{
     background-color: #333;
 }
 
-.header_nav1 li {
+#nav-ul li {
     float: left;
 }
 
-.header_nav1 li a {
+#nav-ul li a {
     display: block;
     color: white;
     text-align: center;
@@ -175,7 +175,7 @@ ul{
     text-decoration: none;
 }
 
-.header_nav1 li a:hover:not(.active) {
+#nav-ul li a:hover:not(.active) {
     background-color: white;
 }
 

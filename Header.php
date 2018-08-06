@@ -20,7 +20,7 @@
 	<br>
   <div class="header_nav1">
 			
-			<ul>
+			<ul id= "nav-ul">
 				<li><a href="index(loyd).php">Home</a></li>
 				<li><a href="#documents">Document</a></li>
 				<li><a href="#plagiarism">Plagiarism</a></li>
