@@ -24,7 +24,7 @@ $("#submit").click(function(){
           if (str[0]==="Success") {
             alert(data);
         $(".boxx")[0].reset();
-            window.location.replace("login.php");
+            window.location.replace("new-login.php");
           }else {
             alert(data);
           }
