@@ -14,7 +14,7 @@
   <div class="header_banner"><span> Research Record Management System</span></div>	
 
   <div class="header_nav">
-	<a id= "navi" href="#home">Home</a>
+	<a id= "navi" href="home(loyd).php">Home</a>
     <a id= "navi" href="#books">Books</a>
     <a id= "navi" href="#plagiarism">Plagiarism</a>
 	<a class="header_login" href="#login">Login</a>

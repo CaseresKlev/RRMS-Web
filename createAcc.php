@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title> Administrator </title>
+    <title> Create Accounts </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	
     <!-- Custom Theme Style -->
@@ -41,11 +41,11 @@
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
               <div class="menu_section">
                 <div class="nav side-menu">
-				<ul><a href= "MyDocx.html"> MY DOCUMENTS </a> </ul>
+				<ul><a href= "MyDocx.php"> MY DOCUMENTS </a> </ul>
                   <ul><a href= "#accounts"> ACCOUNTS </a></ul>
                     <ul class="nav child_menu">
-						<a href= "createAcc.html"> Add </a></br>
-						<a href= "activateAcc.html"> Activate Accounts </a>
+						<a class= "dashboard-active" href= "createAcc.php"> Add </a></br>
+						<a href= "activateAcc.php"> Activate Accounts </a>
                     </ul> </br>
                   <ul><button id= "btn-logout"><strong> <a href="#Logout"> LOGOUT </a></strong></button></ul>
                 </div>
@@ -57,10 +57,48 @@
 
         <!-- page content -->
         <div class="right_col" role="main">
+			<form class= "frm-createAcc" action="/action_page.php">
+				<div class="frm-container">
+				<h1> CREATE ACCOUNTS </h1>
+				<p> Please fill in this form to create an account. </p>
+			<hr></br>
+			<label for="Name"><b> Name :</b></label> 
+				<input type="text" placeholder="Enter name" name="Name" required> </br></br>
+			
+			<label for="username"><b> Username :</b></label>
+				<input type="text" placeholder="Enter username" name="username" required> </br></br>
+				
+			<label for="psw"><b> Password :</b></label>
+				<input type="password" placeholder="Enter Password" name="psw" required> </br></br>
+
+			<label for="psw-repeat"><b> Repeat Password :</b></label>
+				<input type="password" placeholder="Repeat Password" name="psw-repeat" required> </br></br>
+			<fieldset class= "fieldset-validity">
+				<legend> Validity </legend>
+				
+					<input type="radio" checked="checked" name="radio">
+					<label class="tbl-search_container" id="search_title"> Forever 
+						<span class="tbl-search_checkmark"></span>
+					</label>
+					
+					<input type="radio" name="radio">
+					<label class="tbl-search_container" id="search_content"> 1 year 
+						<span class="tbl-search_checkmark"></span>
+					</label></br></br>
+					
+					<b> Specify: </b></br>
+					<input type="date" name="specify" style= "float: right">
+					
+			</fieldset></br>
+			<hr>
+		<button type="submit" class="btn-register">Register</button>
+				</div>
+			
+		</form>
           <!-- top tiles -->
           <div class="row tile_count"></div>
           <!-- /top tiles -->
-              </div>
+        </div>
             </div>
           </div>
         </div>
