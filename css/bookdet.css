@@ -1,28 +1,24 @@
-/*.indexbody{
-  width: 70%;
-
-}*/
-.content{
+.content {
   width: 70%;
 }
 
-td{
+td {
   font-size: 14pt;
   border: none;
-
-
 }
 
-td #booktitle{
+td #booktitle {
   font-size: 20pt;
   color: black;
 }
-.wrapper{
+
+.wrapper {
   margin-left: auto;
   margin-right: auto;
   padding-top: 3%;
   overflow: hidden;
 }
-html{
-background-color:#68dddd;
+
+html {
+  background-color: #68dddd;
 }
