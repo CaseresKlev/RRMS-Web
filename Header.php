@@ -1,5 +1,12 @@
 <?php
-	session_start();
+	if (session_status() == PHP_SESSION_NONE) {
+		session_start();
+
+	}else{
+		session_destroy();
+
+	}
+	
 ?>
 
 <!DOCTYPE html>
@@ -23,58 +30,58 @@
 	</table>
 	<br>
   <div class="header_nav1">
-			
+
 			<ul id= "nav-ul">
 				<li><a href="index(loyd).php">Home</a></li>
 				<li><a href="#documents">Document</a></li>
 				<li><a href="#plagiarism">Plagiarism</a></li>
 				<!--<li style="float:right"><a class= "user-dropdown">User</a></li>-->
 				<div class="dropdown" style="float:right">
-					<a class="dropbtn">User</a>
+					<a class="dropbtn" style="display:none">User</a>
 					<div class="dropdown-content">
 						<a href="#">Documents</a>
 						<a href="#">Account</a>
 						<a href="#">LOGOUT</a>
 					</div>
-				</div> 
-				<li style="float:right"><a href="#login">Login</a></li>
+				</div>
+				<li style="float:right"><a href="new-login.php">Login</a></li>
 				<li style="float:right" id="searchbtn">Search</li>
 			</ul>
-		
-	
+
+
 	<!--<u><a href="#username" style= "color: white;"> username </a></u>
 	<a class="header_login" href="#login">Login</a>
 	<button class= "header_btn"> Search </button>-->
   </div>
   <div style= "display: none;" class="header_search-container">
-	
+
 		<form action="searchcontent.php">
 		<table id="tbl_search">
-			<tr> 
+			<tr>
 				<td> </td>
 				<td> </td>
 				<td> </td>
 			</tr>
-			<tr> 
+			<tr>
 				<td> </td>
 				<td> <input type="text" placeholder="Search.." name="search"> </td>
 				<td> <button type="submit"> Search </button> </td>
 			</tr>
-			<tr> 
+			<tr>
 				<td>
-					
+
 					<label class="tbl-search_container" id="search_title"> Title <input type="radio" checked="checked" name="radio">
 						<span class="tbl-search_checkmark"></span>
 					</label>
 				</td>
-				<td> 
-					
+				<td>
+
 					<label class="tbl-search_container" id="search_content"> Content <input type="radio" name="radio">
 						<span class="tbl-search_checkmark"></span>
 					</label>
 				</td>
-				<td> 
-					
+				<td>
+
 					<label class="tbl-search_container" id="search_key"> Keywords <input type="radio" name="radio">
 						<span class="tbl-search_checkmark"></span>
 					</label>

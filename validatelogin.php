@@ -1,6 +1,8 @@
 <?php
 
-session_start();
+
+// remove all session variables
+
 
   $uname = $_POST['username'];
   $upass = $_POST['password'];
