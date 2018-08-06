@@ -26,7 +26,7 @@
 <table bgcolor="#ffffff" width="100%" height="326">
   <tr >
 
-    <td width="40%"height="350px" id="col1"> <img src="img/1.jpg" style="display:block"; width="100%" height="100%"></td>
+    <td width="40%"height="350px" id="col1"> <img src="<?php echo $row['cover']?>" style="display:block"; width="100%" height="100%"></td>
     <td id="col2">
       <table height=100%>
         <tr>
@@ -36,7 +36,24 @@
 
         </tr>
         <tr class"det">
-          <td>Author: Caseres, Klevie Jun</td>
+
+
+          <td>Author:
+          <?php
+  				$dbconfig= new dbconfig();
+  				$con= $dbconfig -> getCon();
+  				$query= "SELECT DISTINCT(a_id) as 'a_id' , a_lname as 'a_lname', SUBSTRING(a_fname, 1, 1) as 'a_fname' FROM author INNER JOIN junc_authorbook on author.a_id = junc_authorbook.aut_id";
+  				$result = $con -> query($query);
+  				$autorList ="";
+  				if($result->num_rows>0){
+  					while ($row1 = $result->fetch_assoc()) {
+  					//	$autorList .= $row['a_lname'] . ", " . $row['a_fname'] . "; ";
+            ?>
+            <a href="author.php?aut_id=<?php echo $row1['a_id']; ?>">  <?php echo $row1['a_lname'] . ", " . $row1['a_fname'] . "; ";?>
+              </a>
+        <?php }
+      } ?>
+      </td>
         </tr>
         <td>
 
@@ -69,15 +86,7 @@
 
 
       </table>
-      <!--
-      <div class="det" id="title"><strong>Research management system</strong></div>
-      <div class="det" id="author"><strong>Research management system</strong></div>
-      <div class="det" id="pubdate"><strong>Research management system</strong></div>
-      <div class="det" id="revision"><strong>Research management system</strong></div>
-      <div class="det" id="status"><strong>Research management system</strong></div>
-      <div class="det" id="viewcount"><strong>Research management system</strong></div>
-      <div class="det" id="cited"><strong>Research management system</strong></div>
-    -->
+    
 
     </td>
   </tr>
@@ -99,10 +108,20 @@
 
       <strong style="font-size: 20pt;"><em>References:</em></strong><br/>
       <ul>
-        <li>https//www.google.com</li>
-          <li>https//www.google.com</li>
-            <li>https//www.google.com</li>
-              <li>https//www.google.com</li>
+
+        <?php
+        $dbconfig= new dbconfig();
+        $con= $dbconfig -> getCon();
+        $query= "SELECT ref.id, ref.link FROM ref INNER JOIN junk_bookref ON ref.id = junk_bookref.webref_id WHERE book_id = 1";
+        $result = $con -> query($query);
+        if ($result->num_rows>0) {
+          while ($row2=$result->fetch_assoc()) {
+
+         ?>
+        <a href="#"><li><?php echo $row2['link'];?></li></a>
+      <?php }
+    } ?>
+
       </ul>
       <hr>
     </td>
@@ -113,7 +132,7 @@
 
 </div>
 <div class="foot">
- 
+
   </div>
 </body>
 

@@ -5,10 +5,10 @@
             var fields = 1;
 
             setPage();
-            
+
 
             $("#next").click(function(){
-                
+
                 if(page<3){
 
                     if(page==1){
@@ -147,7 +147,7 @@
                 }
 
 
-                    
+
 
                 //ajax post
                $.ajax({
@@ -175,8 +175,9 @@
                     adv_suff : adv_suff,
                     adv_email : adv_email
 
-                },   
+                },
                 success: function (data) {
+<<<<<<< HEAD
 
                     var str = data.split(":");
 
@@ -187,11 +188,14 @@
                     }
                    // $("#debug").html(data);
                           
+=======
+                    $("#debug").html(data);
+>>>>>>> 9d302a2b05a568f2092dfa04b502620539cb8e88
                 }
             });
 
 
-           }) 
+           })
 
 
 
@@ -214,7 +218,7 @@
                              </tr>';
                              fields = fields + 1;
 
-                $("#aut_list").append(row);    
+                $("#aut_list").append(row);
             });
 
             //remove field handling
@@ -369,8 +373,8 @@
 
 
 
-              /*  <?php 
-                include_once 'connection.php'; 
+              /*  <?php
+                include_once 'connection.php';
                     $dbconfig = new dbconfig();
                     $conn = $dbconfig->getCon();
                     $query= "SELECT * FROM author";
@@ -378,4 +382,3 @@
                     if($result->num_rows > 0){
                         while($row = $result->fetch_assoc()){
                 ?> */
-
