@@ -7,7 +7,8 @@
     include_once 'connection.php';
 
     $bookid = $_POST['bookid'];
-    echo "#log-".$bookid;
+    //echo "#log-".$bookid;
+    echo $bookid;
 
     $file = $_FILES['file'];
     $tempfile = $_FILES['file']['tmp_name'];
@@ -82,27 +83,31 @@
                         $query= "UPDATE `book` SET `enabled` = '1', `cover` = '$coverLoc', `docloc` = '$FileFullpath' WHERE `book`.`book_id` = $bookid";
 
                         //  echo $query;
+<<<<<<< HEAD
+                        //echo "#log-" . $query;
+=======
                         echo "#log-" . $query;
 
                         //echo "#log-" . $query;
 
+>>>>>>> 9d302a2b05a568f2092dfa04b502620539cb8e88
                         //echo "#log-Uploading your document";
                         $result = $conn ->query($query);
                         if($result){
-                          echo "#log-Upload Done";
+                          echo "#log:Success:Upload Done";
                         }
                     }
                     //echo $FileFullpath . " Book ID: " . $bookid;
                     //startIndexing($FileFullpath);
                 }else{
-                    echo "#error-File Exceeded in Maximu File size";
+                    echo "#error:Error:File Exceeded in Maximu File size";
                 }
             }else{
-                echo "#error-There was error Uploading your File!";
+                echo "#error:Error:There was error Uploading your File!";
             }
     }else{
         //echo "File is Not Valid!";
-      echo "#error-File is Not Valid!";
+      echo "#error:Error:File is Not Valid!";
     }
 
 

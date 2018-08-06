@@ -46,6 +46,7 @@
                 <p class="para">
                     Category:
                     <select name="department" id="department">
+                        <option></option>
                     <?php include_once 'connection.php';
                         $dbconfig = new dbconfig();
                         $conn = $dbconfig->getCon();

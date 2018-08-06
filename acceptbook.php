@@ -18,6 +18,7 @@
     include_once 'connection.php';
 
     $bookid = $_GET['book_id'];
+    //echo $bookid;
     $dbconfig = new dbconfig();
     $conn = $dbconfig->getCon();
     $query= "SELECT * FROM `book` WHERE book_id = $bookid";
@@ -42,7 +43,8 @@
         $bookid = $_GET['book_id'];
         $dbconfig = new dbconfig();
         $conn = $dbconfig->getCon();
-        $query= "SELECT DISTINCT(a_id) as 'a_id' , a_lname as 'a_lname', SUBSTRING(a_fname, 1, 1) as 'a_fname' FROM author INNER JOIN junc_authorbook WHERE junc_authorbook.book_id = $bookid";
+        $query= "SELECT DISTINCT(a_id) as 'a_id' , a_lname as 'a_lname', SUBSTRING(a_fname, 1, 1) as 'a_fname' FROM author INNER JOIN junc_authorbook on author.a_id = junc_authorbook.aut_id WHERE junc_authorbook.book_id = $bookid";
+        //echo $query;
         $result = $conn->query($query);
         $authors = "";
         if($result->num_rows>0){
@@ -58,18 +60,13 @@
       </i></h4>
     </div>
 
-
-
-    <input type="text" id="bookid" name='bookid' value="<?php echo $row['book_id'];?>" readonly style="display: none;">
-
-    <input type="text" id="bookid" name='bookid' value= "<?php echo $bookid ?>" readonly style="display: none;">
-
+    <input type="text" id="bookid" name='bookid' value="<?php echo $bookid;?>" readonly style="display: none;">
     <div class="Browse">
       <label for="file">Select file:</label>
       <input type="file" name="file" id="file">
     </div>
 
-    <?php
+   <?php
      }
     }
     ?>
