@@ -12,7 +12,8 @@
   $dbconfig = new dbconfig();
   $conn = $dbconfig->getCon();
 //$id = $_GET['book_id'];
-  $query = "INSERT INTO `account` (`id`, `g_name`, `u_name`, `password`) VALUES (NULL, '$gname', '$uname', '$pass');";
+  //$query = "INSERT INTO `account` (`id`, `g_name`, `u_name`, `password`) VALUES (NULL, '$gname', '$uname', '$pass');";
+  $query = "INSERT INTO `account` (`id`, `g_name`, `u_name`, `password`, `activate`) VALUES (NULL, '$gname', '$uname', '$pass', '0');";
   $result = $conn->query($query);
 
   if ($result) {
