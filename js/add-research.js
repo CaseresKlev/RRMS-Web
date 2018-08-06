@@ -5,10 +5,10 @@
             var fields = 1;
 
             setPage();
-            
+
 
             $("#next").click(function(){
-                
+
                 if(page<3){
                     page++;
                     setPage();
@@ -102,7 +102,7 @@
                 }
 
 
-                    
+
 
                 //ajax post
                $.ajax({
@@ -130,14 +130,14 @@
                     adv_suff : adv_suff,
                     adv_email : adv_email
 
-                },   
+                },
                 success: function (data) {
-                    $("#debug").html(data);        
+                    $("#debug").html(data);
                 }
             });
 
 
-           }) 
+           })
 
 
 
@@ -160,7 +160,7 @@
                              </tr>';
                              fields = fields + 1;
 
-                $("#aut_list").append(row);    
+                $("#aut_list").append(row);
             });
 
             //remove field handling
@@ -312,8 +312,8 @@
 
 
 
-              /*  <?php 
-                include_once 'connection.php'; 
+              /*  <?php
+                include_once 'connection.php';
                     $dbconfig = new dbconfig();
                     $conn = $dbconfig->getCon();
                     $query= "SELECT * FROM author";
@@ -321,4 +321,3 @@
                     if($result->num_rows > 0){
                         while($row = $result->fetch_assoc()){
                 ?> */
-
