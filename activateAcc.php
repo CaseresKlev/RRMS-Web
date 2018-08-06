@@ -42,7 +42,7 @@
               <div class="menu_section">
                 <div class="nav side-menu">
 				<ul><a href= "MyDocx.php"> MY DOCUMENTS </a> </ul>
-                  <ul><a href= "#accounts.html"> ACCOUNTS </a></ul>
+                  <ul><a href= "accounts.php"> ACCOUNTS </a></ul>
                     <ul class="nav child_menu">
 						<a class= "dashboard-active" href= "activateAcc.php"> Activate Accounts </a>
                     </ul> </br>
@@ -56,13 +56,30 @@
 
         <!-- page content -->
         <div class="right_col" role="main">
-			<b> Search Accounts </b>
-			<input type="text" placeholder="Search.." name="search">
-			<button type="submit"> Search </button>
+			<div class= "frm-search">
+				
+				<b> Search Accounts </b>
+				<input type="text" placeholder="Search.." name="search"><button type="submit"> Search </button> </br></br>
+				<hr></br></br>
+				<div class= "div-voidmain">
+					<table style= "width: 60%">
+						<tr style= "width: 100%">
+							<td> VOIDMAIN </td>
+							<td style= "float: right"> 
+								<select style="width:150px">
+									<option > select </option>
+									<option value="volvo">Volvo</option>
+									<option value="saab">Saab</option>
+								</select>
+							</td>
+							<td> <button type="submit"> Submit </button> </td>
+						</tr>
+					</table>
+			</div>
           <!-- top tiles -->
           <div class="row tile_count"></div>
           <!-- /top tiles -->
-        </div>
+              </div>
             </div>
           </div>
         </div>

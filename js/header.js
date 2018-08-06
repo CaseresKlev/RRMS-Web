@@ -1,6 +1,6 @@
 
 
-$(".header_btn").click(function(){
+$("#searchbtn").click(function(){
 	if ($(".header_search-container").css("display") == 'none'){
 		//alert("true");
 		$(".header_search-container").slideDown("slow");
