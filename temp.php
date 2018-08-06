@@ -90,7 +90,7 @@
         $book_id = null;
         //if not on db then load to db and return id
         if($result->num_rows>0){
-            echo "Book Already Exsist!";
+            echo "error:Book Already Exsist!";
         }else{
             //query for book details insertion
             $query = "INSERT INTO `book` (`book_id`, `book_title`, `abstract`, `pub_date`, `department`, `rev_count`, `status`, `enabled`, `views_count`, `cover`, `docloc`) VALUES (NULL, '$title', '$abs', '$pubdate', '$deptid', '0', '$stat', '0', '0', '', '')";
@@ -253,6 +253,7 @@
                     }
                 }
             }
+
             //insert book and refernce on junction table
             foreach ($refID as $key) {
                         $query = "INSERT INTO `junk_bookref` (`id`, `book_id`, `webref_id`) VALUES (NULL, '$book_id', '$key')";
@@ -261,7 +262,7 @@
                         $conn ->query($query);
                         
             }
-            echo "Done setting constraint Book-References <br/>";
+            //echo "Done setting constraint Book-References <br/>";
             
             ///-----------END OF REFERNCES INSERTION----------------////
 
@@ -305,7 +306,7 @@
                 }
 
             }
-
+            echo "success:Done:$book_id";
 
             ///-----------END OF ADVISER INSERTION------------------///
 

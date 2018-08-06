@@ -10,10 +10,55 @@
             $("#next").click(function(){
                 
                 if(page<3){
-                    page++;
-                    setPage();
+
+                    if(page==1){
+                        if($("#title").val()==="" || $("#abstract").val()==="" || $("#pubdate").val()==="" || $("#department").val()==="" || $("#reference").val()==="" || $("#pubdate").val()===""){
+                            alert("Please fill all fileds!");
+                        }else{
+                            page++;
+                            setPage();
+                        }
+
+                    }else if(page==2){
+                      /*  if($("#title").val()==="" || $("#abstract").val()==="" || $("#pubdate").val()==="" || $("#department").val()==="" || $("#reference").val()==="" || $("#pubdate").val()===""){
+                            alert("Please fill all fileds!");
+                        }else{
+                            page++;
+                            setPage();
+                        } */
+                        //author details variables
+                        var fname = $("input[name='fname[]']").map(function(){return $(this).val();}).get();
+                        //alert(fname);
+                        var mname = $("input[name='mname[]']").map(function(){return $(this).val();}).get();
+                        //alert(mname);
+                        var lname = $("input[name='lname[]']").map(function(){return $(this).val();}).get();
+                        //alert(lname);
+                        var suf = $("select[name='suf[]']").map(function(){return $(this).val();}).get();
+                        //alert(suf);
+                        var add = $("input[name='add[]']").map(function(){return $(this).val();}).get();
+                        //alert(add);
+                        var contact = $("input[name='contact[]']").map(function(){return $(this).val();}).get();
+                        // alert(contact);
+                        var email = $("input[name='email[]']").map(function(){return $(this).val();}).get();
+                        // alert(email);
+
+                        if(fname.every(checkName) && mname.every(checkName) && lname.every(checkName) && add.every(checkName) && contact.every(checkName) && email.every(checkName)){
+                            page++;
+                            setPage();
+                        }else{
+                            alert("Please fill all fileds!");
+                        }
+                    }
+                    
+                    
                 }
             })
+
+            function checkName(values){
+                 
+               return values !=="";
+
+            }
 
             //previouse button click
             $("#prev").click(function(){
@@ -132,7 +177,16 @@
 
                 },   
                 success: function (data) {
-                    $("#debug").html(data);        
+
+                    var str = data.split(":");
+
+                    if(str[0]==="error"){
+                        alert(str[1]);
+                    }else{
+                        window.location.href = "acceptbook.php?book_id=" + str[2]; 
+                    }
+                   // $("#debug").html(data);
+                          
                 }
             });
 
@@ -173,6 +227,7 @@
             //page handling
             function setPage(){
                 $("#aut_list").show();
+                //alert(page);
                 if(page==1){
                     $("#prev").hide();
                     $("#submit").hide();
@@ -182,6 +237,8 @@
                     $("#page1").slideDown("slow");
                 }else if(page==2){
                     $("#prev").show();
+                    $("#submit").hide();
+                    $("#next").show();
                     $("#page1").hide();
                     $("#page3").hide();
                     $("#page2").slideDown("slow");
