@@ -10,9 +10,7 @@
 	<link rel="stylesheet" type="text/css" href="css/login.css">
 </head>
 <body>
-    <?php
-		include('header.php');
-	?>
+
     <div id="content">
         <!-- Place The login Dialog Here.-->
 
