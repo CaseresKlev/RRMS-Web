@@ -44,7 +44,6 @@
 					<ul><a class= "dashboard-active" href= "MyDocx.php"> MY DOCUMENTS </a> </ul>
 					<ul><a href= "#accounts"> ACCOUNTS </a></ul>
                     <ul class="nav child_menu">
-						<a href= "createAcc.php"> Add </a></br>
 						<a href= "activateAcc.php"> Activate Accounts </a>
                     </ul> </br>
                   <ul><button id= "btn-logout"><strong> <a href="#Logout"> LOGOUT </a></strong></button></ul>

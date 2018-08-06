@@ -44,7 +44,6 @@
 				<ul><a href= "MyDocx.html"> MY DOCUMENTS </a> </ul>
                   <ul><a href= "#accounts"> ACCOUNTS </a></ul>
                     <ul class="nav child_menu">
-						<a href= "createAcc.html"> Add </a></br>
 						<a href= "activateAcc.html"> Activate Accounts </a>
                     </ul> </br>
                   <ul><button id= "btn-logout"><strong> <a href="#Logout"> LOGOUT </a></strong></button></ul>
