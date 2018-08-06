@@ -177,7 +177,6 @@
 
                 },
                 success: function (data) {
-<<<<<<< HEAD
 
                     var str = data.split(":");
 
@@ -188,9 +187,9 @@
                     }
                    // $("#debug").html(data);
                           
-=======
+
                     $("#debug").html(data);
->>>>>>> 9d302a2b05a568f2092dfa04b502620539cb8e88
+
                 }
             });
 

@@ -189,15 +189,25 @@
 .nav-sm li li span.fa{
 	display:inline-block;
 	}
-.nav.side-menu a {
+.nav.side-menu a{
+	font-size: 15px;
 	color: white;
 	text-decoration: none;
 	font-family: Century Gothic;
 }
-.nav.side-menu ul {
+.nav.side-menu ul{
 	font-size: 15px;
 }
-.nav.child_menu {
+.nav.side-menu a:active{
+	color: blue;
+	font-size: 15px;
+}
+.nav.side-menu .dashboard-active {
+	color: darkgray;
+	font-size: 15px;
+}
+.nav.child_menu a{
+	font-size: 13px;
 	margin-left: 15%;
 }
 .nav_menu{
@@ -214,10 +224,10 @@
 	}
 }
 .nav-md .container.body .col-md-3.left_col{
+	position: fixed;
 	min-height:115%;
 	width: 180px;
 	padding:0;
-	position:absolute;
 	display:-ms-flexbox;
 	display:flex;
 	z-index:1;
@@ -304,3 +314,38 @@ body{
 	line-height:11px;
 	margin-top:4px;
 	}
+#btn-logout {
+	text-align: right;
+	border-radius: 5px;
+	padding: 10px 50px 10px 50px;
+	font-family: Century Gothic;
+	font-size: 15px;
+}
+#btn-logout a {
+	color: black;
+}
+#btn-logout:active {
+	background-color: blue;
+}
+/*Create Accounts*/
+.frm-createAcc {
+	width: 40%;
+	margin: auto;
+}
+hr {
+	width: 100%;
+}
+.frm-createAcc b {
+	float: left;
+}
+.btn-register {
+	margin-top: 5%;
+	float: right;
+	font-family: Century Gothic;
+	border-radius: 5px;
+	padding: 5px 5px 5px 5px;
+}
+fieldset {
+	margin: auto;
+	width: 40%;
+}
