@@ -33,7 +33,7 @@
 						<a href="#">LOGOUT</a>
 					</div>
 				</div> 
-				<li style="float:right"><a href="#about">Login</a></li>
+				<li style="float:right"><a href="#login">Login</a></li>
 				<li style="float:right" id="searchbtn">Search</li>
 			</ul>
 		
