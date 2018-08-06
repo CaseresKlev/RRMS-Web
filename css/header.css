@@ -177,6 +177,7 @@ ul{
 
 #nav-ul li a:hover:not(.active) {
     background-color: white;
+	color: black;
 }
 
 .active {
