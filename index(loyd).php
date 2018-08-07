@@ -87,6 +87,6 @@
 
 </body>
 		<footer>
-
+			<?php include_once 'header.php'; ?>
 	</footer>
 </html>
