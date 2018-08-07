@@ -1,3 +1,24 @@
+<?php
+	session_start();
+	if(isset($_SESSION['uid'])){
+    print_r($_SESSION);
+  }else{
+    header("Location: index(loyd).php");
+  }
+
+  $accname = $_SESSION['gname'];
+  $acctype = $_SESSION['type'];
+  //echo $acctype;
+
+  include("connection.php");
+  $dbconfig = new dbconfig();
+  $conn = $dbconfig->getCOn();
+
+
+
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,8 +47,8 @@
                 <img src="img/final.jpg" alt="..." class="img-circle profile_img">
               </div>
               <div class="profile_info">
-                <span> USERNAME </span>
-                <h2> Faculty </h2>
+                <span> <?php echo strtoupper($accname) ?> </span>
+                <h2> <?php echo strtoupper($acctype) ?> </h2>
               </div>
             </div>
             <!-- /menu profile quick info -->
@@ -55,11 +76,11 @@
 			<div class="frm-container" style="margin: auto; width: 50%">
 				<center><h1> UPDATE ACCOUNT </h1></center>
 			<hr></br>
-			<form class= "frm-updateAcc" action="/action_page.php">
+			<form id= "frm-updateAcc">
 				<table style="font-size: 15px">
 					<tr> 
 						<td> Current Password :</td>
-						<td> <input type="password" placeholder="Enter Password" name="psw" required> </td>
+						<td> <input type="password" placeholder="Enter Password" name="psw" id="oldpsw" required> </td>
 					</tr>
 					<tr> 
 						<td> </td>
@@ -71,7 +92,7 @@
 					</tr>
 					<tr> 
 						<td> New Password :</td>
-						<td> <input type="password" placeholder="Enter New Password" name="psw" required> </td>
+						<td> <input type="password" placeholder="Enter New Password" name="psw" id="npsw" required> </td>
 					</tr> </br>
 					<tr> 
 						<td> </td>
@@ -83,12 +104,14 @@
 					</tr>
 					<tr> 
 						<td> Retype New Password :</td>
-						<td> <input type="password" placeholder="Re-enter New Password" name="psw" required> </td>
+						<td> <input type="password" placeholder="Re-enter New Password" name="ncpsw" id="ncpsw" required> </td>
 					</tr>
 				</table>
 			</form></br></br>
 			<hr>
-			<button type="submit" class="btn-update"> UPDATE </button>
+			<div id="result" style="text-align: center; color: red; font-weight: bold;">mnjhgfccvg</div>
+			<input type="text" id="gname" class="gname" style="display: none;" value="<?php echo $_SESSION['gname'];?>" />
+			<button type="submit" class="btn-update" id="btn-update"> UPDATE </button>
 		</div>
           <!-- top tiles -->
           <div class="row tile_count"></div>
@@ -103,12 +126,14 @@
     </div>
 
     <!-- jQuery -->
+    <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
     <script src="js/jquery.min.js"></script>
     <!-- Bootstrap -->
     <script src="js/bootstrap.min.js"></script>
 
     <!-- Custom Theme Scripts -->
     <script src="js/custom.min.js"></script>
+    <script type="text/javascript" src="js/updateAccount.js"></script>
 	
   </body>
 </html>

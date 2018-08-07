@@ -5,6 +5,7 @@
 
   $uname = $_POST['username'];
   $upass = $_POST['password'];
+  $old = $_POST['opsw'];
   
 
 
@@ -16,7 +17,7 @@
 
   if ($result->num_rows>0) {
     while ($row=$result->fetch_assoc()) {
-      $_SESSION['uid'] = 1;
+      $_SESSION['uid'] = $row['id'];
       $_SESSION['gname'] = $row['g_name'];
       $_SESSION['stat']= $row['activate'];
       $_SESSION['type'] = $row['type'];

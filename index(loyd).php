@@ -19,6 +19,7 @@
 		$con= $dbconfig -> getCon();
 
 		$limit = 12;
+		
 
 		$query= "SELECT book_id, book_title, cover, docloc FROM `book` WHERE 1 ORDER BY pub_date ASC;";
 		$result = $con -> query($query);
