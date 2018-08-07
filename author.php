@@ -12,8 +12,8 @@
 <body id="annebody">
 
   <?php
-      include_once 'header.php';
-   ?>
+        include_once 'header.php';
+     ?>
 
   <?php
 
@@ -62,7 +62,7 @@
                            ?>
 
 
-                        <a href="bookdetails.php?book_id=<?php echo $row['book_id']; ?>"><li> <?php echo $row['book_title']; ?> </li> </a> <br>
+                        <a  href="bookdetails.php?book_id=<?php echo $row['book_id']; ?>"><li> <?php echo $row['book_title']; ?> </li> </a> <br>
 
                       <?php }
                     } ?>
@@ -72,3 +72,4 @@
 
 
 </body>
+</html>
