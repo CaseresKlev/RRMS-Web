@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 .footerbody{
-=======
-.footer_body {
->>>>>>> 0e143b5bcbc42e9e7a05d556d11ff5622508e83a
 	width: 100%;
 }
 
@@ -140,16 +136,16 @@
 @media (max-width: 880px) {
 
 
-	.footer-distributed .footer-left,
-	.footer-distributed .footer-center,
-	.footer-distributed .footer-right{
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right{
 		display: block;
 		width: 100%;
 		margin-bottom: 40px;
 		text-align: center;
 	}
 
-	.footer-distributed .footer-center i{
+.footer-distributed .footer-center i{
 		margin-left: 0;
 	}
 .footer-distributed .footer-center p{

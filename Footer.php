@@ -1,7 +1,11 @@
 <?php
-	session_start();
-?>
+	if (session_status() == PHP_SESSION_NONE) {
+		session_start();
 
+	}else{
+		session_destroy();
+	}
+?>
 <!DOCTYPE html>
 <html>
 
@@ -33,7 +37,7 @@
 				<h3 id= "footer-title"> Research Record Management System </h3>
 
 				<p class="footer-links">
-					<a href="#home">Home</a>
+					<a href="index(loyd).php">Home</a>
 					·
 					<a href="#about">About</a>
 					·
@@ -45,12 +49,12 @@
 			<div class="footer-center">
 
 				<div>
-					<img id= "footer-contactus" src= "C:\xampp\htdocs\RRMS-Web\img/location-icon.png">
-					<p>Fortich Street, </br> Malaybalay City, Bukidnon</p>
+					<img id= "footer-contactus" src= "img/location-icon.png">
+					<p> Fortich Street, </br> Malaybalay City, Bukidnon</p>
 				</div>
 
 				<div>
-                    <img id= "footer-contactus" src= "C:\xampp\htdocs\RRMS-Web\img/Phone-icon.png"> <p>+63-88-813-2717</p>
+                    <img id= "footer-contactus" src= "img/Phone-icon.png"> <p>+63-88-813-2717</p>
 				</div>
 			</div>
 
