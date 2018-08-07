@@ -19,7 +19,7 @@
 
 </head>
 
-<body class= "header_body" style= "'width: 70%">
+<body class= "header_body">
 <div class="header" style= "width= 100%">
 	<table width=100%>
 		<tr>
