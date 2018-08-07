@@ -41,11 +41,11 @@
         <tr class"det">
 
 
-          <td>Author:
+          <td><strong>Author:</strong>
           <?php
   				$dbconfig= new dbconfig();
   				$con= $dbconfig -> getCon();
-  				$query= "SELECT DISTINCT(a_id) as 'a_id' , a_lname as 'a_lname', SUBSTRING(a_fname, 1, 1) as 'a_fname' FROM author INNER JOIN junc_authorbook on author.a_id = junc_authorbook.aut_id";
+  				$query= "SELECT DISTINCT(a_id) as 'a_id' , a_lname as 'a_lname', SUBSTRING(a_fname, 1, 1) as 'a_fname' FROM author INNER JOIN junc_authorbook on author.a_id = junc_authorbook.aut_id WHERE junc_authorbook.book_id =$id";
   				$result = $con -> query($query);
   				$autorList ="";
   				if($result->num_rows>0){
@@ -65,22 +65,42 @@
 
         </td>
         <tr class"det">
-          <td>Date Submitted: <?php echo $row['pub_date']; ?></td>
+          <td><strong>Date Submitted:</strong> <?php echo $row['pub_date']; ?></td>
         </tr>
         <tr class"det">
-          <td>Revision: 2</td>
+          <td><strong>Revision:</strong> 2</td>
         </tr>
         <tr class"det">
-          <td>Status: Unpublish</td>
+          <td><strong>Status:</strong> Unpublish</td>
         </tr>
         <tr class"det">
-          <td>Views:<?php echo " " .  $row['views_count']; ?></td>
+          <td><strong>Views:</strong><?php echo " " .  $row['views_count']; ?></td>
         </tr>
         <tr >
-          <td>Keywords: fdf,dfdf,fdfdf</td>
+
+
+          <td><strong>Keywords:</strong> <i style="color:blue;">
+            <?php
+            $dbconfig3= new dbconfig();
+            $con3= $dbconfig3 -> getCon();
+            $query3= "SELECT key_words FROM keywords INNER JOIN junc_bookkeywords ON keywords.id=junc_bookkeywords.keywords_id WHERE junc_bookkeywords.book_id=$id";
+            $result3 = $con3-> query($query3);
+
+            if ($result3->num_rows>0) {
+              while ($row3=$result3->fetch_assoc()) {
+
+                echo $row3['key_words'] . ", " ;
+              }
+            }
+
+            ?>
+
+          </i>
+          </td>
+
         </tr>
         <tr >
-          <td>Cited: 5 Times</td>
+          <td><strong>Cited:</strong> 5 Times</td>
         </tr>
         <tr >
           <td><h4>Download</h4></td>

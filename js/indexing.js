@@ -1,11 +1,11 @@
 $("#submit").click(function(){
-    
+
     if(document.getElementById("file").files.length == 0){
       alert("Please Choose File!");
     }else{
-      alert($("#bookid").val());
+      alert("Book id:" + $("#bookid").val());
       $("#fileForm").ajaxSubmit(
-          
+
            {
             url: 'upload.php',
             type: 'post',
@@ -13,11 +13,11 @@ $("#submit").click(function(){
                {
                 //$("#prog").show();
                 //$("#prog").attr('value','0');
-                   
+
                },
                uploadProgress:function(event,position,total,percentCompelete)
                {
-                  //$("#prog").attr('value',percentCompelete); 
+                  //$("#prog").attr('value',percentCompelete);
                    //$("#percent").html(percentCompelete+'%');
                },
                success:function(data){
@@ -25,7 +25,7 @@ $("#submit").click(function(){
                 //$("#content").html(data);
                 //alert(data);
                 var msg = data.split("-");
-                //alert(data);
+                alert(data);
                 if(msg[0]=="#error"){
                   $(msg[0]).html(msg[1]);
                   $(msg[0]).fadeIn();
@@ -33,19 +33,19 @@ $("#submit").click(function(){
                 }else{
                   window.location.href = "index(loyd).php";
                 }
-                
-                
+
+
                 //alert(msg[1]);
-                   
+
                }
-           }); 
+           });
     }
-    //e.preventDefault();   
-        
+    //e.preventDefault();
+
 });
 
 
 function startIndexing(fileLocation){
 
-  
+
 }

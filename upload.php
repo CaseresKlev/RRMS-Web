@@ -8,7 +8,7 @@
 
     $bookid = $_POST['bookid'];
     //echo "#log-".$bookid;
-    echo $bookid;
+
 
     $file = $_FILES['file'];
     $tempfile = $_FILES['file']['tmp_name'];
@@ -81,7 +81,7 @@
 
 
                         $query= "UPDATE `book` SET `enabled` = '1', `cover` = '$coverLoc', `docloc` = '$FileFullpath' WHERE `book`.`book_id` = $bookid";
-
+                        echo "$query";
                         //  echo $query;
 
                         //echo "#log-" . $query;
