@@ -1,7 +1,9 @@
 body {
   font-family: helvetica, sans-serif, arial;
   font-size: 12pt;
-  /**	padding: 100px;*/
+  /*	padding: 100px;*/
+  margin-left: auto;
+  margin-right: auto;
 
 }
 
