@@ -20,7 +20,7 @@
 </head>
 
 <body class= "header_body">
-<div class="header" style= "width= 100%">
+<div class="header" style= "width= 70%; margin: auto;" >
 	<table width=100%>
 		<tr>
 			<td width="10%"><img width="100%" height="40%" style="display:block" src="img/1.png" ></td>
