@@ -83,14 +83,12 @@
                         $query= "UPDATE `book` SET `enabled` = '1', `cover` = '$coverLoc', `docloc` = '$FileFullpath' WHERE `book`.`book_id` = $bookid";
 
                         //  echo $query;
-<<<<<<< HEAD
+
                         //echo "#log-" . $query;
-=======
                         echo "#log-" . $query;
 
                         //echo "#log-" . $query;
 
->>>>>>> 9d302a2b05a568f2092dfa04b502620539cb8e88
                         //echo "#log-Uploading your document";
                         $result = $conn ->query($query);
                         if($result){
