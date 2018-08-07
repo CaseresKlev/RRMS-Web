@@ -1,11 +1,5 @@
 <?php
-	if (session_status() == PHP_SESSION_NONE) {
-		session_start();
-
-	}else{
-		session_destroy();
-
-	}
+	
 	
 ?>
 
@@ -37,7 +31,7 @@
 				<li><a href="#plagiarism">Plagiarism</a></li>
 				<!--<li style="float:right"><a class= "user-dropdown">User</a></li>-->
 				<div class="dropdown" style="float:right">
-					<a class="dropbtn" style="display:none">User</a>
+					<a class="dropbtn" style=""><?php echo $_SESSION['g_name']; ?></a>
 					<div class="dropdown-content">
 						<a href="#">Documents</a>
 						<a href="#">Account</a>
