@@ -1,6 +1,3 @@
-<?php
-
-?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -135,13 +132,13 @@
         <?php
         $dbconfig= new dbconfig();
         $con= $dbconfig -> getCon();
-        $query= "SELECT ref.id, ref.link FROM ref INNER JOIN junk_bookref ON ref.id = junk_bookref.webref_id WHERE book_id = 1";
+        $query= "SELECT ref.id, ref.link FROM ref INNER JOIN junk_bookref ON ref.id = junk_bookref.webref_id WHERE book_id = $id";
         $result = $con -> query($query);
         if ($result->num_rows>0) {
           while ($row2=$result->fetch_assoc()) {
 
          ?>
-        <a href="#"><li><?php echo $row2['link'];?></li></a>
+        <a <?php if(preg_match('/www./',$row2['link'])){ echo "href=" . "\"http://" . $row2['link'] ."\"" ." " . "target=" . "\"_blank\""; } ?> ><li><?php echo $row2['link'];?></li></a>
       <?php }
     } ?>
 
@@ -154,9 +151,9 @@
 </table>
 
 </div>
-<div class="foot">
+<br/>
 
-  </div>
+<?php include_once 'Footer.php'?>
 </body>
 
 </html>

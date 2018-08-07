@@ -1,11 +1,3 @@
-<?php
-	if (session_status() == PHP_SESSION_NONE) {
-		session_start();
-
-	}else{
-		session_destroy();
-	}
-?>
 <!DOCTYPE html>
 <html>
 
@@ -21,14 +13,9 @@
 	<link rel="stylesheet" href="css/footer.css">
 
 </head>
-
-
-		<body class="footerbody" width= "100%">
+<!--<body class="footerbody" width= "100%">-->
 
 	<body class= "footer_body">
-
-
-		<!-- The content of your page would go here. -->
 
 		<footer class="footer-distributed">
 

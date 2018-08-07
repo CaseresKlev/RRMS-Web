@@ -250,5 +250,9 @@ ul{
 .dropdown:hover .dropdown-content {
     display: block;
 }
+
+.dropdown:hover #userli{
+	color: black;
+}
 /* end of header */
 
