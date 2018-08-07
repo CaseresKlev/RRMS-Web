@@ -46,14 +46,16 @@ print_r($_SESSION)
 
 				<?php
 				//for author
-				$dbconfig= new dbconfig();
-				$con= $dbconfig -> getCon();
-				$query= "SELECT DISTINCT(a_id) as 'a_id' , a_lname as 'a_lname', SUBSTRING(a_fname, 1, 1) as 'a_fname' FROM author INNER JOIN junc_authorbook on author.a_id = junc_authorbook.aut_id";
-				$result = $con -> query($query);
+
+				$book_id = $row['book_id'];
+				$dbconfig2= new dbconfig();
+				$con2= $dbconfig2 -> getCon();
+				$query2= "SELECT DISTINCT(a_id) as 'a_id' , a_lname as 'a_lname', SUBSTRING(a_fname, 1, 1) as 'a_fname' FROM author INNER JOIN junc_authorbook on author.a_id = junc_authorbook.aut_id where junc_authorbook.book_id = " . $row['book_id'] . "";
+				$result2 = $con2 -> query($query2);
 				$autorList ="";
-				if($result->num_rows>0){
-					while ($row = $result->fetch_assoc()) {
-						$autorList .= $row['a_lname'] . ", " . $row['a_fname'] . "; ";
+				if($result2->num_rows>0){
+					while ($row2 = $result2->fetch_assoc()) {
+						$autorList .= $row2['a_lname'] . ", " . $row2['a_fname'] . "; ";
 						// use this ---> echo $row['a_lname'] . ", " . $row['a_fname'] . ";";;
 					}
 				}
