@@ -36,11 +36,21 @@ body {
   font-size: 10pt;
   /**padding: 10px;*/
   margin-right: 38px;
-  
+
 }
 
 .gallery #name-title{
-  overflow: hidden;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2; /* number of lines to show */
+  -webkit-box-orient: vertical;
+
+}
+div .title{
+  white-space: nowrap;
+   width: 160px;
+   overflow: hidden;
+   text-overflow: ellipsis;
 }
 
 .responsive {
