@@ -40,7 +40,7 @@ print_r($_SESSION)
 			<a href="bookdetails.php?book_id= <?php echo $row['book_id']; ?>">
 				<img src="<?php echo $row['cover']; ?>"alt="1"/>
 			</a>
-			<div class="title"><strong><?php echo $row['book_title'];?></strong></div>
+			<div class="title" id="name-title"><strong><?php echo $row['book_title'];?></strong></div>
 
 			<div class="title">
 

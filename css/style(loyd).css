@@ -2,6 +2,8 @@ body {
   font-family: helvetica, sans-serif, arial;
   font-size: 12pt;
   /**	padding: 100px;*/
+	margin-left: auto;
+  margin-right: auto;
 
 }
 
@@ -34,6 +36,10 @@ body {
   font-size: 10pt;
   /**padding: 10px;*/
   margin-right: 38px;
+  
+}
+
+.gallery #name-title{
   overflow: hidden;
 }
 
