@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	
     <!-- Custom Theme Style -->
-    <link rel="stylesheet" type="text/css" media="screen" href="C:\xampp\htdocs\RRMS-Web\css/custom.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/custom.min.css">
 	
 </head>
 <body class="nav-md">
