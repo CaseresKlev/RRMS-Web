@@ -1,4 +1,4 @@
-//ANNE
+
 
 $("#submit").click(function() {
   //alert("Hello");
@@ -21,7 +21,7 @@ $("#submit").click(function() {
       },
       success: function(data) {
         var str= data.split(":");
-      
+          //alert(str[0]);
         if (str[0]==="Success") {
           window.location.replace("index(loyd).php");
 

@@ -1,9 +1,3 @@
-<?php
-session_start();
-print_r($_SESSION)
-
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,6 +17,9 @@ print_r($_SESSION)
 		include_once 'connection.php';
 		$dbconfig= new dbconfig();
 		$con= $dbconfig -> getCon();
+
+		$limit = 12;
+
 		$query= "SELECT book_id, book_title, cover, docloc FROM `book` WHERE 1 ORDER BY pub_date ASC;";
 		$result = $con -> query($query);
 		if ($result->num_rows>0) {
@@ -78,18 +75,22 @@ print_r($_SESSION)
 
 	<?php }
 }?>
-			</div>
+<br>
+</div>
+<br>
+<br>
 
 
 
 
 
 </div>
-
+<br>
+<?php include_once 'footer.php'; ?>
 
 
 </body>
 
-			<?php include_once 'footer.php'; ?>
+			
 
 </html>

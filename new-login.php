@@ -1,10 +1,8 @@
 <?php
-  if(session_id() == '' || !isset($_SESSION)) {
-    // session isn't started
-    //session_start();
-}else{
+  session_start();
+  session_unset();
   session_destroy();
-}
+  //print_r($_SESSION);
 ?>
 <!DOCTYPE html>
 <!-- ANNE -->
