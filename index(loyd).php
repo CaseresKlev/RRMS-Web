@@ -16,7 +16,7 @@ print_r($_SESSION)
 </head>
 
 <header><?php include_once 'header.php'; ?></header>
-<body class="indexbody">
+<body>
 
 	<div class="title">
 
@@ -92,7 +92,7 @@ print_r($_SESSION)
 
 
 </body>
-		<footer>
-			<?php include_once 'header.php'; ?>
-	</footer>
+
+			<?php include_once 'footer.php'; ?>
+
 </html>
