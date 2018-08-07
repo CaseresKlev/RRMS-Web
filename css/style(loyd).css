@@ -1,10 +1,8 @@
 body {
   font-family: helvetica, sans-serif, arial;
   font-size: 12pt;
-  /*	padding: 100px;*/
-  margin-left: auto;
-  margin-right: auto;
-
+  /**	padding: 100px;*/
+  background-image: url("img/cover/cover.jpg");
 }
 
 .content {
@@ -36,7 +34,6 @@ body {
   font-size: 10pt;
   /**padding: 10px;*/
   margin-right: 38px;
-  overflow: hidden;
 }
 
 .responsive {

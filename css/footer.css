@@ -6,7 +6,7 @@
 	background-color: #292c2f;
 	text-align: left;
 	font-family: arial;
-  padding: 40px 20px 20px 20px;
+    padding: 40px 20px 20px 20px;
 	margin-top: 100%;
 	bottom: 0;
 	width: 100%;
@@ -159,4 +159,5 @@
 #footer-contactus {
 	width: 5%;
 	    padding: 5px 10px 0px 5px;
+}
 }
