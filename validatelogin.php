@@ -17,6 +17,7 @@
 
   if ($result->num_rows>0) {
     while ($row=$result->fetch_assoc()) {
+      session_start();
       $_SESSION["id"] = $row['id'];
       $_SESSION["g_name"] = $row['g_name'];
       $_SESSION["activate"] = $row['activate'];
