@@ -5,8 +5,8 @@
 	box-sizing: border-box;
 }
 .header_body { 
-	margin: auto;
-  font-family: Arial;
+	width: 100%;
+	font-family: Arial;
 }
 @media screen and (max-width:800px){
 	.responsive{

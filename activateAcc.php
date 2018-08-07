@@ -50,12 +50,19 @@
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
               <div class="menu_section">
                 <div class="nav side-menu">
-				<ul><a href= "MyDocx.php"> MY DOCUMENTS </a> </ul>
-                  <ul><a href= "accounts.php"> ACCOUNTS </a></ul>
-                    <ul class="nav child_menu">
-						<a class= "dashboard-active" href= "activateAcc.php"> Activate Accounts </a>
-                    </ul> </br>
-                  <ul><button id= "btn-logout"><strong> <a href="#Logout"> LOGOUT </a></strong></button></ul>
+				          <ul>
+                    <a href= "MyDocx.php"> MY DOCUMENTS </a>
+                  </ul>
+                  <ul>
+                    <a href= "accounts.php"> ACCOUNTS </a>
+                  </ul>
+                  <ul class="nav child_menu">
+						          <a class= "dashboard-active" href= "activateAcc.php"> Activate Accounts </a>
+                  </ul>
+                </br>
+                  <ul>
+                    <button id= "btn-logout"><strong> <a href="#Logout"> LOGOUT </a></strong>
+                  </button></ul>
                 </div>
               </div>
 

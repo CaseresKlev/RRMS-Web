@@ -23,7 +23,7 @@
 </head>
 
 
-		<body class="footerbody">
+		<body class="footerbody" width= "100%">
 
 	<body class= "footer_body">
 
