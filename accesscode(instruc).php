@@ -38,10 +38,9 @@
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
               <div class="menu_section">
                 <div class="nav side-menu">
-					<ul><a class= "dashboard-active" href="#documents"> DOCUMENTS </span></a></ul>
-					<ul><a href="updateAcc.php"> UPDATE ACCOUNT </a></ul>
-					<ul><a href="accesscode.php"> ACCESS CODE </a> </ul>      
-					<ul><a href="reports.php"> REPORTS </a> </ul> </br>      
+					<ul><a href="instructordashboard.php"> DOCUMENTS </span></a></ul>
+					<ul><a class= "dashboard-active" href="#code"> ACCESS CODE </a> </ul>      
+					<ul><a href="reports(instruc).php"> REPORTS </a> </ul> </br>      
 					<ul><button id= "btn-logout"><strong> <a href="#Logout"> LOGOUT </a></strong></button></ul>
                 </div>
               </div>
@@ -52,14 +51,21 @@
        
         <!-- page content -->
         <div class="right_col" role="main">
-			<div id= "admin-frm-search" class= "frm-search" style= "font-size: 18px">
-				
-				<b> Search Documents </b>
-				<input type="text" placeholder="Search.." name="search"><button type="submit"> Search </button> </br></br>
-				<hr></br></br>
-				<div id= "admin-div-voidmain" class= "div-voidmain">
-					<li style= "font-size: 15px"> Around the World in 80 Days </li>
-			</div>
+			<div id= "instructor-frm-container" class="frm-container" style="margin: auto; width: 80%; margin-top: 5%">
+				<center><h1> GENERATE ACCESS CODE </h1></center>
+			<hr></br>
+			<form id= "instructor-frm-generatepass" class= "frm-generatepass" action="/action_page.php">
+				<table style="width= 100%">
+					<tr style="font-size: 15px"> 
+						<td width= "50%"> <b> Number of Access Code: </b> </td>
+						<td> <input type="number" placeholder="0" name="number" style= "width: 50%" required> </td>
+						<td><button type="submit" id= "instructor-frm-generate" class="btn-generate"> GENERATE </button></td>
+					</tr>
+				</table>
+			</form></br></br>
+			<hr></br>
+			
+		</div>
           <!-- top tiles -->
           <div class="row tile_count"></div>
           <!-- /top tiles -->

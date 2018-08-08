@@ -26,8 +26,8 @@
                 <img src="img/final.jpg" alt="..." class="img-circle profile_img">
               </div>
               <div class="profile_info">
-                <span> USERNAME </span>
-                <h2> Faculty </h2>
+                <span> <?php echo strtoupper($accname) ?> </span>
+                <h2> <?php echo strtoupper($acctype) ?> </h2>
               </div>
             </div>
             <!-- /menu profile quick info -->
@@ -38,7 +38,7 @@
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
               <div class="menu_section">
                 <div class="nav side-menu">
-					<ul><a href="userdashboard.php"> DOCUMENTS </span></a></ul>
+					<ul><a href="admindashboard.php"> DOCUMENTS </span></a></ul>
 					<ul><a href="updateAcc.php"> UPDATE ACCOUNT </a></ul>
 					<ul><a class= "dashboard-active" href="#code"> ACCESS CODE </a> </ul>      
 					<ul><a href="reports.php"> REPORTS </a> </ul> </br>      
@@ -52,10 +52,10 @@
        
         <!-- page content -->
         <div class="right_col" role="main">
-			<div class="frm-container" style="margin: auto; width: 50%">
+			<div id= "admin-frm-container" class="frm-container" style="margin: auto; width: 80%">
 				<center><h1> GENERATE ACCESS CODE </h1></center>
 			<hr></br>
-			<form class= "frm-generatepass" action="/action_page.php">
+			<form id= "admin-frm-generatepass" class= "frm-generatepass" action="/action_page.php">
 				<table style="font-size: 15px">
 					<tr> 
 						<td> <b> Number of Access Code: </b> </td>
@@ -64,7 +64,7 @@
 				</table>
 			</form></br></br>
 			<hr></br>
-			<button type="submit" class="btn-generate"> GENERATE </button>
+			<button type="submit" id= "admin-btn-generate" class="btn-generate"> GENERATE </button>
 		</div>
           <!-- top tiles -->
           <div class="row tile_count"></div>

@@ -348,7 +348,7 @@ hr {
 /* end of Update Accounts*/
 /* Activate Accounts*/
 .frm-search {
-	width:70%;
+	width: 80%;
 	margin: auto;
 	margin-top: 5%;
 }
@@ -361,7 +361,7 @@ hr {
 	padding: 5px 5px 5px 5px;
 }
 .frm-generatepass {
-	width:70%;
+	width:80%;
 	margin: auto;
 	margin-top: 5%;
 }

@@ -59,7 +59,7 @@
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
               <div class="menu_section">
                 <div class="nav side-menu">
-					<ul><a href="userdashboard.php"> DOCUMENTS </span></a></ul>
+					<ul><a href="admindashboard.php"> DOCUMENTS </span></a></ul>
 					<ul><a class= "dashboard-active" href="#update"> UPDATE ACCOUNT </a></ul>
 					<ul><a href="accesscode.php"> ACCESS CODE </a> </ul>      
 					<ul><a href="reports.php"> REPORTS </a> </ul> </br>      
@@ -73,10 +73,10 @@
        
         <!-- page content -->
         <div class="right_col" role="main">
-			<div class="frm-container" style="margin: auto; width: 50%">
+			<div id= "admin-frm-container" class="frm-container" style="margin: auto; width: 80%">
 				<center><h1> UPDATE ACCOUNT </h1></center>
 			<hr></br>
-			<form id= "frm-updateAcc">
+			<form id= "admin-frm-updateAcc">
 				<table style="font-size: 15px">
 					<tr> 
 						<td> Current Password :</td>
