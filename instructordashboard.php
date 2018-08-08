@@ -1,12 +1,3 @@
-<?php
-	if (session_status() == PHP_SESSION_NONE) {
-		session_start();
-
-	}else{
-		session_destroy();
-	}
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -38,8 +29,8 @@
                 <img src="img/final.jpg" alt="..." class="img-circle profile_img">
               </div>
               <div class="profile_info">
-                <span> USERNAME </span>
-                <h2> Instructor </h2>
+                <span> <?php echo strtoupper($accname) ?> </span>
+                <h2> <?php echo strtoupper($acctype) ?> </h2>
               </div>
             </div>
             <!--/menu profile quick info-->
@@ -50,16 +41,10 @@
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
               <div class="menu_section">
                 <div class="nav side-menu">
-				            <ul>
-                      <a href= "MyDocx.html"> MY DOCUMENTS </a>
-                    </ul>
-                    <ul>
-                      <a href= "#accounts"> ACCOUNTS </a>
-                    </ul>
-                    <ul class="nav child_menu">
-						            <a href= "activateAcc.php"> Activate Accounts </a>
-                    </ul> </br>
-                  <ul><button id= "btn-logout"><strong> <a href="#Logout"> LOGOUT </a></strong></button></ul>
+					<ul><a class= "dashboard-active" href="#documents"> DOCUMENTS </span></a></ul>
+					<ul><a href="accesscode(instruc).php"> ACCESS CODE </a> </ul>      
+					<ul><a href="reports(instruc).php"> REPORTS </a> </ul> </br>      
+					<ul><button id= "btn-logout"><strong> <a href="#Logout"> LOGOUT </a></strong></button></ul>
                 </div>
               </div>
 
@@ -69,12 +54,28 @@
 
         <!-- page content -->
         <div class="right_col" role="main">
+			<div id= "instructor-frm-search" class= "frm-search" style= "font-size: 18px">
+				
+				<b> Search Documents </b>
+				<input type="text" placeholder="Search.." name="search"><button type="submit"> Search </button> </br></br>
+				<hr>
+				<div id= "instructor-div-voidmain" class= "div-voidmain">
+					<form id= "instructor-frm-documents" class= "frm-documents" action="/action_page.php">
+						<table style="font-size: 15px" width= "100%">
+							<tr> 
+								<td> <li> Around the World in 80 Days </li> </td>
+								<td> <u style= "cursor: pointer; float: right"> Submit Revision </u> </td>
+							</tr>
+						</table>
+					</form></br></br>
+					<hr>
+				<button type="submit" id= "instructor-btn-addnew" class="btn-addnew"> ADD NEW </button>
+					
+			</div>
           <!-- top tiles -->
           <div class="row tile_count"></div>
           <!-- /top tiles -->
-              </div>
             </div>
-          </div>
         </div>
         <!-- /page content -->
 

@@ -38,10 +38,9 @@
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
               <div class="menu_section">
                 <div class="nav side-menu">
-					<ul><a href="admindashboard.php"> DOCUMENTS </span></a></ul>
-					<ul><a href="updateAcc.php"> UPDATE ACCOUNT </a></ul>
-					<ul><a class= "dashboard-active" href="#code"> ACCESS CODE </a> </ul>      
-					<ul><a href="reports.php"> REPORTS </a> </ul> </br>      
+					<ul><a href="instructordashboard.php"> DOCUMENTS </span></a></ul>
+					<ul><a href="accesscode(instruc).php"> ACCESS CODE </a> </ul> 
+					<ul><a class= "dashboard-active" href="#reports"> REPORTS </a> </ul> </br>      
 					<ul><button id= "btn-logout"><strong> <a href="#Logout"> LOGOUT </a></strong></button></ul>
                 </div>
               </div>
@@ -52,39 +51,10 @@
        
         <!-- page content -->
         <div class="right_col" role="main">
-			<div id= "admin-frm-container" class="frm-container" style="margin: auto; width: 80%">
-				<center><h1> GENERATE ACCESS CODE </h1></center>
+			<div id= "instructor-frm-container" class="frm-container" style="margin: auto; width: 80%; margin-top: 5%">
+				<center><h1> REPORTS </h1></center>
 			<hr></br>
-			<form id= "admin-frm-generatepass" class= "frm-generatepass" action="/action_page.php">
-				<table style="font-size: 15px">
-					<tr> 
-						<td> <b> Number of Access Code: </b> </td>
-						<td> <input type="number" placeholder="0" name="number" style= "width: 30%" required> </td>
-						<td> <button type="submit" id= "admin-btn-generate" class="btn-generate"> GENERATE </button> </td>
-					</tr>
-				</table>
-			</form></br></br>
-			<hr>
-			</br> <center><h1> GENERATED CODES </h1></center>
-			<form id= "admin-frm-generatepass" class= "frm-generatepass" action="/action_page.php">
-				<table style="font-size: 15px">
-					<tr> 
-						<td> <b>1. </b> </td>
-						<td> </td>
-					</tr>
-					<tr> 
-						<td> <b>2. </b> </td>
-						<td> </td>
-					</tr>
-					<tr> 
-						<td> <b>3. </b> </td>
-						<td> </td>
-					</tr>
-				</table>
-			</form></br></br>
-			<hr></br>
-			<button type="submit" id= "admin-btn-print" class="btn-print"> PRINT </button>
-		</div>
+			</div>
           <!-- top tiles -->
           <div class="row tile_count"></div>
           <!-- /top tiles -->

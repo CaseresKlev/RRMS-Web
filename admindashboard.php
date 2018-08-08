@@ -26,8 +26,8 @@
                 <img src="img/final.jpg" alt="..." class="img-circle profile_img">
               </div>
               <div class="profile_info">
-                <span> USERNAME </span>
-                <h2> Faculty </h2>
+                <span> <?php echo strtoupper($accname) ?> </span>
+                <h2> <?php echo strtoupper($acctype) ?> </h2>
               </div>
             </div>
             <!-- /menu profile quick info -->
@@ -52,12 +52,12 @@
        
         <!-- page content -->
         <div class="right_col" role="main">
-			<div class= "frm-search" style= "font-size: 18px">
+			<div id= "admin-frm-search" class= "frm-search" style= "font-size: 18px">
 				
 				<b> Search Documents </b>
 				<input type="text" placeholder="Search.." name="search"><button type="submit"> Search </button> </br></br>
 				<hr></br></br>
-				<div class= "div-voidmain">
+				<div id= "admin-div-voidmain" class= "div-voidmain">
 					<li style= "font-size: 15px"> Around the World in 80 Days </li>
 			</div>
           <!-- top tiles -->

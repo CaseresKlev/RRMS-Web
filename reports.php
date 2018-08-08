@@ -26,8 +26,8 @@
                 <img src="img/final.jpg" alt="..." class="img-circle profile_img">
               </div>
               <div class="profile_info">
-                <span> USERNAME </span>
-                <h2> Faculty </h2>
+                <span> <?php echo strtoupper($accname) ?> </span>
+                <h2> <?php echo strtoupper($acctype) ?> </h2>
               </div>
             </div>
             <!-- /menu profile quick info -->
@@ -52,7 +52,7 @@
        
         <!-- page content -->
         <div class="right_col" role="main">
-			<div class="frm-container" style="margin: auto; width: 50%">
+			<div id= "admin-frm-container" class="frm-container" style="margin: auto; width: 80%; margin-top: 5%">
 				<center><h1> REPORTS </h1></center>
 			<hr></br>
 			</div>
