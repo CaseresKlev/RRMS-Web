@@ -365,3 +365,13 @@ hr {
 	margin: auto;
 	margin-top: 5%;
 }
+
+#tbl-accescodes, #access-th ,#access-tr {
+	text-align: left;
+	border: 1px solid black;
+    border-collapse: collapse;
+}
+
+#tbl-accescodes{
+	width: 100%;
+}

@@ -214,7 +214,7 @@
                              <td><input type="text" placeholder="Contact" oninput="this.className = \'\'" id="adv_mname" name="contact[]"></td> \
                              <td><input type="text" placeholder="Email" oninput="this.className = \'\'" id="adv_mname" name="email[]"></td> \
                              <td><button type="button" name="remove" id="'+fields+'" class="btn_remove">Remove</button></td>\
-                             </tr>';
+                        </tr>';
                              fields = fields + 1;
 
                 $("#aut_list").append(row);

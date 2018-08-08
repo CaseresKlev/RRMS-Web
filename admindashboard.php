@@ -1,3 +1,20 @@
+<?php
+  session_start();
+  if(isset($_SESSION['uid'])){
+    print_r($_SESSION);
+  }else{
+    header("Location: index(loyd).php");
+  }
+
+  $accname = $_SESSION['gname'];
+  $acctype = $_SESSION['type'];
+  //echo $acctype;
+
+  ?>
+
+
+
+
 <!DOCTYPE html>
 <html>
 <head>

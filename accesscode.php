@@ -1,3 +1,23 @@
+<?php
+	session_start();
+	if(isset($_SESSION['uid'])){
+    print_r($_SESSION);
+  }else{
+    header("Location: index(loyd).php");
+  }
+
+  $accname = $_SESSION['gname'];
+  $acctype = $_SESSION['type'];
+  //echo $acctype;
+
+  
+
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -59,31 +79,29 @@
 				<table style="font-size: 15px">
 					<tr> 
 						<td> <b> Number of Access Code: </b> </td>
-						<td> <input type="number" placeholder="0" name="number" style= "width: 30%" required> </td>
-						<td> <button type="submit" id= "admin-btn-generate" class="btn-generate"> GENERATE </button> </td>
+						<td> <input type="number" placeholder="0" name="number" min="0" value="0" id="access-count" style= "width: 50%" required> </td>
+						<td> <button type="button" id="admin-btn-generate" class="btn-generate"> GENERATE </button> </td>
 					</tr>
 				</table>
 			</form></br></br>
+			<progress id="prog" max="100" value="0" style="width: 100%" ></progress>
 			<hr>
 			</br> <center><h1> GENERATED CODES </h1></center>
 			<form id= "admin-frm-generatepass" class= "frm-generatepass" action="/action_page.php">
-				<table style="font-size: 15px">
-					<tr> 
-						<td> <b>1. </b> </td>
-						<td> </td>
-					</tr>
-					<tr> 
-						<td> <b>2. </b> </td>
-						<td> </td>
-					</tr>
-					<tr> 
-						<td> <b>3. </b> </td>
-						<td> </td>
+				<table id="tbl-accescodes" style="font-size: 15px">
+					
+					<tr class="access-tr-head">
+						<th id="access-th">Count</th>
+						<th id="access-th">Access Codes</th>
+						<th id="access-th">Type</th>
 					</tr>
 				</table>
 			</form></br></br>
+
 			<hr></br>
+			<span style="float: left;">
 			<button type="submit" id= "admin-btn-print" class="btn-print"> PRINT </button>
+			</span>
 		</div>
           <!-- top tiles -->
           <div class="row tile_count"></div>
@@ -103,7 +121,7 @@
     <script src="js/bootstrap.min.js"></script>
 
     <!-- Custom Theme Scripts -->
-    <script src="js/custom.min.js"></script>
+    <script src="js/accesscode.js"></script>
 	
   </body>
 </html>
