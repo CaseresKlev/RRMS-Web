@@ -17,18 +17,13 @@
 		include_once 'connection.php';
 		$dbconfig= new dbconfig();
 		$con= $dbconfig -> getCon();
-
 		$limit = 12;
-		
 
 		$query= "SELECT book_id, book_title, cover, docloc FROM `book` WHERE 1 ORDER BY pub_date ASC;";
 		$result = $con -> query($query);
 		if ($result->num_rows>0) {
-
 			while ($row=$result->fetch_assoc()) {
-
 				//echo $row['book_title'];
-
 		?>
 	<div class="responsive">
 		<div class="gallery">
@@ -41,7 +36,6 @@
 
 				<?php
 				//for author
-
 				$book_id = $row['book_id'];
 				$dbconfig2= new dbconfig();
 				$con2= $dbconfig2 -> getCon();
@@ -54,7 +48,6 @@
 						// use this ---> echo $row['a_lname'] . ", " . $row['a_fname'] . ";";;
 					}
 				}
-
 				//end for authors
 				//echo $autorList;
 				$splitArr = explode(";", $autorList);
@@ -65,8 +58,6 @@
 				 }else{
 					 echo $splitArr[0];
 				 }
-
-
 				 ?></i>
 
 			 </div>
@@ -92,6 +83,6 @@
 
 </body>
 
-			
+
 
 </html>
