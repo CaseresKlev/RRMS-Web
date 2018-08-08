@@ -12,12 +12,13 @@
 
 
  .anneauthor {
-   margin: auto;
-   padding: inherit;
-   padding-left: 0;
-   padding-top: 10%;
-   text-align: left;
-   float: left;
+      margin: auto;
+   /* padding: inherit; */
+    padding-left: 0;
+    padding-top: 3%;
+    text-align: left;
+    width: 100%;
+    display: inline-block;
  }
 
  .anneauthor p {
@@ -31,17 +32,11 @@
  }
 
 
-/*.annebooks {
-  text-align: right;
-  margin-right: 32%;
-  margin-top: 10%;
-  float: right;
-}*/
-
-.annebooks h3 {
-  padding-top: 30%;
-  padding-left: 0;
+.annebooks {
+  display: block;
+  width: 100%;
 }
+
 
 .annelist {
   float: left;

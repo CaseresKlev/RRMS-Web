@@ -9,9 +9,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="css/author-new.css">
 </head>
-<body id="annebody">
-
-  <?php
+<header>
+   <?php
         include_once 'header.php';
      ?>
 
@@ -19,10 +18,10 @@
 
   $auth_id = $_GET['aut_id'];
 
-?>
-
-
-  <div class="anneauthor">
+    ?>
+</header>
+<body id="annebody">
+<div class="anneauthor">
     <?php
           include_once 'connection.php';
           $dbconfig = new dbconfig();
@@ -42,10 +41,10 @@
     <?php }
   } ?>
   </div>
-          <div class="annebooks">
+  <div class="annebooks" >
               <h3> AUTHORED RESEARCH PAPER </h3>
                   <hr>
-          </div>
+  </div>
 
             <div class="annelist">
                       <ul>
@@ -69,7 +68,15 @@
 
                       </ul>
                   </div>
+                  <br/>
+                  <br/>
+                  <hr>
+
 
 
 </body>
+<footer style="padding-top: 5px;">
+  <?php include_once 'footer.php' ?>
+  
+</footer>
 </html>

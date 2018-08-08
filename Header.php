@@ -1,4 +1,6 @@
-
+<?php
+session_start();
+?>
 
 <!DOCTYPE html>
 <html>
@@ -28,15 +30,15 @@
 				<li><a href="#plagiarism">Plagiarism</a></li>
 				<!--<li style="float:right"><a class= "user-dropdown">User</a></li>-->
 				<div class="dropdown" style="float:right">
-					<a class="dropbtn">User</a>
+					<a class="dropbtn" id="userli" >User</a>
 					<div class="dropdown-content">
 						<a href="#">Documents</a>
 						<a href="#">Account</a>
-						<a href="#">LOGOUT</a>
+						<a href="logout.php">LOGOUT</a>
 					</div>
 				</div>
-				<li style="float:right"><a href="new-login.php">Login</a></li>
-				<li style="float:right" id="searchbtn">Search</li>
+				<li style="float:right;" id="btnLoginOut" ><a href="new-login.php">Login</a></li>
+				<li style="float:right;" id="searchbtn">Search</li>
 			</ul>
 
 
@@ -84,6 +86,19 @@
 </div>
 <script type= "text/javascript" src= "js/jquery-3.3.1.js"></script>
 <script type= "text/javascript" src= "js/header.js"></script>
+<?php if(!isset($_SESSION['uid'])){
+	echo "<script> 
+			$('#btnLoginOut').show();
+			$('#userli').hide(); 
+		</script>";
+	//print_r($_SESSION);
+}else{
+	echo "<script> 
+			$('#btnLoginOut').hide();
+			$('#userli').html(\"" . $_SESSION['gname'] . "\");
+			$('#userli').css(\"color\", \"yellow\");
+		</script>";
+} ?>
 
 </body>
 </html>

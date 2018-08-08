@@ -1,12 +1,12 @@
 <?php
-
-
+  session_start();
 // remove all session variables
 
 
   $uname = $_POST['username'];
   $upass = $_POST['password'];
-
+ // $old = $_POST['opsw'];
+  
 
 
   include_once 'connection.php';
@@ -17,17 +17,15 @@
 
   if ($result->num_rows>0) {
     while ($row=$result->fetch_assoc()) {
-      session_start();
-      $_SESSION["id"] = $row['id'];
-      $_SESSION["g_name"] = $row['g_name'];
-      $_SESSION["activate"] = $row['activate'];
-      $_SESSION["type"] = $row['type'];
+      $_SESSION['uid'] = $row['id'];
+      $_SESSION['gname'] = $row['g_name'];
+      $_SESSION['stat']= $row['activate'];
+      $_SESSION['type'] = $row['type'];
     }
 
-
-  echo "Success:login";
-  }
-  else {
+    echo "Success:Login";
+    //header("Location: index.php"); 
+}else {
     echo "Error:Your username and password do not match. Please try again.";
   }
 

@@ -327,31 +327,51 @@ body {
 #btn-logout:active {
 	background-color: blue;
 }
-/*Create Accounts*/
-.frm-createAcc {
-	width: 50%;
+/*Update Accounts*/
+.frm-updateAcc {
 	margin: auto;
 }
 hr {
 	width: 100%;
 }
-.frm-createAcc b {
+.frm-updateAcc b {
 	float: left;
 }
-.btn-register {
+.btn-update {
 	margin-top: 5%;
 	float: right;
 	font-family: Century Gothic;
 	border-radius: 5px;
 	padding: 5px 5px 5px 5px;
 }
-fieldset {
-	width: 80%;
-}
-/* end of Create Accounts*/
+
+/* end of Update Accounts*/
 /* Activate Accounts*/
 .frm-search {
-	width:70%;
+	width: 80%;
 	margin: auto;
 	margin-top: 5%;
+}
+/* Access Code */
+.btn-generate {
+	margin-top: 5%;
+	float: right;
+	font-family: Century Gothic;
+	border-radius: 5px;
+	padding: 5px 5px 5px 5px;
+}
+.frm-generatepass {
+	width:80%;
+	margin: auto;
+	margin-top: 5%;
+}
+
+#tbl-accescodes, #access-th ,#access-tr {
+	text-align: left;
+	border: 1px solid black;
+    border-collapse: collapse;
+}
+
+#tbl-accescodes{
+	width: 100%;
 }
