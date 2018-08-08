@@ -60,11 +60,30 @@
 					<tr> 
 						<td> <b> Number of Access Code: </b> </td>
 						<td> <input type="number" placeholder="0" name="number" style= "width: 30%" required> </td>
+						<td> <button type="submit" id= "admin-btn-generate" class="btn-generate"> GENERATE </button> </td>
+					</tr>
+				</table>
+			</form></br></br>
+			<hr>
+			</br> <center><h1> GENERATED CODES </h1></center>
+			<form id= "admin-frm-generatepass" class= "frm-generatepass" action="/action_page.php">
+				<table style="font-size: 15px">
+					<tr> 
+						<td> <b>1. </b> </td>
+						<td> </td>
+					</tr>
+					<tr> 
+						<td> <b>2. </b> </td>
+						<td> </td>
+					</tr>
+					<tr> 
+						<td> <b>3. </b> </td>
+						<td> </td>
 					</tr>
 				</table>
 			</form></br></br>
 			<hr></br>
-			<button type="submit" id= "admin-btn-generate" class="btn-generate"> GENERATE </button>
+			<button type="submit" id= "admin-btn-print" class="btn-print"> PRINT </button>
 		</div>
           <!-- top tiles -->
           <div class="row tile_count"></div>

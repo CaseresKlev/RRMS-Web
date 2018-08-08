@@ -64,7 +64,25 @@
 				</table>
 			</form></br></br>
 			<hr></br>
-			
+			</br> <center><h1> GENERATED CODES </h1></center>
+			<form id= "instructor-frm-generatepass" class= "frm-generatepass" action="/action_page.php">
+				<table style="font-size: 15px">
+					<tr> 
+						<td> <b>1. </b> </td>
+						<td> </td>
+					</tr>
+					<tr> 
+						<td> <b>2. </b> </td>
+						<td> </td>
+					</tr>
+					<tr> 
+						<td> <b>3. </b> </td>
+						<td> </td>
+					</tr>
+				</table>
+			</form></br></br>
+			<hr></br>
+			<button type="submit" id= "instructor-btn-print" class="btn-print"> PRINT </button>
 		</div>
           <!-- top tiles -->
           <div class="row tile_count"></div>
