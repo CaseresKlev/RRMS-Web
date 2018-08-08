@@ -5,7 +5,7 @@
 
   $uname = $_POST['username'];
   $upass = $_POST['password'];
-  $old = $_POST['opsw'];
+ // $old = $_POST['opsw'];
   
 
 

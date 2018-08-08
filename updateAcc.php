@@ -10,9 +10,7 @@
   $acctype = $_SESSION['type'];
   //echo $acctype;
 
-  include("connection.php");
-  $dbconfig = new dbconfig();
-  $conn = $dbconfig->getCOn();
+  
 
 
 
