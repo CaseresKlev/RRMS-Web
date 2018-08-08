@@ -1,12 +1,3 @@
-<<<<<<< HEAD
-<?php
-session_start();
-//print_r($_SESSION)
-
-?>
-
-=======
->>>>>>> d9078064f171686cc4c11c758600e4c170c6966f
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,18 +17,13 @@ session_start();
 		include_once 'connection.php';
 		$dbconfig= new dbconfig();
 		$con= $dbconfig -> getCon();
-
 		$limit = 12;
-		
 
 		$query= "SELECT book_id, book_title, cover, docloc FROM `book` WHERE 1 ORDER BY pub_date ASC;";
 		$result = $con -> query($query);
 		if ($result->num_rows>0) {
-
 			while ($row=$result->fetch_assoc()) {
-
 				//echo $row['book_title'];
-
 		?>
 	<div class="responsive">
 		<div class="gallery">
@@ -50,7 +36,6 @@ session_start();
 
 				<?php
 				//for author
-
 				$book_id = $row['book_id'];
 				$dbconfig2= new dbconfig();
 				$con2= $dbconfig2 -> getCon();
@@ -63,7 +48,6 @@ session_start();
 						// use this ---> echo $row['a_lname'] . ", " . $row['a_fname'] . ";";;
 					}
 				}
-
 				//end for authors
 				//echo $autorList;
 				$splitArr = explode(";", $autorList);
@@ -74,8 +58,6 @@ session_start();
 				 }else{
 					 echo $splitArr[0];
 				 }
-
-
 				 ?></i>
 
 			 </div>
@@ -101,6 +83,6 @@ session_start();
 
 </body>
 
-			
+
 
 </html>
