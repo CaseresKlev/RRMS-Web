@@ -1,3 +1,33 @@
+
+<?php
+
+  session_start(); 
+  if(isset($_SESSION['uid'])){
+    print_r($_SESSION);
+  }else{
+    header("Location: index(loyd).php");
+  }
+
+  $accname = $_SESSION['gname'];
+  $acctype = $_SESSION['type'];
+
+  if($acctype==="admin"){
+    echo "Admin ANG NAKALOGIN";
+  }else if($acctype==="instructor"){
+    echo "Instructor ang naka login";
+  }else if($acctype==="student"){
+    echo "student ang naka login";
+  }
+
+  if(isset($_GET['book_id'])){
+      $book_id = $_GET['book_id'];
+    }else{
+       header("Location: admindashboard.php");
+    }
+
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,7 +41,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="css/editDocument.css">
 	
 </head>
-
+  <input type="text" id="book_id" style="display: none" value="<?php echo $book_id; ?>">
   <body class="nav-md">
     <div class="container body">
       <div class="main_container">
@@ -29,8 +59,8 @@
                 <img src="img/final.jpg" alt="..." class="img-circle profile_img">
               </div>
               <div class="profile_info">
-                <span> USERNAME </span>
-                <h2> Instructor </h2>
+                <span><?php echo strtoupper($_SESSION['gname']); ?></span>
+                <h2> <?php echo strtoupper($_SESSION['type']);   ?> </h2>
               </div>
             </div>
             <!--/menu profile quick info-->
@@ -41,10 +71,10 @@
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
               <div class="menu_section">
                 <div class="nav side-menu">
-					<ul><a href="instructordashboard.php"> DOCUMENTS </span></a></ul>
-					<ul><a href="accesscode(instruc).php"> ACCESS CODE </a> </ul>      
-					<ul><a href="reports(instruc).php"> REPORTS </a> </ul> </br>      
-					<ul><button id= "btn-logout"><strong> <a href="#Logout"> LOGOUT </a></strong></button></ul>
+					         <ul><a href="instructordashboard.php"> DOCUMENTS </span></a></ul>
+					         <ul><a href="accesscode(instruc).php"> ACCESS CODE </a> </ul>      
+					         <ul><a href="reports(instruc).php"> REPORTS </a> </ul> </br>      
+					         <ul><button id= "btn-logout"><strong> <a href="#Logout"> LOGOUT </a></strong></button></ul>
                 </div>
               </div>
 
@@ -59,63 +89,76 @@
 			<hr></br>
 			<div id="bookDet">
                 <p class="edittxt" style= "font-family: Century Gothic; font-size: 16px">
+
+                  
                 Title: </br>
-                  <input type="text" placeholder="book title" id="title" name="title" 
-				  style= "width: 100%; font-family: Century Gothic; font-size: 15px; font-style: italic">
+                  <textarea placeholder="book title" id="title" name="title" 
+				  style= "width: 100%; font-family: Century Gothic; font-size: 15px; font-style: italic; font-weight: bold; resize: none;" readonly><?php echo $_GET['title'];?></textarea> 
                 </p>
                 <p class="edittxt" style= "font-family: Century Gothic; font-size: 16px">
+                  <?php
+
+                  include_once 'connection.php';
+                  $dbconfig = new dbconfig();
+                  $conn = $dbconfig->getCon();
+                  $query = "SELECT author.a_fname as 'fname', CONCAT(SUBSTRING(author.a_mname, 1, 1),'.') as 'mi', author.a_lname as 'lname'  FROM  author INNER JOIN `junc_authorbook` on author.a_id = junc_authorbook.aut_id WHERE junc_authorbook.id = $book_id";
+                  $result = $conn->query($query);
+                  $author = array();
+                  if($result->num_rows>0){
+                    while ($row=$result->fetch_assoc()) {
+                      $fullname = $row['fname'] . " " . $row['mi'] . " " . $row['lname'];
+                      array_push($author, strtoupper($fullname));
+                    }
+                  }
+
+
+                  ?>
                 Author:</br>
-                  <textarea rows="2" cols="102" placeholder="author" name="author" id="author" 
-						style= "width: 100%; font-family: Century Gothic; font-size: 15px; font-style: italic"></textarea>
+                  <textarea rows="4" cols="102" placeholder="author" name="author" id="author" 
+						style= "width: 100%; font-family: Century Gothic; font-size: 15px; font-style: italic; font-weight: bold; resize: none;" readonly><?php 
+            foreach($author as $key){
+              echo $key . "\n";
+            } ?></textarea>
                 </p>
                 <p class="edittxt">
-					<table width= 100%>
-						<tr>
-							<td style= "font-family: Century Gothic; font-size: 16px"> 
-								Status: 
-								<select name="status" id="status" style= "width: 80%">
-									<option> select status </option>
+
+								Status:<br/> 
+								<select name="status" id="status" style= "width: 100%; font-family: Century Gothic; font-size: 15px; font-style: italic; font-weight: bold;">
+                  <option></option>
+									<option>Unpublish</option>
 									<option> Proposed </option>
 									<option> Completed </option>
 									<option> Disseminated </option>
 									<option> Published </option>
 								</select>
-							</td>
-							<td> </td>
-						</tr>
-						<tr>
-							
-							<td>
-								<fieldset class= "fieldset-disseminated" style= "width: 90%">
-									<legend><i> if disseminated </i></legend> <center>
-										<input type="radio" checked="checked" name="radio">
-										<label class="tbl-radiocontainer" id="local"> Local 
-											<span class="tbl-radiocheckmark"></span>
-										</label>
-					
-										<input type="radio" name="radio">
-										<label class="tbl-radiocontainer" id="international"> International 
-											<span class="tbl-radiocheckmark"></span>
-										</label> </center>
-								</fieldset> 
-							</td>
-							<td> 
-								<fieldset class= "fieldset-published" style= "width: 90%">
-									<legend><i> if published </i></legend> <center>
-										ISDN: 
-										<input type="text/number" placeholder="serial number" id="serial" name="serial"></br></br>
-					
-										Journal: 
-										<input type="text" placeholder="journal name" id="name" name="name"> </center>
-								</fieldset> 
-							</td>
-						</tr>
-					</table>
-                </p>
+
+                <fieldset class= "fieldset-disseminated" style= "width: 97%; display: none;">
+                  <legend><i>Choose Disseminated Option </i></legend>
+                  <br/> 
+                    <input type="radio" name="loc" id="btn-radio-local" value="Local" class="btn-radio">
+                    <label class="tbl-radiocontainer" id="local" style="font-size: 12pt"> Local 
+                      <span class="tbl-radiocheckmark"></span>
+                    </label>
+          
+                    <input type="radio" name="loc" id="btn-radio-intl" value="International" class="btn-radio">
+                    <label class="tbl-radiocontainer" id="international" style="font-size: 12pt"> International 
+                      <span class="tbl-radiocheckmark"></span>
+                    </label>
+                    <textarea rows="4" cols="102" placeholder="Description 160 Character maximum" name="disseminated-desc" id="disseminated-desc" 
+            style= "width: 100%; font-family: Century Gothic; font-size: 15px; font-style: italic; font-weight: bold; resize: none;"></textarea>
+                </fieldset> 
+                <fieldset class= "fieldset-published" style= "width: 97%; display: none;">
+                  <legend><i>Fill Publish Details</i></legend> 
+                    ISDN:&emsp; 
+                    <input type="text/number" placeholder="serial number" id="isdn" name="serial" style= "width: 100%; font-family: Century Gothic; font-size: 15px; font-style: italic; font-weight: bold;"></br></br>
+                    
+                    Journal: 
+                    <input type="text" placeholder="journal name" id="journal" name="name" style= "width: 100%; font-family: Century Gothic; font-size: 15px; font-style: italic; font-weight: bold;"> 
+                </fieldset> 
                 <p class="edittxt" style= "font-family: Century Gothic; font-size: 16px">
                 Cited:<br>
-                  <textarea rows="2" cols="102" placeholder="cite" name="cite" id="cite" 
-				  style= "width: 100%; font-family: Century Gothic; font-size: 15px; font-style: italic"></textarea>
+                  <input type="number" placeholder="cite" name="cite" id="cite" min="0"
+				  style= "width: 100%; font-family: Century Gothic; font-size: 15px; font-style: italic; font-weight: bold;" value="<?php echo $_GET['cited']; ?>">
                 </p></br>
                 <hr></br>
 				<button type="submit" id= "instructor-btn-save" class="btn-save"> SAVE </button>
@@ -137,6 +180,7 @@
 
     <!-- Custom Theme Scripts -->
     <script src="js/custom.min.js"></script>
+    <script type="text/javascript" src="js/editdocu.js"></script>
 
   </body>
 </html>

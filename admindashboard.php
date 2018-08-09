@@ -11,7 +11,14 @@
 
   $accname = $_SESSION['gname'];
   $acctype = $_SESSION['type'];
-  //echo $acctype;
+  if($acctype==="admin"){
+    echo "Admin ANG NAKALOGIN";
+  }else if($acctype==="instructor"){
+    echo "Instructor ang naka login";
+  }else if($acctype==="student"){
+    echo "student ang naka login";
+  }
+  
 
   ?>
 
@@ -88,7 +95,7 @@
                   include_once 'connection.php';
                   $dbconfig = new dbconfig();
                   $conn = $dbconfig->getCon();
-                  $query = "SELECT book_id, book_title FROM `book` WHERE book_title LIKE '%$key%'";
+                  $query = "SELECT book_id, book_title, cited FROM `book` WHERE book_title LIKE '%$key%'";
                   $result = $conn->query($query);
                   if($result->num_rows>0){
                     while ($row = $result->fetch_assoc()) {
@@ -96,7 +103,7 @@
 
 
             ?>
-					<a href="editdocu.php?book_id = <?php echo $row['book_id']?>" ><li style= "font-size: 14pt"> <u><b><?php echo $row['book_title']; ?></b></u><i>
+					<a href="editdocu.php?book_id=<?php echo $row['book_id']?>&title=<?php echo $row['book_title']; ?>&cited=<?php echo $row['cited'];?>" ><li style= "font-size: 14pt"> <u><b><?php echo $row['book_title']; ?></b></u><i>
             <?php 
             $conn = $dbconfig->getCon();
                   $query = "SELECT author.a_lname as `lname`, SUBSTRING(a_fname, 1, 1) as `fname` FROM author INNER JOIN junc_authorbook on junc_authorbook.aut_id = author.a_id WHERE junc_authorbook.book_id=" . $row['book_id'];
