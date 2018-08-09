@@ -9,10 +9,12 @@
 }
   .annegroup {
    margin: auto;
-   padding: inherit;
+   /*padding: inherit;*/
    padding-left: 0;
-   padding-top: 10%;
+   padding-top: 3%;
    text-align: left;
+   width: 100%;
+   display: inline-block;
    float: left;
  }
   .annegroup p {
@@ -28,11 +30,31 @@
   margin-top: 10%;
   float: right;
 }*/
- .annegroupbook h3 {
-  padding-top: 30%;
-  padding-left: 0;
+ .annegroupbook {
+  padding-top: 12%;
+  width: 100%;
 }
+
+
  .annegrouplist {
   float: left;
   margin-right: 75%;
+}
+
+.grouprow {
+  padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.grouptable {
+    border-collapse: collapse;
+    width: 100%;
+    table-layout: fixed;
+    margin-left: 2em;
+}
+
+.subrevision {
+  margin-right: 3em;
+  padding: 8px;
 }
