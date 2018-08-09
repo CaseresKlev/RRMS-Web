@@ -59,7 +59,7 @@ h1 {
   text-align: center;
   text-align: center;
   text-transform: uppercase;
-  color: #4CAF50;
+  color:#00004d;
 
 }
 button {
@@ -76,10 +76,8 @@ button {
 }
 
 body{
-  background-color: #b3ecff;
+  background-color: #808080;
 }
 .browse{
   text-align: left;
 }
-
-

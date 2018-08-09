@@ -8,7 +8,7 @@
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="css/add-research.css" />
-    
+
 </head>
 
 <body>
@@ -46,11 +46,11 @@
                 <p class="para">
                     Category:
                     <select name="department" id="department">
-                        <option></option>
+                        <option>Select your Departments</option>
                     <?php include_once 'connection.php';
                         $dbconfig = new dbconfig();
                         $conn = $dbconfig->getCon();
-                        $query= "SELECT * FROM department";
+                        $query= "SELECT DISTINCT * FROM department;";
                         $result= $conn->query($query);
                          if ($result->num_rows > 0) {
                              while ($row=$result->fetch_assoc()) { ?>
@@ -66,15 +66,15 @@
                     <textarea rows="6" cols="102" placeholder="Key Words" name="keywords" id="keywords"></textarea><br/>
                 </p>
                 <p id="para">
-                 References: <strong style="color:red">&ensp;One Refrence per Line</strong></note><br/>
-                    <textarea rows="6" cols="102" placeholder="Key Words" name="reference" id="reference"></textarea><br/>
+                 References: <strong style="color:red">&ensp;One Reference per Line</strong></note><br/>
+                    <textarea rows="6" cols="102" placeholder="Reference" name="reference" id="reference"></textarea><br/>
                 </p>
                 <p class="para">
                     Status:
                     <select name="status" id="status">
                         <option>Unpublish</option>
                         <option>Published</option>
-                        <option>On-Going</option>
+
                     </select>
                 </p>
             </div>
@@ -99,7 +99,7 @@
                         <td><input type="text" placeholder="Middle name" oninput="this.className = ''" id="mname" name="mname[]"></td>
                         <td><input type="text" placeholder="Last name" oninput="this.className = ''" id="lname" name="lname[]"></td>
                         <td style="width: 70px;">
-                            <select id="sufname" name="suf[]">  
+                            <select id="sufname" name="suf[]">
                                 <option></option>
                                 <option>JR</option>
                                 <option>IV</option>
@@ -167,7 +167,7 @@
     <div id="debug" style="text-align: center; font-weight: bold; font-size: 14pt; color: red; width: 100%;"></div>
         <br/>
     </div>
-  </form>      
+  </form>
 
 
 
