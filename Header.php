@@ -26,14 +26,14 @@ session_start();
 
 			<ul id= "nav-ul">
 				<li><a href="index(loyd).php">Home</a></li>
-				<li><a href="#documents">Document</a></li>
 				<li><a href="#plagiarism">Plagiarism</a></li>
 				<!--<li style="float:right"><a class= "user-dropdown">User</a></li>-->
 				<div class="dropdown" style="float:right">
 					<a class="dropbtn" id="userli" >User</a>
 					<div class="dropdown-content">
-						<a href="#">Documents</a>
-						<a href="#">Account</a>
+						<a href="admindashboard.php"> My Dashboard </a>
+						<a href="#"> Documents </a>
+						<a href="#"> Account </a>
 						<a href="logout.php">LOGOUT</a>
 					</div>
 				</div>

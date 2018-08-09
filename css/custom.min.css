@@ -1,8 +1,11 @@
+.nav-md {
+	background-color: gray;
+}
 .detail a, a:hover,.site_title:focus,.site_title:hover,a,a:focus,a:hover{
 	text-decoration:none;
 	}
 .left_col.scroll-view {
-	background:#2A3F54;
+	background-color: gray;
 	width: 240px;
 	}
 .nav-sm .container.body .col-md-3.left_col{
@@ -240,6 +243,7 @@ body .container.body .right_col{
 	background:#F7F7F7;
 	}
 .nav-md .container.body .right_col{
+	background-color: #00004d;
 	padding:10px 20px 0;
 	margin-left:230px;
 	}
@@ -248,7 +252,7 @@ body .container.body .right_col{
 	margin-left: 10%;
 	width: 160px;
 	float:left;
-	background:#2A3F54;
+	background: gray;
 	border-radius:0;
 	height:57px;
 	}
@@ -317,7 +321,7 @@ body {
 #btn-logout {
 	text-align: right;
 	border-radius: 5px;
-	padding: 10px 50px 10px 50px;
+	padding: 10px 40px 10px 40px;
 	font-family: Century Gothic;
 	font-size: 15px;
 }
