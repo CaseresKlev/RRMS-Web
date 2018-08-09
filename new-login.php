@@ -24,7 +24,7 @@
 
 
 
-      <input type="text" name="username" id="u_name"required pattern="^[A-Za-z0-9]+" placeholder="USERNAME">
+      <input type="text" name="username" id="u_name"required pattern="^[A-Za-z0-9]+" placeholder="USERNAME" autocomplete="off">
       <input type="password"name="password" id="password"required pattern="^[A-Za-z0-9]+" placeholder="PASSWORD">
       <input type="button" id="submit" value="Submit">
 
