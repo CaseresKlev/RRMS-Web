@@ -29,5 +29,8 @@ td #booktitle {
 }
 
 html {
-  background-color: #68dddd;
+  background-color: gray;
+}
+.wrapper img:hover {
+  border: 2px solid black;
 }
