@@ -1,3 +1,28 @@
+<?php
+  
+  session_start();
+  
+
+  if(isset($_SESSION['uid'])){
+    print_r($_SESSION);
+  }else{
+    header("Location: index(loyd).php");
+  }
+
+  $accname = $_SESSION['gname'];
+  $acctype = $_SESSION['type'];
+  if($acctype==="admin"){
+    echo "Admin ANG NAKALOGIN";
+  }else if($acctype==="instructor"){
+    echo "Instructor ang naka login";
+  }else if($acctype==="student"){
+    echo "student ang naka login";
+  }
+  
+
+  ?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
