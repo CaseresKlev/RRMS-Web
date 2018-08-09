@@ -1,3 +1,11 @@
+<?php
+
+//session_start();
+$bookid = 1;
+
+?>
+
+
 <!DOCTYPE html>
 <!-- ANNE -->
 <html>
@@ -27,7 +35,7 @@
             while ($row=$result->fetch_assoc()) {
               #echo $row['a_id'] . " " . $row['a_fname'] . " " . $row['a_mname'] . " " . $row['a_lname'] . " " . $row['a_suffix'] . " " . $row['a_add'] . " " . $row['a_contact'] . " " . $row['a_email'];
       ?>
-      <h2><?php echo $row['g_name']; ?></h2>
+      <h2><?php echo $row['g_name']; ?></h2> <!--voidmain -->
      <?php }
   } ?>
   </div>
