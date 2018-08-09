@@ -26,8 +26,8 @@
 }
 
 .header {
-  overflow: hidden;
-  background-color: #4682B4;
+	overflow: hidden;
+	background-color: #4682B4;
 	padding: 20px 0px 0px 0px;
 }
 
@@ -171,7 +171,7 @@ ul{
     display: block;
     color: white;
     text-align: center;
-    padding: 14px 16px;
+    padding: 14px 30px;
     text-decoration: none;
 }
 
@@ -202,7 +202,7 @@ ul{
 	display: block;
     color: white;
     text-align: center;
-    padding: 14px 16px;
+    padding: 14px 2px;
     text-decoration: none;
 }
 
@@ -211,7 +211,7 @@ ul{
     border: none;
     outline: none;
     color: white;
-    padding: 14px 16px;
+    padding: 14px 44px;
     background-color: inherit;
     font-family: inherit;
     margin: 0;
@@ -224,17 +224,17 @@ ul{
 }
 
 .dropdown-content {
+	margin-right: 10%;
     display: none;
     position: absolute;
     background-color: #f9f9f9;
-    min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 }
 
 .dropdown-content a {
-    float: none;
     color: black;
+	font-size: 14px;
     padding: 12px 16px;
     text-decoration: none;
     display: block;

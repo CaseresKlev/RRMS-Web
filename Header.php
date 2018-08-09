@@ -32,8 +32,9 @@ session_start();
 				<div class="dropdown" style="float:right">
 					<a class="dropbtn" id="userli" >User</a>
 					<div class="dropdown-content">
-						<a href="#">Documents</a>
-						<a href="#">Account</a>
+						<a href="admindashboard.php"> My Dashboard </a>
+						<a href="#"> Documents </a>
+						<a href="#"> Account </a>
 						<a href="logout.php">LOGOUT</a>
 					</div>
 				</div>
