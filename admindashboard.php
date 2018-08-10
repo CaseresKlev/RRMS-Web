@@ -1,7 +1,7 @@
 <?php
-  
+
   session_start();
-  
+
 
   if(isset($_SESSION['uid'])){
     print_r($_SESSION);
@@ -18,7 +18,7 @@
   }else if($acctype==="student"){
     echo "student ang naka login";
   }
-  
+
 
   ?>
 
@@ -33,10 +33,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title> Administrator </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	
+
     <!-- Custom Theme Style -->
     <link rel="stylesheet" type="text/css" media="screen" href="css/custom.min.css">
-	
+
 </head>
 <body class="nav-md">
     <div class="container body">
@@ -67,8 +67,8 @@
                 <div class="nav side-menu">
 					<ul><a class= "dashboard-active" href="#documents"> DOCUMENTS </span></a></ul>
 					<ul><a href="updateAcc.php"> UPDATE ACCOUNT </a></ul>
-					<ul><a href="accesscode.php"> ACCESS CODE </a> </ul>      
-					<ul><a href="reports.php"> REPORTS </a> </ul> </br>      
+					<ul><a href="accesscode.php"> ACCESS CODE </a> </ul>
+					<ul><a href="fiddle.php"> REPORTS </a> </ul> </br>      
 					<ul><button id= "btn-logout"><strong> <a href="#Logout"> LOGOUT </a></strong></button></ul>
                 </div>
               </div>
@@ -76,14 +76,14 @@
             </div>
           </div>
         </div>
-       
+
         <!-- page content -->
         <div class="right_col" role="main">
 			<div id= "admin-frm-search" class= "frm-search" style= "font-size: 18px">
 				<b> Search Documents </b>
 				<input type="text" placeholder="Search.." id="search-key" name="search"><button type="button" id="btn-search"> Search </button> </br></br>
 				<hr>
-             
+
 				<div id= "admin-div-voidmain" class= "div-voidmain">
           <ul>
             <?php
@@ -99,12 +99,12 @@
                   $result = $conn->query($query);
                   if($result->num_rows>0){
                     while ($row = $result->fetch_assoc()) {
-                      
+
 
 
             ?>
 					<a href="editdocu.php?book_id=<?php echo $row['book_id']?>&title=<?php echo $row['book_title']; ?>&cited=<?php echo $row['cited'];?>" ><li style= "font-size: 14pt"> <u><b><?php echo $row['book_title']; ?></b></u><i>
-            <?php 
+            <?php
             $conn = $dbconfig->getCon();
                   $query = "SELECT author.a_lname as `lname`, SUBSTRING(a_fname, 1, 1) as `fname` FROM author INNER JOIN junc_authorbook on junc_authorbook.aut_id = author.a_id WHERE junc_authorbook.book_id=" . $row['book_id'];
                   $result2 = $conn->query($query);
@@ -121,7 +121,7 @@
                 echo "<div style='text-align:center; width 100%'><h4> No Result Found! </h4></div>";
 
             }/// end of result outer
-          } 
+          }
           ?>
           </ul>
 			</div>
@@ -145,6 +145,6 @@
     <!-- Custom Theme Scripts -->
     <script src="js/custom.min.js"></script>
     <script src="js/searchdoc.js"></script>
-	 
+
   </body>
 </html>

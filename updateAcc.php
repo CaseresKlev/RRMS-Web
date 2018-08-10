@@ -10,7 +10,7 @@
   $acctype = $_SESSION['type'];
   //echo $acctype;
 
-  
+
 
 
 
@@ -25,10 +25,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title> Administrator </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	
+
     <!-- Custom Theme Style -->
     <link rel="stylesheet" type="text/css" media="screen" href="css/custom.min.css">
-	
+
 </head>
 <body class="nav-md">
     <div class="container body">
@@ -59,8 +59,8 @@
                 <div class="nav side-menu">
 					<ul><a href="admindashboard.php"> DOCUMENTS </span></a></ul>
 					<ul><a class= "dashboard-active" href="#update"> UPDATE ACCOUNT </a></ul>
-					<ul><a href="accesscode.php"> ACCESS CODE </a> </ul>      
-					<ul><a href="reports.php"> REPORTS </a> </ul> </br>      
+					<ul><a href="accesscode.php"> ACCESS CODE </a> </ul>
+					<ul><a href="fiddle.php"> REPORTS </a> </ul> </br>      
 					<ul><button id= "btn-logout"><strong> <a href="#Logout"> LOGOUT </a></strong></button></ul>
                 </div>
               </div>
@@ -68,7 +68,7 @@
             </div>
           </div>
         </div>
-       
+
         <!-- page content -->
         <div class="right_col" role="main">
 			<div id= "admin-frm-container" class="frm-container" style="margin: auto; width: 80%">
@@ -76,31 +76,31 @@
 			<hr></br>
 			<form id= "admin-frm-updateAcc">
 				<table style="font-size: 15px">
-					<tr> 
+					<tr>
 						<td> Current Password :</td>
 						<td> <input type="password" placeholder="Enter Password" name="psw" id="oldpsw" required> </td>
 					</tr>
-					<tr> 
+					<tr>
 						<td> </td>
 						<td> </td>
 					</tr>
-					<tr> 
+					<tr>
 						<td> </td>
 						<td> </td>
 					</tr>
-					<tr> 
+					<tr>
 						<td> New Password :</td>
 						<td> <input type="password" placeholder="Enter New Password" name="psw" id="npsw" required> </td>
 					</tr> </br>
-					<tr> 
+					<tr>
 						<td> </td>
 						<td> </td>
 					</tr>
-					<tr> 
+					<tr>
 						<td> </td>
 						<td> </td>
 					</tr>
-					<tr> 
+					<tr>
 						<td> Retype New Password :</td>
 						<td> <input type="password" placeholder="Re-enter New Password" name="ncpsw" id="ncpsw" required> </td>
 					</tr>
@@ -132,6 +132,6 @@
     <!-- Custom Theme Scripts -->
     <script src="js/custom.min.js"></script>
     <script type="text/javascript" src="js/updateAccount.js"></script>
-	
+
   </body>
 </html>
