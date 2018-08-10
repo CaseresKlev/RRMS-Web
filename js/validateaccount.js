@@ -2,6 +2,8 @@ $("#submit").click(function(){
   var g_name=$("#g_name").val();
 
   var u_name=$("#u_name").val();
+  var access=$("#access").val();
+  //alert(access);
 
   var upass=$("#password").val();
   if (g_name===''|| u_name==='' || upass==='') {
@@ -12,6 +14,7 @@ $("#submit").click(function(){
       type:"POST",
       cache:false,
       data:{
+        access: access,
         groupname:g_name,
         uname:u_name,
         password:upass
