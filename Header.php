@@ -38,7 +38,7 @@ if(isset($_SESSION['uid'])){
 
 			<ul id= "nav-ul">
 				<li><a href="index(loyd).php">Home</a></li>
-				<li><a href="#plagiarism">Plagiarism</a></li>
+				<!--<li><a href="#plagiarism">Plagiarism</a></li>
 				<!--<li style="float:right"><a class= "user-dropdown">User</a></li>-->
 				<div class="dropdown" style="float:right">
 					<a class="dropbtn" id="userli" >User</a>
@@ -49,7 +49,7 @@ if(isset($_SESSION['uid'])){
 							if($acctype==="instructor" || $acctype==="admin"){
 								echo "<a href=" . "\"admindashboard.php\"" . "> My Dashboard </a>";
 							}else{
-								echo "<a href=". "\"groupdoclist.php?gid=" . $_SESSION['uid'] . "\"" . "> Documents </a>";
+								echo "<a href=". "\"groupdoclist.php?gid=" . $_SESSION['uid'] . "\"" . "> My Research </a>";
 								echo "<a href=". "\"userchangepass.php\"" . "> Change Password </a>";
 							}
 								echo "<a href=". "\"logout.php\"" . ">LOGOUT</a>";
@@ -89,12 +89,6 @@ if(isset($_SESSION['uid'])){
 				<td>
 
 					<label class="tbl-search_container" id="search_title"> Title <input type="radio" checked="checked" name="radio">
-						<span class="tbl-search_checkmark"></span>
-					</label>
-				</td>
-				<td>
-
-					<label class="tbl-search_container" id="search_content"> Content <input type="radio" name="radio">
 						<span class="tbl-search_checkmark"></span>
 					</label>
 				</td>
