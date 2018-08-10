@@ -3,10 +3,11 @@ $(".btn-update").click(function(){
 
 	var opsw = $("#oldpsw").val();
 	var npsw = $("#npsw").val();
-	alert(npsw);
+	var access = $("#access").val();
+	alert(access);
 
 	var ncpsw = $("#ncpsw").val();
-	alert(ncpsw);
+	//alert(ncpsw);
 	var gname = $("#gname").val();
 	if(opsw==''|| npsw=='' || ncpsw==''){
 		$("#result").html("Please fill all fields!");
@@ -32,8 +33,5 @@ $(".btn-update").click(function(){
 			$("#result").html("Password Didnt Match!");
 		}		
 	}
-
-	
-	
 
 });
