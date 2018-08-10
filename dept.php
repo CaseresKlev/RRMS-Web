@@ -1,4 +1,4 @@
-<?php
+ <?php
 
   session_start();
 
@@ -27,6 +27,7 @@
 
 
 
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -38,6 +39,8 @@
 
     <!-- Custom Theme Style -->
     <link rel="stylesheet" type="text/css" media="screen" href="css/custom.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/dept.css">
+
 
 </head>
 
@@ -84,54 +87,63 @@
 
         <!-- page content -->
         <div class="right_col" role="main">
-			<div id= "admin-frm-search" class= "frm-search" style= "font-size: 18px">
-				<b> Search Documents </b>
-				<input type="text" placeholder="Search.." id="search-key" name="search"><button type="button" id="btn-search"> Search </button> </br></br>
-				<hr>
-
-				<div id= "admin-div-voidmain" class= "div-voidmain">
-          <ul>
-            <?php
-              $key = "";
-              if(isset($_GET['search'])){
-                  $key =  $_GET['search'];
 
 
-                  include_once 'connection.php';
-                  $dbconfig = new dbconfig();
-                  $conn = $dbconfig->getCon();
-                  $query = "SELECT book_id, book_title, cited FROM `book` WHERE book_title LIKE '%$key%'";
-                  $result = $conn->query($query);
-                  if($result->num_rows>0){
-                    while ($row = $result->fetch_assoc()) {
+          <div class="login-page">
+<div class="form">
+
+  <form class="login-form">
+    <fieldset>
+      <legend>ADD DEPARTMENT</legend>
+      <input type="text"name="department" id="department" placeholder="Department" required/>
+      <input type="text"name="college" id="college" placeholder="College"/ required>
+            <button type="button" id="submit1" >ADD</button>
+    </fieldset>
+  </form>
+
+
+    <form class="search-form">
+
+        <fieldset>
+
+          <legend>DELETE DEPARTMENT</legend>
+
+    <!--  <input type="search" name="search" placeholder="Search.." autocomplete="off"> -->
+      <select id="deldept" style="width:100%; font-size:14pt">
+      <option></option>
+
+
+      <?php
+
+      include_once 'connection.php';
+      $dbconfig=new dbconfig();
+      $conn=$dbconfig->getCon();
+
+      $query="SELECT * FROM `department` WHERE 1";
+
+      $result= $conn->query($query);
+
+      if ($result->num_rows>0) {
+        while ($row=$result->fetch_assoc()) {
+          echo "<option>". $row['cat_name']. "</option>";
+        }
+      }
+
+        ?>
+        </select>
+
+            <button id="btn-del" style="background-color:red; font:12pt;">DELETE</button>
+      </fieldset>
+  </form>
+
+
+</div>
+</div>
 
 
 
-            ?>
-					<a href="editdocu.php?book_id=<?php echo $row['book_id']?>&title=<?php echo $row['book_title']; ?>&cited=<?php echo $row['cited'];?>" ><li style= "font-size: 14pt"> <u><b><?php echo $row['book_title']; ?></b></u><i>
-            <?php
-            $conn = $dbconfig->getCon();
-                  $query = "SELECT author.a_lname as `lname`, SUBSTRING(a_fname, 1, 1) as `fname` FROM author INNER JOIN junc_authorbook on junc_authorbook.aut_id = author.a_id WHERE junc_authorbook.book_id=" . $row['book_id'];
-                  $result2 = $conn->query($query);
-                  if($result2->num_rows>0){
-                    while ($row2=$result2->fetch_assoc()) {
-                      echo " - " .  $row2['lname'] . ", " . $row2['fname'] . ";";
-                    }
-                  }
-            ?>
-          </i></li></a>
 
-          <?php    }
-            }else{
-                echo "<div style='text-align:center; width 100%'><h4> No Result Found! </h4></div>";
-
-            }/// end of result outer
-          }
-          ?>
-          </ul>
-			</div>
-          <!-- top tiles -->
-          <div class="row tile_count"></div>
+				    <div class="row tile_count"></div>
           <!-- /top tiles -->
               </div>
             </div>

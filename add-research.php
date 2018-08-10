@@ -72,10 +72,35 @@
                     Key Words:<strong style="color:red">&emsp;One Keywords per Line</strong></note>
                     <textarea rows="6" cols="102" placeholder="Key Words" name="keywords" id="keywords"></textarea><br/>
                 </p>
+                <div class="ref-container">
+                <fieldset>
+                  <legend> References</legend>
+
                 <p id="para">
-                 References: <strong style="color:red">&ensp;One Reference per Line</strong></note><br/>
-                    <textarea rows="6" cols="102" placeholder="Reference" name="reference" id="reference"></textarea><br/>
+                <br/><br/>&ensp;Title: (Appa Format)<br/>
+                    <textarea rows="1" cols="102" placeholder="Input reference title" name="reference" id="reference"></textarea>
                 </p>
+
+                <p id="para">
+              <br/>&ensp;Weblinks<br/>
+                    <textarea rows="1" cols="102" placeholder="Input Weblinks" name="reference" id="reference"></textarea><br/>
+                </p>
+
+                <p id="para">
+              <br/>&ensp;Local Reference key<br/>
+                    <textarea rows="1" cols="102" placeholder="Input Local Reference Key" name="reference" id="reference" style="text-transform:capitalized;"></textarea><br/>
+                </p>
+                <div class="add">
+                <button type="submit" id="addref"style="display: block;padding: 10px 15px;vertical-align:middle; text-align:center; display:inline-block; float:left;">ADD</button>
+              </div>
+
+                <p id="para">
+                <br/><br/> <br/>References: &ensp;
+                    <textarea rows="6" cols="102" placeholder="" name="reference" id="reference" readonly></textarea><br/>
+                </p>
+
+              </fieldset>
+            </div>
                 <p class="para">
                     Status:
                     <select name="status" id="status">

@@ -26,6 +26,14 @@
 
       <input type="text" name="username" id="u_name"required pattern="^[A-Za-z0-9]+" placeholder="USERNAME" autocomplete="off">
       <input type="password"name="password" id="password"required pattern="^[A-Za-z0-9]+" placeholder="PASSWORD">
+
+        <div class="checkboxx">
+      <label for="show-password" class="field-toggle">
+
+        <input type="checkbox" id="show-password" class="field-toggle-input" />
+        show password
+      </label>
+    </div>
       <input type="button" id="submit" value="Submit">
 
         <input type="reset" id="reset" value="Clear">
