@@ -1,4 +1,5 @@
 <?php
+        session_start();
         include_once 'connection.php';
         
         $title = $_POST['title'];
@@ -306,7 +307,14 @@
                 }
 
             }
-            echo "success:Done:$book_id";
+            $accid = $_SESSION['uid'];
+            $query = "INSERT INTO `groupdoc` (`id`, `accid`, `book_id`) VALUES (NULL, '$accid', '$book_id')";
+                    $dbconfig = new dbconfig();
+                    $conn = $dbconfig->getCon();
+                    $result = $conn ->query($query);
+
+
+                    echo "success:Done:$book_id";
 
             ///-----------END OF ADVISER INSERTION------------------///
 

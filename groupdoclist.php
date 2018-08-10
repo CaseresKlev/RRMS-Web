@@ -66,8 +66,11 @@ $accid = $_GET['gid'];
                       <?php 
 
                       if(!$hideResult){
-                        echo "<tr><td class="."\"bookchar\"" . ">  <a  href=" . "\"bookdetails.php?book_id=" . $row['book_id'] . "\"" . ">". $row['title'] . "</a> </td><td class=". "\"subrevision\"" . " style=". "\"text-align:right;" ."\"" . "> <a href=". "\"revision.php?book_id=" . $row['book_id']. "&revison=true" . "\"" . ">Submit Revisions</a> </td>
-                      </tr>";
+                        echo "<ul><tr></li><td class="."\"bookchar\"" . ">  <a style=\"font-size: 14pt; font-weight: bold;\" href=" . "\"bookdetails.php?book_id=" . $row['book_id'] . "\"" . ">". $row['title'] . "</a> </td></li><td class=". "\"subrevision\"" . " style=". "\"text-align:right;" ."\"" . "> <a href=". "\"revision.php?book_id=" . $row['book_id'].  "\"" . ">Submit Revisions</a> </td>
+                      </tr></ul>";
+                      }else{
+                        echo "<div style=\"width: 100%; text-align: center; color: red;\"><strong>You Dont have Document Uploaded</strong></div>";
+
                       }
 
 
@@ -75,8 +78,7 @@ $accid = $_GET['gid'];
                        
                       </table>
                       <br/>
-                      <div style="width: 100%; text-align: center; color: red;"><strong>You Dont have Document Uploaded</strong></div>
-
+                      
 
 
 

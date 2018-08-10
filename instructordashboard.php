@@ -10,6 +10,7 @@ session_start();
 
   $accname = $_SESSION['gname'];
   $acctype = $_SESSION['type'];
+  $uid = $_SESSION['uid'];
 
 ?>
 
@@ -59,8 +60,8 @@ session_start();
               <div class="menu_section">
                 <div class="nav side-menu">
 					<ul><a class= "dashboard-active" href="#documents"> DOCUMENTS </span></a></ul>
-					<ul><a href="accesscode(instruc).php"> ACCESS CODE </a> </ul>      
-					<ul><a href="reports(instruc).php"> REPORTS </a> </ul> </br> 
+					<ul><a href="accesscode_instruct.php"> ACCESS CODE </a> </ul>      
+					<ul><a href="fiddle.php"> REPORTS </a> </ul> </br> 
           <ul><a href="index(loyd).php"> Back to Home </a> </ul>     
 					<ul><button id= "btn-logout"><strong> <a href="logout.php"> LOGOUT </a></strong></button></ul>
                 </div>
@@ -74,16 +75,29 @@ session_start();
         <div class="right_col" role="main">
 			<div id= "instructor-frm-search" class= "frm-search" style= "font-size: 18px">
 				
-				<b> Search Documents </b>
-				<input type="text" placeholder="Search.." name="search"><button type="submit"> Search </button> </br></br>
+				<b> My Research </b>
 				<hr>
 				<div id= "instructor-div-voidmain" class= "div-voidmain">
 					<form id= "instructor-frm-documents" class= "frm-documents" action="/action_page.php">
 						<table style="font-size: 15px" width= "100%">
-							<tr> 
-								<td> <li> Around the World in 80 Days </li> </td>
-								<td> <u style= "cursor: pointer; float: right"> Submit Revision </u> </td>
-							</tr>
+							
+                <?php 
+                  include_once 'connection.php';
+                  $dbconfig = new dbconfig();
+                  $conn = $dbconfig->getCon();
+                  $query = "SELECT book.book_id, book.book_title FROM book INNER JOIN groupdoc on book.book_id = groupdoc.book_id WHERE groupdoc.accid = $uid";
+                  $result = $conn->query($query);
+                  if($result->num_rows>0){
+                    while ($row=$result->fetch_assoc()) {
+                      echo "<tr> 
+                              <td> <li>" . $row['book_title'] . "</li> </td>
+                              <td> <a href=revision.php?book_id=" . $row['book_id'] ." <u style= \"cursor: pointer; float: right\"> Submit Revision </u> </td></a>
+                            </tr>";
+                    }
+                  }
+
+                ?>
+
 						</table>
 					</form></br></br>
 					<hr>

@@ -1,3 +1,19 @@
+<?php
+session_start();
+
+
+  if(isset($_SESSION['uid'])){
+    print_r($_SESSION);
+  }else{
+    header("Location: index(loyd).php");
+  }
+
+  $accname = $_SESSION['gname'];
+  $acctype = $_SESSION['type'];
+
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -53,37 +69,54 @@
         <!-- page content -->
         <div class="right_col" role="main">
 			<div id= "instructor-frm-container" class="frm-container" style="margin: auto; width: 80%; margin-top: 5%">
-				<center><h1> GENERATE ACCESS CODE </h1></center>
-			<hr></br>
-			<form id= "instructor-frm-generatepass" class= "frm-generatepass" action="/action_page.php">
+				<center><b> GENERATE ACCESS CODE </b></center>
+			<hr>
 				<table style="width= 100%">
-					<tr style="font-size: 15px"> 
+					<tr> 
 						<td width= "50%"> <b> Number of Access Code: </b> </td>
-						<td> <input type="number" placeholder="0" name="number" style= "width: 50%" required> </td>
-						<td><button type="submit" id= "instructor-frm-generate" class="btn-generate"> GENERATE </button></td>
+						<td> <input type="number" placeholder="0" id="access-count" name="number" min="0" style= "width: 50%; font-size: 14pt" required> </td>
+						<td><button type="submit" id= "instructor-frm-generate" class="btn-generate" style="font-size:12pt"> Generate </button></td>
 					</tr>
 				</table>
-			</form></br></br>
 			<hr></br>
-			</br> <center><h1> GENERATED CODES </h1></center>
-			<form id= "instructor-frm-generatepass" class= "frm-generatepass" action="/action_page.php">
-				<table style="font-size: 15px">
-					<tr> 
-						<td> <b>1. </b> </td>
-						<td> </td>
+			</br> 
+			<div id="printtable">
+				<table style="width:100%"border="1" cellpadding="3" id="tbl-accescodes"  style="font-size: 15px; " >
+					<center><h2> Available Student Codes </h2></center>
+					<tr class="access-tr-head">
+						<th id="access-th">Count</th>
+						<th id="access-th">Access Codes</th>
+						<th id="access-th">Type</th>
 					</tr>
-					<tr> 
-						<td> <b>2. </b> </td>
-						<td> </td>
-					</tr>
-					<tr> 
-						<td> <b>3. </b> </td>
-						<td> </td>
-					</tr>
+					<?php 
+						include_once 'connection.php';
+						$dbconfig = new dbconfig();
+						$conn = $dbconfig->getCon();
+						$query = "SELECT * FROM `acesskey` WHERE used=0 and type='Student'";
+						$result = $conn->query($query);
+						if($result->num_rows>0){
+							$i=1;
+							while($row=$result->fetch_assoc()){
+								echo "<tr class=\"access-tr-head\">
+										<th id=\"access-th\">$i</th>
+											<th id=\"access-th\">" . $row['acesskey'] . "</th>
+												<th id=\"access-th\">" . $row['type'] . "</th>
+										</tr>";
+										$i++;
+							}
+						}
+
+
+					?>
+					
 				</table>
-			</form></br></br>
-			<hr></br>
-			<button type="submit" id= "instructor-btn-print" class="btn-print"> PRINT </button>
+			</div>
+			<iframe name="print_frame" width="0" height="0" frameborder="0" src="about:blank"></iframe>
+				<br>
+				<br>
+			<hr>
+			<button type="submit" id= "instructor-btn-print" class="btn-print" style="font-size: 14pt" onclick="printDiv()"> PRINT </button>
+			
 		</div>
           <!-- top tiles -->
           <div class="row tile_count"></div>
@@ -104,6 +137,16 @@
 
     <!-- Custom Theme Scripts -->
     <script src="js/custom.min.js"></script>
+    <script type="text/javascript" src="js/accesscode.js"></script>
+    <script>
+		function printDiv() {
+			
+			 window.frames["print_frame"].document.body.innerHTML = "jmhngfvdvgbhkj,mhgfvdgbhjkkmhngf" + document.getElementById("printtable").innerHTML;
+			 alert(window.frames["print_frame"].document.body.innerHTML = document.getElementById("printtable").innerHTML);
+			 window.frames["print_frame"].window.focus();
+			 window.frames["print_frame"].window.print();
+		 }
+		</script>
 	
   </body>
 </html>
