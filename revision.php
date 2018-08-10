@@ -13,7 +13,9 @@
 </head>
 
 <body>
-      
+    <?php
+        include "header.php";
+    ?>    
   <?php
     include_once 'connection.php';
 
@@ -108,5 +110,8 @@
 <script src="js/jquery.form.min.js"></script>
   <script type="text/javascript" src="js/indexing.js"></script>
   <textarea style="display:none;" id="content" wrap="hard" rows="10" cols="20"></textarea>
+  <?php
+    include 'footer.php';
+?>
 </body>
 </html>
