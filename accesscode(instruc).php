@@ -38,7 +38,7 @@
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
               <div class="menu_section">
                 <div class="nav side-menu">
-					<ul><a href="instructordashboard.php"> DOCUMENTS </span></a></ul>
+					<ul><a href="instructordashboard.php"> MY RESEARCH </span></a></ul>
 					<ul><a class= "dashboard-active" href="#code"> ACCESS CODE </a> </ul>      
 					<ul><a href="fiddle.php" target="_blank"> REPORTS </a> </ul> </br>
 					<ul><a href="index(loyd).php"> Back to Home </a> </ul>      

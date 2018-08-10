@@ -60,7 +60,7 @@
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
               <div class="menu_section">
                 <div class="nav side-menu">
-					<ul><a href="admindashboard.php"> DOCUMENTS </span></a></ul>
+					<ul><a href="admindashboard.php"> MY RESEARCH </span></a></ul>
 					<ul><a href="updateAcc.php"> UPDATE ACCOUNT </a></ul>
 					<ul><a class= "dashboard-active" href="#code"> ACCESS CODE </a> </ul>
 					<ul><a href="fiddle.php" target="_blank"> REPORTS </a> </ul> </br>
@@ -78,7 +78,7 @@
 			<div id= "admin-frm-container" class="frm-container" style="margin: auto; width: 80%">
 				<center><h1> GENERATE ACCESS CODE </h1></center>
 			<hr></br>
-			<form id= "admin-frm-generatepass" class= "frm-generatepass" action="/action_page.php">
+			<form id= "admin-frm-generatepass" class= "frm-generatepass" >
 				<table style="font-size: 15px">
 					<tr>
 						<td> <b> Number of Access Code: </b> </td>
@@ -89,7 +89,7 @@
 			</form></br></br>
 			<progress id="prog" max="100" value="0" style="width: 100%" ></progress>
 			<hr>
-			</br> <center><h1> GENERATED CODES </h1></center>
+			</br> <center><h2> Available Accesskey </h2></center>
 			<form id= "admin-frm-generatepass" class= "frm-generatepass" action="/action_page.php">
 				<div id="printtable">
 				<table style="width:100%"border="1" cellpadding="3" id="tbl-accescodes" style="font-size: 15px" >
@@ -99,6 +99,26 @@
 						<th id="access-th">Access Codes</th>
 						<th id="access-th">Type</th>
 					</tr>
+					<?php 
+						include_once 'connection.php';
+						$dbconfig = new dbconfig();
+						$conn = $dbconfig->getCon();
+						$query = "SELECT * FROM `acesskey` WHERE used=0 and type='instructor'";
+						$result = $conn->query($query);
+						if($result->num_rows>0){
+							$i=1;
+							while($row=$result->fetch_assoc()){
+								echo "<tr class=\"access-tr-head\">
+										<th id=\"access-th\">$i</th>
+											<th id=\"access-th\">" . $row['acesskey'] . "</th>
+												<th id=\"access-th\">" . $row['type'] . "</th>
+										</tr>";
+										$i++;
+							}
+						}
+
+
+					?>
 				</table>
 			</div>
 				<iframe name="print_frame" width="0" height="0" frameborder="0" src="about:blank"></iframe>
