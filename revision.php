@@ -108,6 +108,6 @@
 <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
 <script src="js/jquery.form.min.js"></script>
   <script type="text/javascript" src="js/indexing.js"></script>
-  <textarea id="content" wrap="hard" rows="10" cols="20"></textarea>
+  <textarea style="display:none;" id="content" wrap="hard" rows="10" cols="20"></textarea>
 </body>
 </html>
