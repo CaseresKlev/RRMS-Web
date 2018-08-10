@@ -5,6 +5,7 @@ if(isset($_SESSION['uid'])){
     print_r($_SESSION);
     $accname = $_SESSION['gname'];
   $acctype = $_SESSION['type'];
+
   }else{
     //header("Location: index(loyd).php");
   }
@@ -48,7 +49,7 @@ if(isset($_SESSION['uid'])){
 							if($acctype==="instructor" || $acctype==="admin"){
 								echo "<a href=" . "\"admindashboard.php\"" . "> My Dashboard </a>";
 							}else{
-								echo "<a href=". "\"groupdoclist.php\"" . "> Documents </a>";
+								echo "<a href=". "\"groupdoclist.php?gid=" . $_SESSION['uid'] . "\"" . "> Documents </a>";
 								echo "<a href=". "\"userchangepass.php\"" . "> Change Password </a>";
 							}
 								echo "<a href=". "\"logout.php\"" . ">LOGOUT</a>";

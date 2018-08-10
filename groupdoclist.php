@@ -2,6 +2,8 @@
 
 //session_start();
 $bookid = 1;
+$accid = $_GET['gid'];
+//echo $gid;
 
 ?>
 
@@ -22,29 +24,36 @@ $bookid = 1;
         include_once 'header.php';
      ?>
    <?php
-   $bookid = $_GET['book_id'];
+  
  ?>
    <div class="annegroup">
-    <?php
-          include_once 'connection.php';
-          $dbconfig = new dbconfig();
-          $con = $dbconfig->getCon();
-          $query = "SELECT * FROM `account` WHERE id = $bookid";
-          $result = $con->query($query);
-           if ($result->num_rows>0) {
-            while ($row=$result->fetch_assoc()) {
-              #echo $row['a_id'] . " " . $row['a_fname'] . " " . $row['a_mname'] . " " . $row['a_lname'] . " " . $row['a_suffix'] . " " . $row['a_add'] . " " . $row['a_contact'] . " " . $row['a_email'];
-      ?>
-      <h2><?php echo $row['g_name']; ?></h2> <!--voidmain -->
-     <?php }
-  } ?>
+    
   </div>
         <!--  <div class="annegroupbook"> -->
 
             <table class="subtable" style="width:100%;">
               <tr>
                 <td style="width:50%; text-align:left;"> <h3> SUBMITTED RESEARCH PAPER </h3> </td>
-          <td style="text-align: right;">    <a href="add-research.php"> <h5 class="subdocu"> Submit documents </h5> </a> </td>
+                <?php 
+                  include_once 'connection.php';
+                  $dbconfig = new dbconfig();
+                  $conn = $dbconfig->getCon();
+                  $query = "SELECT book.book_id, book.book_title as 'title' from book INNER JOIN groupdoc on book.book_id = groupdoc.book_id WHERE groupdoc.accid = $accid";
+                  $result = $conn->query($query);
+                  $hideResult = null;
+                  $row = null;
+                  if(!$result->num_rows>0){
+                    
+                    //echo "string " . $row['book_id'];
+                    $hideResult = true;
+                    echo "<td style=" . "\"text-align: right;\"" .">    <a href="."\"add-research.php". "\"". "> <h5 class=". "\"subdocu"."\"" . "> Submit documents </h5> </a> </td>";
+                  }else{
+                      $row = $result->fetch_assoc();
+                  }
+                //echo $query;        
+
+                ?>
+          
               </tr>
               </table>
                 <hr>
@@ -54,11 +63,16 @@ $bookid = 1;
 
 
                      <table class="grouptable" style="width:100%;">
+                      <?php 
 
-                       <tr>
-                           <td class="bookchar">  <a  href="bookdetails.php?book_id=1">TITLE</a> </td>
-                             <td class="subrevision" style="text-align:right;"> <a href="revision.php">Submit Revisions</a> </td>
-                      </tr>
+                      if(!$hideResult){
+                        echo "<tr><td class="."\"bookchar\"" . ">  <a  href=" . "\"bookdetails.php?book_id=" . $row['book_id'] . "\"" . ">". $row['title'] . "</a> </td><td class=". "\"subrevision\"" . " style=". "\"text-align:right;" ."\"" . "> <a href=". "\"revision.php?book_id=" . $row['book_id']. "&revison=true" . "\"" . ">Submit Revisions</a> </td>
+                      </tr>";
+                      }
+
+
+                      ?>
+                       
                       </table>
 
 
