@@ -70,7 +70,7 @@ h1 {
   text-align: center;
   text-align: center;
   text-transform: uppercase;
-  color:#00004d;
+  color: #4CAF50;
 
 }
 button {
@@ -87,8 +87,10 @@ button {
 }
 
 body{
-  background-color: #808080;
+  background-color: #00004d;
 }
 .browse{
   text-align: left;
 }
+
+
