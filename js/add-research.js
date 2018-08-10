@@ -199,7 +199,7 @@
                     var str = data.split(":");
 
                     if(str[0]==="error"){
-                        alert(str[1]);
+                        alert(str[2]);
                     }else{
                         window.location.href = "acceptbook.php?book_id=" + str[2]; 
                     }
