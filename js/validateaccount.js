@@ -30,7 +30,7 @@ $("#submit").click(function(){
           //alert(str[0]);
           if (str[0]==="Success") {
             alert(data);
-        $(".boxx")[0].reset();
+        //$(".boxx")[0].reset();
             window.location.replace("new-login.php");
           }else {
             alert(data);
