@@ -3,17 +3,21 @@ $(".btn-update").click(function(){
 
 	var opsw = $("#oldpsw").val();
 	var npsw = $("#npsw").val();
-	var access = $("#access").val();
-	alert(access);
+
+	//alert(npsw);
+	//var access = $("#access").val();
+	//alert(access);
 
 	var ncpsw = $("#ncpsw").val();
 	//alert(ncpsw);
 	var gname = $("#gname").val();
 	if(opsw==''|| npsw=='' || ncpsw==''){
+		$("#result").show();
 		$("#result").html("Please fill all fields!");
+		$("#result").fadeOut(5000);
 	}else{
 		if(ncpsw==npsw){
-			document.getElementById('frm-updateAcc').reset();
+			document.getElementById('admin-frm-updateAcc').reset();
 			$.ajax({
 				url: 'valUpdateAccount.php',
 				type:"POST",
@@ -26,7 +30,9 @@ $(".btn-update").click(function(){
         	},
         	success: function (data) {
             //alert("Data Loaded:");
+           		$("#result").show();
             	$("#result").html(data);
+            	//$("#result").fadeOut(5000);
         	}
 			});
 		}else{

@@ -107,7 +107,7 @@
 				</table>
 			</form></br></br>
 			<hr>
-			<div id="result" style="text-align: center; color: red; font-weight: bold;">mnjhgfccvg</div>
+			<div id="result" style="text-align: center; color: red; font-weight: bold; display: none;">mnjhgfccvg</div>
 			<input type="text" id="gname" class="gname" style="display: none;" value="<?php echo $_SESSION['gname'];?>" />
 			<button type="submit" class="btn-update" id="btn-update"> UPDATE </button>
 		</div>

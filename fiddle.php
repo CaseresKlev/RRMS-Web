@@ -9,6 +9,7 @@
 
 <!doctype html>
 
+
   <html>
       <head>
         <title>RRMS FILTER REPORTS</title>
@@ -19,9 +20,10 @@
       </head>
 
       <body>
+        
         <center><h1>RRMS REPORTS</h1></center>
         <table id="example" class="display nowrap" cellspacing="0" width="100%">
-          <thead>
+          <thead style="text-align: left;">
             <tr>
               <th>Book ID</th>
               <th>Book title</th>

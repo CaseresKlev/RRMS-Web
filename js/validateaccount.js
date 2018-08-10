@@ -3,12 +3,16 @@ $("#submit").click(function(){
 
   var u_name=$("#u_name").val();
   var access=$("#access").val();
-  //alert(access);
-
   var upass=$("#password").val();
+
+  //alert(upass.length);
   if (g_name===''|| u_name==='' || upass==='') {
     alert("Please fill all fields!");
+  }else if(upass.length>12 || u_name.length>12){
+    alert("Notice: Maximum of length or username or password is 12 character");
+
   }else {
+    //alert("else");
     $.ajax({
       url:"validate.php",
       type:"POST",

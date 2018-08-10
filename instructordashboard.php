@@ -1,3 +1,20 @@
+<?php
+session_start();
+
+
+  if(isset($_SESSION['uid'])){
+    print_r($_SESSION);
+  }else{
+    header("Location: index(loyd).php");
+  }
+
+  $accname = $_SESSION['gname'];
+  $acctype = $_SESSION['type'];
+
+?>
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -43,8 +60,9 @@
                 <div class="nav side-menu">
 					<ul><a class= "dashboard-active" href="#documents"> DOCUMENTS </span></a></ul>
 					<ul><a href="accesscode(instruc).php"> ACCESS CODE </a> </ul>      
-					<ul><a href="reports(instruc).php"> REPORTS </a> </ul> </br>      
-					<ul><button id= "btn-logout"><strong> <a href="#Logout"> LOGOUT </a></strong></button></ul>
+					<ul><a href="reports(instruc).php"> REPORTS </a> </ul> </br> 
+          <ul><a href="index(loyd).php"> Back to Home </a> </ul>     
+					<ul><button id= "btn-logout"><strong> <a href="logout.php"> LOGOUT </a></strong></button></ul>
                 </div>
               </div>
 

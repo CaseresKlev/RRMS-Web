@@ -1,5 +1,16 @@
 <?php
+
 session_start();
+if(isset($_SESSION['uid'])){
+    print_r($_SESSION);
+    $accname = $_SESSION['gname'];
+  $acctype = $_SESSION['type'];
+  }else{
+    //header("Location: index(loyd).php");
+  }
+
+  
+
 ?>
 
 <!DOCTYPE html>
@@ -30,11 +41,20 @@ session_start();
 				<!--<li style="float:right"><a class= "user-dropdown">User</a></li>-->
 				<div class="dropdown" style="float:right">
 					<a class="dropbtn" id="userli" >User</a>
-					<div class="dropdown-content">
-						<a href="admindashboard.php"> My Dashboard </a>
-						<a href="#"> Documents </a>
-						<a href="#"> Account </a>
-						<a href="logout.php">LOGOUT</a>
+					<?php
+					echo "<div class="."\"dropdown-content\"" . ">";
+						
+						if(isset($_SESSION['uid'])){
+							if($acctype=="instructor" || $acctype=="admin"){
+								echo "<a href=" . "\"admindashboard.php\"" . "> My Dashboard </a>";
+							}
+						
+						
+						
+						echo "<a href=". "\"groupdoclist.php\"" . "> Documents </a>";
+						echo "<a href=". "\"logout.php\"" . ">LOGOUT</a>";
+					}
+						?>
 					</div>
 				</div>
 				<li style="float:right;" id="btnLoginOut" ><a href="new-login.php">Login</a></li>
