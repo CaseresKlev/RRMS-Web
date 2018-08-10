@@ -41,7 +41,7 @@ $bookid = 1;
   </div>
           <div class="annegroupbook">
               <h3> SUBMITTED RESEARCH PAPER </h3>
-              <a href="revision.php"> <h5> Submit documents </h5> </a>
+              <a href="revision.php"> <h5 class="subdocu"> Submit documents </h5> </a>
                   <hr>
           </div>
              <div class="annegrouplist">
@@ -58,10 +58,11 @@ $bookid = 1;
 
 
                      <table class="grouptable">
-                          <tr class="grouprow">
-                           <th>  <a  href="bookdetails.php?book_id=<?php echo $row['book_id']; ?>"> <?php echo $row['book_title']; ?> </a> </th>
-                             <th class="subrevision"> <a href="#">Submit Revisions</a> </th>
-                           </tr>
+
+                       <th>
+                           <td class="bookchar">  <a  href="bookdetails.php?book_id=<?php echo $row['book_id']; ?>"> <?php echo $row['book_title']; ?> </a> </td>
+                             <td class="subrevision"> <a href="#">Submit Revisions</a> </td>
+                      </th>
                       </table>
                        <?php }
                     } ?>
