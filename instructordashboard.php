@@ -59,7 +59,7 @@ session_start();
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
               <div class="menu_section">
                 <div class="nav side-menu">
-					<ul><a class= "dashboard-active" href="#documents"> DOCUMENTS </span></a></ul>
+					<ul><a class= "dashboard-active" href="#documents"> MY RESEARCH </span></a></ul>
 					<ul><a href="accesscode_instruct.php"> ACCESS CODE </a> </ul>      
 					<ul><a href="fiddle.php"> REPORTS </a> </ul> </br> 
           <ul><a href="index(loyd).php"> Back to Home </a> </ul>     
