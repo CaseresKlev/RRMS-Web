@@ -48,13 +48,16 @@
 }
 
 .grouptable {
-    border-collapse: collapse;
-    width: 100%;
-    table-layout: fixed;
-    margin-left: 2em;
+    max-width: 100%;
+
 }
 
 .subrevision {
-  margin-right: 3em;
-  padding: 8px;
+  float: left;
+  padding-left: 250%;
+  padding-bottom: 0;
+}
+
+.bookchar {
+  margin: auto;
 }
