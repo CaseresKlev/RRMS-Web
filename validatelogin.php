@@ -6,7 +6,7 @@
   $uname = $_POST['username'];
   $upass = $_POST['password'];
  // $old = $_POST['opsw'];
-  
+
 
 
   include_once 'connection.php';
@@ -24,7 +24,7 @@
     }
 
     echo "Success:Login";
-    //header("Location: index.php"); 
+    //header("Location: index.php");
 }else {
     echo "Error:Your username and password do not match. Please try again.";
   }
