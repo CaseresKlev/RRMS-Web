@@ -92,12 +92,15 @@ if(isset($_SESSION['uid'])){
 						<span class="tbl-search_checkmark"></span>
 					</label>
 				</td>
+				
 				<td>
 
 					<label class="tbl-search_container" id="search_key"> Keywords <input type="radio" name="radio">
 						<span class="tbl-search_checkmark"></span>
 					</label>
 				</td>
+				<td> </td>
+				
 			</tr>
 		</table>
 		</form>
