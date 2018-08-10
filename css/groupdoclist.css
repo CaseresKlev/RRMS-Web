@@ -37,8 +37,7 @@
 
 
  .annegrouplist {
-  float: left;
-  margin-right: 75%;
+
 }
 
 .grouprow {
@@ -53,11 +52,9 @@
 }
 
 .subrevision {
-  float: left;
-  padding-left: 250%;
-  padding-bottom: 0;
+
 }
 
 .bookchar {
-  margin: auto;
+  width: 50%;
 }
