@@ -1,4 +1,6 @@
-
+<?php
+    //session_start();
+?>
 
 <!DOCTYPE html>
 <html style="width=70%">
@@ -11,11 +13,16 @@
 
 </head>
 
-<body>
+<body style="width: 70%; margin-left: auto; margin-right: auto;" >
+    <?php
+        include "header.php";
+    ?>
     <h1>Add Research Information</h1>
 
-<form  method="POST" enctype="multipart/form-data" id="entry">
-    <div id="enclosure">
+<form  method="POST" enctype="multipart/form-data" id="entry" style="width: 100%; margin-left: auto; margin-right: auto;">
+    <div id="enclosure" style="margin-bottom: 10px; margin-top: 20px; font-family: Raleway;
+    min-width: 300px;
+    text-align: left;">
         <div id = "page1" style="height=500px">
 
             <!--<div class="browse">
@@ -173,6 +180,10 @@
 
 <script src="js/jquery-3.3.1.js"></script>
 <script src="js/add-research.js"></script>
+
+<?php
+    include 'footer.php';
+?>
 </body>
 
 </html>

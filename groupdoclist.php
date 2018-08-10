@@ -46,7 +46,7 @@ $accid = $_GET['gid'];
                     
                     //echo "string " . $row['book_id'];
                     $hideResult = true;
-                    echo "<td style=" . "\"text-align: right;\"" .">    <a href="."\"add-research.php". "\"". "> <h5 class=". "\"subdocu"."\"" . "> Submit document </h5> </a> </td>";
+                    echo "<td style=" . "\"text-align: right;\"" .">    <a href="."\"add-research.php?gid=" . $accid . "\"". "> <h5 class=". "\"subdocu"."\"" . "> Submit document </h5> </a> </td>";
                   }else{
                       $row = $result->fetch_assoc();
                   }
@@ -74,12 +74,19 @@ $accid = $_GET['gid'];
                       ?>
                        
                       </table>
-
+                      <br/>
+                      <div style="width: 100%; text-align: center; color: red;"><strong>You Dont have Document Uploaded</strong></div>
 
 
 
 
                   </div>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <hr>
  </body>
  <footer style="padding-top: 5px;">
    <?php include_once 'footer.php' ?>
