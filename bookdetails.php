@@ -49,7 +49,7 @@
   					while ($row1 = $result->fetch_assoc()) {
   					//	$autorList .= $row['a_lname'] . ", " . $row['a_fname'] . "; ";
             ?>
-            <a href="author.php?aut_id=<?php echo $row1['a_id']; ?>">  <?php echo $row1['a_lname'] . ", " . $row1['a_fname'] . "; ";?>
+            <a href="author.php?aut_id=<?php echo $row1['a_id']; ?>" style="font-weight: bold; font-size: 14pt">  <?php echo $row1['a_lname'] . ", " . $row1['a_fname'] . "; ";?>
               </a>
         <?php }
       } ?>
@@ -99,8 +99,22 @@
         <tr >
           <td><strong>Cited:</strong> 5 Times</td>
         </tr>
+        
         <tr >
-          <td><h4>Download</h4></td>
+          <?php 
+            $dbconfig6= new dbconfig();
+            $con6= $dbconfig6 -> getCon();
+            $query6= "SELECT referencekey.refkey FROM `referencekey` WHERE referencekey.book_id = $id";
+            $result6 = $con6 -> query($query6);
+            $row6 = $result6->fetch_assoc();
+
+          ?>
+
+          <td>Citation Key: <b style="color: blue"><?php echo $row6['refkey'] ?></b></td>
+        </tr>
+        <br>
+        <tr >
+          <td><b>Download</b></td>
         </tr>
 
 

@@ -307,14 +307,27 @@
                 }
 
             }
-            $accid = $_SESSION['uid'];
-            $query = "INSERT INTO `groupdoc` (`id`, `accid`, `book_id`) VALUES (NULL, '$accid', '$book_id')";
+                    //document per group isertion
+                    $accid = $_SESSION['uid'];
+                    $query = "INSERT INTO `groupdoc` (`id`, `accid`, `book_id`) VALUES (NULL, '$accid', '$book_id')";
+                    $dbconfig = new dbconfig();
+                    $conn = $dbconfig->getCon();
+                    $result = $conn ->query($query);
+
+                    //insert citation key
+                    $refkey = getRandomString(32);
+                    $query = "INSERT INTO `referencekey` (`id`, `book_id`, `refkey`) VALUES ('', '$book_id', '$refkey')";
                     $dbconfig = new dbconfig();
                     $conn = $dbconfig->getCon();
                     $result = $conn ->query($query);
 
 
+
+
+
                     echo "success:Done:$book_id";
+
+
 
             ///-----------END OF ADVISER INSERTION------------------///
 
@@ -324,5 +337,20 @@
         ////--------------End of Book Insertion--------------------////
         
         
+
+
+
+
+
+        function getRandomString($length) {
+            $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            $string = '';
+
+            for ($i = 0; $i < $length; $i++) {
+                $string .= $characters[mt_rand(0, strlen($characters) - 1)];
+            }
+
+            return $string;
+        }
     
 ?>
