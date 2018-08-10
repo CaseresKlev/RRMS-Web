@@ -46,7 +46,7 @@ $accid = $_GET['gid'];
                     
                     //echo "string " . $row['book_id'];
                     $hideResult = true;
-                    echo "<td style=" . "\"text-align: right;\"" .">    <a href="."\"add-research.php". "\"". "> <h5 class=". "\"subdocu"."\"" . "> Submit documents </h5> </a> </td>";
+                    echo "<td style=" . "\"text-align: right;\"" .">    <a href="."\"add-research.php". "\"". "> <h5 class=". "\"subdocu"."\"" . "> Submit document </h5> </a> </td>";
                   }else{
                       $row = $result->fetch_assoc();
                   }
