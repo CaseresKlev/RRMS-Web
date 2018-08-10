@@ -125,18 +125,28 @@
 								Status:<br/> 
 								<select name="status" id="status" style= "width: 100%; font-family: Century Gothic; font-size: 15px; font-style: italic; font-weight: bold;">
                   <option></option>
-									<option>Unpublish</option>
+									<option> Unpublish </option>
 									<option> Proposed </option>
 									<option> Completed </option>
-									<option> Disseminated </option>
+									<option> Disseminated/Presented </option>
 									<option> Published </option>
 								</select>
 
                 <fieldset class= "fieldset-disseminated" style= "width: 97%; display: none;">
-                  <legend><i>Choose Disseminated Option </i></legend>
-                  <br/> 
-                    <input type="radio" name="loc" id="btn-radio-local" value="Local" class="btn-radio">
-                    <label class="tbl-radiocontainer" id="local" style="font-size: 12pt"> Local 
+                  <legend><i> Choose Disseminated/Presented Option </i></legend>
+                  <br/>
+					
+					<option class="tbl-radiocontainer" id="institutional" style="font-size: 12pt"> Institutional </option>
+					<option class="tbl-radiocontainer" id="national" style="font-size: 12pt"> National </option>
+					<option class="tbl-radiocontainer" id="international" style="font-size: 12pt"> International </option>
+					
+                    <!--<input type="radio" name="loc" id="btn-radio-institutional" value="Institutional" class="btn-radio">
+                    <label class="tbl-radiocontainer" id="institutional" style="font-size: 12pt"> Institutional 
+                      <span class="tbl-radiocheckmark"></span>
+                    </label>
+					
+					<input type="radio" name="loc" id="btn-radio-national" value="National" class="btn-radio">
+                    <label class="tbl-radiocontainer" id="national" style="font-size: 12pt"> National 
                       <span class="tbl-radiocheckmark"></span>
                     </label>
           
@@ -145,18 +155,44 @@
                       <span class="tbl-radiocheckmark"></span>
                     </label>
                     <textarea rows="4" cols="102" placeholder="Description 160 Character maximum" name="disseminated-desc" id="disseminated-desc" 
-            style= "width: 100%; font-family: Century Gothic; font-size: 15px; font-style: italic; font-weight: bold; resize: none;"></textarea>
+            style= "width: 100%; font-family: Century Gothic; font-size: 15px; font-style: italic; font-weight: bold; resize: none;"></textarea> -->
+					Name of Conference: 
+                    <input type="text" placeholder="conference name" id="Name" name="name" 
+					style= "width: 100%; font-family: Century Gothic; font-size: 15px; font-style: italic; font-weight: bold;">
+					
+					Venue of Conference: 
+                    <input type="text" placeholder="conference venue" id="Venue" name="venue" 
+					style= "width: 100%; font-family: Century Gothic; font-size: 15px; font-style: italic; font-weight: bold;">
+					
+					Date:
+                    <input type="date" width="100%" name="disdate" id="disdate" placeholder="" 
+					style= "font-family: Century Gothic; font-size: 15px; font-style: italic; font-weight: bold;">
+					
+					Certificate: 
+					<input type="file" name="myFile" 
+					style= "font-family: Century Gothic; font-size: 15px; font-style: italic; font-weight: bold;">
+					
                 </fieldset> 
                 <fieldset class= "fieldset-published" style= "width: 97%; display: none;">
-                  <legend><i>Fill Publish Details</i></legend> 
-                    ISDN:&emsp; 
+                  <legend><i> Fill Published Details</i></legend> 
+                    ISSN:&emsp; 
                     <input type="text/number" placeholder="serial number" id="isdn" name="serial" style= "width: 100%; font-family: Century Gothic; font-size: 15px; font-style: italic; font-weight: bold;"></br></br>
                     
-                    Journal: 
-                    <input type="text" placeholder="journal name" id="journal" name="name" style= "width: 100%; font-family: Century Gothic; font-size: 15px; font-style: italic; font-weight: bold;"> 
-                </fieldset> 
+                    Name of Journal: 
+                    <input type="text" placeholder="journal name" id="journal" name="name" 
+					style= "width: 100%; font-family: Century Gothic; font-size: 15px; font-style: italic; font-weight: bold;"> 
+					
+					Type of Journal: 
+                    <input type="text" placeholder="journal type" id="journal" name="type" 
+					style= "width: 100%; font-family: Century Gothic; font-size: 15px; font-style: italic; font-weight: bold;"> 
+                
+					Date:
+                    <input type="date" width="100%" name="pubdate" id="pubdate" placeholder="" 
+					style= "font-family: Century Gothic; font-size: 15px; font-style: italic; font-weight: bold;">
+					
+				</fieldset> 
                 <p class="edittxt" style= "font-family: Century Gothic; font-size: 16px">
-                Cited:<br>
+				Cited:<br>
                   <input type="number" placeholder="cite" name="cite" id="cite" min="0"
 				  style= "width: 100%; font-family: Century Gothic; font-size: 15px; font-style: italic; font-weight: bold;" value="<?php echo $_GET['cited']; ?>">
                 </p></br>
