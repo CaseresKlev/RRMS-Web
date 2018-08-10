@@ -45,14 +45,18 @@ if(isset($_SESSION['uid'])){
 					echo "<div class="."\"dropdown-content\"" . ">";
 						
 						if(isset($_SESSION['uid'])){
-							if($acctype=="instructor" || $acctype=="admin"){
+							if($acctype==="instructor" || $acctype==="admin"){
 								echo "<a href=" . "\"admindashboard.php\"" . "> My Dashboard </a>";
+							}else{
+								echo "<a href=". "\"groupdoclist.php\"" . "> Documents </a>";
+								echo "<a href=". "\"userchangepass.php\"" . "> Change Password </a>";
 							}
+								echo "<a href=". "\"logout.php\"" . ">LOGOUT</a>";
+							
 						
 						
+							
 						
-						echo "<a href=". "\"groupdoclist.php\"" . "> Documents </a>";
-						echo "<a href=". "\"logout.php\"" . ">LOGOUT</a>";
 					}
 						?>
 					</div>
