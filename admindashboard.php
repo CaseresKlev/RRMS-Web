@@ -72,7 +72,7 @@
 					<ul><a href="updateAcc.php"> UPDATE ACCOUNT </a></ul>
 					<ul><a href="accesscode.php"> ACCESS CODE </a> </ul>
 					<ul><a href="fiddle.php" target="_blank"> REPORTS </a> </ul> </br>
-          <ul><a href="index(loyd).php"> Back to Home </a> </ul>
+					<ul><a href="index(loyd).php"> Back to Home </a> </ul>
 					<ul><button id= "btn-logout"><strong> <a href="#Logout"> LOGOUT </a></strong></button></ul>
                 </div>
               </div>
