@@ -1,0 +1,14 @@
+/* TAPAYAN */
+ * {
+    box-sizing: border-box;
+}
+#userchangepassbody {
+  background-color: #d3d3d3;
+  max-width: 70%;
+  margin: auto;
+}
+.userchangepass {
+  padding-top: 12%;
+  width: 100%;
+  background-color: gray;
+}
