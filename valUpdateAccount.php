@@ -1,7 +1,9 @@
 <?php 
 $npass = $_POST['ncpsw'];
 $gname = $_POST['gname'];
- $old = $_POST['opsw'];
+$old = $_POST['opsw'];
+
+ //$echo $npass;
 
 	include("connection.php");
   $dbconfig = new dbconfig();

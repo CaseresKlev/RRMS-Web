@@ -14,7 +14,9 @@
   if($acctype==="admin"){
     echo "Admin ANG NAKALOGIN";
   }else if($acctype==="instructor"){
-    echo "Instructor ang naka login";
+    //echo "Instructor ang naka login";
+
+    header("Location: instructordashboard.php");
   }else if($acctype==="student"){
     echo "student ang naka login";
   }
@@ -38,6 +40,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="css/custom.min.css">
 
 </head>
+
 <body class="nav-md">
     <div class="container body">
 		<div class="main_container">
@@ -68,7 +71,8 @@
 					<ul><a class= "dashboard-active" href="#documents"> DOCUMENTS </span></a></ul>
 					<ul><a href="updateAcc.php"> UPDATE ACCOUNT </a></ul>
 					<ul><a href="accesscode.php"> ACCESS CODE </a> </ul>
-					<ul><a href="fiddle.php"> REPORTS </a> </ul> </br>      
+					<ul><a href="fiddle.php"> REPORTS </a> </ul> </br>
+          <ul><a href="index(loyd).php"> Back to Home </a> </ul>      
 					<ul><button id= "btn-logout"><strong> <a href="#Logout"> LOGOUT </a></strong></button></ul>
                 </div>
               </div>
