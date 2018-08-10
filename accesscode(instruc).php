@@ -1,17 +1,3 @@
-<?php
-	session_start();
-	if(isset($_SESSION['uid'])){
-    print_r($_SESSION);
-  }else{
-    header("Location: index(loyd).php");
-  }
-
-  $accname = $_SESSION['gname'];
-  $acctype = $_SESSION['type'];
-  //echo $acctype;
-?>
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,10 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title> Administrator </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+	
     <!-- Custom Theme Style -->
     <link rel="stylesheet" type="text/css" media="screen" href="css/custom.min.css">
-
+	
 </head>
 <body class="nav-md">
     <div class="container body">
@@ -52,9 +38,8 @@
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
               <div class="menu_section">
                 <div class="nav side-menu">
-					<ul><a href="admindashboard.php"> MY RESEARCH </span></a></ul>
-					<ul><a class= "dashboard-active" href="#update"> UPDATE ACCOUNT </a></ul>
-					<ul><a href="accesscode.php"> ACCESS CODE </a> </ul>
+					<ul><a href="instructordashboard.php"> MY RESEARCH </span></a></ul>
+					<ul><a class= "dashboard-active" href="#code"> ACCESS CODE </a> </ul>      
 					<ul><a href="fiddle.php" target="_blank"> REPORTS </a> </ul> </br>
 					<ul><a href="index(loyd).php"> Back to Home </a> </ul>      
 					<ul><button id= "btn-logout"><strong> <a href="#Logout"> LOGOUT </a></strong></button></ul>
@@ -64,48 +49,41 @@
             </div>
           </div>
         </div>
-
+       
         <!-- page content -->
         <div class="right_col" role="main">
-			<div id= "admin-frm-container" class="frm-container" style="margin: auto; width: 80%">
-				<center><h1> UPDATE ACCOUNT </h1></center>
+			<div id= "instructor-frm-container" class="frm-container" style="margin: auto; width: 80%; margin-top: 5%">
+				<center><h1> GENERATE ACCESS CODE </h1></center>
 			<hr></br>
-			<form id= "admin-frm-updateAcc">
-				<table style="font-size: 15px">
-					<tr>
-						<td> Current Password :</td>
-						<td> <input type="password" placeholder="Enter Password" name="psw" id="oldpsw" required> </td>
-					</tr>
-					<tr>
-						<td> </td>
-						<td> </td>
-					</tr>
-					<tr>
-						<td> </td>
-						<td> </td>
-					</tr>
-					<tr>
-						<td> New Password :</td>
-						<td> <input type="password" placeholder="Enter New Password" name="psw" id="npsw" required> </td>
-					</tr> </br>
-					<tr>
-						<td> </td>
-						<td> </td>
-					</tr>
-					<tr>
-						<td> </td>
-						<td> </td>
-					</tr>
-					<tr>
-						<td> Retype New Password :</td>
-						<td> <input type="password" placeholder="Re-enter New Password" name="ncpsw" id="ncpsw" required> </td>
+			<form id= "instructor-frm-generatepass" class= "frm-generatepass" action="/action_page.php">
+				<table style="width= 100%">
+					<tr style="font-size: 15px"> 
+						<td width= "50%"> <b> Number of Access Code: </b> </td>
+						<td> <input type="number" placeholder="0" name="number" style= "width: 50%" required> </td>
+						<td><button type="submit" id= "instructor-frm-generate" class="btn-generate"> GENERATE </button></td>
 					</tr>
 				</table>
 			</form></br></br>
-			<hr>
-			<div id="result" style="text-align: center; color: red; font-weight: bold; display: none;">mnjhgfccvg</div>
-			<input type="text" id="gname" class="gname" style="display: none;" value="<?php echo $_SESSION['gname'];?>" />
-			<button type="submit" class="btn-update" id="btn-update"> UPDATE </button>
+			<hr></br>
+			</br> <center><h1> GENERATED CODES </h1></center>
+			<form id= "instructor-frm-generatepass" class= "frm-generatepass" action="/action_page.php">
+				<table style="font-size: 15px">
+					<tr> 
+						<td> <b>1. </b> </td>
+						<td> </td>
+					</tr>
+					<tr> 
+						<td> <b>2. </b> </td>
+						<td> </td>
+					</tr>
+					<tr> 
+						<td> <b>3. </b> </td>
+						<td> </td>
+					</tr>
+				</table>
+			</form></br></br>
+			<hr></br>
+			<button type="submit" id= "instructor-btn-print" class="btn-print"> PRINT </button>
 		</div>
           <!-- top tiles -->
           <div class="row tile_count"></div>
@@ -120,14 +98,12 @@
     </div>
 
     <!-- jQuery -->
-    <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
     <script src="js/jquery.min.js"></script>
     <!-- Bootstrap -->
     <script src="js/bootstrap.min.js"></script>
 
     <!-- Custom Theme Scripts -->
     <script src="js/custom.min.js"></script>
-    <script type="text/javascript" src="js/updateAccount.js"></script>
-
+	
   </body>
 </html>

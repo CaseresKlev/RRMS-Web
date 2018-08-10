@@ -63,7 +63,7 @@
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
               <div class="menu_section">
                 <div class="nav side-menu">
-					<ul><a href="admindashboard.php"> DOCUMENTS </span></a></ul>
+					<ul><a href="admindashboard.php"> MY RESEARCH </span></a></ul>
 					<ul><a href="updateAcc.php"> UPDATE ACCOUNT </a></ul>
 					<ul><a href="accesscode.php"> ACCESS CODE </a> </ul>
 					<ul><a href="fiddle.php" target="_blank"> REPORTS </a> </ul> </br>
