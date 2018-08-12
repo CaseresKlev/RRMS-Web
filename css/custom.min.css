@@ -232,7 +232,7 @@
 .nav-md .container.body .col-md-3.left_col{
 	position: fixed;
 	min-height:115%;
-	width: 215px;
+	width: 196px;
 	padding:0;
 	display:-ms-flexbox;
 	display:flex;
@@ -248,7 +248,7 @@ body .container.body .right_col{
 .nav-md .container.body .right_col{
 	background-color: gray;
 	padding:10px 20px 0;
-	margin-left: 215px;
+	margin-left: 196px;
 	}
 .nav_title{
 	margin-top: 10%;
@@ -267,7 +267,7 @@ body .container.body .right_col{
 
 .nav-md .container.body .right_col{
 	float: right;
-	width: 265%; 
+	width: 70%; 
 	}
 .right_col{
 	padding:10px!important;
@@ -295,7 +295,7 @@ body .container.body .right_col{
 	padding:0;
 	}
 body {
-	color:#73879C;
+	color: black;
 	background:#2A3F54;
 	font-family:"Helvetica Neue",Roboto,Arial,"Droid Sans",sans-serif;
 	font-size:13px;

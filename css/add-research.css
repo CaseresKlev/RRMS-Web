@@ -70,7 +70,7 @@ h1 {
   text-align: center;
   text-align: center;
   text-transform: uppercase;
-  color: #4CAF50;
+  color: black;
 
 }
 button {
@@ -95,3 +95,4 @@ body{
 button[type=submit]{
   padding: 100%;
 }
+ 
