@@ -15,6 +15,8 @@
   transform: translate(-50%,-50%);
   background: #191919;
   text-align: center;
+  color: white;
+  font-size: 11pt;
 
 }
 .boxx-login input[type= "text"], .boxx-login input[type="text"], .boxx-login input[type="password"]{
@@ -91,4 +93,9 @@ font-weight: 500;
 }
 #link-login:hover, a:hover{
 color: green;
+}
+.checboxx input[type="checkbox"]{
+
+  color: white;
+  text-decoration-color: white;
 }

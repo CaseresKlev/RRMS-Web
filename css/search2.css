@@ -1,7 +1,7 @@
 /* TAPAYAN */
 
 .header_body {
-  background: #F8F8FF;
+  background: gray;
   width: 70%;
 }
 .header_search-container {
@@ -12,12 +12,12 @@
  }
 
 .header_search-container input[type=text] {
-	padding: 7px;
+    padding: 7px;
     margin-top: 0%;
     font-size: 17px;
     border: none;
-    margin-left: 10%;
-	margin-bottom: 5px;
+    margin-left: 0%;
+    margin-bottom: 5px;
 }
 
 .header_search-container button {
@@ -25,7 +25,7 @@
     padding: 6px;
     margin-top: 0%;
     margin-right: 0%;
-	margin-bottom: 5px;
+    margin-bottom: 5px;
     background: #ddd;
     font-size: 17px;
     border: none;
@@ -120,18 +120,14 @@
 }
 
 #search_title {
-  margin-left: 135%;
-  margin-top: 2%;
+    float: left;
+    margin-left: 98%;
+    margin-top: 2%;
 }
-
-#search_content {
-  margin-left: 50%;
-  margin-top: 2%;
-}
-
 #search_key {
-  margin-left: 0%;
-  margin-top: 2%;
+    float: right;
+    margin-left: 0%;
+    margin-top: 2%;
 }
 
 .main-con {
