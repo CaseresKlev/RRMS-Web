@@ -26,7 +26,7 @@
           <thead style="text-align: left;">
             <tr>
               <th>Book ID</th>
-              <th>Book title</th>
+              <th>Book Title</th>
               <th>Date</th>
               <th>Department</th>
               <th>Status</th>
@@ -70,13 +70,17 @@
                 <script type="text/javascript" src="js/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"> </script>
                   <script type="text/javascript" src="js/buttons.print.min.js"> </script>
 
+                    <script type="text/javascript" src="js/buttons/1.5.2/js/buttons.html5.min.js"> </script>
 
 
-                        <script type="text/javascript"src="js/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"> </script>
+                        <script type="text/javascript" src="js/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"> </script>
                           <script type="text/javascript" src="js/ajax/libs/jszip/3.1.3/jszip.min.js"> </script>
+                            <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.html5.min.js"> </script>
 
 
-            <script type="text/javascript">
+
+
+            <script type="text/javascript">     
             $(document).ready(function() {
       $('#example').DataTable( {
           dom: 'Bfrtip',

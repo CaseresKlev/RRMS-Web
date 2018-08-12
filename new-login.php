@@ -15,6 +15,33 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <title>LOGIN</title>
       <link rel="stylesheet" href="css/new-login.css">
+
+
+      <script>
+
+        function showPass()
+        {
+          var password= document.getElementById('password');
+          if (document.getElementById('show-password').checked)
+          {
+            password.setAttribute('type','text');
+
+          }else{
+
+              password.setAttribute('type','password');
+          }
+
+
+
+        }
+
+      </script>
+
+
+
+
+
+
     </head>
 
     <body class="body-login">
@@ -30,8 +57,8 @@
         <div class="checkboxx">
       <label for="show-password" class="field-toggle">
 
-        <input type="checkbox" id="show-password" class="field-toggle-input" />
-        show password
+        <input type="checkbox" id="show-password" onclick="showPass();" class="field-toggle-input" />
+        Show password
       </label>
     </div>
       <input type="button" id="submit" value="Submit">
@@ -44,6 +71,7 @@
 
 
     </form>
+
 
 
     <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
