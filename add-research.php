@@ -39,8 +39,8 @@
             </div>-->
             <div id="bookDet">
                 <p class="para">
-                Title
-                  <input type="text" placeholder="Book title" id="title" name="title">
+                Manuscript Title
+                  <input type="text" placeholder="Manuscript title" id="title" name="title">
                 </p>
                 <p class="para">
                     Abstract:<br>
@@ -53,7 +53,7 @@
                 <p class="para">
                     Category:
                     <select name="department" id="department">
-                        <option>Select your Departments</option>
+                        <option>Select your Department</option>
                     <?php include_once 'connection.php';
                         $dbconfig = new dbconfig();
                         $conn = $dbconfig->getCon();
@@ -69,7 +69,7 @@
                     </select>
                 </p>
                 <p id="para">
-                    Key Words:<strong style="color:red">&emsp;One Keywords per Line</strong></note>
+                    Key Words:<strong style="color:red">&emsp;One keyword per line</strong></note>
                     <textarea rows="6" cols="102" placeholder="Key Words" name="keywords" id="keywords"></textarea><br/>
                 </p>
                 <div class="ref-container">
@@ -104,8 +104,9 @@
                 <p class="para">
                     Status:
                     <select name="status" id="status">
-                        <option>Unpublish</option>
+                        <option>Unpublished</option>
                         <option>Published</option>
+                        <option>Utilized</option>
 
                     </select>
                 </p>
