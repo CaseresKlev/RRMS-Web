@@ -113,9 +113,16 @@
           <td>Citation Key: <b style="color: blue"><?php echo $row6['refkey'] ?></b></td>
         </tr>
         <br>
-        <tr >
-          <td><b>Download</b></td>
-        </tr>
+
+        <?php
+        //echo $row['dowloadable'];
+          if($row['dowloadable']==1){
+            echo "<tr >
+                    <td><b><a href=" . $row['docloc'] . ">Download</a></b></td>
+                  </tr>";
+          }
+        ?>
+        
 
 
 
@@ -146,13 +153,13 @@
         <?php
         $dbconfig= new dbconfig();
         $con= $dbconfig -> getCon();
-        $query= "SELECT ref.id, ref.link FROM ref INNER JOIN junk_bookref ON ref.id = junk_bookref.webref_id WHERE book_id = $id";
+        $query= "SELECT ref.id, ref.reftitle, ref.link FROM ref INNER JOIN junk_bookref ON ref.id = junk_bookref.webref_id WHERE book_id = $id";
         $result = $con -> query($query);
         if ($result->num_rows>0) {
           while ($row2=$result->fetch_assoc()) {
 
          ?>
-        <a <?php if(preg_match('/www./',$row2['link'])){ echo "href=" . "\"http://" . $row2['link'] ."\"" ." " . "target=" . "\"_blank\""; } ?> ><li><?php echo $row2['link'];?></li></a>
+        <a style="text-decoration: none;" <?php echo "href=" . $row2['link']  .  " target=" . "\"_blank\"";  ?> ><li><b><em><?php echo $row2['reftitle']; ?></em></em><b></br><?php echo $row2['link'];?></li></a>
       <?php }
     } ?>
 

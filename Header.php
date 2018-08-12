@@ -2,7 +2,7 @@
 
 session_start();
 if(isset($_SESSION['uid'])){
-    //print_r($_SESSION);
+   print_r($_SESSION);
     $accname = $_SESSION['gname'];
   $acctype = $_SESSION['type'];
 
@@ -39,14 +39,14 @@ if(isset($_SESSION['uid'])){
 			<ul id= "nav-ul">
 				<li><a href="index(loyd).php">Home</a></li>
 				<!--<li><a href="#plagiarism">Plagiarism</a></li>
-				<!--<li style="float:right"><a class= "user-dropdown">User</a></li>-->
+				<li style="float:right"><a class= "user-dropdown">User</a></li>-->
 				<div class="dropdown" style="float:right">
 					<a class="dropbtn" id="userli" >User</a>
 					<?php
 					echo "<div class="."\"dropdown-content\"" . ">";
 						
 						if(isset($_SESSION['uid'])){
-							if($acctype==="instructor" || $acctype==="admin"){
+							if($acctype==="INSTRUCTOR" || $acctype==="admin"){
 								echo "<a href=" . "\"admindashboard.php\"" . "> My Dashboard </a>";
 							}else{
 								echo "<a href=". "\"groupdoclist.php?gid=" . $_SESSION['uid'] . "\"" . "> My Research </a>";

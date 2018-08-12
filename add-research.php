@@ -77,26 +77,26 @@
                   <legend> References</legend>
 
                 <p id="para">
-                <br/><br/>&ensp;Title: (Appa Format)<br/>
-                    <textarea rows="1" cols="102" placeholder="Input reference title" name="reference" id="reference"></textarea>
+                <br/>&ensp;Title: (Appa Format)<br/>
+                    <textarea rows="1" cols="102" id="reftitle" placeholder="Input reference title"></textarea>
                 </p>
 
                 <p id="para">
-              <br/>&ensp;Weblinks<br/>
-                    <textarea rows="1" cols="102" placeholder="Input Weblinks" name="reference" id="reference"></textarea><br/>
+              &ensp;Weblinks<br/>
+                    <textarea rows="1" cols="102" id="refweb" placeholder="Input Weblinks" ></textarea><br/>
                 </p>
 
                 <p id="para">
-              <br/>&ensp;Local Reference key<br/>
-                    <textarea rows="1" cols="102" placeholder="Input Local Reference Key" name="reference" id="reference" style="text-transform:capitalized;"></textarea><br/>
+              &ensp;Local Research Reference key (if available)
+                    <textarea rows="1" cols="102" placeholder="Input Local Reference Key" name="reference" id="locref" style="text-transform:capitalized;"></textarea>
                 </p>
                 <div class="add">
-                <button type="submit" id="addref"style="display: block;padding: 10px 15px;vertical-align:middle; text-align:center; display:inline-block; float:left;">ADD</button>
+                <button type="button" id="addref" style="display: block;padding: 10px 15px;vertical-align:middle; text-align:center; display:inline-block; float:left;">ADD</button>
               </div>
-
+              <br>
                 <p id="para">
                 <br/><br/> <br/>References: &ensp;
-                    <textarea rows="6" cols="102" placeholder="" name="reference" id="reference" readonly></textarea><br/>
+                    <textarea rows="6" cols="102" placeholder="" name="reference" id="reference" value="" readonly></textarea><br/>
                 </p>
 
               </fieldset>
@@ -185,7 +185,7 @@
                         <input type="text" placeholder="Email" oninput="this.className = ''" id="adv_email">
                     </p>
                     <p>
-                      <center> <input type="checkbox"name="vehicle3" value="Boat" checked> I want others download my file.</center><br><br>
+                      <center> <input type="checkbox" id="download" name="vehicle3" value="Boat" checked> I want others download my file.</center><br><br>
                     </p>
     </div>
 

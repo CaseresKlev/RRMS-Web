@@ -103,7 +103,13 @@
 						include_once 'connection.php';
 						$dbconfig = new dbconfig();
 						$conn = $dbconfig->getCon();
-						$query = "SELECT * FROM `acesskey` WHERE used=0 and type='instructor'";
+						$query = null;
+						if($_SESSION['type']=="INSTRUCTOR"){
+							$query = "SELECT * FROM `acesskey` WHERE used=0 and type='student'";
+						}else{
+							$query = "SELECT * FROM `acesskey` WHERE used=0 and type='instructor'";
+						}
+						
 						$result = $conn->query($query);
 						if($result->num_rows>0){
 							$i=1;

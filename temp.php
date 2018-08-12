@@ -50,6 +50,8 @@
         //echo "<br/>";
         //$dbconfig = new dbconfig();
         //$conn = $dbconfig->getCon();
+        $dl = $_POST['dl'];
+        //echo "Dowload state = " . $dl;
 
 
         $adv_fname = $_POST['adv_fname'];
@@ -94,7 +96,7 @@
             echo "error:Book Already Exsist!";
         }else{
             //query for book details insertion
-            $query = "INSERT INTO `book` (`book_id`, `book_title`, `abstract`, `pub_date`, `department`, `rev_count`, `status`, `enabled`, `views_count`, `cover`, `docloc`) VALUES (NULL, '$title', '$abs', '$pubdate', '$deptid', '0', '$stat', '0', '0', '', '')";
+            $query = "INSERT INTO `book` (`book_id`, `book_title`, `abstract`, `pub_date`, `department`, `rev_count`, `status`, `enabled`, `views_count`, `cover`, `docloc`) VALUES (NULL, '$title', '$abs', '$pubdate', '$deptid', '0', '$stat', '0', '0', '', '', '$dl')";
        // echo "<br/>" . $query;
             $dbconfig = new dbconfig();
             $conn = $dbconfig->getCon();
@@ -226,8 +228,15 @@
             ///--------------START OF REFERENCES INSERTION------------///
             $refID = array();
             foreach($referencesArray as $key){
-                //check references if existed///
-                $query = "SELECT id FROM `ref` WHERE link='$key'";
+                $reftemp = split("\n", $key);
+
+
+                if($reftemp[0]===""){
+                    echo "empty";
+                }else{
+                    //check references if existed///
+                $query = "SELECT id FROM `ref` WHERE reftitle='$reftemp[0]'";
+                //echo $query;
                 $dbconfig = new dbconfig();
                 $conn = $dbconfig->getCon();
                 $result = $conn ->query($query);
@@ -238,21 +247,29 @@
                 }else{
                      // else not found then load to db and get the reference i.d
                     //load to ref table
-                    $query = "INSERT INTO `ref` (`id`, `link`) VALUES (NULL, '$key')";
-                    $dbconfig = new dbconfig();
-                    $conn = $dbconfig->getCon();
-                    $result = $conn ->query($query);
-                    //if load to db then get id then push to aray
-                    if($result){
-                        $query = "SELECT id FROM `ref` WHERE link='$key'";
+
+                        $query = "INSERT INTO `ref` (`id`, `reftitle`, `link`) VALUES (NULL, '$reftemp[0]','$reftemp[1]')";
+                        //echo $query;
                         $dbconfig = new dbconfig();
                         $conn = $dbconfig->getCon();
                         $result = $conn ->query($query);
-                        while($row1 = $result->fetch_assoc()){
-                            array_push($refID, $row1['id']);
+                        //if load to db then get id then push to aray
+                        if($result){
+                            $query = "SELECT id FROM `ref` WHERE reftitle='$reftemp[0]'";
+                            $dbconfig = new dbconfig();
+                            $conn = $dbconfig->getCon();
+                            $result = $conn ->query($query);
+                            while($row1 = $result->fetch_assoc()){
+                                array_push($refID, $row1['id']);
                         }
                     }
+                    
                 }
+                }
+                
+
+
+
             }
 
             //insert book and refernce on junction table

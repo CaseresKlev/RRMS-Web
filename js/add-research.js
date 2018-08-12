@@ -30,7 +30,7 @@
                 if(page<3){
 
                     if(page==1){
-                        if($("#title").val()==="" || $("#abstract").val()==="" || $("#pubdate").val()==="" || $("#department").val()==="" || $("#reference").val()==="" || $("#pubdate").val()===""){
+                        if($("#title").val()==="" || $("#abstract").val()==="" || $("#pubdate").val()==="" || $("#department").val()==="" || $("#pubdate").val()===""){
                             alert("Please fill all fileds!");
                         }else{
                             page++;
@@ -99,7 +99,78 @@
                 });*/
            // })
 
+           $("#reference").bind('input propertychange', function(){
+                alert("g");
+           })
+
+           $("#addref").click(function(){
+                //alert("fsrf");
+                //alert($("#refweb").val());
+                //alert($("#reftitle").val());
+                var reftitle = $("#reftitle").val();
+                //alert(reftitle);
+                var reflink = $("#refweb").val();
+
+                var refs = $("#reference").val();
+
+
+                if(reftitle=="" && $("#locref").val()==""){
+                    alert("Please fill citation title!");
+                }else if(!reftitle=="" && $("#locref").val()==""){
+                    refs = refs + reftitle +"\n" + reflink +"\n\n";
+                    $("#reference").val(refs);
+                     $("#reftitle").val("");
+                     $("#refweb").val("");
+                }
+
+
+                
+
+                if(!$("#locref").val()==""){
+
+                    var citkey = $("#locref").val();
+
+                    $.ajax({
+
+                        url:"getAPA.php",
+                        type: "POST",
+                        cache: false,
+                        data:{
+                            citkey:citkey
+                        },
+                        success: function(data){
+                            //alert(data);
+                            var str = data.split("--->");
+                            if(str[0]==="SUCCESS"){
+                                var refs = $("#reference").val();
+                                 refs = refs + str[1] + "\n";
+                                 $("#reference").val(refs);
+                                 $("#locref").val("");
+                            }else{
+                                alert(str[1]);
+                                $("#locref").val("");
+                            }
+                        }
+
+
+
+
+                    })
+
+                }
+
+
+
+           })
+
            $("#submit").click(function(){
+
+                var checbox = $("#download");
+                var dl=null;
+                if(checbox.is(':checked')){
+                    //alert("checkbox is check");
+                    dl=1;
+                }
 
                 //book details variable
                 var title = $("#title").val();
@@ -112,8 +183,8 @@
                 //alert(dept);
                 var kw = $("#keywords").val().split("\n");
                 //alert(kw);
-                var ref = $("#reference").val().split("\n");
-                //alert(ref);
+                var ref = $("#reference").val().split("\n\n");
+                alert(ref);
 
                 var stat = $("#status").val();
                // alert(stat);
@@ -191,25 +262,27 @@
                     adv_mname : adv_mname,
                     adv_lname : adv_lname,
                     adv_suff : adv_suff,
-                    adv_email : adv_email
+                    adv_email : adv_email,
+                    dl:dl
 
                 },
                 success: function (data) {
-
+                    alert(data);
                     var str = data.split(":");
 
                     if(str[0]==="error"){
                         alert(str[2]);
+                        $("#debug").html(data);
                     }else{
                         window.location.href = "acceptbook.php?book_id=" + str[2]; 
                     }
                    // $("#debug").html(data);
                           
 
-                    $("#debug").html(data);
+                    
 
                 }
-            });
+            }); 
 
 
            })
