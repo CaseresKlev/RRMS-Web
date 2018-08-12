@@ -267,7 +267,7 @@ body .container.body .right_col{
 
 .nav-md .container.body .right_col{
 	float: right;
-	width: 265%; 
+	width: 71%; 
 	}
 .right_col{
 	padding:10px!important;
@@ -295,7 +295,7 @@ body .container.body .right_col{
 	padding:0;
 	}
 body {
-	color:#73879C;
+	color: black;
 	background:#2A3F54;
 	font-family:"Helvetica Neue",Roboto,Arial,"Droid Sans",sans-serif;
 	font-size:13px;
