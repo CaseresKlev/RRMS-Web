@@ -114,7 +114,7 @@
 
     <div id = "page2" style="display:none">
         <fieldset>
-            <legend>Authours Info</legend>
+            <legend>Authors Info</legend>
                 <table name="aut_list" id="aut_list" style="display: none;">
 
                     <th>First Name</th>
