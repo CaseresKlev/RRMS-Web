@@ -44,7 +44,7 @@
       <form class="boxx">
         <h1>Create Account</h1>
 
-<<<<<<< HEAD
+
       <input type="text" name="g_name" id="g_name"required pattern="^[A-Za-z]+" placeholder="Group Name" autocomplete="off">
       <input type="text" name="u_name" id="u_name"required pattern="^[A-Za-z0-9]+" placeholder="User Name" autocomplete="off">
       <input type="password"name="password" id="password"required pattern="^[A-Za-z0-9]+" placeholder="Password">
@@ -57,14 +57,14 @@
   </div>
         <input type="text" name="accesscode" id="access" required pattern="^[A-Za-z0-9]+" placeholder="Access Code" autocomplete="off">
       <input type="button" id="submit" value="Submit">
-=======
+
       <label for="anneselect"> Choose account type </label>
         <select id="anneselect">
             <option> Student </option>
             <option> Instructor </option>
         </select>
 
->>>>>>> 757bf60883795d70db3cbf1fe9ac65136e73678a
+
 
         <input type="text" name="g_name" id="g_name"required pattern="^[A-Za-z]+" placeholder="Group Name" autocomplete="off">
         <input type="text" name="u_name" id="u_name"required pattern="^[A-Za-z0-9]+" placeholder="User Name" autocomplete="off">
