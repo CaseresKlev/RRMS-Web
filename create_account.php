@@ -45,7 +45,7 @@
         <h1>Create Account</h1>
 
         <label class="choose" for="anneselect"> Choose account type </label>
-          <select id="anneselect">
+          <select style="border:0;" id="anneselect">
               <option> Student </option>
               <option> Instructor </option>
           </select>

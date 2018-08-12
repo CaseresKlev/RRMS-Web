@@ -73,6 +73,7 @@ font-weight: 500;
   border: none;
   background-color: cornflowerblue;
   padding: 1%;
+  font-family: inherit;
 }
 
 .show {

@@ -47,7 +47,7 @@
                     <textarea rows="6" cols="102" placeholder="Abstract" name="abstract" id="abstract"></textarea>
                 </p>
                 <p class="para">
-                    Publication Date
+                    Submitted Date
                     <input type="date" width="100%" name="pubdate" id="pubdate" placeholder="">
                 </p>
                 <p class="para">
@@ -77,7 +77,7 @@
                   <legend> References</legend>
 
                 <p id="para">
-                <br/>&ensp;Title: (Appa Format)<br/>
+                <br/>&ensp;Title: (APA Format)<br/>
                     <textarea rows="1" cols="102" id="reftitle" placeholder="Input reference title"></textarea>
                 </p>
 
