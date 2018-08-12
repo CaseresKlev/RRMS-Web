@@ -1,9 +1,25 @@
+$("#anneselect").click(function(){
+    var type=$("#anneselect").val();
+
+      if (type=="Instructor") {
+        $("#g_name").hide();
+      }
+      else {
+        $("#g_name").show();
+      }
+})
+
+
+
+
 $("#submit").click(function(){
   var g_name=$("#g_name").val();
 
   var u_name=$("#u_name").val();
   var access=$("#access").val();
   var upass=$("#password").val();
+
+
 
   //alert(upass.length);
   if (g_name===''|| u_name==='' || upass==='') {
