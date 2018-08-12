@@ -44,11 +44,14 @@
       <form class="boxx">
         <h1>Create Account</h1>
 
-        <label class="choose" for="anneselect"> Choose account type </label>
-          <select style="border:0;" id="anneselect">
+
+        <label class="choose" for="anneselect"> Choose account type: </label>
+          <div class="styled-select slate">
+            <select style="border:0;" id="anneselect">
               <option> Student </option>
               <option> Instructor </option>
           </select>
+          </div>
 
 
 
