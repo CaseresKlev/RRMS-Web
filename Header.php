@@ -99,7 +99,10 @@ if(isset($_SESSION['uid'])){
 						<span class="tbl-search_checkmark"></span>
 					</label>
 				</td>
-				<td> </td>
+				<td> 
+				Date: </br>
+                    <input type="year" width="100%" name="pubdate" id="pubdate" placeholder="">
+				</td>
 				
 			</tr>
 		</table>
