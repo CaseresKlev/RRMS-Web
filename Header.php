@@ -82,24 +82,32 @@ if(isset($_SESSION['uid'])){
 			</tr>
 			<tr>
 				<td> </td>
-				<td> <input type="text" placeholder="Search.." name="search"> </td>
-				<td> <button type="submit"> Search </button> </td>
+				<td> <input type="text" placeholder="Search.." name="search" id="skey"> </td>
+				<td> <button type="button" id="btn-search-home"> Search </button> </td>
 			</tr>
 			<tr>
 				<td>
 
-					<label class="tbl-search_container" id="search_title"> Title <input type="radio" checked="checked" name="radio">
+					<label class="tbl-search_container" > Title 
+						<input type="radio" checked="checked" name="radio" id="search_title">
 						<span class="tbl-search_checkmark"></span>
 					</label>
 				</td>
 				
 				<td>
 
-					<label class="tbl-search_container" id="search_key"> Keywords <input type="radio" name="radio">
+					<label class="tbl-search_container" id="search_key"> Keywords 
+						<input type="radio" name="radio" id="search_kw">
 						<span class="tbl-search_checkmark"></span>
 					</label>
 				</td>
-				<td> </td>
+				<tr>
+					<td></td>
+				<td colspan="2"> 
+				Date: </br>
+                    <input type="number" width="100%"  name="pubdate" id="filterdate" placeholder="">
+				</td>
+			</tr>
 				
 			</tr>
 		</table>
