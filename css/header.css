@@ -6,7 +6,7 @@
 }
 .header_body { 
 	width: 100%;
-	font-family: Arial;
+	font-family: Arial, Helvetica, sans-serif;
 	background-color: red;
 }
 @media screen and (max-width:800px){
@@ -214,7 +214,7 @@ ul{
     color: white;
     padding: 14px 44px;
     background-color: inherit;
-    font-family: inherit;
+    font-family: Arial, Helvetica, sans-serif;
     margin: 0;
 }
 
