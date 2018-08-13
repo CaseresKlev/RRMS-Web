@@ -19,7 +19,10 @@ $("#btn-search-home").click(function(){
 	var filterdate = $("#filterdate").val(); 
 	var by = "";
 
-	if(filterdate==""){
+
+
+	//alert("Please provide terms to search");
+
 		if($('#search_title').is(':checked')){
 		//alert("searct");
 		by = "title";
@@ -29,11 +32,11 @@ $("#btn-search-home").click(function(){
 		by = "kw";
 	}
 
-	
-	}
 
 	var search = "" + skey + "-" + by + "-" + filterdate;
 
-	window.location.replace("searchcontent.php?search="+search)
+	window.location.replace("searchcontent.php?search="+search);
+
+	
 	
 });
