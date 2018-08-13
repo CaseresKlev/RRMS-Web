@@ -73,14 +73,13 @@
         </tr>
 =======
         </tr> -->
->>>>>>> 414c252ca285c09df0d5769e3ecf913b5e3f7e88
         <tr class"det">
           <td><strong>Status:</strong><?php echo $row['status']; ?></td>
         </tr>
         <!-- <tr class"det">
-          <!-- <td><strong>Views:</strong><?php //echo " " .  $row['views_count']; ?></td> -->
-        </tr> -->
-        <tr >
+           <td><strong>Views:</strong><?php //echo " " .  $row['views_count']; ?></td> -->
+        </tr> 
+                <tr >
 
 
           <td><strong>Keywords:</strong> <i style="color:blue;">
