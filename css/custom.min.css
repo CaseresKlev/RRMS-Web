@@ -27,7 +27,7 @@
 	}
 .site_title span {
 	margin-top: 3%;
-	font-family: Century Gothic;
+	font-family: Arial, Helvetica, sans-serif;
 	font-size: 18px;
 	text-align: justify;
 	color: white;
@@ -124,7 +124,7 @@
 .menu_section>ul{
 	margin-top:10px;
 	text-decoration: none;
-	font-family: Century Gothic;
+	font-family: Arial, Helvetica, sans-serif;
 	}
 .profile_pic{
 	width:35%;
@@ -142,7 +142,7 @@
 	padding:4px;
 	}
 .profile_info{
-	font-family: Century Gothic;
+	font-family: Arial, Helvetica, sans-serif;
 	padding:25px 10px 10px;
 	width:65%;
 	float:left;
@@ -199,7 +199,7 @@
 	font-size: 15px;
 	color: white;
 	text-decoration: none;
-	font-family: Century Gothic;
+	font-family: Arial, Helvetica, sans-serif;
 }
 .nav.side-menu ul{
 	font-size: 15px;
@@ -297,7 +297,7 @@ body .container.body .right_col{
 body {
 	color: black;
 	background:#2A3F54;
-	font-family:"Helvetica Neue",Roboto,Arial,"Droid Sans",sans-serif;
+	font-family: Arial, Helvetica, sans-serif;
 	font-size:13px;
 	font-weight:400;
 	line-height:1.471;
@@ -325,7 +325,7 @@ body {
 	text-align: right;
 	border-radius: 5px;
 	padding: 10px 40px 10px 40px;
-	font-family: Century Gothic;
+	font-family: Arial, Helvetica, sans-serif;
 	font-size: 15px;
 }
 #btn-logout a {
@@ -347,7 +347,7 @@ hr {
 .btn-update {
 	margin-top: 5%;
 	float: right;
-	font-family: Century Gothic;
+	font-family: Arial, Helvetica, sans-serif;
 	border-radius: 5px;
 	padding: 5px 5px 5px 5px;
 }
@@ -363,7 +363,7 @@ hr {
 .btn-generate {
 	margin-top: 5%;
 	float: right;
-	font-family: Century Gothic;
+	font-family: Arial, Helvetica, sans-serif;
 	border-radius: 5px;
 	padding: 5px 5px 5px 5px;
 }
