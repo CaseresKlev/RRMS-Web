@@ -7,7 +7,13 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
+li{
 
+  color:blue;
+}
+li span{
+  color:black;
+}
 .box {
 	width: 95%;
   display: block;
