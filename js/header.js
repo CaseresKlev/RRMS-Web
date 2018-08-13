@@ -12,3 +12,28 @@ $("#searchbtn").click(function(){
 	}
 	
 });
+
+
+$("#btn-search-home").click(function(){
+	var skey = $("#skey").val();
+	var filterdate = $("#filterdate").val(); 
+	var by = "";
+
+	if(filterdate==""){
+		if($('#search_title').is(':checked')){
+		//alert("searct");
+		by = "title";
+		
+		
+	}else if($('#search_kw').is(':checked')){
+		by = "kw";
+	}
+
+	
+	}
+
+	var search = "" + skey + "-" + by + "-" + filterdate;
+
+	window.location.replace("searchcontent.php?search="+search)
+	
+});
