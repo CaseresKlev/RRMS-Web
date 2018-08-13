@@ -94,7 +94,8 @@ session_start();
                   if($result->num_rows>0){
                     while ($row=$result->fetch_assoc()) {
                       echo "<tr>
-                              <td> <li>" . $row['book_title'] . "</li> </td>
+                              <td> <a href=\"bookdetails.php?book_id=" . $row['book_id'] . "\" ><li>" . $row['book_title'] . "</li> </td>
+                              <td style=\"float: right\"> <a  href=\"supporting.php?book_id=" . $row['book_id'] . "\"> My supporting document </td>
                               <td> <a href=revision.php?book_id=" . $row['book_id'] ." <u style= \"cursor: pointer; float: right\"> Submit Revision </u> </td></a>
                             </tr>";
                     }

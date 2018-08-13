@@ -17,7 +17,23 @@
 </header>
 <body id="supportbody">
 <div class="annesupport">
-    <h1 class="annename"> RAYANNE CRUZ </h1>
+  <?php 
+      $book_id = $_GET['book_id'];
+
+                          include_once 'connection.php';
+                          $dbconfig = new dbconfig();
+                          $conn = $dbconfig->getCon();
+                          $query = "SELECT book_id, book_title FROM `book` WHERE book_id= " . $book_id;
+                          $result = $conn->query($query);
+                          if($result->num_rows>0){
+                            while ($row=$result->fetch_assoc()) {
+                              echo "<h1 class=\"annename\">" . $row['book_title'] ." </h1>";
+                            }
+                          }
+
+
+  ?>
+    
   </div>
   <div class="annedocument" >
               <h3> SUPPORTING DOCUMENTS </h3>
@@ -27,8 +43,24 @@
             <div class="supportdocu">
                       <ul class="anneul">
 
-                      <li> <a  href="#">Disseminated Certificate </a> </li> <br>
+                          <?php 
+                              $book_id = $_GET['book_id'];
 
+                          include_once 'connection.php';
+                          $dbconfig = new dbconfig();
+                          $conn = $dbconfig->getCon();
+                          $query = "SELECT * FROM `documents` WHERE book_id = " . $book_id;
+                          $result = $conn->query($query);
+                          if($result->num_rows>0){
+                            while ($row=$result->fetch_assoc()) {
+                              echo "<li> <a  href=\"". $row['documents'] ."\">Disseminated Certificate </a> </li> <br>";
+                            }
+                          }
+
+
+  ?>
+
+                      
                       </ul>
                   </div>
                   <br/>

@@ -1,5 +1,5 @@
 $("#btn-search").click(function(){
-
+	alert("k");
 	var searchkey = $("#search-key").val();
 	//alert(searchkey);
 

@@ -152,6 +152,8 @@
                                             array_push($autorID, $row['a_id']);
                                         }
                                 }
+                    }else{
+                        echo "Insert Author Fail";
                     }    
                 }
             }
@@ -263,6 +265,9 @@
                             while($row1 = $result->fetch_assoc()){
                                 array_push($refID, $row1['id']);
                         }
+                    }
+                    else{
+                        echo "Fail to add References";
                     }
                     
                 }

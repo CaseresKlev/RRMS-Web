@@ -148,7 +148,9 @@
     <script src="js/bootstrap.min.js"></script>
 
     <!-- Custom Theme Scripts -->
+<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
     <script src="js/custom.min.js"></script>
+    
     <script src="js/searchdoc.js"></script>
 
   </body>

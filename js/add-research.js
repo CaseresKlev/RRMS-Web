@@ -273,8 +273,9 @@
                     if(str[0]=="error"){
                         alert(str[2]);
                         $("#debug").html(data);
-                    }else
-                        window.location.href = "acceptbook.php?book_id=" + str[2]; 
+                    }else{
+                        //window.location.href = "acceptbook.php?book_id=" + str[2]; 
+                    }
                     
                    // $("#debug").html(data);
                           
