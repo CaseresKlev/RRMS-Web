@@ -16,7 +16,7 @@
       <title>LOGIN</title>
       <link rel="stylesheet" href="css/new-login.css">
 
-
+        <!-- script for show and hide password  -->
       <script>
 
         function showPass()
@@ -50,7 +50,7 @@
         <h1>LOGIN</h1>
 
 
-
+        <!-- input field for username and password -->
       <input type="text" name="username" id="u_name"required pattern="^[A-Za-z0-9]+" placeholder="USERNAME" autocomplete="off">
       <input type="password"name="password" id="password"required pattern="^[A-Za-z0-9]+" placeholder="PASSWORD">
 

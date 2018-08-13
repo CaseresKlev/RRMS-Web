@@ -91,7 +91,7 @@
 
           <div class="login-page">
 <div class="form">
-
+     <!-- adding department for any changes  -->
   <form class="login-form">
     <fieldset>
       <legend>ADD DEPARTMENT</legend>
@@ -106,6 +106,7 @@
 
         <fieldset>
 
+          <!-- delete department if needed -->
           <legend>DELETE DEPARTMENT</legend>
 
     <!--  <input type="search" name="search" placeholder="Search.." autocomplete="off"> -->
@@ -114,7 +115,7 @@
 
 
       <?php
-
+        // connection to database
       include_once 'connection.php';
       $dbconfig=new dbconfig();
       $conn=$dbconfig->getCon();

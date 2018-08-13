@@ -25,18 +25,8 @@
     text-align: left;">
         <div id = "page1" style="height=500px">
 
-            <!--<div class="browse">
-                <p>
-                    <label for="myFile">Choose Word File</label>
-                    <input type="file" id="myFile" name="file" accept="Documents/docx">
-                </p>
-            </div>
-            <div class="browse">
-                <p>
-                    <label for="myCover">Choose Cover</label>
-                    <input type="file" id="myCover" name="cover" accept="image/*">
-                </p>
-            </div>-->
+              <!-- research paper details input  -->
+
             <div id="bookDet">
                 <p class="para">
                 Manuscript Title

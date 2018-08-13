@@ -4,9 +4,7 @@ $(".btn-update").click(function(){
 	var opsw = $("#oldpsw").val();
 	var npsw = $("#npsw").val();
 
-	//alert(npsw);
-	//var access = $("#access").val();
-	//alert(access);
+	
 
 	var ncpsw = $("#ncpsw").val();
 	//alert(ncpsw);
@@ -32,12 +30,12 @@ $(".btn-update").click(function(){
             //alert("Data Loaded:");
            		$("#result").show();
             	$("#result").html(data);
-            	//$("#result").fadeOut(5000);
+
         	}
 			});
 		}else{
 			$("#result").html("Password Didnt Match!");
-		}		
+		}
 	}
 
 });
