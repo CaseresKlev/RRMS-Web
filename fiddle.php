@@ -1,3 +1,5 @@
+  <!-- query for displaying report for printing -->
+
   <?php
   $connect = mysqli_connect("localhost", "root", "", "db_rrms");
   //$query ="SELECT * FROM book ORDER BY book_id DESC";
@@ -9,7 +11,7 @@
 
 <!doctype html>
 
-
+          -- plugins for jquery report viewer
   <html>
       <head>
         <title>RRMS FILTER REPORTS</title>
@@ -20,7 +22,7 @@
       </head>
 
       <body>
-
+               
         <center><h1>RRMS REPORTS</h1></center>
         <table id="example" class="display nowrap" cellspacing="0" width="100%">
           <thead style="text-align: left;">

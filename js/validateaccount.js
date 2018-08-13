@@ -25,7 +25,7 @@ $("#submit").click(function(){
   if (g_name===''|| u_name==='' || upass==='') {
     alert("Please fill all fields!");
   }else if(upass.length>12 || u_name.length>12){
-    alert("Notice: Maximum of length or username or password is 12 character");
+    alert("Notice: Maximum of length or username or password is 12 characters");
 
   }else {
     //alert("else");
@@ -46,23 +46,13 @@ $("#submit").click(function(){
           //alert(str[0]);
           if (str[0]==="Success") {
             alert(data);
-      
+
             window.location.replace("new-login.php");
           }else {
             alert(data);
           }
-
-           //
-
-          //$("#result").html(data);
+                  //$("#result").html(data);
       }
-
-
-
     });
-
   }
-
-
-
 })

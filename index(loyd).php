@@ -13,6 +13,7 @@
 
 	</div>
 	<div class="content">
+		<!-- database connection  -->
 		<?php
 		include_once 'connection.php';
 		$dbconfig= new dbconfig();
@@ -23,8 +24,9 @@
 		$result = $con -> query($query);
 		if ($result->num_rows>0) {
 			while ($row=$result->fetch_assoc()) {
-				//echo $row['book_title'];
+
 		?>
+		<!-- body content mainpage display cover and details -->
 	<div class="responsive">
 		<div class="gallery">
 			<a href="bookdetails.php?book_id= <?php echo $row['book_id']; ?>">
@@ -52,6 +54,7 @@
 				//echo $autorList;
 				$splitArr = explode(";", $autorList);
 				?>
+				<!-- for author list et al -->
 				 <i><?php
 				 if(count($splitArr)>2){
 					 echo $splitArr[0] . " et. al";
