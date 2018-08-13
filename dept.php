@@ -6,7 +6,7 @@
   if(isset($_SESSION['uid'])){
     print_r($_SESSION);
   }else{
-    header("Location: index(loyd).php");
+    header("Location: index.php");
   }
 
   $accname = $_SESSION['gname'];
@@ -76,7 +76,7 @@
 					<ul><a href="accesscode.php"> ACCESS CODE </a> </ul>
 					<ul><a href="fiddle.php" target="_blank"> REPORTS </a> </ul>
           <ul><a href="dept.php">DEPARTMENT </a> </ul> </br>
-					<ul><a href="index(loyd).php"> Back to Home </a> </ul>
+					<ul><a href="index.php"> Back to Home </a> </ul>
 					<ul><button id= "btn-logout"><strong> <a href="#Logout"> LOGOUT </a></strong></button></ul>
                 </div>
               </div>

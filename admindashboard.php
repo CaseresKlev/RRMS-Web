@@ -13,7 +13,7 @@
   $acctype = $_SESSION['type'];
   if($acctype==="admin"){
     echo "Admin ANG NAKALOGIN";
-  }else if($acctype==="instructor"){
+  }else if($acctype==="INSTRUCTOR"){
     //echo "Instructor ang naka login";
 
     header("Location: instructordashboard.php");
@@ -74,7 +74,7 @@
 					<ul><a href="fiddle.php" target="_blank"> REPORTS </a> </ul>
           <ul><a href="dept.php">DEPARTMENT </a> </ul> </br>
 					<ul><a href="index.php"> Back to Home </a> </ul>
-					<ul><button id= "btn-logout"><strong> <a href="#Logout"> LOGOUT </a></strong></button></ul>
+		
                 </div>
               </div>
 

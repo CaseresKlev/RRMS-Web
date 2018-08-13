@@ -24,7 +24,7 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title> Administrator </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	
+
     <!-- Custom Theme Style -->
     <link rel="stylesheet" type="text/css" media="screen" href="css/custom.min.css">
 
@@ -60,10 +60,16 @@ session_start();
               <div class="menu_section">
                 <div class="nav side-menu">
 					<ul><a class= "dashboard-active" href="#documents"> MY RESEARCH </span></a></ul>
-					<ul><a href="accesscode_instruct.php"> ACCESS CODE </a> </ul>      
-					<ul><a href="fiddle.php"> REPORTS </a> </ul> </br> 
-					<ul><a href="index.php"> Back to Home </a> </ul>     
-					<ul><button id= "btn-logout"><strong> <a href="logout.php"> LOGOUT </a></strong></button></ul>
+
+					<ul><a href="accesscode_instruct.php"> ACCESS CODE </a> </ul>
+					<ul><a href="fiddle.php"> REPORTS </a> </ul> </br>
+					<ul><a href="index.php"> Back to Home </a> </ul>
+
+=======
+					<ul><a href="accesscode_instruct.php"> ACCESS CODE </a> </ul>
+					<ul><a href="fiddle.php" target="_blank"> REPORTS </a> </ul> </br>
+					<ul><a href="index.php"> Back to Home </a> </ul>
+
                 </div>
               </div>
 
@@ -74,14 +80,14 @@ session_start();
         <!-- page content -->
         <div class="right_col" role="main">
 			<div id= "instructor-frm-search" class= "frm-search" style= "font-size: 18px">
-				
+
 				<b> My Research </b>
 				<hr>
 				<div id= "instructor-div-voidmain" class= "div-voidmain">
 					<form id= "instructor-frm-documents" class= "frm-documents" action="/action_page.php">
 						<table style="font-size: 15px" width= "100%">
-							
-                <?php 
+
+                <?php
                   include_once 'connection.php';
                   $dbconfig = new dbconfig();
                   $conn = $dbconfig->getCon();
@@ -89,7 +95,7 @@ session_start();
                   $result = $conn->query($query);
                   if($result->num_rows>0){
                     while ($row=$result->fetch_assoc()) {
-                      echo "<tr> 
+                      echo "<tr>
                               <td> <li>" . $row['book_title'] . "</li> </td>
                               <td> <a href=revision.php?book_id=" . $row['book_id'] ." <u style= \"cursor: pointer; float: right\"> Submit Revision </u> </td></a>
                             </tr>";
@@ -102,7 +108,7 @@ session_start();
 					</form></br></br>
 					<hr>
 				<button type="submit" id= "instructor-btn-addnew" class="btn-addnew"> ADD NEW </button>
-					
+
 			</div>
           <!-- top tiles -->
           <div class="row tile_count"></div>
