@@ -45,7 +45,7 @@ $("#submit").click(function(){
         access: access,
         groupname:g_name,
         uname:u_name,
-        password:upass
+        password:upass,
 
       },
       success: function (data) {
@@ -54,7 +54,7 @@ $("#submit").click(function(){
           //alert(str[0]);
           if (str[0]==="Success") {
             alert(data);
-        //$(".boxx")[0].reset();
+      
             window.location.replace("new-login.php");
           }else {
             alert(data);

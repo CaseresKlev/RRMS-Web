@@ -73,7 +73,7 @@
 					<ul><a href="accesscode.php"> ACCESS CODE </a> </ul>
 					<ul><a href="fiddle.php" target="_blank"> REPORTS </a> </ul>
           <ul><a href="dept.php">DEPARTMENT </a> </ul> </br>
-					<ul><a href="index(loyd).php"> Back to Home </a> </ul>
+					<ul><a href="index.php"> Back to Home </a> </ul>
 					<ul><button id= "btn-logout"><strong> <a href="#Logout"> LOGOUT </a></strong></button></ul>
                 </div>
               </div>
@@ -83,7 +83,7 @@
         </div>
 
         <!-- page content -->
-        <div class="right_col" role="main">
+        <div class="right_col" role="main" style= "min-height: 600px;">
 			<div id= "admin-frm-search" class= "frm-search" style= "font-size: 18px">
 				<b> Search Documents </b>
 				<input type="text" placeholder="Search.." id="search-key" name="search"><button type="button" id="btn-search"> Search </button> </br></br>

@@ -64,15 +64,22 @@
         <tr class"det">
           <td><strong>Date Submitted:</strong> <?php echo $row['pub_date']; ?></td>
         </tr>
-        <tr class"det">
+        <!-- <tr class"det">
           <td><strong>Revision:</strong> 2</td>
+<<<<<<< HEAD
         </tr>
         <tr class"det">
           <td><strong>Status:</strong> <?php echo $row['status']; ?></td>
         </tr>
+=======
+        </tr> -->
+>>>>>>> 414c252ca285c09df0d5769e3ecf913b5e3f7e88
         <tr class"det">
-          <td><strong>Views:</strong><?php echo " " .  $row['views_count']; ?></td>
+          <td><strong>Status:</strong><?php echo $row['status']; ?></td>
         </tr>
+        <!-- <tr class"det">
+          <!-- <td><strong>Views:</strong><?php //echo " " .  $row['views_count']; ?></td> -->
+        </tr> -->
         <tr >
 
 
@@ -99,9 +106,9 @@
         <tr >
           <td><strong>Cited:</strong> 5 Times</td>
         </tr>
-        
+
         <tr >
-          <?php 
+          <?php
             $dbconfig6= new dbconfig();
             $con6= $dbconfig6 -> getCon();
             $query6= "SELECT referencekey.refkey FROM `referencekey` WHERE referencekey.book_id = $id";

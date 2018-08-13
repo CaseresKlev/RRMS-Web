@@ -44,11 +44,15 @@
       <form class="boxx">
         <h1>Create Account</h1>
 
-        <label class="choose" for="anneselect"> Choose account type </label>
-          <select id="anneselect">
+
+        <label class="choose" for="anneselect"> Choose account type: </label>
+          <div class="styled-select slate">
+            <select style="border:0;" id="anneselect">
               <option> Student </option>
               <option> Instructor </option>
           </select>
+          </div>
+
 
 
       <input type="text" name="g_name" id="g_name"required pattern="^[A-Za-z]+" placeholder="Group Name" autocomplete="off">

@@ -25,6 +25,15 @@
     <link rel="stylesheet" type="text/css" media="screen" href="css/custom.min.css">
 
 </head>
+
+<header>
+		<?php
+					include "header.php";
+?>
+</header>
+
+
+
 <body class="nav-md">
     <div class="container body">
 		<div class="main_container">
@@ -56,7 +65,7 @@
 					<ul><a class= "dashboard-active" href="#update"> UPDATE ACCOUNT </a></ul>
 					<ul><a href="accesscode.php"> ACCESS CODE </a> </ul>
 					<ul><a href="fiddle.php" target="_blank"> REPORTS </a> </ul> </br>
-					<ul><a href="index(loyd).php"> Back to Home </a> </ul>      
+					<ul><a href="index.php"> Back to Home </a> </ul>
 					<ul><button id= "btn-logout"><strong> <a href="#Logout"> LOGOUT </a></strong></button></ul>
                 </div>
               </div>
@@ -97,7 +106,7 @@
 						<td> </td>
 					</tr>
 					<tr>
-						<td> Retype New Password :</td>
+						<td> Re-enter New Password :</td>
 						<td> <input type="password" placeholder="Re-enter New Password" name="ncpsw" id="ncpsw" required> </td>
 					</tr>
 				</table>
