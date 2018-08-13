@@ -1,6 +1,6 @@
 $("#status").click(function(){
 	//$(".btn-radio").prop('checked', false);
-	if($("#status").val()=="Disseminated"){
+	if($("#status").val()=="Disseminated/Presented"){
 		$(".fieldset-published").hide();
 		$(".fieldset-disseminated").slideDown("slow");
 	}else if($("#status").val()=="Published"){
@@ -16,99 +16,111 @@ $("#instructor-btn-save").click(function(){
 	//alert("hbbg");
 
 	var book_id = $("#book_id").val();
+	//alert(book_id);
 	var title = $("#title").val();
 	var status = $("#status").val();
+	//alert(status);
 	var cited = $("#cite").val();
-
-	//disseminated
-	var disseminatedLoc = "";
-	var disseminatedDesc = "";
-
-
-	//published
-	var isdn = "";
-	var journal ="";
+	//alert(cited);
 	
-	if(status=="Disseminated"){
-		if(!$(".btn-radio").is(':checked')){
-			alert("Please provide Disseminated status");
+	if(status=="Disseminated/Presented"){
+		var distype = $("#dis-type").val();
+		var discon = $("#dis-con").val();
+		var conven = $("#con-ven").val();
+		var disdate = $("#disdate").val();
+		//var discert = $("#dis-cert").val();
+		//alert(disdate);
+
+		if(distype=="" || discon=="" || conven=="" || disdate==""){
+			 alert("Please provide dissimination information.");
+			
 		}else{
-			/*if($("#btn-radio-intl").prop('checked', false)){
-				var
-			}*/
-			disseminatedLoc = $("input[class='btn-radio']:checked"). val();
-			disseminatedDesc = $("#disseminated-desc"). val();
-			//var query="INSERT INTO `disseminated` (`id`, `book_id`, `location`, `description`) VALUES ('', '1', 'loc', 'desc')";
+			$("#dis-form").ajaxSubmit(
+			 {
+			 	url: 'uploadDisseminated.php',
+			 	type: 'POST',
+			 	success: function(data){
+			 		alert(data);
+			 		window.location.replace("admindashboard.php");
+			 	}
+
+
+			 });
+
+
 			$.ajax({
-				url:'savechanges.php',
-				type:'POST',
+
+				url: 'savechanges.php',
+				type: 'POST',
 				cache: false,
 				data:{
 					book_id: book_id,
 					status: status,
-					cited:cited,
-					disLoc: disseminatedLoc,
-					disDesc:disseminatedDesc,
-				},
+					cited: cited
+				}, 
 				success: function(data){
 					alert(data);
 				}
 
-
 			})
-
-			//alert(disseminatedLoc);
 		}
 
-	}else if(status=="Published"){
-		if($("#journal").val()=="" && $("#isdn").val()==""){
-			alert("Please provide ISDN and Journal name.");
-		}else{
-			isdn = $("#isdn").val();
-			journal = $("#journal").val();
 
-		$.ajax({
-				url:'savechanges.php',
-				type:'POST',
+		
+		
+
+	}else if(status=="Published"){
+		var issn = $("#isdn").val();
+		var journal = $("#journal").val();
+		var type = $("#type").val();
+		var date = $("#pubdate").val();
+		var id = $("#book_id").val();
+
+
+
+		if(issn=="" || journal=="" || type=="" || date==""){
+			alert("Please provide Published information");
+		}else{
+			$.ajax({
+
+				url: 'uploadPublished.php',
+				type: 'POST',
+				cache: false,
+				data:{
+					issn: issn,
+					journal: journal,
+					type: type,
+					date: date,
+					book_id: id
+				}, 
+				success: function(data){
+					alert(data);
+					window.location.replace("admindashboard.php");
+				}
+
+			});
+
+			$.ajax({
+
+				url: 'savechanges.php',
+				type: 'POST',
 				cache: false,
 				data:{
 					book_id: book_id,
 					status: status,
-					cited:cited,
-					isdn: isdn,
-					journal: journal,
-				},
+					cited: cited
+				}, 
 				success: function(data){
 					alert(data);
-					//window.location="admindashboard.php";
 				}
 
-
 			})
-
-		//alert(journal);
-		//alert(isdn);
 		}
 		
 	}else if(status==""){
 		alert("Please choose book status.");
 	}else{
-		$.ajax({
-				url:'savechanges.php',
-				type:'POST',
-				cache: false,
-				data:{
-					book_id: book_id,
-					status: status,
-					cited:cited,
-				},
-				success: function(data){
-					alert(data);
-					window.location="admindashboard.php";
-				}
 
-
-			})
 	}
 	//alert(title);
 })

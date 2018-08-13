@@ -9,7 +9,7 @@ if(isset($_SESSION['uid'])){
   }else{
     //header("Location: index(loyd).php");
   }
-
+//print_r($_SESSION);
   
 
 ?>
@@ -37,7 +37,7 @@ if(isset($_SESSION['uid'])){
   <div class="header_nav1">
 
 			<ul id= "nav-ul">
-				<li><a href="index(loyd).php">Home</a></li>
+				<li><a href="index.php">Home</a></li>
 				<!--<li><a href="#plagiarism">Plagiarism</a></li>
 				<li style="float:right"><a class= "user-dropdown">User</a></li>-->
 				<div class="dropdown" style="float:right">

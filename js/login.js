@@ -23,7 +23,7 @@ $("#submit").click(function() {
         var str= data.split(":");
           //alert(str[0]);
         if (str[0]==="Success") {
-          window.location.replace("index(loyd).php");
+          window.location.replace("index.php");
 
 
         }else {

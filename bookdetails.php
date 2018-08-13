@@ -66,7 +66,14 @@
         </tr>
         <!-- <tr class"det">
           <td><strong>Revision:</strong> 2</td>
+<<<<<<< HEAD
+        </tr>
+        <tr class"det">
+          <td><strong>Status:</strong> <?php echo $row['status']; ?></td>
+        </tr>
+=======
         </tr> -->
+>>>>>>> 414c252ca285c09df0d5769e3ecf913b5e3f7e88
         <tr class"det">
           <td><strong>Status:</strong><?php echo $row['status']; ?></td>
         </tr>

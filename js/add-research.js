@@ -270,12 +270,12 @@
                     alert(data);
                     var str = data.split(":");
 
-                    if(str[0]==="error"){
+                    if(str[0]=="error"){
                         alert(str[2]);
                         $("#debug").html(data);
-                    }else{
+                    }else
                         window.location.href = "acceptbook.php?book_id=" + str[2]; 
-                    }
+                    
                    // $("#debug").html(data);
                           
 
