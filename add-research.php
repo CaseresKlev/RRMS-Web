@@ -150,6 +150,7 @@
     <br/>
     </div>
     <div id = "page3" style="display:none">
+        <center><h3>Add Instructor Information</h3></center>
                     <p>
                         First Name:<br/>
                         <input type="text"placeholder="First name" oninput="this.className = ''" id="adv_fname">

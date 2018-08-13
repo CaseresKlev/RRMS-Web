@@ -3,7 +3,7 @@ session_start();
 
 
   if(isset($_SESSION['uid'])){
-    print_r($_SESSION);
+    //print_r($_SESSION);
   }else{
     header("Location: index(loyd).php");
   }
@@ -27,7 +27,7 @@ session_start();
     <link rel="stylesheet" type="text/css" media="screen" href="css/custom.min.css">
 	
 </head>
-<body class="nav-md">
+<body class="nav-md" style="background-color: gray">
     <div class="container body">
 		<div class="main_container">
 			<div class="col-md-3 left_col">
@@ -92,7 +92,7 @@ session_start();
 						include_once 'connection.php';
 						$dbconfig = new dbconfig();
 						$conn = $dbconfig->getCon();
-						$query = "SELECT * FROM `acesskey` WHERE used=0 and type='Student'";
+						$query = "SELECT * FROM `acesskey` WHERE used=0 and type='STUDENT'";
 						$result = $conn->query($query);
 						if($result->num_rows>0){
 							$i=1;
@@ -137,6 +137,7 @@ session_start();
 
     <!-- Custom Theme Scripts -->
     <script src="js/custom.min.js"></script>
+    <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
     <script type="text/javascript" src="js/accesscode.js"></script>
     <script>
 		function printDiv() {

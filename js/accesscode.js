@@ -41,9 +41,10 @@ $("#admin-btn-generate").click(function(){
 
 $("#instructor-frm-generate").click(function(){
     //alert("true");
+    //alert("g");
         var count = $("#access-count").val()
         var type = "STUDENT";
-        alert(count); 
+        //alert(count); 
         if(count<1){
             alert("Please input greater than 0");
         }else{

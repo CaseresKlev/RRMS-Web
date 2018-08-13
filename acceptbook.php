@@ -1,7 +1,7 @@
 <?php
 
-  session_start();
-  print_r($_SESSION);
+  //session_start();
+  //print_r($_SESSION);
 
 ?>
 
@@ -19,8 +19,15 @@
   <title>Indexing</title>
 
 </head>
+  <?php
 
-<body>
+  include_once 'header.php';
+
+    ?>
+
+
+<body     style="margin-left: auto;
+    margin-right: auto;">
 
   <?php
     include_once 'connection.php';
@@ -38,7 +45,8 @@
 
 
   ?>
-  <form id="fileForm" enctype="multipart/form-data">
+  <div id="container" style="width: 100%">
+  <form id="fileForm" enctype="multipart/form-data" style="width: 100%;">
     <div class="rrms">
       <h2><?php echo $row['book_title'];?></h2>
      Date: <?php echo $row['pub_date']; ?>
@@ -105,12 +113,18 @@
 
 <br/>
 </form>
-<br/>
+</div>
 
 
 <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
 <script src="js/jquery.form.min.js"></script>
   <script type="text/javascript" src="js/indexing.js"></script>
-  <textarea id="content" wrap="hard" rows="10" cols="20"></textarea>
+  <!--<textarea id="content" wrap="hard" rows="10" cols="20"></textarea>-->
 </body>
+<footer>
+  <?php
+    include_once 'footer.php';
+  ?>
+
+</footer>
 </html>

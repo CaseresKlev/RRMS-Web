@@ -3,7 +3,7 @@ session_start();
 
 
   if(isset($_SESSION['uid'])){
-    print_r($_SESSION);
+   // print_r($_SESSION);
   }else{
     header("Location: index(loyd).php");
   }
@@ -17,7 +17,7 @@ session_start();
 
 
 <!DOCTYPE html>
-<html>
+<html >
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="utf-8" />
@@ -30,7 +30,7 @@ session_start();
 
 </head>
 
-  <body class="nav-md">
+  <body class="nav-md" style="background-color: gray">
     <div class="container body">
       <div class="main_container">
         <div class="col-md-3 left_col">
@@ -64,8 +64,6 @@ session_start();
 					<ul><a href="accesscode_instruct.php"> ACCESS CODE </a> </ul>
 					<ul><a href="fiddle.php"> REPORTS </a> </ul> </br>
 					<ul><a href="index.php"> Back to Home </a> </ul>
-
-=======
 					<ul><a href="accesscode_instruct.php"> ACCESS CODE </a> </ul>
 					<ul><a href="fiddle.php" target="_blank"> REPORTS </a> </ul> </br>
 					<ul><a href="index.php"> Back to Home </a> </ul>
@@ -107,7 +105,7 @@ session_start();
 						</table>
 					</form></br></br>
 					<hr>
-				<button type="submit" id= "instructor-btn-addnew" class="btn-addnew"> ADD NEW </button>
+				<button type="submit" id= "instructor-btn-addnew" class="btn-addnew" onclick="location.href='add-research.php'"> ADD NEW </button>
 
 			</div>
           <!-- top tiles -->
@@ -121,12 +119,13 @@ session_start();
     </div>
 
     <!-- jQuery -->
-    <script src="js/jquery.min.js"></script>
+    
+    <script type="text/javascript" sr="js/jquery-3.3.1.js"></script>
     <!-- Bootstrap -->
-    <script src="js/bootstrap.min.js"></script>
-
+    <!--<script src="js/bootstrap.min.js"></script>-->
+    <script type="text/javascript" src=""></script>
     <!-- Custom Theme Scripts -->
-    <script src="js/custom.min.js"></script>
+    <!--<script src="js/custom.min.js"></script>-->
 
   </body>
 </html>

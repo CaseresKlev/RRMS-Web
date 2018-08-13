@@ -1,7 +1,7 @@
 <?php
 	session_start();
 	if(isset($_SESSION['uid'])){
-    print_r($_SESSION);
+    //print_r($_SESSION);
   }else{
     header("Location: index.php");
   }
@@ -14,7 +14,7 @@
 
 
 <!DOCTYPE html>
-<html>
+<html ">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="utf-8" />
@@ -28,7 +28,7 @@
 
 
 </head>
-<body class="nav-md">
+<body class="nav-md" style="background-color: gray">
     <div class="container body">
 		<div class="main_container">
 			<div class="col-md-3 left_col">
@@ -82,7 +82,6 @@
 					</tr>
 				</table>
 			</form></br></br>
-			<progress id="prog" max="100" value="0" style="width: 100%" ></progress>
 			<hr>
 			</br> <center><h2> Available Accesskey </h2></center>
 			<form id= "admin-frm-generatepass" class= "frm-generatepass" action="/action_page.php">
@@ -123,13 +122,14 @@
 				</table>
 			</div>
 				<iframe name="print_frame" width="0" height="0" frameborder="0" src="about:blank"></iframe>
-			</form></br></br>
+			</form></br>
 
-			<hr></br>
+			<hr>
 			<span style="float: left;">
 
   	<!--	<button onclick="printContent('tbl-accescodes')">Print</button> -->
-		<button class="print-button" onclick="printDiv()"><span class="print-icon"></button>
+		<!--<button class="print-button" onclick="printDiv()"><span class="print-icon"></button>-->
+			<button onclick="printDiv()" style="width: 100px; font-size: 13pt">Print</button>
 
 		<script>
 		function printDiv() {

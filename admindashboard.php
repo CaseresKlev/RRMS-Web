@@ -4,7 +4,7 @@
 
 
   if(isset($_SESSION['uid'])){
-    print_r($_SESSION);
+    //print_r($_SESSION);
   }else{
     header("Location: index(loyd).php");
   }
@@ -12,7 +12,7 @@
   $accname = $_SESSION['gname'];
   $acctype = $_SESSION['type'];
   if($acctype==="admin"){
-    echo "Admin ANG NAKALOGIN";
+    //echo "Admin ANG NAKALOGIN";
   }else if($acctype==="INSTRUCTOR"){
     //echo "Instructor ang naka login";
 
@@ -41,7 +41,7 @@
 
 </head>
 
-<body class="nav-md">
+<body class="nav-md" style="background-color: gray">
     <div class="container body">
 		<div class="main_container">
 			<div class="col-md-3 left_col">

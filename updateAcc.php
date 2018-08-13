@@ -1,9 +1,9 @@
 <?php
 	session_start();
-	if(isset($_SESSION['uid'])){
-    print_r($_SESSION);
+if(isset($_SESSION['uid'])){
+    //print_r($_SESSION);
   }else{
-    header("Location: index(loyd).php");
+    header("Location: index.php");
   }
 
   $accname = $_SESSION['gname'];
@@ -13,7 +13,7 @@
 
 
 <!DOCTYPE html>
-<html>
+<html >
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="utf-8" />
@@ -27,14 +27,12 @@
 </head>
 
 <header>
-		<?php
-					include "header.php";
-?>
+		
 </header>
 
 
 
-<body class="nav-md">
+<body class="nav-md" style="background-color: gray">
     <div class="container body">
 		<div class="main_container">
 			<div class="col-md-3 left_col">
@@ -129,7 +127,7 @@
     </div>
 
     <!-- jQuery -->
-    <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+   
     <script src="js/jquery.min.js"></script>
     <!-- Bootstrap -->
     <script src="js/bootstrap.min.js"></script>
