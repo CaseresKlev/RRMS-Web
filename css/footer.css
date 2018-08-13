@@ -3,7 +3,7 @@
 }
 
 .footer-distributed{
-	background-color: #85c1e9;
+	background-color: #5499c7;
 	text-align: left;
 	font-family: Arial, Helvetica, sans-serif;
     padding: 40px 20px 20px 20px;
@@ -51,7 +51,7 @@
 }
 
 .footer-distributed .footer-company-name{
-	color:  #8f9296;
+	color: white;
 	font-size: 11px;
 	font-weight: normal;
 	margin: 0;
@@ -127,7 +127,7 @@
 	margin-bottom: 20px;
 }
 #footer-contactus {
-	width: 5%;
+	width: 15%;
 	padding: 18px 10px 0px 5px;
 }
 
