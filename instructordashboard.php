@@ -60,17 +60,16 @@ session_start();
               <div class="menu_section">
                 <div class="nav side-menu">
 					<ul><a class= "dashboard-active" href="#documents"> MY RESEARCH </span></a></ul>
-<<<<<<< HEAD
+
 					<ul><a href="accesscode_instruct.php"> ACCESS CODE </a> </ul>
 					<ul><a href="fiddle.php"> REPORTS </a> </ul> </br>
 					<ul><a href="index.php"> Back to Home </a> </ul>
-				
+
 =======
-					<ul><a href="accesscode_instruct.php"> ACCESS CODE </a> </ul>      
-					<ul><a href="fiddle.php" target="_blank"> REPORTS </a> </ul> </br> 
-					<ul><a href="index.php"> Back to Home </a> </ul>     
-					<ul><button id= "btn-logout"><strong> <a href="logout.php"> LOGOUT </a></strong></button></ul>
->>>>>>> a552de2f00dad655b99ca83aad4f8bab105237f3
+					<ul><a href="accesscode_instruct.php"> ACCESS CODE </a> </ul>
+					<ul><a href="fiddle.php" target="_blank"> REPORTS </a> </ul> </br>
+					<ul><a href="index.php"> Back to Home </a> </ul>
+
                 </div>
               </div>
 
