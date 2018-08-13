@@ -13,11 +13,19 @@ $("#anneselect").click(function(){
 
 
 $("#submit").click(function(){
-  var g_name=$("#g_name").val();
+
 
   var u_name=$("#u_name").val();
   var access=$("#access").val();
   var upass=$("#password").val();
+
+   var g_name = "";
+  if($("#g_name").is(":visible")){
+    var g_name=$("#g_name").val();
+  }else{
+    var g_name=u_name;
+  }
+  
 
 
 

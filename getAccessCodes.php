@@ -1,6 +1,15 @@
 <?php
+
+session_start();
 	$count = $_POST['count'];
-	$type = $_POST['type'];
+	$temptype = $_SESSION['type'];
+	//print_r($$temptype);
+	$type = null;
+	if($temptype==="INSTRUCTOR"){
+		$type = "STUDENT";
+	}else if($temptype==="admin"){
+		$type = "INSTRUCTOR";
+	}
 	//echo $type;
 
 	

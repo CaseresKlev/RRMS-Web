@@ -31,7 +31,7 @@ $("#submit").click(function(){
                   $(msg[0]).fadeIn();
                   $(msg[0]).fadeOut(3000);
                 }else{
-                  window.location.href = "index(loyd).php";
+                  window.location.href = "index.php";
                 }
 
 

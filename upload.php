@@ -19,7 +19,7 @@
     $filesize = $_FILES['file']['size'];
     $fileext = explode(".",$filename);
     $extension = strtolower(end($fileext));
-    $allowedFile = array('docx', 'doc');
+    $allowedFile = array('pdf');
 
 
     //cover

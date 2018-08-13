@@ -3,17 +3,12 @@
 	if(isset($_SESSION['uid'])){
     print_r($_SESSION);
   }else{
-    header("Location: index(loyd).php");
+    header("Location: index.php");
   }
 
   $accname = $_SESSION['gname'];
   $acctype = $_SESSION['type'];
   //echo $acctype;
-
-
-
-
-
 ?>
 
 

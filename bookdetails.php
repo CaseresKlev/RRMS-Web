@@ -68,7 +68,7 @@
           <td><strong>Revision:</strong> 2</td>
         </tr>
         <tr class"det">
-          <td><strong>Status:</strong> Unpublish</td>
+          <td><strong>Status:</strong> <?php echo $row['status']; ?></td>
         </tr>
         <tr class"det">
           <td><strong>Views:</strong><?php echo " " .  $row['views_count']; ?></td>

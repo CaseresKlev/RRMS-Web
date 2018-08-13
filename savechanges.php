@@ -8,6 +8,22 @@
 		$book_id = $_POST['book_id'];
 		$status = $_POST['status'];
 		$cited = $_POST['cited'];
+
+			include 'connection.php';
+			$dbconfig = new dbconfig();
+			$conn = $dbconfig->getCon();
+			$query = "UPDATE `book` SET `status` = '$status', `cited` = '$cited' WHERE `book`.`book_id` = $book_id";
+			//echo $query;
+			$result = $conn->query($query);
+
+
+			if($result){
+				echo "Save Changes Done.";
+			}else{
+				echo "No changes has been made.";
+			}
+
+		/*
 		if($status==="Disseminated"){
 			$disloc = $_POST['disLoc'];
 			$disdesc = $_POST['disDesc'];
@@ -128,6 +144,7 @@
 			}
 			//echo "string";
 		}
+		*/
 	}
 
 ?>

@@ -135,10 +135,16 @@
                 <fieldset class= "fieldset-disseminated" style= "width: 97%; display: none;">
                   <legend><i> Choose Disseminated/Presented Option </i></legend>
                   <br/>
-					
-					<option class="tbl-radiocontainer" id="institutional" style="font-size: 12pt"> Institutional </option>
-					<option class="tbl-radiocontainer" id="national" style="font-size: 12pt"> National </option>
-					<option class="tbl-radiocontainer" id="international" style="font-size: 12pt"> International </option>
+                  <form id="dis-form">
+                    <input type="text" name="book_id" value="<?php echo $_GET['book_id']; ?>" style="display: none;">
+                  Type:<br>
+					         <select style= "width: 100%; font-family: Century Gothic; font-size: 15px; font-style: italic; id="dis-type" name="dis-type">
+					             <option class="tbl-radiocontainer" id="institutional" style="font-size: 12pt"> Institutional </option>
+  	           	  			<option class="tbl-radiocontainer" id="national" style="font-size: 12pt"> National </option>
+					             <option class="tbl-radiocontainer" id="international" style="font-size: 12pt"> International </option>
+                    </select>
+                    <br>
+                    <br>
 					
                     <!--<input type="radio" name="loc" id="btn-radio-institutional" value="Institutional" class="btn-radio">
                     <label class="tbl-radiocontainer" id="institutional" style="font-size: 12pt"> Institutional 
@@ -157,38 +163,46 @@
                     <textarea rows="4" cols="102" placeholder="Description 160 Character maximum" name="disseminated-desc" id="disseminated-desc" 
             style= "width: 100%; font-family: Century Gothic; font-size: 15px; font-style: italic; font-weight: bold; resize: none;"></textarea> -->
 					Name of Conference: 
-                    <input type="text" placeholder="conference name" id="Name" name="name" 
+                    <input type="text" placeholder="conference name" id="dis-con" name="dis-con" 
 					style= "width: 100%; font-family: Century Gothic; font-size: 15px; font-style: italic; font-weight: bold;">
-					
+					         <br>
+                    <br>
 					Venue of Conference: 
-                    <input type="text" placeholder="conference venue" id="Venue" name="venue" 
+                    <input type="text" placeholder="conference venue" id="con-ven" name="con-ven" 
 					style= "width: 100%; font-family: Century Gothic; font-size: 15px; font-style: italic; font-weight: bold;">
-					
-					Date:
+					         <br>
+                    <br>
+					Date:<br>
                     <input type="date" width="100%" name="disdate" id="disdate" placeholder="" 
 					style= "font-family: Century Gothic; font-size: 15px; font-style: italic; font-weight: bold;">
-					
-					Certificate: 
-					<input type="file" name="myFile" 
-					style= "font-family: Century Gothic; font-size: 15px; font-style: italic; font-weight: bold;">
-					
+					         
+                   <br>
+                    <br>
+					Certificates if Available: 
+          <br>
+					<input type="file" name="myFile[]" id="dis-cert" 
+					style= "font-family: Century Gothic; font-size: 15px; font-style: italic; font-weight: bold;" multiple>
+					</form>
                 </fieldset> 
+                <input type="text" id="book_id" name="book_id" value="<?php echo $_GET['book_id']; ?>" style="display: none;">
                 <fieldset class= "fieldset-published" style= "width: 97%; display: none;">
                   <legend><i> Fill Published Details</i></legend> 
+                  <form id="form-published">
                     ISSN:&emsp; 
                     <input type="text/number" placeholder="serial number" id="isdn" name="serial" style= "width: 100%; font-family: Century Gothic; font-size: 15px; font-style: italic; font-weight: bold;"></br></br>
                     
                     Name of Journal: 
-                    <input type="text" placeholder="journal name" id="journal" name="name" 
+                    <input type="text" placeholder="journal name" id="journal" name="journal" 
 					style= "width: 100%; font-family: Century Gothic; font-size: 15px; font-style: italic; font-weight: bold;"> 
 					
 					Type of Journal: 
-                    <input type="text" placeholder="journal type" id="journal" name="type" 
+                    <input type="text" placeholder="journal type" name="type" id="type"
 					style= "width: 100%; font-family: Century Gothic; font-size: 15px; font-style: italic; font-weight: bold;"> 
                 
 					Date:
                     <input type="date" width="100%" name="pubdate" id="pubdate" placeholder="" 
 					style= "font-family: Century Gothic; font-size: 15px; font-style: italic; font-weight: bold;">
+        </form>
 					
 				</fieldset> 
                 <p class="edittxt" style= "font-family: Century Gothic; font-size: 16px">
@@ -213,6 +227,8 @@
     <script src="js/jquery.min.js"></script>
     <!-- Bootstrap -->
     <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.form.min.js"></script>
+
 
     <!-- Custom Theme Scripts -->
     <script src="js/custom.min.js"></script>

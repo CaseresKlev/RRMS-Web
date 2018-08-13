@@ -1,26 +1,88 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>BUKSU Local Plagiarism Detection</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
+	<meta charset="utf-8">
+	<title>Gallery Images</title>
+	<link href="css/style(loyd).css" rel="stylesheet"/>
 </head>
+
+<header><?php include_once 'header.php'; ?></header>
 <body>
-    <div id="Nav-Bar">
-        <ul>
-            <li><a href="index.php">Home</a></li>
-            <li><a href="Browse Research.php">Browse Research</a></li>
-            <li><a href= "Plagiarism.php">Plagiarism</a></li>
-            <li><a href = "Login.php">Login</a></li>
-        </ul>
-    </div>
-    <div id="content">
-        Place The header content of Index or home Here.
-    </div>
+
+	<div class="title">
+
+	</div>
+	<div class="content">
+		<?php
+		include_once 'connection.php';
+		$dbconfig= new dbconfig();
+		$con= $dbconfig -> getCon();
+		$limit = 12;
+
+		$query= "SELECT book_id, book_title, cover, docloc FROM `book` WHERE enabled=1 ORDER BY pub_date ASC;";
+		$result = $con -> query($query);
+		if ($result->num_rows>0) {
+			while ($row=$result->fetch_assoc()) {
+				//echo $row['book_title'];
+		?>
+	<div class="responsive">
+		<div class="gallery">
+			<a href="bookdetails.php?book_id= <?php echo $row['book_id']; ?>">
+				<img src="<?php echo $row['cover']; ?>"alt="1"/>
+			</a>
+			<div class="title"><strong><?php echo $row['book_title'];?></strong></div>
+
+			<div class="title">
+
+				<?php
+				//for author
+				$book_id = $row['book_id'];
+				$dbconfig2= new dbconfig();
+				$con2= $dbconfig2 -> getCon();
+				$query2= "SELECT DISTINCT(a_id) as 'a_id' , a_lname as 'a_lname', SUBSTRING(a_fname, 1, 1) as 'a_fname' FROM author INNER JOIN junc_authorbook on author.a_id = junc_authorbook.aut_id where junc_authorbook.book_id = " . $row['book_id'] . "";
+				$result2 = $con2 -> query($query2);
+				$autorList ="";
+				if($result2->num_rows>0){
+					while ($row2 = $result2->fetch_assoc()) {
+						$autorList .= $row2['a_lname'] . ", " . $row2['a_fname'] . "; ";
+						// use this ---> echo $row['a_lname'] . ", " . $row['a_fname'] . ";";;
+					}
+				}
+				//end for authors
+				//echo $autorList;
+				$splitArr = explode(";", $autorList);
+				?>
+				 <i><?php
+				 if(count($splitArr)>2){
+					 echo $splitArr[0] . " et. al";
+				 }else{
+					 echo $splitArr[0];
+				 }
+				 ?></i>
+
+			 </div>
+		</div>
+		<hr>
+	</div>
+
+	<?php }
+}?>
+<br>
+</div>
+<br>
+<br>
+
+
+
+
+
+</div>
+<br>
+<?php include_once 'footer.php'; ?>
+
+
 </body>
-<footer>This is The footer.
-</footer>
+
+
+
 </html>

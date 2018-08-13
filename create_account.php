@@ -1,5 +1,5 @@
 <?php
-  //session_start();
+  session_start();
 
   //$accname = $_SESSION['gname'];
   //$acctype = $_SESSION['type'];
