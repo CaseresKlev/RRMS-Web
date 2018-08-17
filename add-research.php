@@ -29,8 +29,8 @@
 
             <div id="bookDet">
                 <p class="para">
-                Manuscript Title
-                  <input type="text" placeholder="Manuscript title" id="title" name="title">
+                Research Title
+                  <input type="text" placeholder="Research title" id="title" name="title">
                 </p>
                 <p class="para">
                     Abstract:<br>

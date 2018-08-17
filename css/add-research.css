@@ -39,10 +39,11 @@ div.para{
 }
 #bookDet{
   text-align: left;
+  color: white;
 
 }
 #enclosure {
-background-color: #ffffff;
+background-color: #1f2833;
     /* margin: 100px auto;
      margin-bottom: 10px;
     margin-top: 20px;
@@ -53,8 +54,6 @@ background-color: #ffffff;
     min-width: 300px;
     text-align: left;
   */
-
-      background-color: #ffffff;
     margin: 100px auto;
     margin-bottom: 10px;
     margin-top: 20px;
@@ -71,6 +70,7 @@ h1 {
   text-align: center;
   text-transform: uppercase;
   color: black;
+  font-family: "Century Gothic";
 
 }
 button {
@@ -95,4 +95,3 @@ body{
 button[type=submit]{
   padding: 100%;
 }
- 
