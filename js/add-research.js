@@ -274,7 +274,7 @@
                         alert(str[2]);
                         $("#debug").html(data);
                     }else{
-                        //window.location.href = "acceptbook.php?book_id=" + str[2]; 
+                        window.location.href = "acceptbook.php?book_id=" + str[2]; 
                     }
                     
                    // $("#debug").html(data);

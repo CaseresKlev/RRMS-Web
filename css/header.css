@@ -4,10 +4,11 @@
 * {
 	box-sizing: border-box;
 }
-.header_body { 
+.header_body {
 	width: 100%;
 	font-family: Arial, Helvetica, sans-serif;
-	background-color: red;
+	background-color: #f0ead6;
+	color: black;
 }
 @media screen and (max-width:800px){
 	.responsive{
@@ -28,7 +29,7 @@
 
 .header {
 	overflow: hidden;
-	background-color: #5499c7;
+	background-color: #1f2833;
 	padding: 20px 0px 0px 0px;
 }
 
@@ -208,7 +209,7 @@ ul{
 }
 
 .dropdown .dropbtn {
-    font-size: 16px;    
+    font-size: 16px;
     border: none;
     outline: none;
     color: white;
@@ -255,5 +256,9 @@ ul{
 .dropdown:hover #userli{
 	color: black;
 }
-/* end of header */
 
+.fordate {
+	color: white;
+}
+
+/* end of header */

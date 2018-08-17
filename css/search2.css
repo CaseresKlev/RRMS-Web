@@ -1,7 +1,7 @@
 /* TAPAYAN */
 
 .header_body {
-  background-color: #85929e;
+  background-color: #f0ead6;
   width: 70%;
 }
 .header_search-container {
@@ -47,7 +47,7 @@
     width: 100%;
     margin: 0;
     padding: 14px;
-	
+
   }
 .header_search-container input[type=text] {
     border: 1px solid #ccc;
@@ -67,6 +67,7 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    color: white;
 }
 
 /* Hide the browser's default radio button */
@@ -128,6 +129,7 @@
     float: right;
     margin-left: 0%;
     margin-top: 2%;
+    color: white;
 }
 
 .main-con {

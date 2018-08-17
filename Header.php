@@ -10,7 +10,7 @@ if(isset($_SESSION['uid'])){
     //header("Location: index(loyd).php");
   }
 //print_r($_SESSION);
-  
+
 
 ?>
 
@@ -44,7 +44,7 @@ if(isset($_SESSION['uid'])){
 					<a class="dropbtn" id="userli" >User</a>
 					<?php
 					echo "<div class="."\"dropdown-content\"" . ">";
-						
+
 						if(isset($_SESSION['uid'])){
 							if($acctype==="INSTRUCTOR" || $acctype==="admin"){
 								echo "<a href=" . "\"admindashboard.php\"" . "> My Dashboard </a>";
@@ -53,11 +53,11 @@ if(isset($_SESSION['uid'])){
 								echo "<a href=". "\"userchangepass.php\"" . "> Change Password </a>";
 							}
 								echo "<a href=". "\"logout.php\"" . ">LOGOUT</a>";
-							
-						
-						
-							
-						
+
+
+
+
+
 					}
 						?>
 					</div>
@@ -88,27 +88,27 @@ if(isset($_SESSION['uid'])){
 			<tr>
 				<td>
 
-					<label class="tbl-search_container" > Title 
+					<label class="tbl-search_container" > Title
 						<input type="radio" checked="checked" name="radio" id="search_title">
 						<span class="tbl-search_checkmark"></span>
 					</label>
 				</td>
-				
+
 				<td>
 
-					<label class="tbl-search_container" id="search_key"> Keywords 
+					<label class="tbl-search_container" id="search_key"> Keywords
 						<input type="radio" name="radio" id="search_kw">
 						<span class="tbl-search_checkmark"></span>
 					</label>
 				</td>
 				<tr>
 					<td></td>
-				<td colspan="2"> 
+				<td class="fordate" colspan="2"> 
 				Date: </br>
                     <input type="number" width="100%"  name="pubdate" id="filterdate" placeholder="">
 				</td>
 			</tr>
-				
+
 			</tr>
 		</table>
 		</form>
@@ -117,13 +117,13 @@ if(isset($_SESSION['uid'])){
 <script type= "text/javascript" src= "js/jquery-3.3.1.js"></script>
 <script type= "text/javascript" src= "js/header.js"></script>
 <?php if(!isset($_SESSION['uid'])){
-	echo "<script> 
+	echo "<script>
 			$('#btnLoginOut').show();
-			$('#userli').hide(); 
+			$('#userli').hide();
 		</script>";
 	//print_r($_SESSION);
 }else{
-	echo "<script> 
+	echo "<script>
 			$('#btnLoginOut').hide();
 			$('#userli').html(\"" . $_SESSION['gname'] . "\");
 			$('#userli').css(\"color\", \"yellow\");

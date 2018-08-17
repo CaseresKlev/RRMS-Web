@@ -2,6 +2,7 @@ body{
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+<<<<<<< HEAD
   background: #5499c7;
 
 }
@@ -23,6 +24,9 @@ body{
 
 .clearBoth{
   color: black;
+=======
+  background: #e3dac9;
+>>>>>>> b48796845eed8d34c2b7f851dbcf43a51d152b80
 }
 .boxx{
   width: 600px;
@@ -31,7 +35,7 @@ body{
   top: 70%;
   left: 50%;
   transform: translate(-50%,-50%);
-  background: #191919;
+  background: #1f2833;
   text-align: center;
   color: white;
 
