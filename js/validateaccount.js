@@ -2,10 +2,14 @@ $("#anneselect").click(function(){
     var type=$("#anneselect").val();
 
       if (type=="Instructor") {
-        $("#g_name").hide();
-      }
-      else {
-        $("#g_name").show();
+        $(".studiv").hide();
+          $("#tblins").show();
+
+
+      }else {
+
+          $("#tblins").hide();
+          $(".studiv").show();
       }
 })
 
@@ -25,7 +29,7 @@ $("#submit").click(function(){
   }else{
     var g_name=u_name;
   }
-  
+
 
 
 
@@ -64,3 +68,34 @@ $("#submit").click(function(){
     });
   }
 })
+$("#show-password").change(function(){
+     //alert("dsgsdd");
+     if ($(this).is(':checked')) {
+         $(":password").attr("type","text");
+     }else {
+
+       $("#stud_password").attr("type","password");
+       $("#ins_password").attr("type","password");
+        //alert("not check");
+     }
+
+
+    /*function showPass()
+    {
+
+      var password= document.getElementById('password');
+      if (document.getElementById('show-password').checked)
+      {
+        alert("dsgsdd");
+        password.setAttribute('type','text');
+
+      }else{
+
+          password.setAttribute('type','password');
+      }
+
+
+
+    }*/
+
+});
