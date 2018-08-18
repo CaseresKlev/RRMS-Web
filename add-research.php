@@ -1,6 +1,4 @@
-<?php
-    //session_start();
-?>
+
 
 <!DOCTYPE html>
 <html style="width=70%">
@@ -17,6 +15,16 @@
     <?php
         include "header.php";
     ?>
+
+    <?php
+    
+    //print_r($_SESSION);
+if(isset($_SESSION['uid'])){
+    //print_r($_SESSION);
+  }else{
+    header("Location: index.php");
+  }
+?>
     <h1>Add Research Information</h1>
 
 <form  method="POST" enctype="multipart/form-data" id="entry" style="width: 100%; margin-left: auto; margin-right: auto;">

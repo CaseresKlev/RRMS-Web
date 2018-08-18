@@ -2,7 +2,7 @@
 
 session_start();
 if(isset($_SESSION['uid'])){
-   //print_r($_SESSION);
+   print_r($_SESSION);
     $accname = $_SESSION['gname'];
   $acctype = $_SESSION['type'];
 
