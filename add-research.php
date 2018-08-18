@@ -102,7 +102,7 @@ if(isset($_SESSION['uid'])){
                 <p class="para">
                     Status:
                     <select name="status" id="status">
-                        <option>Unpublished</option>
+                        <option>Unpublish</option>
                         <option>Published</option>
                         <option>Utilized</option>
 

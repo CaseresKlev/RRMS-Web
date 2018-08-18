@@ -27,7 +27,7 @@
 
             $("#next").click(function(){
 
-                if(page<3){
+                if(page<2){
 
                     if(page==1){
                         if($("#title").val()==="" || $("#abstract").val()==="" || $("#pubdate").val()==="" || $("#department").val()==="" || $("#pubdate").val()===""){
@@ -206,6 +206,7 @@
                // alert(email);
 
 
+               /*
                //adviser details
                var adv_fname = $("#adv_fname").val();
                //alert(adv_fname);
@@ -221,7 +222,7 @@
 
                var adv_email = $("#adv_email").val();
                //alert(adv_email);
-
+                */
 
                 //validation of author details
                 var authorList = new Array();
@@ -258,11 +259,11 @@
                     address: add,
                     contact: contact,
                     email: email,
-                    adv_fname : adv_fname,
+                    /*adv_fname : adv_fname,
                     adv_mname : adv_mname,
                     adv_lname : adv_lname,
                     adv_suff : adv_suff,
-                    adv_email : adv_email,
+                    adv_email : adv_email,*/
                     dl:dl
 
                 },
@@ -332,17 +333,17 @@
                     $("#page1").slideDown("slow");
                 }else if(page==2){
                     $("#prev").show();
-                    $("#submit").hide();
-                    $("#next").show();
+                    $("#submit").show();
+                    $("#next").hide();
                     $("#page1").hide();
                     $("#page3").hide();
                     $("#page2").slideDown("slow");
                 }else if(page==3){
-                    $("#next").hide();
+                   /* $("#next").hide();
                     $("#submit").show();
                     $("#page1").hide();
                     $("#page2").hide();
-                    $("#page3").slideDown("slow");
+                    $("#page3").slideDown("slow"); */
                 }
             }
 
