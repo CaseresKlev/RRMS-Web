@@ -75,13 +75,13 @@ if(isset($_SESSION['uid'])){
                   <legend> References</legend>
 
                 <p id="para">
-                <br/>&ensp;Title: (APA Format)<br/>
-                    <textarea rows="1" cols="102" id="reftitle" placeholder="Input reference title"></textarea>
+                <br/>&ensp;Title: (APA Format) <br/>
+                    <textarea rows="1" cols="102" id="reftitle" placeholder="Input reference title (Ex. Satalkar, B. (2010, July 15). Water aerobics)"></textarea>
                 </p>
 
                 <p id="para">
               &ensp;Weblinks<br/>
-                    <textarea rows="1" cols="102" id="refweb" placeholder="Input Weblinks" ></textarea><br/>
+                    <textarea rows="1" cols="102" id="refweb" placeholder="Input Weblinks (Ex. HTTPS://www.Reference.com)" ></textarea><br/>
                 </p>
 
                 <p id="para">
@@ -126,9 +126,21 @@ if(isset($_SESSION['uid'])){
                     <th></th>
 
                     <tr id="row">
-                        <td><input type="text" placeholder="First Name" oninput="this.className = ''" id="fname" name="fname[]"></td>
-                        <td><input type="text" placeholder="Middle name" oninput="this.className = ''" id="mname" name="mname[]"></td>
-                        <td><input type="text" placeholder="Last name" oninput="this.className = ''" id="lname" name="lname[]"></td>
+
+                        <script>
+
+                          function lettersonly(input){
+                            var regex= /[^ a-z]/gi;
+                            input.value= input.value.replace(regex,"");
+                          }
+                          function numbersonly(input){
+                            var numall= /[^0-9]/gi;
+                            input.value= input.value.replace(numall, "");
+                          }
+                        </script>
+                        <td><input type="text" placeholder="First Name" oninput="this.className = ''" id="fname" name="fname[]" onkeyup="lettersonly(this)"></td>
+                        <td><input type="text" placeholder="Middle name" oninput="this.className = ''" id="mname" name="mname[]" onkeyup="lettersonly(this)"></td>
+                        <td><input type="text" placeholder="Last name" oninput="this.className = ''" id="lname" name="lname[]" onkeyup="lettersonly(this)"></td>
                         <td style="width: 70px;">
                             <select id="sufname" name="suf[]">
                                 <option></option>
@@ -138,7 +150,7 @@ if(isset($_SESSION['uid'])){
                              </select>
                         </td>
                         <td><input type="text" placeholder="Address" oninput="this.className = ''" id="add" name="add[]"></td>
-                        <td><input type="text" placeholder="Contact" oninput="this.className = ''" id="con" name="contact[]"></td>
+                        <td><input type="text" placeholder="Contact" oninput="this.className = ''" id="con" name="contact[]" onkeyup="numbersonly(this)"></td>
                         <td><input type="text" placeholder="Email" oninput="this.className = ''" id="email" name="email[]"></td>
                     </tr>
 
@@ -157,7 +169,7 @@ if(isset($_SESSION['uid'])){
     </fieldset>
     <br/>
     </div>
-    <div id = "page3" style="display:none">
+    <!-- <div id = "page3" style="display:none">
         <center><h3>Add Instructor Information</h3></center>
                     <p>
                         First Name:<br/>
@@ -187,7 +199,7 @@ if(isset($_SESSION['uid'])){
                     <p>
                       <center> <input type="checkbox" id="download" name="vehicle3" value="Boat" checked> I want others download my file.</center><br><br>
                     </p>
-    </div>
+    </div> -->
 
     <span style="float: right">
         <button type="button" id="prev">Previous</button>
