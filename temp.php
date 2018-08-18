@@ -53,7 +53,7 @@
         $dl = $_POST['dl'];
         //echo "Dowload state = " . $dl;
 
-
+        /*
         $adv_fname = $_POST['adv_fname'];
         //echo $adv_fname;
         
@@ -70,7 +70,8 @@
 
         $adv_email = $_POST['adv_email'];
         //echo $adv_email;
-    
+        */
+
         //get the department id
         $query = "SELECT id FROM `department` WHERE cat_name = \"$dept\"";
         $dbconfig = new dbconfig();
@@ -102,13 +103,20 @@
             $dbconfig = new dbconfig();
             $conn = $dbconfig->getCon();
             $result = $conn ->query($query);
-            $query = "SELECT book_id FROM `book` WHERE book_title = '$title'";
-            $dbconfig = new dbconfig();
-            $conn = $dbconfig->getCon();
-            $result = $conn ->query($query);
+            
+           
+
+
+
             if($result->num_rows>0){
                 while ($row=$result->fetch_assoc()) {
                     $book_id = $row['book_id'];
+                    
+                    $query = "SELECT book_id FROM `book` WHERE book_title = '$title'";
+                     $dbconfig = new dbconfig();
+                    $conn = $dbconfig->getCon();
+                    $result20 = $conn ->query($query);
+
                 }
             }
             //echo "Done Inserting Book Details <br/>";
@@ -292,11 +300,16 @@
 
 
             ///-----------START OF ADVISER INSERTION----------------///
-            $query = "SELECT `adv_id` FROM `adviser` WHERE  adv_fname='$adv_fname' and adv_midName = '$adv_mname' and adv_Lname = '$adv_lname' and adv_suff = '$adv_suff'";
+
+
+            $adv_id = $_SESSION['adviser'];
+            
+            $query = "INSERT INTO `junc_advicerbook` (`id`, `book_id`, `adv_id`) VALUES (NULL, '$book_id', '$adv_id')";
             $dbconfig = new dbconfig();
             $conn = $dbconfig->getCon();
             $result = $conn ->query($query);
 
+            /*
             $adv_id = null;
             if($result->num_rows>0){
                 while($row = $result->fetch_assoc()){
@@ -330,7 +343,12 @@
                 }
 
             }
-                    //document per group isertion
+            */
+
+             ///-----------END OF ADVISER INSERTION------------------///
+
+
+            ///------------DOCUMENT PER GROUP INSERTION-------------///
                     $accid = $_SESSION['uid'];
                     $query = "INSERT INTO `groupdoc` (`id`, `accid`, `book_id`) VALUES (NULL, '$accid', '$book_id')";
                     $dbconfig = new dbconfig();
@@ -344,7 +362,7 @@
                     $conn = $dbconfig->getCon();
                     $result = $conn ->query($query);
 
-
+            ///------------END DOCUMENT PER GROUP INSERTION-------------///
 
 
 
@@ -352,7 +370,7 @@
 
 
 
-            ///-----------END OF ADVISER INSERTION------------------///
+           
 
             
             
