@@ -111,6 +111,39 @@ if(isset($_SESSION['uid'])){
             </div>
         </div>
 
+
+        <fieldset class= "fieldset-published" style= "width: 100%; ">
+          <legend><i> Fill Published Details</i></legend>
+          <form id="form-published">
+            ISSN:&emsp;
+            <input type="text/number" placeholder="serial number" id="isdn" name="serial" style= "width: 100%; font-family: Century Gothic; font-size: 15px; font-style: italic; font-weight: bold;"></br></br>
+
+            Name of Journal:
+            <input type="text" placeholder="journal name" id="journal" name="journal"
+  style= "width: 100%; font-family: Century Gothic; font-size: 15px; font-style: italic; font-weight: bold;">
+
+  Type of Journal:
+            <input type="text" placeholder="journal type" name="type" id="type"
+  style= "width: 100%; font-family: Century Gothic; font-size: 15px; font-style: italic; font-weight: bold;">
+
+  Date:
+            <input type="date" width="100%" name="pubdate" id="pubdate" placeholder=""
+  style= "font-family: Century Gothic; font-size: 15px; font-style: italic; font-weight: bold;">
+</form>
+
+</fieldset>
+
+
+<fieldset class= "fieldset-utilized" style= "width: 100%; ">
+  <legend><i> Fill Ultized Details</i></legend>
+  <form id="form-utilized">
+    Organization Name:&emsp;
+    <input type="text/number" placeholder="Organization name" id="org" name="serial" style= "width: 100%; font-family: Century Gothic; font-size: 15px; font-style: italic; font-weight: bold;"></br></br>
+
+</form>
+
+</fieldset>
+
     <div id = "page2" style="display:none">
         <fieldset>
             <legend>Authors Info</legend>
