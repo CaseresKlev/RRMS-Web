@@ -26,7 +26,7 @@
 
     </head>
 
-    <body>
+    <body class="createbody">
 
       <form class="boxx">
         <h1>Create Account</h1>
