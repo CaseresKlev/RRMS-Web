@@ -44,7 +44,7 @@
           $conn = $dbconfig->getCon();
           //$id = $_GET['book_id'];
           //$query = "INSERT INTO `account` (`id`, `g_name`, `u_name`, `password`) VALUES (NULL, '$gname', '$uname', '$pass');";
-          $query = "INSERT INTO `account` (`id`, `g_name`, `u_name`, `password`, `activate`, `type`) VALUES (NULL, '$gname', '$uname', '$pass', '1', '$type');";
+          $query = "INSERT INTO `account` (`id`, `g_name`, `u_name`, `password`, `activate`, `type`, `adviser`) VALUES (NULL, '$gname', '$uname', '$pass', '1', '$type', '$ins_id');";
          //echo ($query);
           $result = $conn->query($query);
           //echo ($result);
