@@ -103,20 +103,23 @@
             $dbconfig = new dbconfig();
             $conn = $dbconfig->getCon();
             $result = $conn ->query($query);
-            
-           
 
-
-
+            $query = "SELECT book_id FROM `book` WHERE book_title = '$title'";
+            $dbconfig = new dbconfig();
+            $conn = $dbconfig->getCon();
+            $result = $conn ->query($query);
             if($result->num_rows>0){
                 while ($row=$result->fetch_assoc()) {
                     $book_id = $row['book_id'];
-                    
-                    $query = "SELECT book_id FROM `book` WHERE book_title = '$title'";
-                     $dbconfig = new dbconfig();
-                    $conn = $dbconfig->getCon();
-                    $result20 = $conn ->query($query);
 
+
+                    ///-----------INSERT TO HISTORY-----------////
+                    if($stat==="Unpublish"){
+                            $query = "INSERT INTO `bookhistory` (`id`, `book_id`, `book_stat`, `dis_type`, `dis_convension`, `dis_location`, `pub_issn`, `pub_journal`, `pub_type`, `date`) VALUES (NULL, '$book_id', '$stat', '', '', '', '', '', '', '$pubdate')";
+                            $dbconfig = new dbconfig();
+                            $conn = $dbconfig->getCon();
+                            $result20 = $conn ->query($query);
+                    }
                 }
             }
             //echo "Done Inserting Book Details <br/>";
