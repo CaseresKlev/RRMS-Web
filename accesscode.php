@@ -101,7 +101,7 @@
 						if($_SESSION['type']=="INSTRUCTOR"){
 							$query = "SELECT * FROM `acesskey` WHERE used=0 and type='student'";
 						}else{
-							$query = "SELECT * FROM `acesskey` WHERE used=0 and type='instructor'";
+							$query = "SELECT * FROM `acesskey` WHERE used=0 and type='instructor' and ins_id = 0";
 						}
 						
 						$result = $conn->query($query);
@@ -159,6 +159,7 @@
     <script src="js/bootstrap.min.js"></script>
 
     <!-- Custom Theme Scripts -->
+    <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
     <script src="js/accesscode.js"></script>
 
   </body>

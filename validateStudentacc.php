@@ -10,12 +10,14 @@
 
   //echo "FROM " . $gname . " " . $uname . " " . $pass;
 
-
+  //echo "$gname $uname $pass $access";
 
   $dbconfig1 = new dbconfig();
   $conn = $dbconfig1->getCon();
   $query = "SELECT * FROM `acesskey` WHERE acesskey COLLATE latin1_general_cs LIKE '$access'";
+  //echo $query;
   $result = $conn->query($query);
+
 
   //check if accesskey exist
   if($result->num_rows>0){
@@ -26,6 +28,7 @@
     $row = $result->fetch_assoc();
     $access_id = $row['id'];
     $type = $row['type'];
+    $ins_id = $row['ins_id'];
 
     //check if accesskey if not used
     if($row['used']==0){

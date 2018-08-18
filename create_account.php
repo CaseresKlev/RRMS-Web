@@ -26,7 +26,7 @@
 
     </head>
 
-    <body>
+    <body class="createbody">
 
       <form class="boxx">
         <h1>Create Account</h1>
@@ -54,11 +54,11 @@
                   <td>  <input class="ins" type="text" placeholder="Last name"id="ins_lname"></td>
                   <td>  <label class="saff" for="anneselects"></label>
 
-                        <select class="ins"width="100%" name="Suffix"style="border:1;" id="suff">
-                            <option class="ins"value="" style="text-align: center;">Suffix </option>
-                            <option style="color:black"class="ins"value="0"> JR </option>
-                            <option style="color:black"class="ins"value="1"> IV </option>
-                            <option style="color:black"class="ins"value="2"> III </option>
+                        <select class="ins"width="100%" name="Suffix" style="border:1;" id="suff">
+                            <option class="ins" value="" style="text-align: center;">Suffix </option>
+                            <option style="color:black"class="ins"> JR </option>
+                            <option style="color:black"class="ins"> IV </option>
+                            <option style="color:black"class="ins"> III </option>
                       </select>
                     </div>
                   </td>
@@ -69,7 +69,7 @@
                 </tr>
 
                 <tr>
-                  <td colspan="2">  <input class="ins"type="text" name="u_name" id="ins_u_name"required pattern="^[A-Za-z0-9]+" placeholder="User Name" autocomplete="off"></td>
+                  <td colspan="2">  <input class="ins"type="text" name="ins_name" id="ins_u_name"required pattern="^[A-Za-z0-9]+" placeholder="User Name" autocomplete="off"></td>
                   <td>  <input class="ins" type="password"name="password" id="ins_password"required pattern="^[A-Za-z0-9]+" placeholder="Password"></td>
                   <td>    <input class="ins" type="text" name="accesscode" id="ins_access" required pattern="^[A-Za-z0-9]+" placeholder="Access Code" autocomplete="off"></td>
                 </tr>
@@ -80,7 +80,7 @@
 
           <div class="studiv">
 
-            <input class="stud"type="text" name="g_name" id="g_name"required pattern="^[A-Za-z]+" placeholder="Group Name" autocomplete="off">
+            <input class="stud"type="text" name="g_name" id="g_name" required pattern="^[A-Za-z]+" placeholder="Group Name" autocomplete="off">
             <input class="stud"type="text" name="u_name" id="stud_u_name"required pattern="^[A-Za-z0-9]+" placeholder="User Name" autocomplete="off">
             <input class="stud"type="password"name="password" id="stud_password"required pattern="^[A-Za-z0-9]+" placeholder="Password">
 
@@ -91,8 +91,9 @@
 
 
           </div>
-
+          <div id="msg" style="color: red"></div>
           <input class="stud"type="button" style="width: 50%;"id="submit" value="Submit">
+          <input class="stud"type="button" style="width: 50%;"id="clear" value="Clear all Fields">
           <div class="checkboxx">
         <label class="show" for="show-password" class="field-toggle">
           Show password

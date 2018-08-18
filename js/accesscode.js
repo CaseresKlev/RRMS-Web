@@ -1,4 +1,5 @@
 $("#admin-btn-generate").click(function(){
+  alert("g");
 		var count = $("#access-count").val();
 		var type = "INSTRUCTOR";
 		//alert(count); 
@@ -23,6 +24,7 @@ $("#admin-btn-generate").click(function(){
                    alert(e);
                },
     		success: function(data){
+          alert(data);
     			location.reload(true);
     			
     		}

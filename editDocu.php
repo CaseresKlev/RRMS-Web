@@ -128,7 +128,7 @@
 									<option> Unpublish </option>
 									<option> Proposed </option>
 									<option> Completed </option>
-									<option> Disseminated/Presented </option>
+									<option> Disseminated / Presented </option>
 									<option> Published </option>
 								</select>
 
