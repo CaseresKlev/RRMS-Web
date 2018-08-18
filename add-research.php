@@ -17,7 +17,7 @@
     ?>
 
     <?php
-    
+
     //print_r($_SESSION);
 if(isset($_SESSION['uid'])){
     //print_r($_SESSION);
@@ -38,11 +38,11 @@ if(isset($_SESSION['uid'])){
             <div id="bookDet">
                 <p class="para">
                 Research Title
-                  <input type="text" placeholder="Research title" id="title" name="title">
+                  <input style="text-transform: capitalize"type="text" placeholder="Research title" id="title" name="title">
                 </p>
                 <p class="para">
                     Abstract:<br>
-                    <textarea rows="6" cols="102" placeholder="Abstract" name="abstract" id="abstract"></textarea>
+                    <textarea style="text-transform: capitalize"rows="6" cols="102" placeholder="Abstract" name="abstract" id="abstract"></textarea>
                 </p>
                 <p class="para">
                     Submitted Date
@@ -68,7 +68,7 @@ if(isset($_SESSION['uid'])){
                 </p>
                 <p id="para">
                     Key Words:<strong style="color:red">&emsp;One keyword per line</strong></note>
-                    <textarea rows="6" cols="102" placeholder="Key Words" name="keywords" id="keywords"></textarea><br/>
+                    <textarea style="text-transform: capitalize"rows="6" cols="102" placeholder="Key Words" name="keywords" id="keywords"></textarea><br/>
                 </p>
                 <div class="ref-container">
                 <fieldset>
@@ -76,17 +76,17 @@ if(isset($_SESSION['uid'])){
 
                 <p id="para">
                 <br/>&ensp;Title: (APA Format) <br/>
-                    <textarea rows="1" cols="102" id="reftitle" placeholder="Input reference title (Ex. Satalkar, B. (2010, July 15). Water aerobics)"></textarea>
+                    <textarea style="text-transform: capitalize"rows="1" cols="102" id="reftitle" placeholder="Input reference title (Ex. Satalkar, B. (2010, July 15). Water aerobics)"></textarea>
                 </p>
 
                 <p id="para">
               &ensp;Weblinks<br/>
-                    <textarea rows="1" cols="102" id="refweb" placeholder="Input Weblinks (Ex. HTTPS://www.Reference.com)" ></textarea><br/>
+                    <textarea style="text-transform: capitalize"rows="1" cols="102" id="refweb" placeholder="Input Weblinks (Ex. HTTPS://www.Reference.com)" ></textarea><br/>
                 </p>
 
                 <p id="para">
               &ensp;Local Research Reference key (if available)
-                    <textarea rows="1" cols="102" placeholder="Input Local Reference Key" name="reference" id="locref" style="text-transform:capitalized;"></textarea>
+                    <textarea style="text-transform: capitalize"rows="1" cols="102" placeholder="Input Local Reference Key" name="reference" id="locref" style="text-transform:capitalized;"></textarea>
                 </p>
                 <div class="add">
                 <button type="button" id="addref" style="display: block;padding: 10px 15px;vertical-align:middle; text-align:center; display:inline-block; float:left;">ADD</button>
@@ -94,7 +94,7 @@ if(isset($_SESSION['uid'])){
               <br>
                 <p id="para">
                 <br/><br/> <br/>References: &ensp;
-                    <textarea rows="6" cols="102" placeholder="" name="reference" id="reference" value="" readonly></textarea><br/>
+                    <textarea style="text-transform: capitalize"rows="6" cols="102" placeholder="" name="reference" id="reference" value="" readonly></textarea><br/>
                 </p>
 
               </fieldset>
@@ -138,9 +138,9 @@ if(isset($_SESSION['uid'])){
                             input.value= input.value.replace(numall, "");
                           }
                         </script>
-                        <td><input type="text" placeholder="First Name" oninput="this.className = ''" id="fname" name="fname[]" onkeyup="lettersonly(this)"></td>
-                        <td><input type="text" placeholder="Middle name" oninput="this.className = ''" id="mname" name="mname[]" onkeyup="lettersonly(this)"></td>
-                        <td><input type="text" placeholder="Last name" oninput="this.className = ''" id="lname" name="lname[]" onkeyup="lettersonly(this)"></td>
+                        <td><input style="text-transform: capitalize" type="text" placeholder="First Name" oninput="this.className = ''" id="fname" name="fname[]" onkeyup="lettersonly(this)"></td>
+                        <td><input style="text-transform: capitalized" type="text" placeholder="Middle name" oninput="this.className = ''" id="mname" name="mname[]" onkeyup="lettersonly(this)"></td>
+                        <td><input style="text-transform: capitalized" type="text" placeholder="Last name" oninput="this.className = ''" id="lname" name="lname[]" onkeyup="lettersonly(this)"></td>
                         <td style="width: 70px;">
                             <select id="sufname" name="suf[]">
                                 <option></option>
@@ -149,7 +149,7 @@ if(isset($_SESSION['uid'])){
                                 <option>III</option>
                              </select>
                         </td>
-                        <td><input type="text" placeholder="Address" oninput="this.className = ''" id="add" name="add[]"></td>
+                        <td><input style="text-transform: capitalized" type="text" placeholder="Address" oninput="this.className = ''" id="add" name="add[]"></td>
                         <td><input type="text" placeholder="Contact" oninput="this.className = ''" id="con" name="contact[]" onkeyup="numbersonly(this)"></td>
                         <td><input type="text" placeholder="Email" oninput="this.className = ''" id="email" name="email[]"></td>
                     </tr>

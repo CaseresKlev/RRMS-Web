@@ -47,12 +47,22 @@
             <div class="insdiv">
 
               <table id="tblins"width="100%"  style="margin-left:auto; margin-right:auto;">
+
+                <script>
+
+                  function lettersonly(input){
+                    var regex= /[^ a-z -]/gi;
+                    input.value= input.value.replace(regex,"");
+                  }
+
+                </script>
+
                 <tr>
 
-                  <td>  <input class="ins"type="text"placeholder="First name"id="ins_fname"></td>
-                  <td>  <input class="ins"type="text" placeholder="Middle name"id="ins_mname"></td>
-                  <td>  <input class="ins" type="text" placeholder="Last name"id="ins_lname"></td>
-                  <td>  <label class="saff" for="anneselects"></label>
+                  <td>  <input style="text-transform: capitalize"class="ins"type="text"placeholder="First name"id="ins_fname" onkeyup="lettersonly(this)"></td>
+                  <td>  <input style="text-transform: capitalize"class="ins"type="text" placeholder="Middle name"id="ins_mname" onkeyup="lettersonly(this)"></td>
+                  <td>  <input style="text-transform: capitalize"class="ins" type="text" placeholder="Last name"id="ins_lname" onkeyup="lettersonly(this)"></td>
+                  <td>  <label style="text-transform: capitalize"class="saff" for="anneselects"></label>
 
                         <select class="ins"width="100%" name="Suffix" style="border:1;" id="suff">
                             <option class="ins" value="" style="text-align: center;">Suffix </option>
@@ -80,8 +90,8 @@
 
           <div class="studiv">
 
-            <input class="stud"type="text" name="g_name" id="g_name" required pattern="^[A-Za-z]+" placeholder="Group Name" autocomplete="off">
-            <input class="stud"type="text" name="u_name" id="stud_u_name"required pattern="^[A-Za-z0-9]+" placeholder="User Name" autocomplete="off">
+            <input style="text-transform: capitalize"class="stud"type="text" name="g_name" id="g_name" required pattern="^[A-Za-z]+" placeholder="Group Name" autocomplete="off" onkeyup="lettersonly(this)">
+            <input style="text-transform: capitalize" class="stud"type="text" name="u_name" id="stud_u_name"required pattern="^[A-Za-z0-9]+" placeholder="User Name" autocomplete="off" onkeyup="lettersonly(this)">
             <input class="stud"type="password"name="password" id="stud_password"required pattern="^[A-Za-z0-9]+" placeholder="Password">
 
               <input class="stud"type="text" name="accesscode" id="stud_access" required pattern="^[A-Za-z0-9]+" placeholder="Access Code" autocomplete="off">
