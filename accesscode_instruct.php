@@ -10,6 +10,7 @@ session_start();
 
   $accname = $_SESSION['gname'];
   $acctype = $_SESSION['type'];
+  $id = $_SESSION['uid'];
 
 ?>
 
@@ -92,7 +93,7 @@ session_start();
 						include_once 'connection.php';
 						$dbconfig = new dbconfig();
 						$conn = $dbconfig->getCon();
-						$query = "SELECT * FROM `acesskey` WHERE used=0 and type='STUDENT'";
+						$query = "SELECT * FROM `acesskey` WHERE used=0 and type='STUDENT' and ins_id = $id";
 						$result = $conn->query($query);
 						if($result->num_rows>0){
 							$i=1;

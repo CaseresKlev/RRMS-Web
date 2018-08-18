@@ -3,21 +3,15 @@
 session_start();
 	$count = $_POST['count'];
 	$temptype = $_SESSION['type'];
+	$id = $_SESSION['uid'];
 	//print_r($$temptype);
 	$type = null;
 	if($temptype==="INSTRUCTOR"){
 		$type = "STUDENT";
 	}else if($temptype==="admin"){
 		$type = "INSTRUCTOR";
+		$id = 0;
 	}
-	//echo $type;
-
-	
-	
-
-	
-	$accesskey = array();
-	
 
 	//while($i<=5){
 	include_once 'connection.php';
@@ -32,7 +26,7 @@ session_start();
 
 
 		
-		$query = "INSERT INTO `acesskey` (`id`, `acesskey`, `type`, `used`, `date`) VALUES (NULL, '$key', '$type', '0', '$date')";
+		$query = "INSERT INTO `acesskey` (`id`, `acesskey`, `type`, `used`, `date` , `ins_id`) VALUES (NULL, '$key', '$type', '0', '$date', '$id')";
 		$result = $conn ->query($query);
 		//echo $query;
 		//echo $result;

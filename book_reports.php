@@ -64,11 +64,16 @@
 
 		@media print {
 			#Header, #Footer { display: none !important; }
+			a{
+				color: inherit !important; /* blue colors for links too */
+  				text-decoration: inherit !important; /* no underline */
+			}
 		}
 
 		#example tr:nth-child(even) {
     		background-color: #dddddd;
 		}
+
 
 		#example{
 			font-family: arial, sans-serif;
@@ -83,13 +88,13 @@
 		}
 
 		#example td{
-			border: 1px solid #dddddd;
+			border: 1px solid gray;
     		text-align: left;
     		padding: 4px;
 		}
 
 		#example th{
-			border: 1px solid #dddddd;
+			border: 1px solid gray;
     		text-align: left;
     		padding: 4px;
     		text-align: center;
@@ -102,8 +107,8 @@
 		}
 
 		#filter th{
-			border: 1px solid #dddddd;
     		text-align: left;
+    		padding: 10px;
 
 		}
 
@@ -118,9 +123,23 @@
 <body id="print-area">
 
 	<?php
+
+	$filtertitle = $_GET['title'];
+	$filterdept =  $_GET['dept'];
+	$filterstat = $_GET['status'];
+	$filteraut = $_GET['author'];
+	$filterfrom = $_GET['from'];
+	$filterto = $_GET['to'];
+
+	//echo "$filtertitle $filterdept $filterstat $filteraut $filterfrom $filterto";
+
   $connect = mysqli_connect("localhost", "root", "", "db_rrms");
   //$query ="SELECT * FROM book ORDER BY book_id DESC";
-  $query = "SELECT DISTINCT (book.book_id), book.book_title, book.pub_date, (SELECT department.cat_name FROM department WHERE book.department = department.id) as 'dept', book.status, (SELECT concat('',(GROUP_CONCAT((select concat( author.a_lname, ',', SUBSTRING(author.a_fname, 1,1))) SEPARATOR '; '))) as authors FROM junc_authorbook INNER JOIN author on author.a_id = junc_authorbook.aut_id WHERE junc_authorbook.book_id = book.book_id) AS 'authors' FROM book INNER JOIN junc_authorbook on book.book_id = junc_authorbook.book_id WHERE 1";
+  $query = "SELECT book.book_id, book.book_title, (SELECT department.cat_name FROM department WHERE book.department = department.id) as 'dept', bookhistory.book_stat, (SELECT concat('',(GROUP_CONCAT((select concat( author.a_lname, ',', SUBSTRING(author.a_fname, 1,1))) SEPARATOR '; '))) as authors FROM junc_authorbook INNER JOIN author on author.a_id = junc_authorbook.aut_id WHERE junc_authorbook.book_id = book.book_id) AS 'authors', bookhistory.date FROM book 
+INNER JOIN department on department.id = book.department
+INNER JOIN bookhistory on book.book_id = bookhistory.book_id WHERE book.book_title LIKE '%". $filtertitle ."%' and YEAR(bookhistory.date) >= '" . $filterfrom ."' and YEAR(bookhistory.date) <='" . $filterto ."' and department.cat_name LIKE '%" .$filterdept . "%' and bookhistory.book_stat like '%$filterstat%' ORDER BY bookhistory.date DESC";
+
+ // $query = "SELECT book.book_id, book.book_title, (SELECT department.cat_name FROM department WHERE book.department = department.id and department.cat_name like 'education') as 'dept', bookhistory.book_stat, (SELECT concat('',(GROUP_CONCAT((select concat( author.a_lname, ',', SUBSTRING(author.a_fname, 1,1))) SEPARATOR '; '))) as authors FROM junc_authorbook INNER JOIN author on author.a_id = junc_authorbook.aut_id WHERE junc_authorbook.book_id = book.book_id or author.a_fname LIKE '%rasheed%' or author.a_mname LIKE '%rasheed%' or author.a_lname LIKE '%rasheed%') AS 'authors', bookhistory.date FROM book INNER JOIN bookhistory on book.book_id = bookhistory.book_id WHERE book.book_title LIKE '%asia%' and YEAR(bookhistory.date) >= '2018' and YEAR(bookhistory.date) <='2018'";
   $result = mysqli_query($connect, $query);
 
 
@@ -174,18 +193,36 @@
 					</div>
 
 					<center><h2>Reaseach Reports</h2></center>
-					<table id="filter" width="100%">
+					<div id="filter-div">
+					<b style="font-size: 16pt">Filter Options:</b>
+					<table id="filter" width="100%" style="border: 1px solid red">
 						<tr>
-              						<th width="5%"></th>
-              						<th width="40%">Filter Title &nbsp; <textarea io="filte-title" style="width: 98%;" rows="6"></textarea></th>
-              						<th width="15%">Filter Date <br><br>From:&nbsp;
-              						<input type="number" name="from" Value = "2000" width="100%"><br>
-              						To:&nbsp
-              						<input type="number" name="from" Value = "2000" width="100%">
+              						
+              						<th width="20%">Filter Title &nbsp; <br><br><textarea id="filter-title" style="width: 98%;" rows="5" placeholder="Tittle or Keywords"></textarea></th>
+              						<th width="15%" style="padding-top: 0px">Filter Date: <br>
+              							<table>
+              								<tr>
+              									<td>From:</td>
+              									<td><input type="number" id="filter-from" Value = "0" width="100%"></td>
+              									
 
+              								</tr>
+              								<tr>
+              									<td>To:</td>
+              									<td>
+              										<?php
+              										$d = Date('Y-m-d');
+              										$yr = split("-", $d);
+              							
+              										echo '<input type="number" id="filter-to" Value = "' . $yr[0] . '" width="100%">' ;
+              									?>
+
+              									</td>
+              								</tr>
+              							</table>
               						</th>
               						<th width="15%">
-              							Filter Department:<br><br>
+              							Filter Department:<br><br><br>
               							<select id="filter-dept" style="width: 100%">
               								<option>All</option>
               								<?php
@@ -202,8 +239,10 @@
               								?>
 
               							</select>
+              							<br><br>
+              							<br>
               						</th>
-              						<th width="15%">Filter Status:<br><br>
+              						<th width="15%">Filter Status:<br><br><br>
               							<select id="filter-stat" style="width: 100%">
               								<option>All</option>
               								<?php
@@ -219,54 +258,73 @@
 
               								?>
               							</select>
+              							<br><br>
+              							<br>
+
               						</th>
               						<th width="20%">Filter Authors:<br>
-              							<textarea io="filte-title" style="width: 98%;" rows="6"></textarea>
+              							<textarea id="filter-aut" style="width: 98%;" rows="6"></textarea>
               						</th>
             					</tr>
 					</table>
 					<br>
+					<button id="btnFilter" >FILTER</button> 
+					<button id="resetfilter" >Reset Filter</button> 
 					<br>
+					<br>
+					<br>
+					</div>
 					<table id="example" class="display nowrap" cellspacing="0" width="100%">
           					<thead style="text-align: left;">
             					<tr>
               						<th width="5%">ID</th>
-              						<th width="40%">Book Title</th>
-              						<th width="15%">Date</th>
-              						<th width="15%">Department</th>
+              						<th width="38%">Book Title</th>
+              						<th width="12%">Department</th>
               						<th width="15%">Status</th>
-              						<th width="20%">Authors</th>
+              						<th width="15%">Authors</th>
+              						<th width="25%">Date</th>
             					</tr>
           					</thead>
-          			<tbody>
+          			
             		<?php
-
+            		echo "<tbody>";
               		while ($row = mysqli_fetch_array($result)){
                 			echo '
                   				<tr>
                     				<td>'.$row["book_id"].'</td>
-                      				<td>'.$row["book_title"].'</td>
-                        			<td>'.$row["pub_date"].'</td>
+                      				<td><a href="history.php?book_id=' . $row['book_id']. '">'.$row["book_title"].'</a></td>
                           			<td>'.$row["dept"].'</td>
-                            		<td>'.$row["status"].'</td>
+                            		<td>'.$row["book_stat"].'</td>
                               		<td>'.$row["authors"].'</td>
+                              		<td>'.$row["date"].'</td>
                              	</tr>
                   			';
               }
 
 
-
+              echo "</tbody>";
               ?>
-          </tbody>
 
         </table>
         <br>
         <div id="line">
-		
+        	
 		</div>
 		<br>
+		<b id="rescount"></b><br>
+		<b id="datepage">As of </b>
+		<br><br>
 
 
+		<script type="text/javascript">
+				var table,  tr, td, i;
+				table = document.getElementById("example");
+				tr = table.getElementsByTagName("tr");
+
+				$("#rescount").html("Total result: " + (tr.length - 1));
+				$("#datepage").html("As of " + new Date())
+			
+		</script>
 		<button id="print" >Print</button>
 
 
@@ -278,30 +336,64 @@
 
 
 	</table>
-	
+	<br>
+	<br>
+	<br>
+	<br>	
 	
 	<script type="text/javascript">
 		
 		$("#print").click(function(){
 			$(this).hide();
-			$("#filter").hide();
+			$("#filter-div").hide();
 			window.print();
 
 		});
 
-		$("#filter-dept").change(function(){
-			var filter = $(this).val().toUpperCase();
+		$("#btnFilter").click(function(){
+			var title = $("#filter-title").val();
+			var from = $("#filter-from").val();
+			var to = $("#filter-to").val();
+			var dept = $("#filter-dept").val();
+			if(dept=="All"){
+				dept = "";
+			}
+			var stat = $("#filter-stat").val();
+			if(stat=="All"){
+				stat = "";
+			}
+			var aut = $("#filter-aut").val();
 
-			if(filter!="ALL"){
+			window.location.replace("book_reports.php?title=" + title + "&dept=" + dept + "&status=" + stat + "&author=" + aut + "&from=" + from + "&to=" + to);
+		})
+
+		$("#resetfilter").click(function(){
+			/*var table,  tr, td, i;
+				table = document.getElementById("example");
+				tr = tr = table.getElementsByTagName("tr");
+				for(i=0; i<tr.length; i++){
+					tr[i].style.display ="";
+				}
+
+			$("#filter-to").val("2000");
+			$("#filter-title").val("");
+			$("#filter-from").val("2000");
+			$("#filter-aut").val("");
+			$("#filter-stat").val("All");
+			$("#filter-dept").val("All");*/
+			window.location.replace("book_reports.php?title=&dept=&status=&author=&from=0&to=5000");
+		})
+
+		$("#filter-aut").keyup(function(){
+			var filter = $(this).val().toUpperCase();
+ 			if(filter!=""){
 				var table,  tr, td, i;
 				table = document.getElementById("example");
 				tr = table.getElementsByTagName("tr");
 				for (i = 0; i < tr.length; i++) {
 					
-    				td = tr[i].getElementsByTagName("td")[3];
-
-
-    				if(tr[i].style.display==""){
+    				td = tr[i].getElementsByTagName("td")[4];
+     				if(tr[i].style.display==""){
 	    				if (td) {
 	      					if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
 	        					tr[i].style.display = "";
@@ -311,6 +403,7 @@
 	    				}
     			}       
   			}
+
 			}else{
 				var table,  tr, td, i;
 				table = document.getElementById("example");
@@ -321,46 +414,28 @@
 			}
 			
 			//alert(dept);
+			updateResult();
 		})
 
-		$("#filter-stat").change(function(){
-			var filter = $(this).val().toUpperCase();
-			//alert(filter);
 
-			if(filter!="ALL"){
-				var table,  tr, td, i;
+		function updateResult(){
+			var table,  tr, td, i;
 				table = document.getElementById("example");
 				tr = table.getElementsByTagName("tr");
-
-
-
-				
-				for (i = 0; i < tr.length; i++) {
-					//alert(tr[i].getElementsByTagName("td")[4]);
-    				td = tr[i].getElementsByTagName("td")[4];
-
-    				if(tr[i].style.display==""){
-    					if (td) {
-      						if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
-        						tr[i].style.display = "";
-     		 				} else {
-        						tr[i].style.display = "none";
-      						}
-    					}       
-    				}
-    				
-  			}
-			}else{
-				var table,  tr, td, i;
-				table = document.getElementById("example");
-				tr = tr = table.getElementsByTagName("tr");
+				var count = 0;
 				for(i=0; i<tr.length; i++){
-					tr[i].style.display ="";
+					if(tr[i].style.display ==""){
+						count++;
+					}
 				}
-			}
-			
-			//alert(dept);
-		})
+
+				$("#rescount").html("Total result: " + (count-1));
+		}
+
+		window.onafterprint = function(){
+  		 $("#filter-div").show();
+  		 $("#print").show();
+		}
 
 	</script>
 
