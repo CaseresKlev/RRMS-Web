@@ -45,7 +45,9 @@
 		}
 		#line-up{
 			width:100%;
-			height: 30px;
+			height: 40px;
+			background-color: red;
+			display: none;
 
 		}
 
@@ -67,6 +69,30 @@
 			a{
 				color: inherit !important; /* blue colors for links too */
   				text-decoration: inherit !important; /* no underline */
+
+			}
+
+			.report-table {
+				background-color: white !important;
+			}
+
+			@page{
+  			margin-left: 10mm;
+  			margin-top: 0mm;
+
+
+			}
+			#line-up{
+				width:100%;
+				height: 30px;
+				background-color: white !important;
+				display: block;
+
+			}
+
+			#gray{
+				background-color: white !important;
+				background-attachment: fixed;
 			}
 		}
 
@@ -115,6 +141,7 @@
 	 	.printbody {
 			background-image: url("img/BukSU-0014.png");
 			background-repeat: no-repeat;
+			background-color: rgba(214, 214, 194, .50) !important;
 			background-size: cover;
 			height: 100%;
 			width: 100%;
@@ -123,7 +150,18 @@
 		}
 
 		.report-table {
+			
+			
+		}
+
+		#tbl{
+			width: 90%;
+			margin-left: auto !important;
+			margin-right: auto !important;
+		}
+		#gray{
 			background-color: rgba(214, 214, 194, .50);
+			background-attachment: fixed;
 		}
 
 
@@ -135,7 +173,7 @@
 
 </head>
 <body id="print-area" class="printbody">
-
+	<div id="gray">
 	<?php
 
 	$filtertitle = $_GET['title'];
@@ -163,7 +201,7 @@ INNER JOIN bookhistory on book.book_id = bookhistory.book_id WHERE book.book_tit
 	</div>
 		<br/>
 
-		<table width="100%">
+		<table width="100%" id="tbl">
 
 			<tr>
 				<td width="5px">
@@ -290,7 +328,7 @@ INNER JOIN bookhistory on book.book_id = bookhistory.book_id WHERE book.book_tit
 					<table id="example" class="display nowrap" cellspacing="0" width="100%">
           					<thead style="text-align: left;">
             					<tr>
-              						<th width="5%">ID</th>
+              						<!--<th width="5%">ID</th>-->
               						<th width="38%">Book Title</th>
               						<th width="12%">Department</th>
               						<th width="15%">Status</th>
@@ -304,7 +342,7 @@ INNER JOIN bookhistory on book.book_id = bookhistory.book_id WHERE book.book_tit
               		while ($row = mysqli_fetch_array($result)){
                 			echo '
                   				<tr>
-                    				<td>'.$row["book_id"].'</td>
+                    				
                       				<td><a href="history.php?book_id=' . $row['book_id']. '">'.$row["book_title"].'</a></td>
                           			<td>'.$row["dept"].'</td>
                             		<td>'.$row["book_stat"].'</td>
@@ -403,7 +441,7 @@ INNER JOIN bookhistory on book.book_id = bookhistory.book_id WHERE book.book_tit
 				tr = table.getElementsByTagName("tr");
 				for (i = 0; i < tr.length; i++) {
 
-    				td = tr[i].getElementsByTagName("td")[4];
+    				td = tr[i].getElementsByTagName("td")[3];
      				if(tr[i].style.display==""){
 	    				if (td) {
 	      					if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
@@ -451,6 +489,6 @@ INNER JOIN bookhistory on book.book_id = bookhistory.book_id WHERE book.book_tit
 	</script>
 
 
-
+</div>
 </body>
 </html>
