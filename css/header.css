@@ -45,7 +45,7 @@
 .header {
 	overflow: hidden;
 	/*background-color: #003951;*/
-	background-image: url("../img/BukSU-008-1.png");
+	background-image: url("../img/BukSU-008.png");
 	background-repeat: no-repeat;
 	background-position: center;
 	padding: 20px 0px 0px 0px;
@@ -289,5 +289,7 @@ mark{
 	background-color: rgba(255,255,255,.6);
 	color: black;
 }
-
+.close:hover {
+	background-color: white;
+}
 /* end of header */

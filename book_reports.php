@@ -1,5 +1,5 @@
 <?php
-	
+
 	session_start();
 	if(isset($_SESSION['uid'])){
 		//print_r($_SESSION);
@@ -23,10 +23,10 @@
 	<script type="text/javascript" src="js/print.js"></script>
 	<style type="text/css">
 		table, tr, td{
-    	border-collapse: collapse;
+    	/*border-collapse: collapse;*/
     	text-align: left;
     	word-wrap:break-word;
-    	
+
 		}
 
 		#logo{
@@ -34,9 +34,10 @@
 		}
 
 		body * {
-			/*margin-left: auto; 
+			/*margin-left: auto;
 			margin-right: auto;*/
 			-webkit-print-color-adjust: exact !important;
+
 		}
 
 		#line{
@@ -44,7 +45,6 @@
 		}
 		#line-up{
 			width:100%;
-			background-color: white;
 			height: 30px;
 
 		}
@@ -59,7 +59,7 @@
   			margin-left: 0mm;
   			margin-top: 0mm;
 
-  			
+
 		}
 
 		@media print {
@@ -112,15 +112,29 @@
 
 		}
 
+	 	.printbody {
+			background-image: url("img/BukSU-0014.png");
+			background-repeat: no-repeat;
+			background-size: cover;
+			height: 100%;
+			width: 100%;
+			background-attachment: fixed;
+			margin: 0px;
+		}
+
+		.report-table {
+			background-color: rgba(214, 214, 194, .50);
+		}
+
 
 
 
 
 
 	</style>
-    
+
 </head>
-<body id="print-area">
+<body id="print-area" class="printbody">
 
 	<?php
 
@@ -135,7 +149,7 @@
 
   $connect = mysqli_connect("localhost", "root", "", "db_rrms");
   //$query ="SELECT * FROM book ORDER BY book_id DESC";
-  $query = "SELECT book.book_id, book.book_title, (SELECT department.cat_name FROM department WHERE book.department = department.id) as 'dept', bookhistory.book_stat, (SELECT concat('',(GROUP_CONCAT((select concat( author.a_lname, ',', SUBSTRING(author.a_fname, 1,1))) SEPARATOR '; '))) as authors FROM junc_authorbook INNER JOIN author on author.a_id = junc_authorbook.aut_id WHERE junc_authorbook.book_id = book.book_id) AS 'authors', bookhistory.date FROM book 
+  $query = "SELECT book.book_id, book.book_title, (SELECT department.cat_name FROM department WHERE book.department = department.id) as 'dept', bookhistory.book_stat, (SELECT concat('',(GROUP_CONCAT((select concat( author.a_lname, ',', SUBSTRING(author.a_fname, 1,1))) SEPARATOR '; '))) as authors FROM junc_authorbook INNER JOIN author on author.a_id = junc_authorbook.aut_id WHERE junc_authorbook.book_id = book.book_id) AS 'authors', bookhistory.date FROM book
 INNER JOIN department on department.id = book.department
 INNER JOIN bookhistory on book.book_id = bookhistory.book_id WHERE book.book_title LIKE '%". $filtertitle ."%' and YEAR(bookhistory.date) >= '" . $filterfrom ."' and YEAR(bookhistory.date) <='" . $filterto ."' and department.cat_name LIKE '%" .$filterdept . "%' and bookhistory.book_stat like '%$filterstat%' ORDER BY bookhistory.date DESC";
 
@@ -145,20 +159,20 @@ INNER JOIN bookhistory on book.book_id = bookhistory.book_id WHERE book.book_tit
 
 ?>
 	<div id="line-up">
-		
+
 	</div>
 		<br/>
 
 		<table width="100%">
-			
+
 			<tr>
-				<td width="70px">
+				<td width="5px">
 					<div id="left-b">
-						
+
 					</div>
-					
+
 				</td>
-				<td>
+				<td class="report-table">
 					<div id="rep-banner">
 
 						<table width="100%">
@@ -168,43 +182,42 @@ INNER JOIN bookhistory on book.book_id = bookhistory.book_id WHERE book.book_tit
 								</td>
 								<td>
 									<b style="font-size: 22pt">Bukidnon State University</b><br>
-									<b style="font-size: 14pt; font-weight: normal;">Research and Developement Unit<br>
+									<b style="font-size: 14pt; font-weight: normal;">Research and Development Unit<br>
 									Malaybalay City Bukidnon</b>
 									</td>
 							</tr>
 							<tr>
 								<td>
-							
+
 								</td>
 							</tr>
 							<tr>
 								<td>
-							
+
 								</td>
 							</tr>
-
 
 						</table>
 
 					</div>
 					<br>
 					<div id="line">
-		
+
 					</div>
 
-					<center><h2>Reaseach Reports</h2></center>
+					<center><h2>Research Reports</h2></center>
 					<div id="filter-div">
 					<b style="font-size: 16pt">Filter Options:</b>
 					<table id="filter" width="100%" style="border: 1px solid red">
 						<tr>
-              						
+
               						<th width="20%">Filter Title &nbsp; <br><br><textarea id="filter-title" style="width: 98%;" rows="5" placeholder="Tittle or Keywords"></textarea></th>
               						<th width="15%" style="padding-top: 0px">Filter Date: <br>
               							<table>
               								<tr>
               									<td>From:</td>
               									<td><input type="number" id="filter-from" Value = "0" width="100%"></td>
-              									
+
 
               								</tr>
               								<tr>
@@ -213,7 +226,7 @@ INNER JOIN bookhistory on book.book_id = bookhistory.book_id WHERE book.book_tit
               										<?php
               										$d = Date('Y-m-d');
               										$yr = explode("-", $d);
-              							
+
               										echo '<input type="number" id="filter-to" Value = "' . $yr[0] . '" width="100%">' ;
               									?>
 
@@ -268,8 +281,8 @@ INNER JOIN bookhistory on book.book_id = bookhistory.book_id WHERE book.book_tit
             					</tr>
 					</table>
 					<br>
-					<button id="btnFilter" >FILTER</button> 
-					<button id="resetfilter" >Reset Filter</button> 
+					<button id="btnFilter" >FILTER</button>
+					<button id="resetfilter" >Reset Filter</button>
 					<br>
 					<br>
 					<br>
@@ -285,7 +298,7 @@ INNER JOIN bookhistory on book.book_id = bookhistory.book_id WHERE book.book_tit
               						<th width="25%">Date</th>
             					</tr>
           					</thead>
-          			
+
             		<?php
             		echo "<tbody>";
               		while ($row = mysqli_fetch_array($result)){
@@ -308,7 +321,7 @@ INNER JOIN bookhistory on book.book_id = bookhistory.book_id WHERE book.book_tit
         </table>
         <br>
         <div id="line">
-        	
+
 		</div>
 		<br>
 		<b id="rescount"></b><br>
@@ -323,26 +336,24 @@ INNER JOIN bookhistory on book.book_id = bookhistory.book_id WHERE book.book_tit
 
 				$("#rescount").html("Total result: " + (tr.length - 1));
 				$("#datepage").html("As of " + new Date())
-			
+
 		</script>
 		<button id="print" >Print</button>
 
 
 				</td>
 			</tr>
-		
-		
-	
+
 
 
 	</table>
 	<br>
 	<br>
 	<br>
-	<br>	
-	
+	<br>
+
 	<script type="text/javascript">
-		
+
 		$("#print").click(function(){
 			$(this).hide();
 			$("#filter-div").hide();
@@ -391,7 +402,7 @@ INNER JOIN bookhistory on book.book_id = bookhistory.book_id WHERE book.book_tit
 				table = document.getElementById("example");
 				tr = table.getElementsByTagName("tr");
 				for (i = 0; i < tr.length; i++) {
-					
+
     				td = tr[i].getElementsByTagName("td")[4];
      				if(tr[i].style.display==""){
 	    				if (td) {
@@ -401,7 +412,7 @@ INNER JOIN bookhistory on book.book_id = bookhistory.book_id WHERE book.book_tit
 	        					tr[i].style.display = "none";
 	      					}
 	    				}
-    			}       
+    			}
   			}
 
 			}else{
@@ -412,7 +423,7 @@ INNER JOIN bookhistory on book.book_id = bookhistory.book_id WHERE book.book_tit
 					tr[i].style.display ="";
 				}
 			}
-			
+
 			//alert(dept);
 			updateResult();
 		})
