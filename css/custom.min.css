@@ -247,7 +247,7 @@ body .container.body .right_col{
 	}
 .nav-md .container.body .right_col{
 	background-color: gray;
-	padding:10px 20px 0;
+	padding:0px 20px 0;
 	margin-left: 196px;
 	}
 .nav_title{
@@ -267,7 +267,7 @@ body .container.body .right_col{
 
 .nav-md .container.body .right_col{
 	float: right;
-	width: 70%; 
+	width: 70%;
 	}
 .right_col{
 	padding:10px!important;

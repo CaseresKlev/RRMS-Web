@@ -4,6 +4,10 @@
   width: 360px;
   padding: 8% 0 0;
   margin: auto;
+  margin-bottom: 30%;
+  margin-left: -20px;
+  position: fixed;
+  background-color: grey;
 }
 .form {
   position: relative;
@@ -11,10 +15,11 @@
   background: #c8bbbb;
   max-width: 360px;
   margin: 0 auto 100px;
-  padding: 70%;
+  margin-right: 45%;
+  padding: 19px;
   text-align: center;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-  margin-bottom: 40%;
+  margin-bottom: 40%
 }
 .form input {
   font-family: "Roboto", sans-serif;
@@ -50,7 +55,7 @@ input[type=search] #deldept{
     border: 2px solid #ccc;
     border-radius: 4px;
     font-size: 12px;
-    background-color: white;
+    background-color:    ;
     background-image: url('searchicon.png');
     background-position: 10px 10px;
     background-repeat: no-repeat;
@@ -65,27 +70,41 @@ input[type=search]:focus {
 .login-page{
   width: 100%;
 }
-
-/*
-.container .info {
-  margin: 50px auto;
-  text-align: center;
+@media screen and (max-width:359px){
+  .login-page {
+    width: 100%;
+    padding: 8% 0 0;
+    margin: auto;
+    margin-bottom: 30%;
+  }
+  .form {
+    position: relative;
+    z-index: 1;
+    background: #c8bbbb;
+    max-width: 100%;
+    margin: 0 auto 100px;
+    padding: 19px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    margin-bottom: 40%
+  }
 }
-.container .info h1 {
-  margin: 0 0 15px;
-  padding: 0;
-  font-size: 36px;
-  font-weight: 300;
-  color: #1a1a1a;
-}
-.container .info span {
-  color: #4d4d4d;
-  font-size: 12px;
-}
-.container .info span a {
-  color: #000000;
-  text-decoration: none;
-}
-.container .info span .fa {
-  color: #EF3B3A;
+@media screen and (max-width:320px){
+  .login-page {
+    width: 100%;
+    padding: 100% 0 0;
+    margin: auto;
+    margin-bottom: 30%;
+  }
+  .form {
+    position: relative;
+    z-index: 1;
+    background: #c8bbbb;
+    max-width: 100%;
+    margin: 0 auto 100px;
+    padding: 19px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    margin-bottom: 40%
+  }
 }

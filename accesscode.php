@@ -61,11 +61,11 @@
 					<?php
                             $d = Date('Y-m-d');
                             $yr = explode("-", $d);
-                            
-                           
+
+
                             echo '<ul><a href="book_reports.php?title=&dept=&status=&author=&from=0&to=' . $yr[0] . '" target="_blank"> REPORTS </a> </ul>';
                           ?>
-					
+
           <ul><a href="dept.php">DEPARTMENT </a> </ul> </br>
 					<ul><a href="index.php"> Back to Home </a> </ul>
                 </div>
@@ -80,11 +80,19 @@
 			<div id= "admin-frm-container" class="frm-container" style="margin: auto; width: 80%">
 				<center><h1> GENERATE ACCESS CODE </h1></center>
 			<hr></br>
+			<script>
+
+			
+				function numbersonly(input){
+					var numall= /[^0-9]/gi;
+					input.value= input.value.replace(numall, "");
+				}
+			</script>
 			<form id= "admin-frm-generatepass" class= "frm-generatepass" >
 				<table style="font-size: 15px">
 					<tr>
 						<td> <b> Number of Access Code: </b> </td>
-						<td> <input type="number" placeholder="0" name="number" min="0" value="0" id="access-count" style= "width: 50%" required> </td>
+						<td> <input type="number" placeholder="0" name="number" min="0" value="0" id="access-count"onkeyup="numbersonly(this)" style= "width: 50%" required> </td>
 						<td> <button type="button" id="admin-btn-generate" class="btn-generate"> GENERATE </button> </td>
 					</tr>
 				</table>
@@ -100,7 +108,7 @@
 						<th id="access-th">Access Codes</th>
 						<th id="access-th">Type</th>
 					</tr>
-					<?php 
+					<?php
 						include_once 'connection.php';
 						$dbconfig = new dbconfig();
 						$conn = $dbconfig->getCon();
@@ -110,7 +118,7 @@
 						}else{
 							$query = "SELECT * FROM `acesskey` WHERE used=0 and type='instructor' and ins_id = 0";
 						}
-						
+
 						$result = $conn->query($query);
 						if($result->num_rows>0){
 							$i=1;
