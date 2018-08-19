@@ -65,11 +65,13 @@ if(isset($_SESSION['uid'])){
 	<a class="header_login" href="#login">Login</a>
 	<button class= "header_btn"> Search </button>-->
   </div>
-  <div style= "display: none;" class="header_search-container">
+  <!--<div style= "display: none;" class="header_search-container" id="search-container">-->
+  	<div style= "display: none;"  id="modal">
 
 		<form action="searchcontent.php">
 		<div class= "form-container" 
 		style= "padding: 10%; background-color: rgba(102, 131, 154, 0.51); width: 100%; padding: 10%;">
+		<span class="close">&times;</span>
 		<table id="tbl_search" style= "margin: auto;">
 			<tr>
 				<td> </td>
