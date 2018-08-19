@@ -4,6 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Untitled Document</title>
 <link rel="stylesheet" type="text/css" href="css/bookdet.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
   <header>
     <?php include_once 'header.php';?>
@@ -78,7 +79,7 @@
         </tr>
         <!-- <tr class"det">
            <td><strong>Views:</strong><?php //echo " " .  $row['views_count']; ?></td> -->
-        </tr> 
+        </tr>
                 <tr >
 
 
@@ -128,7 +129,7 @@
                   </tr>";
           }
         ?>
-        
+
 
 
 
