@@ -6,7 +6,7 @@
 
             setPage();
 
-            $("#print").click(function(){
+            /*$("#print").click(function(){
 
 
                 var myStyle = '<link rel="stylesheet" type="text/css" media="screen" href="css/add-research.css" />';
@@ -22,7 +22,7 @@
 
   setTimeout(function(){newWin.close();},10);
 
-            })
+            })*/
 
 
             $("#next").click(function(){
@@ -117,7 +117,7 @@
                 if(reftitle=="" && $("#locref").val()==""){
                     alert("Please fill citation title!");
                 }else if(!reftitle=="" && $("#locref").val()==""){
-                    refs = refs + reftitle +"\n" + reflink +"\n\n";
+                    refs = refs + reftitle +"\n" + reflink +"\n" + "-------------------------------------------------------------" + "\n";
                     $("#reference").val(refs);
                      $("#reftitle").val("");
                      $("#refweb").val("");
@@ -143,7 +143,8 @@
                             var str = data.split("--->");
                             if(str[0]==="SUCCESS"){
                                 var refs = $("#reference").val();
-                                 refs = refs + str[1] + "\n";
+                                 refs = refs + str[1]  + "\n-------------------------------------------------------------" + "\n";
+                                 //alert(refs);
                                  $("#reference").val(refs);
                                  $("#locref").val("");
                             }else{
@@ -183,7 +184,7 @@
                 //alert(dept);
                 var kw = $("#keywords").val().split("\n");
                 //alert(kw);
-                var ref = $("#reference").val().split("\n\n");
+                var ref = $("#reference").val().split("\n-------------------------------------------------------------\n");
                 alert(ref);
 
                 var stat = $("#status").val();
