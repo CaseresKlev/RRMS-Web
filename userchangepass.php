@@ -19,7 +19,7 @@
  ?>
 	<div class="userchangepass">
 			<form id= "frm-userchangepass" >
-				<table style="font-size: 15px">
+				<table style="font-size: 15px" style= "margin: auto">
 					<tr>
 						<td> Current Password :</td>
 						<td> <input type="password" placeholder="Enter Password" name="psw" id="oldpsw" required> </td>
