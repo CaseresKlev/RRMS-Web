@@ -58,9 +58,16 @@
 					<ul><a href="admindashboard.php"> MY RESEARCH </span></a></ul>
 					<ul><a href="updateAcc.php"> UPDATE ACCOUNT </a></ul>
 					<ul><a class= "dashboard-active" href="#code"> ACCESS CODE </a> </ul>
-					<ul><a href="fiddle.php" target="_blank"> REPORTS </a> </ul> </br>
+					<?php
+                            $d = Date('Y-m-d');
+                            $yr = split("-", $d);
+                            
+                           
+                            echo '<ul><a href="book_reports.php?title=&dept=&status=&author=&from=0&to=' . $yr[0] . '" target="_blank"> REPORTS </a> </ul>';
+                          ?>
+					
+          <ul><a href="dept.php">DEPARTMENT </a> </ul> </br>
 					<ul><a href="index.php"> Back to Home </a> </ul>
-					<ul><button id= "btn-logout"><strong> <a href="#Logout"> LOGOUT </a></strong></button></ul>
                 </div>
               </div>
 

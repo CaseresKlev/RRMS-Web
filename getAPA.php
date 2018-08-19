@@ -30,7 +30,7 @@
 				//echo $author;
 				$state = "SUCCESS--->";
 				$link = "bookdetails.php?book_id=$book_id";
-				$ref = $state . $author . " " . "(" . $book_date . ")" . "." . " " .$book_title . "\n" . $link . "\n\n";
+				$ref = $state . $author . " " . "(" . $book_date . ")" . "." . " " .$book_title . "\n" . $link;
 				ucwords($ref);
 
 				echo $ref;

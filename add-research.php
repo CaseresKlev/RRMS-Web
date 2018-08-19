@@ -76,17 +76,20 @@ if(isset($_SESSION['uid'])){
 
                 <p id="para">
                 <br/>&ensp;Title: (APA Format) <br/>
-                    <textarea style="text-transform: capitalize"rows="1" cols="102" id="reftitle" placeholder="Input reference title (Ex. Satalkar, B. (2010, July 15). Water aerobics)"></textarea>
+                    <!--<textarea style="text-transform: capitalize"rows="1" cols="102" id="reftitle" placeholder="Input reference title (Ex. Satalkar, B. (2010, July 15). Water aerobics)"></textarea>-->
+                    <input type="text" id="reftitle" placeholder="Input reference title (Ex. Satalkar, B. (2010, July 15). Water aerobics)">
                 </p>
 
                 <p id="para">
               &ensp;Weblinks<br/>
-                    <textarea style="text-transform: capitalize"rows="1" cols="102" id="refweb" placeholder="Input Weblinks (Ex. HTTPS://www.Reference.com)" ></textarea><br/>
+                    <!--<textarea style="text-transform: capitalize"rows="1" cols="102" id="refweb" placeholder="Input Weblinks (Ex. HTTPS://www.Reference.com)" ></textarea><br/>-->
+                    <input type="text" id="refweb" placeholder="Input Weblinks (Ex. HTTPS://www.Reference.com)">
                 </p>
 
                 <p id="para">
               &ensp;Local Research Reference key (if available)
-                    <textarea style="text-transform: capitalize"rows="1" cols="102" placeholder="Input Local Reference Key" name="reference" id="locref" style="text-transform:capitalized;"></textarea>
+                    <!--<textarea style="text-transform: capitalize"rows="1" cols="102" placeholder="Input Local Reference Key" name="reference" id="locref" style="text-transform:capitalized;"></textarea>-->
+                    <input type="text" id="locref" width="100%" placeholder="Input local reference key (Ex. Dt6BYByKXVEmPt0VpGr4oDAK9671NNdc)">
                 </p>
                 <div class="add">
                 <button type="button" id="addref" style="display: block;padding: 10px 15px;vertical-align:middle; text-align:center; display:inline-block; float:left;">ADD</button>
