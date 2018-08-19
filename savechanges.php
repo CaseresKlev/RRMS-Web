@@ -8,6 +8,7 @@
 		$book_id = $_POST['book_id'];
 		$status = $_POST['status'];
 		$cited = $_POST['cited'];
+		$date = $_POST['date'];
 
 			include 'connection.php';
 			$dbconfig = new dbconfig();
@@ -18,6 +19,10 @@
 
 
 			if($result){
+				$conn = $dbconfig->getCon();
+        		$query = "INSERT INTO `bookhistory` (`id`, `book_id`, `book_stat`, `date`) VALUES (NULL, '1', '$status', '$date')";
+        		$result = $conn->query($query);
+
 				echo "Save Changes Done.";
 			}else{
 				echo "No changes has been made.";

@@ -54,6 +54,8 @@ for($i=0;$i<$count;$i++) {
     	$query = "INSERT INTO `disseminated` (`id`, `book_id`, `type`, `convension`, `location`, `date`) VALUES (NULL, '$book_id', '$distype', '$discon', '$conven', '$disdate')";
     	$result = $conn->query($query);
 
+        
+
 		
 }
 
