@@ -107,7 +107,7 @@ session_start();
 					</form></br></br>
 					<hr>
 				<button type="submit" id= "instructor-btn-addnew" class="btn-addnew" onclick="location.href='add-research.php'" 
-				style= "    padding: 2%; border-radius: 5%; font-weight: bold;"> ADD NEW </button>
+				style= "padding: 1% 2% 1% 2%; border-radius: 5%; font-weight: bold;"> ADD NEW </button>
 
 			</div>
           <!-- top tiles -->

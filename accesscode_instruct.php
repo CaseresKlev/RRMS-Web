@@ -55,8 +55,8 @@ session_start();
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
               <div class="menu_section">
                 <div class="nav side-menu">
-					<ul><a class= "dashboard-active" href="#documents"> MY RESEARCH </span></a></ul>
-					<ul><a href="accesscode_instruct.php"> ACCESS CODE </a> </ul>
+					<ul><a href="instructordashboard.php"> MY RESEARCH </span></a></ul>
+					<ul><a class= "dashboard-active" href="accesscode_instruct.php"> ACCESS CODE </a> </ul>
 					 <?php
                             $d = Date('Y-m-d');
                             $yr = explode("-", $d);
@@ -87,7 +87,7 @@ session_start();
 						<td width= "50%"> <b> Number of Access Code: </b> </td>
 						<td> <input type="number" placeholder="0" id="access-count" name="number" min="0" style= "width: 50%; font-size: 13pt; padding: 2%;" required> </td>
 						<td><button type="submit" id= "instructor-frm-generate" class="btn-generate"
-						style="font-size: 12pt; font-weight: bold; padding: 10%; border-radius: 10%;"> Generate </button></td>
+						style="font-size: 12pt; font-weight: bold; padding: 1% 2% 1% 2%; border-radius: 10%;"> Generate </button></td>
 					</tr>
 				</table>
 			<hr></br>
@@ -128,7 +128,7 @@ session_start();
 				<br>
 			<hr>
 			<button type="submit" id= "instructor-btn-print" class="btn-print"
-			style= "font-size: 12pt; font-weight: bold; padding: 2% 5% 2% 5%; border-radius: 10%;" onclick="printDiv()"> PRINT </button>
+			style= "font-size: 12pt; font-weight: bold; padding: 1% 2% 1% 2%; border-radius: 10%;" onclick="printDiv()"> PRINT </button>
 
 		</div>
           <!-- top tiles -->
