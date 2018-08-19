@@ -68,6 +68,8 @@ session_start();
         </div>
 
         <!-- page content -->
+    <div id="gray" style="width:100%; height:100%;">
+      <div id="accessdiv" style="width:92%; margin-left:auto; margin-right:auto; padding-left:8%;">
         <div class="right_col" role="main" style= "min-height: 700px;>
 			<div id= "instructor-frm-container" class="frm-container" style="margin: auto; width: 80%; margin-top: 5%">
 				<center><b> GENERATE ACCESS CODE </b></center>
@@ -123,6 +125,8 @@ session_start();
           <div class="row tile_count"></div>
           <!-- /top tiles -->
               </div>
+            </div>
+        </div>
             </div>
           </div>
         </div>
