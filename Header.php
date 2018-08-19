@@ -53,13 +53,7 @@ if(isset($_SESSION['uid'])){
 								echo "<a href=". "\"userchangepass.php\"" . "> Change Password </a>";
 							}
 								echo "<a href=". "\"logout.php\"" . ">LOGOUT</a>";
-
-
-
-
-
-					}
-						?>
+					} ?>
 					</div>
 				</div>
 				<li style="float:right;" id="btnLoginOut" ><a href="new-login.php">Login</a></li>
@@ -74,7 +68,9 @@ if(isset($_SESSION['uid'])){
   <div style= "display: none;" class="header_search-container">
 
 		<form action="searchcontent.php">
-		<table id="tbl_search">
+		<div class= "form-container" 
+		style= "padding: 10%; background-color: rgba(102, 131, 154, 0.51); width: 100%; padding: 10%;">
+		<table id="tbl_search" style= "margin: auto;">
 			<tr>
 				<td> </td>
 				<td> </td>
@@ -86,6 +82,7 @@ if(isset($_SESSION['uid'])){
 				<td> <button type="button" id="btn-search-home"> Search </button> </td>
 			</tr>
 			<tr>
+				<td></td>
 				<td>
 
 					<label class="tbl-search_container" > Title
@@ -93,24 +90,27 @@ if(isset($_SESSION['uid'])){
 						<span class="tbl-search_checkmark"></span>
 					</label>
 				</td>
-
+			<tr>
+				<td></td>
 				<td>
-
-					<label class="tbl-search_container" id="search_key"> Keywords
+					<label class="tbl-search_container" id="search_key" style= "float: left;"> Keywords
 						<input type="radio" name="radio" id="search_kw">
 						<span class="tbl-search_checkmark"></span>
 					</label>
 				</td>
-				<tr>
+				<td></td>
+			</tr>
+			<tr>
 					<td></td>
 				<td class="fordate" colspan="2">
 				Date: </br>
-                    <input type="number" width="100%"  name="pubdate" id="filterdate" placeholder="">
+                    <input type="number" width="100%"  name="pubdate" id="filterdate" placeholder="" style= "padding: 2%">
 				</td>
 			</tr>
 
 			</tr>
 		</table>
+		</div>
 		</form>
   </div>
 </div>
