@@ -60,14 +60,14 @@ session_start();
               <div class="menu_section">
                 <div class="nav side-menu">
 					<ul><a class= "dashboard-active" href="#documents"> MY RESEARCH </span></a></ul>
-
 					<ul><a href="accesscode_instruct.php"> ACCESS CODE </a> </ul>
-					<ul><a href="fiddle.php"> REPORTS </a> </ul> </br>
+					 <?php
+                            $d = Date('Y-m-d');
+                            $yr = explode("-", $d);
+                            echo '<ul><a href="book_reports.php?title=&dept=&status=&author=&from=0&to=' . $yr[0] . '" target="_blank"> REPORTS </a> </ul>';
+                          ?>
+					</br>
 					<ul><a href="index.php"> Back to Home </a> </ul>
-					<ul><a href="accesscode_instruct.php"> ACCESS CODE </a> </ul>
-					<ul><a href="fiddle.php" target="_blank"> REPORTS </a> </ul> </br>
-					<ul><a href="index.php"> Back to Home </a> </ul>
-
                 </div>
               </div>
 
@@ -106,7 +106,8 @@ session_start();
 						</table>
 					</form></br></br>
 					<hr>
-				<button type="submit" id= "instructor-btn-addnew" class="btn-addnew" onclick="location.href='add-research.php'"> ADD NEW </button>
+				<button type="submit" id= "instructor-btn-addnew" class="btn-addnew" onclick="location.href='add-research.php'" 
+				style= "padding: 1% 2% 1% 2%; border-radius: 5%; font-weight: bold;"> ADD NEW </button>
 
 			</div>
           <!-- top tiles -->

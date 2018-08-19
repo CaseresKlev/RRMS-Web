@@ -55,11 +55,15 @@ session_start();
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
               <div class="menu_section">
                 <div class="nav side-menu">
-					<ul><a href="instructordashboard.php"> DOCUMENTS </span></a></ul>
-					<ul><a class= "dashboard-active" href="#code"> ACCESS CODE </a> </ul>
-					<ul><a href="fiddle.php" target="_blank"> REPORTS </a> </ul> </br>
+					<ul><a href="instructordashboard.php"> MY RESEARCH </span></a></ul>
+					<ul><a class= "dashboard-active" href="accesscode_instruct.php"> ACCESS CODE </a> </ul>
+					 <?php
+                            $d = Date('Y-m-d');
+                            $yr = explode("-", $d);
+                            echo '<ul><a href="book_reports.php?title=&dept=&status=&author=&from=0&to=' . $yr[0] . '" target="_blank"> REPORTS </a> </ul>';
+                          ?>
+					</br>
 					<ul><a href="index.php"> Back to Home </a> </ul>
-					<ul><button id= "btn-logout"><strong> <a href="#Logout"> LOGOUT </a></strong></button></ul>
                 </div>
               </div>
 
@@ -68,15 +72,22 @@ session_start();
         </div>
 
         <!-- page content -->
+
+    <div id="gray" style="width:100%; height:100%;">
+      <div id="accessdiv" style="width:92%; margin-left:auto; margin-right:auto; padding-left:8%;">
         <div class="right_col" role="main" style= "min-height: 700px;>
+=======
+        <div class="right_col" role="main">
+
 			<div id= "instructor-frm-container" class="frm-container" style="margin: auto; width: 80%; margin-top: 5%">
 				<center><b> GENERATE ACCESS CODE </b></center>
 			<hr>
 				<table style="width= 100%">
 					<tr>
 						<td width= "50%"> <b> Number of Access Code: </b> </td>
-						<td> <input type="number" placeholder="0" id="access-count" name="number" min="0" style= "width: 50%; font-size: 14pt" required> </td>
-						<td><button type="submit" id= "instructor-frm-generate" class="btn-generate" style="font-size:12pt"> Generate </button></td>
+						<td> <input type="number" placeholder="0" id="access-count" name="number" min="0" style= "width: 50%; font-size: 13pt; padding: 2%;" required> </td>
+						<td><button type="submit" id= "instructor-frm-generate" class="btn-generate"
+						style="font-size: 12pt; font-weight: bold; padding: 1% 2% 1% 2%; border-radius: 10%;"> Generate </button></td>
 					</tr>
 				</table>
 			<hr></br>
@@ -116,13 +127,16 @@ session_start();
 				<br>
 				<br>
 			<hr>
-			<button type="submit" id= "instructor-btn-print" class="btn-print" style="font-size: 14pt" onclick="printDiv()"> PRINT </button>
+			<button type="submit" id= "instructor-btn-print" class="btn-print"
+			style= "font-size: 12pt; font-weight: bold; padding: 1% 2% 1% 2%; border-radius: 10%;" onclick="printDiv()"> PRINT </button>
 
 		</div>
           <!-- top tiles -->
           <div class="row tile_count"></div>
           <!-- /top tiles -->
               </div>
+            </div>
+        </div>
             </div>
           </div>
         </div>

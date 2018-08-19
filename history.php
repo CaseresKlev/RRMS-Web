@@ -7,7 +7,7 @@ if(!isset($_GET['book_id'])){
 }
 //$accid = $_GET['gid'];
 //echo $gid;
-  
+
   include_once 'connection.php';
 
   $dbconfig = new dbconfig();
@@ -46,24 +46,25 @@ if(!isset($_GET['book_id'])){
 	<link rel="stylesheet" type="text/css" href="css/groupdoclist.css">
 </head>
 <body id="annegroupbody">
+  <div class="historydiv" style="background-color:white;">
    <?php
         include_once 'header.php';
      ?>
    <?php
-  
+
  ?>
    <div class="annegroup">
-    
+
   </div>
         <!--  <div class="annegroupbook"> -->
 		<table class="subtable" style="width:100%;">
             <tr>
-                <td style="width:50%; text-align:left; font-family: helvetica"> <h2 style="color: #6666ff"><i> <?php echo $title ?> </i></h2>
+                <td style="width:50%; text-align:left; font-family: helvetica"> <h2 style="color: darkblue"><i> <?php echo $title ?> </i></h2>
 					<h3 style="text-align:left; font-family: helvetica"> AUTHORS: </h3>
 				</td>
             </tr>
 			<tr>
-                <td style="text-align:left; font-family: helvetica; font-size: 14pt">   
+                <td style="text-align:left; font-family: helvetica; font-size: 14pt">
                   <?php
                     foreach ($author as $key ) {
                       $str = explode("-", $key);
@@ -74,7 +75,7 @@ if(!isset($_GET['book_id'])){
 
                   ?>
 					         <!--<li style= "margin-left: 5%"> Gonzales, Loyd </li>-->
-                   
+
 				        </td>
 
             </tr>
@@ -83,7 +84,7 @@ if(!isset($_GET['book_id'])){
         <br>
         <br>
                  <b style="font-size: 14pt">RESEARCH HISTORY </b>
-          
+
                 <hr>
       <!--    </div> -->
              <div class="annegrouplist">
@@ -92,9 +93,9 @@ if(!isset($_GET['book_id'])){
 
                     <table class="grouptable" style="width:100%; margin-left: 2%">
 						          <tr>
-							           <td style="width:50%; text-align:left; font-family: helvetica"> 
+							           <td style="width:50%; text-align:left; font-family: helvetica">
 
-                          <?php 
+                          <?php
 
                             include_once 'connection.php';
 
@@ -106,8 +107,8 @@ if(!isset($_GET['book_id'])){
 
                             if($result->num_rows>0){
                               while ($row = $result->fetch_assoc()) {
-                                
-                            
+
+
 
 
                           //<!--- FOR UNPUBLISHED, PROPOSED, COMPLETED ---->
@@ -122,7 +123,7 @@ if(!isset($_GET['book_id'])){
                                       <td>Date:</td>
                                       <td><em>8-20-2018</em></td>
                                     </tr>
-                                   
+
                                   </table>
                                   <br>";
 
@@ -136,7 +137,7 @@ if(!isset($_GET['book_id'])){
                                     $resultpub = $conn->query($query);
                                     if($resultpub->num_rows>0){
                                       while ($rowpub = $resultpub->fetch_assoc()) {
-                                    
+
                                      echo "<table id=\"pub\" style=\"\">
                                       <tr>
                                         <td rowspan=\"6\"><span id=\"circle\" style=\"background: black; width: 10px; height: 120px; float: left;\"></span></td>
@@ -193,7 +194,7 @@ if(!isset($_GET['book_id'])){
                                       <td>Location:</td>
                                       <td><em>". $rowpub['location'] ."</em></td>
                                     </tr>
-                                      
+
                                     </tr>
                                   </table>
 
@@ -203,7 +204,7 @@ if(!isset($_GET['book_id'])){
 
                                 }else{
                                   //<!--- FOR UTILIZE ---->
-                                  
+
                                     $dbconfig = new dbconfig();
                                     $conn = $dbconfig->getCon();
                                     $query = "SELECT * FROM `utilize` WHERE book_id = $book_id";
@@ -227,10 +228,10 @@ if(!isset($_GET['book_id'])){
                                       <td>Address:</td>
                                       <td><em>". $rowpub['orgaddress'] ."</em></td>
                                     </tr>
-                                      
+
                                     </tr>
                                   </table>";
-                                
+
                             }
                           }
                         }
@@ -241,17 +242,18 @@ if(!isset($_GET['book_id'])){
 
 							           </td>
 						          </tr>
-	
+
                     </table>
                       <br/>
-                      
+
 
 
 
                   </div>
-                 
-                  
+
+
                   <hr>
+                </div>
  </body>
  <footer style="padding-top: 5px;">
    <?php include_once 'footer.php' ?>
