@@ -253,14 +253,11 @@ body .container.body .right_col{
 	background:#F7F7F7;
 	}
 .nav-md .container.body .right_col{
-<<<<<<< HEAD
 	background-color: gray;
 	padding:0px 20px 0;
-=======
 	background-color: rgba(214, 214, 194, .50);
 	opacity: 50%;
 	padding:10px 20px 0;
->>>>>>> 5c83b21fe1bdef6bdde78f976a9c6e17c81101eb
 	margin-left: 196px;
 	width: 100%;
 	height: 100%;
