@@ -212,7 +212,7 @@ INNER JOIN bookhistory on book.book_id = bookhistory.book_id WHERE book.book_tit
               									<td>
               										<?php
               										$d = Date('Y-m-d');
-              										$yr = split("-", $d);
+              										$yr = explode("-", $d);
               							
               										echo '<input type="number" id="filter-to" Value = "' . $yr[0] . '" width="100%">' ;
               									?>
