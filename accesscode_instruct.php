@@ -23,10 +23,10 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title> Administrator </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+	
     <!-- Custom Theme Style -->
     <link rel="stylesheet" type="text/css" media="screen" href="css/custom.min.css">
-
+	
 </head>
 <body class="nav-md" style="background-color: gray">
     <div class="container body">
@@ -55,34 +55,43 @@ session_start();
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
               <div class="menu_section">
                 <div class="nav side-menu">
-					<ul><a href="instructordashboard.php"> DOCUMENTS </span></a></ul>
-					<ul><a class= "dashboard-active" href="#code"> ACCESS CODE </a> </ul>
-					<ul><a href="fiddle.php" target="_blank"> REPORTS </a> </ul> </br>
+					<ul><a class= "dashboard-active" href="#documents"> MY RESEARCH </span></a></ul>
+					<ul><a href="accesscode_instruct.php"> ACCESS CODE </a> </ul>
+					 <?php
+                            $d = Date('Y-m-d');
+                            $yr = explode("-", $d);
+                            echo '<ul><a href="book_reports.php?title=&dept=&status=&author=&from=0&to=' . $yr[0] . '" target="_blank"> REPORTS </a> </ul>';
+                          ?>
+					</br>
 					<ul><a href="index.php"> Back to Home </a> </ul>
-					<ul><button id= "btn-logout"><strong> <a href="#Logout"> LOGOUT </a></strong></button></ul>
                 </div>
               </div>
 
             </div>
           </div>
         </div>
-
+       
         <!-- page content -->
+<<<<<<< HEAD
     <div id="gray" style="width:100%; height:100%;">
       <div id="accessdiv" style="width:92%; margin-left:auto; margin-right:auto; padding-left:8%;">
         <div class="right_col" role="main" style= "min-height: 700px;>
+=======
+        <div class="right_col" role="main">
+>>>>>>> 06313f09845779cce8b8100a69fc99336bc9fa9d
 			<div id= "instructor-frm-container" class="frm-container" style="margin: auto; width: 80%; margin-top: 5%">
 				<center><b> GENERATE ACCESS CODE </b></center>
 			<hr>
 				<table style="width= 100%">
-					<tr>
+					<tr> 
 						<td width= "50%"> <b> Number of Access Code: </b> </td>
-						<td> <input type="number" placeholder="0" id="access-count" name="number" min="0" style= "width: 50%; font-size: 14pt" required> </td>
-						<td><button type="submit" id= "instructor-frm-generate" class="btn-generate" style="font-size:12pt"> Generate </button></td>
+						<td> <input type="number" placeholder="0" id="access-count" name="number" min="0" style= "width: 50%; font-size: 13pt; padding: 2%;" required> </td>
+						<td><button type="submit" id= "instructor-frm-generate" class="btn-generate" 
+						style="font-size: 12pt; font-weight: bold; padding: 10%; border-radius: 10%;"> Generate </button></td>
 					</tr>
 				</table>
 			<hr></br>
-			</br>
+			</br> 
 			<div id="printtable">
 				<table style="width:100%"border="1" cellpadding="3" id="tbl-accescodes"  style="font-size: 15px; " >
 					<center><h2> Available Student Codes </h2></center>
@@ -91,7 +100,7 @@ session_start();
 						<th id="access-th">Access Codes</th>
 						<th id="access-th">Type</th>
 					</tr>
-					<?php
+					<?php 
 						include_once 'connection.php';
 						$dbconfig = new dbconfig();
 						$conn = $dbconfig->getCon();
@@ -111,15 +120,16 @@ session_start();
 
 
 					?>
-
+					
 				</table>
 			</div>
 			<iframe name="print_frame" width="0" height="0" frameborder="0" src="about:blank"></iframe>
 				<br>
 				<br>
 			<hr>
-			<button type="submit" id= "instructor-btn-print" class="btn-print" style="font-size: 14pt" onclick="printDiv()"> PRINT </button>
-
+			<button type="submit" id= "instructor-btn-print" class="btn-print" 
+			style= "font-size: 12pt; font-weight: bold; padding: 2% 5% 2% 5%; border-radius: 10%;" onclick="printDiv()"> PRINT </button>
+			
 		</div>
           <!-- top tiles -->
           <div class="row tile_count"></div>
@@ -146,13 +156,13 @@ session_start();
     <script type="text/javascript" src="js/accesscode.js"></script>
     <script>
 		function printDiv() {
-
+			
 			 window.frames["print_frame"].document.body.innerHTML = "jmhngfvdvgbhkj,mhgfvdgbhjkkmhngf" + document.getElementById("printtable").innerHTML;
 			 alert(window.frames["print_frame"].document.body.innerHTML = document.getElementById("printtable").innerHTML);
 			 window.frames["print_frame"].window.focus();
 			 window.frames["print_frame"].window.print();
 		 }
 		</script>
-
+	
   </body>
 </html>
