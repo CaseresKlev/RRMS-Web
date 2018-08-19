@@ -51,7 +51,7 @@ if(isset($_SESSION['uid'])){
                 <p class="para">
                     Category:
                     <select name="department" id="department">
-                        <option>Select your Department</option>
+                        <option></option>
                     <?php include_once 'connection.php';
                         $dbconfig = new dbconfig();
                         $conn = $dbconfig->getCon();
@@ -141,9 +141,7 @@ if(isset($_SESSION['uid'])){
             <input type="text" placeholder="journal type" name="type" id="type"
   style= "width: 100%; font-family: Century Gothic; font-size: 15px; font-style: italic; font-weight: bold;">
 
-  Date:
-            <input type="date" width="100%" name="pubdate" id="pubdate" placeholder=""
-  style= "font-family: Century Gothic; font-size: 15px; font-style: italic; font-weight: bold;">
+  
 </form>
 
 </fieldset>
@@ -153,7 +151,12 @@ if(isset($_SESSION['uid'])){
   <legend style="color:white;"><i> Fill Utilized Details</i></legend>
   <form id="form-utilized">
     Organization Name:&emsp;
-    <input type="text/number" placeholder="Organization name" id="org" name="serial" style= "width: 100%; font-family: Century Gothic; font-size: 15px; font-style: italic; font-weight: bold;"></br></br>
+    <input type="text/number" placeholder="Organization name" id="orgname" name="serial" style= "width: 100%; font-family: Century Gothic; font-size: 15px; font-style: italic; font-weight: bold;"></br><br>
+    Address:&emsp;
+    <input type="text/number" placeholder="Organization name" id="orgaddress" name="serial" style= "width: 100%; font-family: Century Gothic; font-size: 15px; font-style: italic; font-weight: bold;"></br>
+    </br>
+     Date of Utilization:&emsp;
+    <input type="date" name="" id="orgdate">
 
 </form>
 
@@ -249,12 +252,17 @@ if(isset($_SESSION['uid'])){
                     </p>
     </div> -->
     <br>
+    <div style="text-align:center">
+        <span class="dot1"></span>
+        <span class="dot2"></span>
+    </div>
     <span style="float: right">
         <button type="button" id="prev">Previous</button>
         <button type="button" id="next">Next</button>
         <button type="button" id="submit">Submit</button>
         <br/>
     </span>
+
 </div>
     <div id="debug" style="text-align: center; font-weight: bold; font-size: 14pt; color: red; width: 100%;"></div>
         <br/>

@@ -102,8 +102,20 @@
 
 
                 Title: </br>
-                  <textarea placeholder="book title" id="title" name="title"
-				  style= "width: 100%; font-family: Century Gothic; font-size: 15px; font-style: italic; font-weight: bold; resize: none;" readonly><?php echo $_GET['title'];?></textarea>
+                  <!--<textarea placeholder="book title" id="title" name="title"
+				  style= "width: 100%; font-family: Century Gothic; font-size: 15px; font-style: italic; font-weight: bold; resize: none;" readonly>
+          </textarea>-->
+                <input type="text" name="" id="title" value='<?php 
+
+                  include_once 'connection.php';
+                  $dbconfig = new dbconfig();
+                  $conn = $dbconfig->getCon();
+                  $query = "SELECT book_title FROM `book` WHERE book_id = $book_id";
+                  $result = $conn->query($query);
+                  $row = $result->fetch_assoc();
+                  echo $row['book_title'];
+
+          ?>' style="width: 100%; font-family: Century Gothic; font-size: 15px; font-style: italic; font-weight: bold; resize: none;" readonly>
                 </p>
                 <p class="edittxt" style= "font-family: Century Gothic; font-size: 16px">
                   <?php
@@ -111,24 +123,20 @@
                   include_once 'connection.php';
                   $dbconfig = new dbconfig();
                   $conn = $dbconfig->getCon();
-                  $query = "SELECT author.a_fname as 'fname', CONCAT(SUBSTRING(author.a_mname, 1, 1),'.') as 'mi', author.a_lname as 'lname'  FROM  author INNER JOIN `junc_authorbook` on author.a_id = junc_authorbook.aut_id WHERE junc_authorbook.id = $book_id";
-                  $result = $conn->query($query);
-                  $author = array();
-                  if($result->num_rows>0){
-                    while ($row=$result->fetch_assoc()) {
-                      $fullname = $row['fname'] . " " . $row['mi'] . " " . $row['lname'];
-                      array_push($author, strtoupper($fullname));
-                    }
+                  $query = "SELECT CONCAT(author.a_fname, \" \" , SUBSTRING(author.a_mname, 1, 1), \". \", author.a_lname, \" \" , author.a_suffix) as author from author INNER JOIN junc_authorbook on junc_authorbook.aut_id = author.a_id WHERE junc_authorbook.book_id = $book_id";
+                  $authorarr = array();
+                  $result30 = $conn->query($query);
+                  while($row = $result30 ->fetch_assoc()){
+                       array_push($authorarr, ucwords($row['author'])) ;
                   }
-
+                 
 
                   ?>
+                  
                 Author:</br>
                   <textarea rows="4" cols="102" placeholder="author" name="author" id="author"
-						style= "width: 100%; font-family: Century Gothic; font-size: 15px; font-style: italic; font-weight: bold; resize: none;" readonly><?php
-            foreach($author as $key){
-              echo $key . "\n";
-            } ?></textarea>
+						style= "width: 100%; font-family: Century Gothic; font-size: 15px; font-style: italic; font-weight: bold; resize: none;" readonly > <?php foreach ($authorarr as $key) { echo"$key" . "\n";}?>
+            </textarea>
                 </p>
                 <p class="edittxt">
 
