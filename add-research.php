@@ -38,7 +38,7 @@ if(isset($_SESSION['uid'])){
             <div id="bookDet">
                 <p class="para">
                 Research Title
-                  <input style="text-transform: capitalize"type="text" placeholder="Research title" id="title" name="title">
+                  <input style="text-transform: capitalize" type="text" placeholder="Research title" id="title" name="title">
                 </p>
                 <p class="para">
                     Abstract:<br>
