@@ -246,7 +246,7 @@
     <!-- Bootstrap -->
     
   <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
-  <!--<script src="js/jquery.form.min.js"></script>-->
+  <script src="js/jquery.form.min.js"></script>
   <!--<script src="js/bootstrap.min.js"></script>-->
 
 

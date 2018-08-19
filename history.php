@@ -2,7 +2,7 @@
 
 //session_start();
 $bookid = 1;
-$accid = $_GET['gid'];
+//$accid = $_GET['gid'];
 //echo $gid;
 
 ?>
