@@ -133,8 +133,37 @@
                 echo "<div style='text-align:center; width 100%'><h4> No Result Found! </h4></div>";
 
             }/// end of result outer
+          }else{
+             include_once 'connection.php';
+                  $dbconfig = new dbconfig();
+                  $conn = $dbconfig->getCon();
+                  $query = "SELECT book_id, book_title, cited FROM `book` WHERE 1";
+                  $result = $conn->query($query);
+                  if($result->num_rows>0){
+                    while ($row = $result->fetch_assoc()) {
+
+
+
+            ?>
+          <a href="editdocu.php?book_id=<?php echo $row['book_id']?>&title=<?php echo $row['book_title']; ?>&cited=<?php echo $row['cited'];?>" ><li style= "font-size: 14pt"> <u><b><?php echo $row['book_title']; ?></b></u><i>
+            <?php
+            $conn = $dbconfig->getCon();
+                  $query = "SELECT author.a_lname as `lname`, SUBSTRING(a_fname, 1, 1) as `fname` FROM author INNER JOIN junc_authorbook on junc_authorbook.aut_id = author.a_id WHERE junc_authorbook.book_id=" . $row['book_id'];
+                  $result2 = $conn->query($query);
+                  if($result2->num_rows>0){
+                    while ($row2=$result2->fetch_assoc()) {
+                      echo " - " .  $row2['lname'] . ", " . $row2['fname'] . ";";
+                    }
+                  }
+            ?>
+          </i></li></a>
+
+          <?php    }
+            }
           }
           ?>
+
+
           </ul>
 			</div>
           <!-- top tiles -->
