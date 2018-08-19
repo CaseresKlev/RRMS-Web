@@ -67,13 +67,13 @@
                             alert("Please fill all fileds!");
                         }
                     }
-                    
-                    
+
+
                 }
             })
 
             function checkName(values){
-                 
+
                return values !=="";
 
             }
@@ -124,7 +124,7 @@
                 }
 
 
-                
+
 
                 if(!$("#locref").val()==""){
 
@@ -276,16 +276,16 @@
                         alert(str[2]);
                         $("#debug").html(data);
                     }else{
-                        window.location.href = "acceptbook.php?book_id=" + str[2]; 
+                        window.location.href = "acceptbook.php?book_id=" + str[2];
                     }
-                    
-                   // $("#debug").html(data);
-                          
 
-                    
+                   // $("#debug").html(data);
+
+
+
 
                 }
-            }); 
+            });
 
 
            })
@@ -475,3 +475,19 @@
                     if($result->num_rows > 0){
                         while($row = $result->fetch_assoc()){
                 ?> */
+
+
+
+                $("#status").change(function(){
+                  var annestat = $("#status").val();
+                  if(annestat==="Published"){
+                    $(".fieldset-published").show();
+                    $(".fieldset-utilized").hide();
+                  }else if (annestat==="Unpublished"){
+                    $(".fieldset-published").hide();
+                    $(".fieldset-utilized").hide();
+                  } else {
+                    $(".fieldset-published").hide();
+                    $(".fieldset-utilized").show();
+                  }
+                })

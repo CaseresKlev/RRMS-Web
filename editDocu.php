@@ -1,7 +1,7 @@
 
 <?php
 
-  session_start(); 
+  session_start();
   if(isset($_SESSION['uid'])){
     print_r($_SESSION);
   }else{
@@ -36,10 +36,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title> Administrator </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	
+
     <!-- Custom Theme Style -->
     <link rel="stylesheet" type="text/css" media="screen" href="css/editDocument.css">
-	
+
 </head>
   <input type="text" id="book_id" style="display: none" value="<?php echo $book_id; ?>">
   <body class="nav-md">
@@ -72,8 +72,8 @@
               <div class="menu_section">
                 <div class="nav side-menu">
 					         <ul><a href="instructordashboard.php"> DOCUMENTS </span></a></ul>
-					         <ul><a href="accesscode(instruc).php"> ACCESS CODE </a> </ul>      
-					         <ul><a href="reports(instruc).php"> REPORTS </a> </ul> </br>      
+					         <ul><a href="accesscode(instruc).php"> ACCESS CODE </a> </ul>
+					         <ul><a href="reports(instruc).php"> REPORTS </a> </ul> </br>
 					         <ul><button id= "btn-logout"><strong> <a href="#Logout"> LOGOUT </a></strong></button></ul>
                 </div>
               </div>
@@ -90,10 +90,10 @@
 			<div id="bookDet">
                 <p class="edittxt" style= "font-family: Century Gothic; font-size: 16px">
 
-                  
+
                 Title: </br>
-                  <textarea placeholder="book title" id="title" name="title" 
-				  style= "width: 100%; font-family: Century Gothic; font-size: 15px; font-style: italic; font-weight: bold; resize: none;" readonly><?php echo $_GET['title'];?></textarea> 
+                  <textarea placeholder="book title" id="title" name="title"
+				  style= "width: 100%; font-family: Century Gothic; font-size: 15px; font-style: italic; font-weight: bold; resize: none;" readonly><?php echo $_GET['title'];?></textarea>
                 </p>
                 <p class="edittxt" style= "font-family: Century Gothic; font-size: 16px">
                   <?php
@@ -114,15 +114,15 @@
 
                   ?>
                 Author:</br>
-                  <textarea rows="4" cols="102" placeholder="author" name="author" id="author" 
-						style= "width: 100%; font-family: Century Gothic; font-size: 15px; font-style: italic; font-weight: bold; resize: none;" readonly><?php 
+                  <textarea rows="4" cols="102" placeholder="author" name="author" id="author"
+						style= "width: 100%; font-family: Century Gothic; font-size: 15px; font-style: italic; font-weight: bold; resize: none;" readonly><?php
             foreach($author as $key){
               echo $key . "\n";
             } ?></textarea>
                 </p>
                 <p class="edittxt">
 
-								Status:<br/> 
+								Status:<br/>
 								<select name="status" id="status" style= "width: 100%; font-family: Century Gothic; font-size: 15px; font-style: italic; font-weight: bold;">
                   <option></option>
 									<option> Unpublish </option>
@@ -145,65 +145,65 @@
                     </select>
                     <br>
                     <br>
-					
+
                     <!--<input type="radio" name="loc" id="btn-radio-institutional" value="Institutional" class="btn-radio">
-                    <label class="tbl-radiocontainer" id="institutional" style="font-size: 12pt"> Institutional 
+                    <label class="tbl-radiocontainer" id="institutional" style="font-size: 12pt"> Institutional
                       <span class="tbl-radiocheckmark"></span>
                     </label>
-					
+
 					<input type="radio" name="loc" id="btn-radio-national" value="National" class="btn-radio">
-                    <label class="tbl-radiocontainer" id="national" style="font-size: 12pt"> National 
+                    <label class="tbl-radiocontainer" id="national" style="font-size: 12pt"> National
                       <span class="tbl-radiocheckmark"></span>
                     </label>
-          
+
                     <input type="radio" name="loc" id="btn-radio-intl" value="International" class="btn-radio">
-                    <label class="tbl-radiocontainer" id="international" style="font-size: 12pt"> International 
+                    <label class="tbl-radiocontainer" id="international" style="font-size: 12pt"> International
                       <span class="tbl-radiocheckmark"></span>
                     </label>
-                    <textarea rows="4" cols="102" placeholder="Description 160 Character maximum" name="disseminated-desc" id="disseminated-desc" 
+                    <textarea rows="4" cols="102" placeholder="Description 160 Character maximum" name="disseminated-desc" id="disseminated-desc"
             style= "width: 100%; font-family: Century Gothic; font-size: 15px; font-style: italic; font-weight: bold; resize: none;"></textarea> -->
-					Name of Conference: 
-                    <input type="text" placeholder="conference name" id="dis-con" name="dis-con" 
+					Name of Conference:
+                    <input type="text" placeholder="conference name" id="dis-con" name="dis-con"
 					style= "width: 100%; font-family: Century Gothic; font-size: 15px; font-style: italic; font-weight: bold;">
 					         <br>
                     <br>
-					Venue of Conference: 
-                    <input type="text" placeholder="conference venue" id="con-ven" name="con-ven" 
+					Venue of Conference:
+                    <input type="text" placeholder="conference venue" id="con-ven" name="con-ven"
 					style= "width: 100%; font-family: Century Gothic; font-size: 15px; font-style: italic; font-weight: bold;">
 					         <br>
                     <br>
 					Date:<br>
-                    <input type="date" width="100%" name="disdate" id="disdate" placeholder="" 
+                    <input type="date" width="100%" name="disdate" id="disdate" placeholder=""
 					style= "font-family: Century Gothic; font-size: 15px; font-style: italic; font-weight: bold;">
-					         
+
                    <br>
                     <br>
-					Certificates if Available: 
+					Certificates if Available:
           <br>
-					<input type="file" name="myFile[]" id="dis-cert" 
+					<input type="file" name="myFile[]" id="dis-cert"
 					style= "font-family: Century Gothic; font-size: 15px; font-style: italic; font-weight: bold;" multiple>
 					</form>
-                </fieldset> 
+                </fieldset>
                 <input type="text" id="book_id" name="book_id" value="<?php echo $_GET['book_id']; ?>" style="display: none;">
                 <fieldset class= "fieldset-published" style= "width: 97%; display: none;">
-                  <legend><i> Fill Published Details</i></legend> 
+                  <legend><i> Fill Published Details</i></legend>
                   <form id="form-published">
-                    ISSN:&emsp; 
+                    ISSN:&emsp;
                     <input type="text/number" placeholder="serial number" id="isdn" name="serial" style= "width: 100%; font-family: Century Gothic; font-size: 15px; font-style: italic; font-weight: bold;"></br></br>
-                    
-                    Name of Journal: 
-                    <input type="text" placeholder="journal name" id="journal" name="journal" 
-					style= "width: 100%; font-family: Century Gothic; font-size: 15px; font-style: italic; font-weight: bold;"> 
-					
-					Type of Journal: 
+
+                    Name of Journal:
+                    <input type="text" placeholder="journal name" id="journal" name="journal"
+					style= "width: 100%; font-family: Century Gothic; font-size: 15px; font-style: italic; font-weight: bold;">
+
+					Type of Journal:
                     <input type="text" placeholder="journal type" name="type" id="type"
-					style= "width: 100%; font-family: Century Gothic; font-size: 15px; font-style: italic; font-weight: bold;"> 
-                
+					style= "width: 100%; font-family: Century Gothic; font-size: 15px; font-style: italic; font-weight: bold;">
+
 					Date:
-                    <input type="date" width="100%" name="pubdate" id="pubdate" placeholder="" 
+                    <input type="date" width="100%" name="pubdate" id="pubdate" placeholder=""
 					style= "font-family: Century Gothic; font-size: 15px; font-style: italic; font-weight: bold;">
         </form>
-					
+
 				</fieldset> 
                 <p class="edittxt" style= "font-family: Century Gothic; font-size: 16px">
 				Cited:<br>
