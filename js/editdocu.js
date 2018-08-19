@@ -1,9 +1,10 @@
-$("#status").click(function(){
+$("#status").change(function(){
 	//$(".btn-radio").prop('checked', false);
-	if($("#status").val()=="Disseminated/Presented"){
+	//alert($("#status").val());
+	if($("#status").val()==="Disseminated / Presented"){
 		$(".fieldset-published").hide();
 		$(".fieldset-disseminated").slideDown("slow");
-	}else if($("#status").val()=="Published"){
+	}else if($("#status").val()==="Published"){
 		$(".fieldset-disseminated").hide();
 		$(".fieldset-published").slideDown("slow");
 	}else{
@@ -23,7 +24,7 @@ $("#instructor-btn-save").click(function(){
 	var cited = $("#cite").val();
 	//alert(cited);
 	
-	if(status=="Disseminated/Presented"){
+	if(status=="Disseminated / Presented"){
 		var distype = $("#dis-type").val();
 		var discon = $("#dis-con").val();
 		var conven = $("#con-ven").val();

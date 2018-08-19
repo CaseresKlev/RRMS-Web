@@ -27,15 +27,32 @@
 
             $("#next").click(function(){
 
-                if(page<2){
+                if(page<=2){
 
                     if(page==1){
-                        if($("#title").val()==="" || $("#abstract").val()==="" || $("#pubdate").val()==="" || $("#department").val()==="" || $("#pubdate").val()===""){
+                        if($("#title").val()==="" || $("#abstract").val()==="" || $("#pubdate").val()==="" || $("#department").val()==="" || $("#keywords").val()==="" || $("#reference").val()==="" || $("#status").val()===""){
                             alert("Please fill all fileds!");
                         }else{
-                            page++;
-                            setPage();
+                            if($("#status").val()==="Published"){
+                                if($("#isdn").val()==="" || $("#journal").val()==="" || $("#type").val()===""){
+                                    alert("Please provide Published Status");
+                                }else{
+                                    page++;
+                                    setPage();
+                                }
+                            }else if($("#status").val()==="Utilized"){
+                                if($("#orgname").val()==="" || $("#orgaddress").val()==="" || $("#orgdate").val()===""){
+                                    alert("Please provide Utilized Status");
+                                }else{
+                                    page++;
+                                    setPage();
+                                }
+                            }else{
+                                page++;
+                                setPage();
+                            }
                         }
+                       
 
                     }else if(page==2){
                       /*  if($("#title").val()==="" || $("#abstract").val()==="" || $("#pubdate").val()==="" || $("#department").val()==="" || $("#reference").val()==="" || $("#pubdate").val()===""){
@@ -66,10 +83,13 @@
                         }else{
                             alert("Please fill all fileds!");
                         }
+
+                        
                     }
 
 
                 }
+                
             })
 
             function checkName(values){
@@ -84,6 +104,9 @@
                     page--;
                     setPage();
                 }
+
+                
+
             })
 
            /// $("#submit").click(function(){
@@ -175,8 +198,34 @@
 
                 //book details variable
                 var title = $("#title").val();
+
+                var i=0;
+                var x = "";
+                for(i=0; i<title.length; i++){
+                    if(title[i]==="'" || title[i]==="\""){
+                        x = x + '\\' + title[i];
+                    }else{
+                        x +=title[i];
+                    }
+                }
+
+                title = x;
+                //alert(title);
+
                 //alert(title);
                 var abs = $("#abstract").val();
+
+                var i=0;
+                var x = "";
+                for(i=0; i<abs.length; i++){
+                    if(abs[i]==="'" || abs[i]==="\""){
+                        x = x + '\\' + abs[i];
+                    }else{
+                        x +=abs[i];
+                    }
+                }
+                abs = x;
+                //alert(abs);
                 //alert(abs);
                 var pubdate = $("#pubdate").val();
                 //alert(pubdate);
@@ -185,7 +234,7 @@
                 var kw = $("#keywords").val().split("\n");
                 //alert(kw);
                 var ref = $("#reference").val().split("\n-------------------------------------------------------------\n");
-                alert(ref);
+               // alert(ref);
 
                 var stat = $("#status").val();
                // alert(stat);
@@ -204,26 +253,23 @@
                 var contact = $("input[name='contact[]']").map(function(){return $(this).val();}).get();
                // alert(contact);
                 var email = $("input[name='email[]']").map(function(){return $(this).val();}).get();
+
+
+                //published details
+                var issn = $("#isdn").val();
+                var journal = $("#journal").val();
+                var journaltype = $("#type").val();
+
+                //utilized details
+                var org= $("#orgname").val();
+                var orgadd = $("#orgaddress").val();
+                var orgdate = $("#orgdate").val();
+
+
+                //alert(issn + " " + journal + " " + journaltype);
+
+            //alert(issn + " " + journal + " " + journaltype + " " + " " + jdate);
                // alert(email);
-
-
-               /*
-               //adviser details
-               var adv_fname = $("#adv_fname").val();
-               //alert(adv_fname);
-
-               var adv_mname = $("#adv_mname").val();
-               //alert(adv_mname);
-
-               var adv_lname = $("#adv_lname").val();
-               //alert(adv_lname);
-
-               var adv_suff = $("#adv_suff").val();
-               //alert(adv_suff);
-
-               var adv_email = $("#adv_email").val();
-               //alert(adv_email);
-                */
 
                 //validation of author details
                 var authorList = new Array();
@@ -260,6 +306,13 @@
                     address: add,
                     contact: contact,
                     email: email,
+                    issn:issn,
+                    journal: journal,
+                    journaltype: journaltype,
+                    org:org,
+                    orgadd:orgadd,
+                    orgdate:orgdate,
+
                     /*adv_fname : adv_fname,
                     adv_mname : adv_mname,
                     adv_lname : adv_lname,
@@ -332,6 +385,8 @@
                     $("#page2").hide();
                     $("#page3").hide();
                     $("#page1").slideDown("slow");
+                    $(".dot2").css("background-color", "#bbb");
+                    showHideExtra();
                 }else if(page==2){
                     $("#prev").show();
                     $("#submit").show();
@@ -339,6 +394,9 @@
                     $("#page1").hide();
                     $("#page3").hide();
                     $("#page2").slideDown("slow");
+                    $(".fieldset-published").hide();
+                    $(".fieldset-utilized").hide();
+                    $(".dot2").css("background-color", "#33ff33");
                 }else if(page==3){
                    /* $("#next").hide();
                     $("#submit").show();
@@ -346,6 +404,8 @@
                     $("#page2").hide();
                     $("#page3").slideDown("slow"); */
                 }
+
+
             }
 
             //init author info field
@@ -477,6 +537,20 @@
                 ?> */
 
 
+                function showHideExtra(){
+
+                    var annestat = $("#status").val();
+                  if(annestat==="Published"){
+                    $(".fieldset-published").show();
+                    $(".fieldset-utilized").hide();
+                  }else if (annestat==="Unpublished"){
+                    $(".fieldset-published").hide();
+                    $(".fieldset-utilized").hide();
+                  } else {
+                    $(".fieldset-published").hide();
+                    $(".fieldset-utilized").show();
+                  }
+                }
 
                 $("#status").change(function(){
                   var annestat = $("#status").val();
@@ -491,3 +565,4 @@
                     $(".fieldset-utilized").show();
                   }
                 })
+                

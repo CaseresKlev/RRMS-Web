@@ -32,6 +32,22 @@ input[type=text], input[type=file], input[type=date],textarea, select{
 
 }
 
+.dot1{
+    height: 20px;
+    width: 20px;
+    background-color: #33ff33;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.dot2{
+    height: 20px;
+    width: 20px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+}
+
 
 div.para{
   text-align: left;

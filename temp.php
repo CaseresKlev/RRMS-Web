@@ -3,8 +3,10 @@
         include_once 'connection.php';
         
         $title = $_POST['title'];
+        //$title = "\"". $title . "\"";
         //echo "Tittle: $title </br>";
         $abs = $_POST['abstract'];
+        //$abs = "\"". $abs . "\"";
         //echo "abstract: $abs </br>";
         $pubdate = $_POST['pubdate'];
         //echo "pubdate: $pubdate </br>";
@@ -46,6 +48,24 @@
         //print_r($contact);
         //echo "<br/>";
         $email = $_POST['email'];
+
+
+        //for published
+        $issn = $_POST['issn'];
+
+        $journal= $_POST['journal'];
+        $journaltype =  $_POST['journaltype'];
+        //echo "$issn $journal $journaltype";
+
+        //for utilized
+        $org= $_POST['org'];
+        $orgadd = $_POST['orgadd'];
+        $orgdate = $_POST['orgdate'];
+
+
+
+
+
         //echo "Author email: ";
         //print_r($email);
         //echo "<br/>";
@@ -100,6 +120,8 @@
             //query for book details insertion
             //$query = "INSERT INTO `book` (`book_id`, `book_title`, `abstract`, `pub_date`, `department`, `rev_count`, `status`, `enabled`, `views_count`, `cover`, `docloc`) VALUES (NULL, '$title', '$abs', '$pubdate', '$deptid', '0', '$stat', '0', '0', '', '', '$dl')";
             $query = "INSERT INTO `book` (`book_id`, `book_title`, `abstract`, `pub_date`, `department`, `rev_count`, `status`, `enabled`, `views_count`, `cited`, `cover`, `docloc`, `dowloadable`) VALUES (NULL, '$title', '$abs', '$pubdate', '$deptid', '0', '$stat', '0', '0', '0', '', '', '$dl')";
+
+            //echo $query;
        // echo "<br/>" . $query;
             $dbconfig = new dbconfig();
             $conn = $dbconfig->getCon();
@@ -115,14 +137,23 @@
 
 
                     ///-----------INSERT TO HISTORY-----------////
-                    if($stat==="Unpublished" || $stat === "Proposed"){
-                            $query = "INSERT INTO `bookhistory` (`id`, `book_id`, `book_stat`, `dis_type`, `dis_convension`, `dis_location`, `pub_issn`, `pub_journal`, `pub_type`, `date`) VALUES (NULL, '$book_id', '$stat', '', '', '', '', '', '', '$pubdate')";
+                    if($stat==="Published"){
+                            $query = "INSERT INTO `published` (`id`, `book_id`, `issn`, `journal`, `type`, `date`) VALUES (NULL, '$book_id', '$issn', '$journal', '$journaltype', '$pubdate')";
                             $dbconfig = new dbconfig();
                             $conn = $dbconfig->getCon();
                             $result20 = $conn ->query($query);
-                    }else if($stat==="Published"){
-                        
+                    }else if($stat==="Utilized"){
+                            $query = "INSERT INTO `utilize` (`id`, `book_id`, `orgname`, `orgaddress`, `date`) VALUES (NULL, '$book_id', '$org', '$orgadd', '$orgdate')";
+                            $dbconfig = new dbconfig();
+                            $conn = $dbconfig->getCon();
+                            $result20 = $conn ->query($query);
                     }
+                    $dbconfig = new dbconfig();
+                    $conn = $dbconfig->getCon();
+                    $query = "INSERT INTO `bookhistory` (`id`, `book_id`, `book_stat`, `date`) VALUES (NULL, '$book_id', '$stat', '$pubdate')";
+                    $result20 = $conn ->query($query);
+                    
+                    echo $query;
                 }
             }
             //echo "Done Inserting Book Details <br/>";
