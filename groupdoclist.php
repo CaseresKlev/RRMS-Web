@@ -24,17 +24,17 @@ $accid = $_GET['gid'];
         include_once 'header.php';
      ?>
    <?php
-  
- ?>
-   <div class="annegroup">
-    
-  </div>
-        <!--  <div class="annegroupbook"> -->
 
+ ?>
+
+
+
+        <!--  <div class="annegroupbook"> -->
+<div class="annegroup">
             <table class="subtable" style="width:100%;">
               <tr>
                 <td style="width:50%; text-align:left;"> <h3> SUBMITTED RESEARCH PAPER </h3> </td>
-                <?php 
+                <?php
                   include_once 'connection.php';
                   $dbconfig = new dbconfig();
                   $conn = $dbconfig->getCon();
@@ -43,27 +43,29 @@ $accid = $_GET['gid'];
                   $hideResult = null;
                   $row = null;
                   if(!$result->num_rows>0){
-                    
+
                     //echo "string " . $row['book_id'];
                     $hideResult = true;
                     echo "<td style=" . "\"text-align: right;\"" .">    <a href="."\"add-research.php?gid=" . $accid . "\"". "> <h5 class=". "\"subdocu"."\"" . "> Submit document </h5> </a> </td>";
                   }else{
                       $row = $result->fetch_assoc();
                   }
-                //echo $query;        
+                //echo $query;
 
                 ?>
-          
+
               </tr>
               </table>
-                <hr>
+        </div>
+
       <!--    </div> -->
              <div class="annegrouplist">
+               <hr>
 
 
 
                      <table class="grouptable" style="width:100%;">
-                      <?php 
+                      <?php
 
                       if(!$hideResult){
                         echo "<ul><tr></li><td class="."\"bookchar\"" . ">  <a style=\"font-size: 14pt; font-weight: bold;\" href=" . "\"bookdetails.php?book_id=" . $row['book_id'] . "\"" . ">". $row['title'] . "</a> </td></li><td class=". "\"subrevision\"" . " style=". "\"text-align:right;" ."\"" . "> <a href=". "\"revision.php?book_id=" . $row['book_id'].  "\"" . ">Submit Revisions</a> </td>
@@ -75,20 +77,21 @@ $accid = $_GET['gid'];
 
 
                       ?>
-                       
+
                       </table>
                       <br/>
-                      
 
 
 
-                  </div>
+
+
                   <br>
                   <br>
                   <br>
                   <br>
                   <br>
                   <hr>
+                    </div>
  </body>
  <footer style="padding-top: 5px;">
    <?php include_once 'footer.php' ?>

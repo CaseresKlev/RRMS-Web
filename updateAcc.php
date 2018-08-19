@@ -27,7 +27,7 @@ if(isset($_SESSION['uid'])){
 </head>
 
 <header>
-		
+
 </header>
 
 
@@ -65,11 +65,11 @@ if(isset($_SESSION['uid'])){
                         <?php
                             $d = Date('Y-m-d');
                             $yr = explode("-", $d);
-                            
-                           
+
+
                             echo '<ul><a href="book_reports.php?title=&dept=&status=&author=&from=0&to=' . $yr[0] . '" target="_blank"> REPORTS </a> </ul>';
                           ?>
-					
+
           <ul><a href="dept.php">DEPARTMENT </a> </ul> </br>
 					<ul><a href="index.php"> Back to Home </a> </ul>
                 </div>
@@ -80,7 +80,7 @@ if(isset($_SESSION['uid'])){
         </div>
 
         <!-- page content -->
-        <div class="right_col" role="main">
+        <div class="right_col" role="main" style="min-height: 712px;">
 			<div id= "admin-frm-container" class="frm-container" style="margin: auto; width: 80%">
 				<center><h1> UPDATE ACCOUNT </h1></center>
 			<hr></br>
@@ -134,9 +134,9 @@ if(isset($_SESSION['uid'])){
     </div>
 
     <!-- jQuery -->
-   
+
     <!--<script type="text/javascript" src="js/jquery.min.js"></script>-->
-    
+
     <!-- Bootstrap -->
     <!--<script src="js/bootstrap.min.js"></script>-->
 

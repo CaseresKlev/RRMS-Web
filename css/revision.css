@@ -2,13 +2,18 @@
   box-sizing: border-box;
 }
 
-body {
-  background-color: #85929e;
-
+.revbody {
+  background-image: url("../img/BukSU-0014.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  background-attachment: fixed;
+  max-width: 70%;
 }
 
 #fileForm {
-  background-color: #ffffff;
+  background-color: white;
   margin: 100px auto;
   font-family: Raleway;
   padding: 40px;
@@ -17,9 +22,6 @@ body {
   padding-top: 0px;
 }
 
-h1 {
-  text-align: center;
-}
 
 
 input,textarea,select {
@@ -37,7 +39,7 @@ input.invalid {
 }
 
 
-button {
+#submit {
   background-color: #4CAF50;
   color: #ffffff;
   border: none;
@@ -93,4 +95,13 @@ button {
 }
 .rrms{
   padding-top: 20px;
+}
+
+.revfile {
+  background-color: white;
+  margin-top: -15%;
+}
+
+.revhtml {
+  padding: 0;
 }

@@ -3,7 +3,13 @@
     box-sizing: border-box;
 }
  #annegroupbody {
-  background-color: #d3d3d3;
+  /*background-color: #d3d3d3;*/
+  background-image: url("../img/BukSU-0014.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  background-attachment: fixed;
   max-width: 70%;
   margin: auto;
 }
@@ -37,7 +43,7 @@
 
 
  .annegrouplist {
-
+   background-color: white;
 }
 
 .grouprow {
@@ -57,4 +63,8 @@
 
 .bookchar {
   width: 50%;
+}
+
+.annegroup {
+  background-color: white;
 }

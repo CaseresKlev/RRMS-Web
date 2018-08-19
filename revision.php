@@ -1,6 +1,6 @@
 <!doctype html>
 
-<html>
+<html class="revhtml">
 
 <head>
   <meta charset="UTF-8">
@@ -12,10 +12,10 @@
 
 </head>
 
-<body>
+<body class="revbody" style="margin-left:auto; margin-right:auto;" >
     <?php
         include "header.php";
-    ?>    
+    ?>
   <?php
     include_once 'connection.php';
 
@@ -34,10 +34,11 @@
 
 
   ?>
+  <div class="revfile">
   <form id="fileForm" enctype="multipart/form-data">
 
     <div class="rrms">
-      <h3 >Submit Revision</h3>
+      <h3 style="font-size:2em; font-style:"Century Gothic";">SUBMIT REVISION</h3>
       <h2><?php echo $row['book_title'];?></h2>
      Date: <?php echo $row['pub_date']; ?>
     </div>
@@ -110,6 +111,9 @@
 <script src="js/jquery.form.min.js"></script>
   <script type="text/javascript" src="js/indexing.js"></script>
   <textarea style="display:none;" id="content" wrap="hard" rows="10" cols="20"></textarea>
+
+</div>
+
   <?php
     include 'footer.php';
 ?>
