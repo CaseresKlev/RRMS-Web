@@ -48,7 +48,7 @@
     <div class="container body">
 		<div class="main_container">
 			<div class="col-md-3 left_col">
-				<div class="left_col scroll-view">
+				<div class="left_col scroll-view" >
 					<div class="navbar nav_title" style="border: 0;">
 						<a class="site_title"><span> Research Record Management System </span></a>
 					</div>
@@ -77,11 +77,11 @@
 					<?php
                             $d = Date('Y-m-d');
                             $yr = explode("-", $d);
-                            
-                           
+
+
                             echo '<ul><a href="book_reports.php?title=&dept=&status=&author=&from=0&to=' . $yr[0] . '" target="_blank"> REPORTS </a> </ul>';
                           ?>
-					
+
           <ul><a class= "dashboard-active" href="dept.php">DEPARTMENT </a> </ul> </br>
 					<ul><a href="index.php"> Back to Home </a> </ul>
                 </div>
@@ -92,7 +92,7 @@
         </div>
 
         <!-- page content -->
-        <div class="right_col" role="main">
+        <div class="right_col" role="main" style= "min-height: 712px;>
 
 
           <div class="login-page">

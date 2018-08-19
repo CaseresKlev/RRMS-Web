@@ -61,11 +61,11 @@
 					<?php
                             $d = Date('Y-m-d');
                             $yr = explode("-", $d);
-                            
-                           
+
+
                             echo '<ul><a href="book_reports.php?title=&dept=&status=&author=&from=0&to=' . $yr[0] . '" target="_blank"> REPORTS </a> </ul>';
                           ?>
-					
+
           <ul><a href="dept.php">DEPARTMENT </a> </ul> </br>
 					<ul><a href="index.php"> Back to Home </a> </ul>
                 </div>
@@ -76,7 +76,7 @@
         </div>
 
         <!-- page content -->
-        <div class="right_col" role="main">
+        <div class="right_col" role="main" style="min-height: 712px;">
 			<div id= "admin-frm-container" class="frm-container" style="margin: auto; width: 80%">
 				<center><h1> GENERATE ACCESS CODE </h1></center>
 			<hr></br>
@@ -100,7 +100,7 @@
 						<th id="access-th">Access Codes</th>
 						<th id="access-th">Type</th>
 					</tr>
-					<?php 
+					<?php
 						include_once 'connection.php';
 						$dbconfig = new dbconfig();
 						$conn = $dbconfig->getCon();
@@ -110,7 +110,7 @@
 						}else{
 							$query = "SELECT * FROM `acesskey` WHERE used=0 and type='instructor' and ins_id = 0";
 						}
-						
+
 						$result = $conn->query($query);
 						if($result->num_rows>0){
 							$i=1;

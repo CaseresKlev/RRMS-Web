@@ -41,7 +41,7 @@
 
 </head>
 
-<body class="nav-md" style="background-color: gray">
+<body class="nav-md" >
     <div class="container body">
 		<div class="main_container">
 			<div class="col-md-3 left_col">
@@ -74,14 +74,14 @@
                         <?php
                             $d = Date('Y-m-d');
                             $yr = explode("-", $d);
-                            
-                           
+
+
                             echo '<ul><a href="book_reports.php?title=&dept=&status=&author=&from=0&to=' . $yr[0] . '" target="_blank"> REPORTS </a> </ul>';
                           ?>
-					
+
           <ul><a href="dept.php">DEPARTMENT </a> </ul> </br>
 					<ul><a href="index.php"> Back to Home </a> </ul>
-		
+
                 </div>
               </div>
 
@@ -90,7 +90,7 @@
         </div>
 
         <!-- page content -->
-        <div class="right_col" role="main" style= "min-height: 600px;">
+        <div class="right_col" role="main" style= "min-height: 712px;">
 			<div id= "admin-frm-search" class= "frm-search" style= "font-size: 18px">
 				<b> Search Documents </b>
 				<input type="text" placeholder="Search.." id="search-key" name="search"><button type="button" id="btn-search"> Search </button> </br></br>
@@ -186,7 +186,7 @@
     <!-- Custom Theme Scripts -->
 <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
     <script src="js/custom.min.js"></script>
-    
+
     <script src="js/searchdoc.js"></script>
 
   </body>

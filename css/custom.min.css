@@ -1,11 +1,17 @@
 .nav-md {
-	background-color: white;
+	/*background-color: white;*/
+	background-image: url("../img/BukSU-0014.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  background-attachment: fixed;
 }
 .detail a, a:hover,.site_title:focus,.site_title:hover,a,a:focus,a:hover{
 	text-decoration:none;
 	}
 .left_col.scroll-view {
-	background-color: #00004d;
+	background-color: #003951;
 	width: 240px;
 	}
 .nav-sm .container.body .col-md-3.left_col{
@@ -120,6 +126,7 @@
 	margin-bottom:0;
 	margin-top:0;
 	text-shadow:1px 1px #000;
+
 	}
 .menu_section>ul{
 	margin-top:10px;
@@ -246,16 +253,19 @@ body .container.body .right_col{
 	background:#F7F7F7;
 	}
 .nav-md .container.body .right_col{
-	background-color: gray;
+	background-color: rgba(214, 214, 194, .50);
+	opacity: 50%;
 	padding:10px 20px 0;
 	margin-left: 196px;
+	width: 100%;
+	height: 100%;
 	}
 .nav_title{
 	margin-top: 10%;
 	margin-left: 10%;
 	width: 160px;
 	float:left;
-	background: #00004d;
+	background: #003951;
 	border-radius:0;
 	height:57px;
 	}
@@ -267,7 +277,7 @@ body .container.body .right_col{
 
 .nav-md .container.body .right_col{
 	float: right;
-	width: 70%; 
+	width: 77%;
 	}
 .right_col{
 	padding:10px!important;
@@ -296,11 +306,12 @@ body .container.body .right_col{
 	}
 body {
 	color: black;
-	background:#2A3F54;
+	/*background:#2A3F54;*/
 	font-family: Arial, Helvetica, sans-serif;
 	font-size:13px;
 	font-weight:400;
 	line-height:1.471;
+	margin: 0px;
 	}
 .main_container .top_nav{
 	display:block;
