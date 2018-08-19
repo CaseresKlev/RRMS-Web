@@ -102,9 +102,24 @@ if(isset($_SESSION['uid'])){
                 <p class="para">
                     Status:
                     <select name="status" id="status">
-                        <option>Unpublish</option>
-                        <option>Published</option>
-                        <option>Utilized</option>
+                      <?php
+                          if ($_SESSION['type']=="STUDENT") {
+                              echo
+                              "<option>Unpublished</option>
+                              <option>Published</option>
+                              <option>Utilized</option>";
+                          }else {
+                            echo
+                            "<option>Unpublished</option>
+                            <option>Published</option>
+                            <option>Dissiminated</option>
+                            <option>Utilized</option>";
+
+                          }
+
+
+                       ?>
+
 
                     </select>
                 </p>
@@ -112,8 +127,8 @@ if(isset($_SESSION['uid'])){
         </div>
 
 
-        <fieldset class= "fieldset-published" style= "width: 100%; ">
-          <legend><i> Fill Published Details</i></legend>
+        <fieldset class= "fieldset-published" style= "width: 100%; color:white; display:none; ">
+          <legend style="color:white;"><i> Fill Published Details</i></legend>
           <form id="form-published">
             ISSN:&emsp;
             <input type="text/number" placeholder="serial number" id="isdn" name="serial" style= "width: 100%; font-family: Century Gothic; font-size: 15px; font-style: italic; font-weight: bold;"></br></br>
@@ -134,8 +149,8 @@ if(isset($_SESSION['uid'])){
 </fieldset>
 
 
-<fieldset class= "fieldset-utilized" style= "width: 100%; ">
-  <legend><i> Fill Ultized Details</i></legend>
+<fieldset class= "fieldset-utilized" style= "width: 100%; color:white; display:none; ">
+  <legend style="color:white;"><i> Fill Utilized Details</i></legend>
   <form id="form-utilized">
     Organization Name:&emsp;
     <input type="text/number" placeholder="Organization name" id="org" name="serial" style= "width: 100%; font-family: Century Gothic; font-size: 15px; font-style: italic; font-weight: bold;"></br></br>
