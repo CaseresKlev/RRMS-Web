@@ -57,7 +57,8 @@ $("#instructor-btn-save").click(function(){
 				data:{
 					book_id: book_id,
 					status: status,
-					cited: cited
+					cited: cited,
+					date: disdate
 				}, 
 				success: function(data){
 					alert(data);
@@ -109,7 +110,8 @@ $("#instructor-btn-save").click(function(){
 				data:{
 					book_id: book_id,
 					status: status,
-					cited: cited
+					cited: cited,
+					date: date
 				}, 
 				success: function(data){
 					alert(data);
