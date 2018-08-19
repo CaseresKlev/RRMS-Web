@@ -3,11 +3,19 @@
     box-sizing: border-box;
 }
 #userchangepassbody {
-  background-color: #d3d3d3;
+  background-image: url("../img/BukSU-0014.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  background-attachment: fixed;
   max-width: 70%;
   margin: auto;
 }
 .userchangepass {
-  padding-top: 12%;
+  padding-top: 5%;
   width: 100%;
+  background-color: white;
+  margin-bottom: 2%;
+  margin-top: -3%;
 }

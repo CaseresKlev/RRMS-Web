@@ -29,7 +29,12 @@ td #booktitle {
 }
 
 html {
-  background-color: #85929e;
+  background-image: url("../img/BukSU-0014.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  background-attachment: fixed;
 }
 .wrapper img:hover {
   border: 2px solid black;
