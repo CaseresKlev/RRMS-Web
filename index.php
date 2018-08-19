@@ -4,6 +4,7 @@
 	<meta charset="utf-8">
 	<title>Gallery Images</title>
 	<link href="css/style(loyd).css" rel="stylesheet"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <header><?php include_once 'header.php'; ?></header>
