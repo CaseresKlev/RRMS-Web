@@ -11,7 +11,7 @@
 
 </head>
 
-<body style="width: 70%; margin-left: auto; margin-right: auto;" >
+<body class="add-body" style="width: 70%; margin-left: auto; margin-right: auto;" >
     <?php
         include "header.php";
     ?>

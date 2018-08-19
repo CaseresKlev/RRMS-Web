@@ -29,7 +29,10 @@
 
 .header {
 	overflow: hidden;
-	background-color: #003951;
+	/*background-color: #003951;*/
+	background-image: url("../img/BukSU-008-1.png");
+	background-repeat: no-repeat;
+	background-position: center;
 	padding: 20px 0px 0px 0px;
 }
 
@@ -52,10 +55,16 @@ ul{
 }
 .header_banner span {
 	margin: 5px 5px 5px 5px;
-	font-size: 150%;
+	font-size: 208%;
 	font-weight: bold;
 	text-align: center;
-	color: white;
+	color: black;
+	font-family: "Impact, charcoal, sans-serif";
+	font-style: normal;
+	font-weight: bold;
+	font-variant: small-caps;
+	position: static;
+
 }
 .subheader {
 	width: 20%;
@@ -121,10 +130,11 @@ ul{
 	}
 .header_banner span {
 	margin: 5px 5px 5px 5px;
-	font-size: 130%;
+	font-size: 140%;
 	font-weight: bold;
 	text-align: center;
-	color: white;
+	color: black;
+	position: static;
 	}
 .header_search-container form {
 	float: right;
@@ -259,6 +269,10 @@ ul{
 
 .fordate {
 	color: white;
+}
+mark{
+	background-color: rgba(255,255,255,.6);
+	color: black;
 }
 
 /* end of header */
