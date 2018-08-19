@@ -11,7 +11,7 @@
 
 </head>
 
-<body style="width: 70%; margin-left: auto; margin-right: auto;" >
+<body class="add-body" style="width: 70%; margin-left: auto; margin-right: auto;" >
     <?php
         include "header.php";
     ?>
@@ -76,17 +76,20 @@ if(isset($_SESSION['uid'])){
 
                 <p id="para">
                 <br/>&ensp;Title: (APA Format) <br/>
-                    <textarea style="text-transform: capitalize"rows="1" cols="102" id="reftitle" placeholder="Input reference title (Ex. Satalkar, B. (2010, July 15). Water aerobics)"></textarea>
+                    <!--<textarea style="text-transform: capitalize"rows="1" cols="102" id="reftitle" placeholder="Input reference title (Ex. Satalkar, B. (2010, July 15). Water aerobics)"></textarea>-->
+                    <input type="text" id="reftitle" placeholder="Input reference title (Ex. Satalkar, B. (2010, July 15). Water aerobics)">
                 </p>
 
                 <p id="para">
               &ensp;Weblinks<br/>
-                    <textarea style="text-transform: capitalize"rows="1" cols="102" id="refweb" placeholder="Input Weblinks (Ex. HTTPS://www.Reference.com)" ></textarea><br/>
+                    <!--<textarea style="text-transform: capitalize"rows="1" cols="102" id="refweb" placeholder="Input Weblinks (Ex. HTTPS://www.Reference.com)" ></textarea><br/>-->
+                    <input type="text" id="refweb" placeholder="Input Weblinks (Ex. HTTPS://www.Reference.com)">
                 </p>
 
                 <p id="para">
               &ensp;Local Research Reference key (if available)
-                    <textarea style="text-transform: capitalize"rows="1" cols="102" placeholder="Input Local Reference Key" name="reference" id="locref" style="text-transform:capitalized;"></textarea>
+                    <!--<textarea style="text-transform: capitalize"rows="1" cols="102" placeholder="Input Local Reference Key" name="reference" id="locref" style="text-transform:capitalized;"></textarea>-->
+                    <input type="text" id="locref" width="100%" placeholder="Input local reference key (Ex. Dt6BYByKXVEmPt0VpGr4oDAK9671NNdc)">
                 </p>
                 <div class="add">
                 <button type="button" id="addref" style="display: block;padding: 10px 15px;vertical-align:middle; text-align:center; display:inline-block; float:left;">ADD</button>
@@ -102,14 +105,59 @@ if(isset($_SESSION['uid'])){
                 <p class="para">
                     Status:
                     <select name="status" id="status">
-                        <option>Unpublish</option>
-                        <option>Published</option>
-                        <option>Utilized</option>
+                      <?php
+                          if ($_SESSION['type']=="STUDENT") {
+                              echo
+                              "<option>Unpublished</option>
+                              <option>Published</option>
+                              <option>Utilized</option>";
+                          }else {
+                            echo
+                            "<option>Proposed</option>";
+
+                          }
+
+
+                       ?>
+
 
                     </select>
                 </p>
             </div>
         </div>
+
+
+        <fieldset class= "fieldset-published" style= "width: 100%; color:white; display:none; ">
+          <legend style="color:white;"><i> Fill Published Details</i></legend>
+          <form id="form-published">
+            ISSN:&emsp;
+            <input type="text/number" placeholder="serial number" id="isdn" name="serial" style= "width: 100%; font-family: Century Gothic; font-size: 15px; font-style: italic; font-weight: bold;"></br></br>
+
+            Name of Journal:
+            <input type="text" placeholder="journal name" id="journal" name="journal"
+  style= "width: 100%; font-family: Century Gothic; font-size: 15px; font-style: italic; font-weight: bold;">
+
+  Type of Journal:
+            <input type="text" placeholder="journal type" name="type" id="type"
+  style= "width: 100%; font-family: Century Gothic; font-size: 15px; font-style: italic; font-weight: bold;">
+
+  Date:
+            <input type="date" width="100%" name="pubdate" id="pubdate" placeholder=""
+  style= "font-family: Century Gothic; font-size: 15px; font-style: italic; font-weight: bold;">
+</form>
+
+</fieldset>
+
+
+<fieldset class= "fieldset-utilized" style= "width: 100%; color:white; display:none; ">
+  <legend style="color:white;"><i> Fill Utilized Details</i></legend>
+  <form id="form-utilized">
+    Organization Name:&emsp;
+    <input type="text/number" placeholder="Organization name" id="org" name="serial" style= "width: 100%; font-family: Century Gothic; font-size: 15px; font-style: italic; font-weight: bold;"></br></br>
+
+</form>
+
+</fieldset>
 
     <div id = "page2" style="display:none">
         <fieldset>
@@ -200,7 +248,7 @@ if(isset($_SESSION['uid'])){
                       <center> <input type="checkbox" id="download" name="vehicle3" value="Boat" checked> I want others download my file.</center><br><br>
                     </p>
     </div> -->
-
+    <br>
     <span style="float: right">
         <button type="button" id="prev">Previous</button>
         <button type="button" id="next">Next</button>

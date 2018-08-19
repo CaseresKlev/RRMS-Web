@@ -43,7 +43,7 @@ div.para{
 
 }
 #enclosure {
-background-color: #1f2833;
+    background-color: #003951;
     /* margin: 100px auto;
      margin-bottom: 10px;
     margin-top: 20px;
@@ -86,8 +86,13 @@ button {
 
 }
 
-body{
-  background-color: #00004d;
+.add-body{
+  background-image: url("../img/BukSU-0014.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  background-attachment: fixed;
 }
 .browse{
   text-align: left;

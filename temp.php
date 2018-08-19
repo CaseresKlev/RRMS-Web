@@ -15,6 +15,7 @@
         //print_r($keywordsArray);
         //echo "<br/>";
         $referencesArray=$_POST['ref'];
+        //print_r($referencesArray);
         //echo "Array of References: ";
         //print_r($referencesArray);
         //echo "<br/>";
@@ -103,20 +104,25 @@
             $dbconfig = new dbconfig();
             $conn = $dbconfig->getCon();
             $result = $conn ->query($query);
-            
-           
 
-
-
+            $query = "SELECT book_id FROM `book` WHERE book_title = '$title'";
+            $dbconfig = new dbconfig();
+            $conn = $dbconfig->getCon();
+            $result = $conn ->query($query);
             if($result->num_rows>0){
                 while ($row=$result->fetch_assoc()) {
                     $book_id = $row['book_id'];
-                    
-                    $query = "SELECT book_id FROM `book` WHERE book_title = '$title'";
-                     $dbconfig = new dbconfig();
-                    $conn = $dbconfig->getCon();
-                    $result20 = $conn ->query($query);
 
+
+                    ///-----------INSERT TO HISTORY-----------////
+                    if($stat==="Unpublished" || $stat === "Proposed"){
+                            $query = "INSERT INTO `bookhistory` (`id`, `book_id`, `book_stat`, `dis_type`, `dis_convension`, `dis_location`, `pub_issn`, `pub_journal`, `pub_type`, `date`) VALUES (NULL, '$book_id', '$stat', '', '', '', '', '', '', '$pubdate')";
+                            $dbconfig = new dbconfig();
+                            $conn = $dbconfig->getCon();
+                            $result20 = $conn ->query($query);
+                    }else if($stat==="Published"){
+                        
+                    }
                 }
             }
             //echo "Done Inserting Book Details <br/>";
@@ -238,10 +244,11 @@
             
             ///--------------START OF REFERENCES INSERTION------------///
             $refID = array();
-            foreach($referencesArray as $key){
-                $reftemp = split("\n", $key);
-
-
+            //$i=0;
+            $len =  count($referencesArray);
+            for($i=0; $i<$len-1; $i++ ){
+                $reftemp = split("\n", $referencesArray[$i]);
+                //print_r($temparr);
                 if($reftemp[0]===""){
                     echo "empty";
                 }else{
@@ -282,9 +289,9 @@
                 }
                 
 
-
-
             }
+
+
 
             //insert book and refernce on junction table
             foreach ($refID as $key) {

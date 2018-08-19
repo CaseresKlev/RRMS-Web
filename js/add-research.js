@@ -6,7 +6,7 @@
 
             setPage();
 
-            $("#print").click(function(){
+            /*$("#print").click(function(){
 
 
                 var myStyle = '<link rel="stylesheet" type="text/css" media="screen" href="css/add-research.css" />';
@@ -22,7 +22,7 @@
 
   setTimeout(function(){newWin.close();},10);
 
-            })
+            })*/
 
 
             $("#next").click(function(){
@@ -67,13 +67,13 @@
                             alert("Please fill all fileds!");
                         }
                     }
-                    
-                    
+
+
                 }
             })
 
             function checkName(values){
-                 
+
                return values !=="";
 
             }
@@ -117,14 +117,14 @@
                 if(reftitle=="" && $("#locref").val()==""){
                     alert("Please fill citation title!");
                 }else if(!reftitle=="" && $("#locref").val()==""){
-                    refs = refs + reftitle +"\n" + reflink +"\n\n";
+                    refs = refs + reftitle +"\n" + reflink +"\n" + "-------------------------------------------------------------" + "\n";
                     $("#reference").val(refs);
                      $("#reftitle").val("");
                      $("#refweb").val("");
                 }
 
 
-                
+
 
                 if(!$("#locref").val()==""){
 
@@ -143,7 +143,8 @@
                             var str = data.split("--->");
                             if(str[0]==="SUCCESS"){
                                 var refs = $("#reference").val();
-                                 refs = refs + str[1] + "\n";
+                                 refs = refs + str[1]  + "\n-------------------------------------------------------------" + "\n";
+                                 //alert(refs);
                                  $("#reference").val(refs);
                                  $("#locref").val("");
                             }else{
@@ -183,7 +184,7 @@
                 //alert(dept);
                 var kw = $("#keywords").val().split("\n");
                 //alert(kw);
-                var ref = $("#reference").val().split("\n\n");
+                var ref = $("#reference").val().split("\n-------------------------------------------------------------\n");
                 alert(ref);
 
                 var stat = $("#status").val();
@@ -275,16 +276,16 @@
                         alert(str[2]);
                         $("#debug").html(data);
                     }else{
-                        window.location.href = "acceptbook.php?book_id=" + str[2]; 
+                        window.location.href = "acceptbook.php?book_id=" + str[2];
                     }
-                    
-                   // $("#debug").html(data);
-                          
 
-                    
+                   // $("#debug").html(data);
+
+
+
 
                 }
-            }); 
+            });
 
 
            })
@@ -474,3 +475,19 @@
                     if($result->num_rows > 0){
                         while($row = $result->fetch_assoc()){
                 ?> */
+
+
+
+                $("#status").change(function(){
+                  var annestat = $("#status").val();
+                  if(annestat==="Published"){
+                    $(".fieldset-published").show();
+                    $(".fieldset-utilized").hide();
+                  }else if (annestat==="Unpublished"){
+                    $(".fieldset-published").hide();
+                    $(".fieldset-utilized").hide();
+                  } else {
+                    $(".fieldset-published").hide();
+                    $(".fieldset-utilized").show();
+                  }
+                })
