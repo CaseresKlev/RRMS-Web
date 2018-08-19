@@ -76,7 +76,7 @@
 					<ul><a href="accesscode.php"> ACCESS CODE </a> </ul>
 					<?php
                             $d = Date('Y-m-d');
-                            $yr = split("-", $d);
+                            $yr = explode("-", $d);
                             
                            
                             echo '<ul><a href="book_reports.php?title=&dept=&status=&author=&from=0&to=' . $yr[0] . '" target="_blank"> REPORTS </a> </ul>';
