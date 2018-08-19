@@ -7,7 +7,7 @@
 </head>
 
 <header><?php include_once 'header.php'; ?></header>
-<body>
+<body class="index-body">
 
 	<div class="title">
 

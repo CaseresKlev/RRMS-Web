@@ -30,7 +30,7 @@ if(isset($_SESSION['uid'])){
 		<tr>
 			<td width="10%"><img width="100%" height="40%" style="display:block" src="img/1.png" ></td>
 			<td width="15%"> <img width="100%" style="display:block" src="img/BukSU Logo.png"></td>
-			<td> <div class="header_banner" ><span> Research Record Management System</span></div></td>
+			<td> <div class="header_banner" ><span><mark> Research Record Management System </mark></span></div></td>
 		</tr>
 	</table>
 	<br>
@@ -103,7 +103,7 @@ if(isset($_SESSION['uid'])){
 				</td>
 				<tr>
 					<td></td>
-				<td class="fordate" colspan="2"> 
+				<td class="fordate" colspan="2">
 				Date: </br>
                     <input type="number" width="100%"  name="pubdate" id="filterdate" placeholder="">
 				</td>

@@ -1,5 +1,10 @@
 .createbody {
-  background-color: #e3dac9;
+  background-image: url("../img/BukSU-0014.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  background-attachment: fixed;
 }
 
 
@@ -28,6 +33,7 @@ div ins{
   text-align: center;
   color: white;
   margin-bottom: 5%;
+  box-shadow: 0px 10px 10px 0px rgba(255, 255, 255, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
 
 }
