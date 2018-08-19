@@ -80,11 +80,19 @@
 			<div id= "admin-frm-container" class="frm-container" style="margin: auto; width: 80%">
 				<center><h1> GENERATE ACCESS CODE </h1></center>
 			<hr></br>
+			<script>
+
+			
+				function numbersonly(input){
+					var numall= /[^0-9]/gi;
+					input.value= input.value.replace(numall, "");
+				}
+			</script>
 			<form id= "admin-frm-generatepass" class= "frm-generatepass" >
 				<table style="font-size: 15px">
 					<tr>
 						<td> <b> Number of Access Code: </b> </td>
-						<td> <input type="number" placeholder="0" name="number" min="0" value="0" id="access-count" style= "width: 50%" required> </td>
+						<td> <input type="number" placeholder="0" name="number" min="0" value="0" id="access-count"onkeyup="numbersonly(this)" style= "width: 50%" required> </td>
 						<td> <button type="button" id="admin-btn-generate" class="btn-generate"> GENERATE </button> </td>
 					</tr>
 				</table>

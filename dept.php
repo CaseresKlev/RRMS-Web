@@ -35,7 +35,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title> Administrator </title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Custom Theme Style -->
     <link rel="stylesheet" type="text/css" media="screen" href="css/custom.min.css">
@@ -76,9 +76,21 @@
 					<ul><a href="accesscode.php"> ACCESS CODE </a> </ul>
 					<?php
                             $d = Date('Y-m-d');
+<<<<<<< HEAD
+
                             $yr = explode("-", $d);
 
 
+
+                            $yr = explode("-", $d);
+
+
+
+=======
+                            $yr = explode("-", $d);
+
+
+>>>>>>> 5c83b21fe1bdef6bdde78f976a9c6e17c81101eb
                             echo '<ul><a href="book_reports.php?title=&dept=&status=&author=&from=0&to=' . $yr[0] . '" target="_blank"> REPORTS </a> </ul>';
                           ?>
 
@@ -96,13 +108,21 @@
 
 
           <div class="login-page">
+            <script>
+
+              function lettersonly(input){
+                var regex= /[^ a-z () , .]/gi;
+                input.value= input.value.replace(regex,"");
+              }
+              </script>
 <div class="form">
      <!-- adding department for any changes  -->
+
   <form class="login-form">
     <fieldset>
       <legend>ADD DEPARTMENT</legend>
-      <input type="text"name="department" id="department" placeholder="Department" required/>
-      <input type="text"name="college" id="college" placeholder="College"/ required>
+      <input style="text-transform:capitalize"type="text"name="department" id="department"onkeyup="lettersonly(this)" placeholder="Department" required/>
+      <input style="text-transform:capitalize"type="text"name="college" id="college" onkeyup="lettersonly(this)" placeholder="College"/ required>
             <button type="button" id="submit1" >ADD</button>
     </fieldset>
   </form>

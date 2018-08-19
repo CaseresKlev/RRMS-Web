@@ -70,7 +70,7 @@
 <<<<<<< HEAD
         </tr>
         <tr class"det">
-          <td><strong>Status:</strong> <?php echo $row['status']; ?></td>
+          <td><strong>Status:</strong> <?php //echo $row['status']; ?></td>
         </tr>
 =======
         </tr> -->
@@ -140,6 +140,7 @@
   </tr>
   <tr>
 
+
     <td colspan="2">
       <hr>
       <strong style="font-size: 20pt;"><em>Abstract:</em></strong><br/>
@@ -177,6 +178,8 @@
   </tr>
 
 </table>
+<br>
+<a href="history.php?book_id=<?php echo $id;?>" style="margin-left: 3%">View Research History</a>
 
 </div>
 <br/>
