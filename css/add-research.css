@@ -87,6 +87,9 @@ h1 {
   text-transform: uppercase;
   color: black;
   font-family: "Century Gothic";
+  background-color: rgba(242, 242, 242, 0.8);
+  padding-top: 2%;
+  padding-bottom: 2%;
 
 }
 button {

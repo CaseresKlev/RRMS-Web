@@ -70,8 +70,10 @@ if(isset($_SESSION['uid'])){
 
 		<form action="searchcontent.php">
 		<div class= "form-container" 
-		style= "padding: 10%; background-color: rgba(102, 131, 154, 0.51); width: 100%; padding: 10%;">
-		<span class="close">&times;</span>
+		style= "padding: 3%; background-color: rgba(102, 131, 154, 0.51); width: 100%; padding: 3%;">
+		<span class="close" 
+		style= "float: right; cursor: pointer; padding: 2px 6px 0px 5px; border-radius: 50%;" 
+		onclick="document.getElementById('modal').style.display='none'"> &times; </span>
 		<table id="tbl_search" style= "margin: auto;">
 			<tr>
 				<td> </td>
@@ -80,14 +82,14 @@ if(isset($_SESSION['uid'])){
 			</tr>
 			<tr>
 				<td> </td>
-				<td> <input type="text" placeholder="Search.." name="search" id="skey"> </td>
-				<td> <button type="button" id="btn-search-home"> Search </button> </td>
+				<td style= "width: 85%"> <input type="text" placeholder="Search.." name="search" id="skey" style= "width: 95%; padding-bottom: 3%; padding-top: 3%;"> </td>
+				<td> <button type="button" id="btn-search-home" style= "font-family: helvetica; padding: 15%; border-radius: 10%;"> Search </button> </td>
 			</tr>
 			<tr>
 				<td></td>
-				<td>
+				<td style= "padding-top: 8%;">
 
-					<label class="tbl-search_container" > Title
+					<label class="tbl-search_container"> Title
 						<input type="radio" checked="checked" name="radio" id="search_title">
 						<span class="tbl-search_checkmark"></span>
 					</label>

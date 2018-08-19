@@ -76,10 +76,10 @@ session_start();
         </div>
 
         <!-- page content -->
-        <div class="right_col" role="main">
+        <div class="right_col" role="main" style= "min-height: 700px;>
 			<div id= "instructor-frm-search" class= "frm-search" style= "font-size: 18px">
 
-				<b> My Research </b>
+				<b style="font-size:3em;"> My Research </b>
 				<hr>
 				<div id= "instructor-div-voidmain" class= "div-voidmain">
 					<form id= "instructor-frm-documents" class= "frm-documents" action="/action_page.php">
@@ -120,7 +120,7 @@ session_start();
     </div>
 
     <!-- jQuery -->
-    
+
     <script type="text/javascript" sr="js/jquery-3.3.1.js"></script>
     <!-- Bootstrap -->
     <!--<script src="js/bootstrap.min.js"></script>-->

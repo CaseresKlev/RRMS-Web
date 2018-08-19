@@ -76,7 +76,10 @@
 					<ul><a href="accesscode.php"> ACCESS CODE </a> </ul>
 					<?php
                             $d = Date('Y-m-d');
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8172339a021c372bedeae4257e673812b4d572bc
 
                             $yr = explode("-", $d);
 
@@ -85,8 +88,11 @@
                             $yr = explode("-", $d);
 
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 8172339a021c372bedeae4257e673812b4d572bc
                             $yr = explode("-", $d);
 
 
@@ -104,7 +110,7 @@
         </div>
 
         <!-- page content -->
-        <div class="right_col" role="main" style= "min-height: 712px;>
+        <div class="right_col" role="main" style= "min-height: 950px;>
 
 
           <div class="login-page">
