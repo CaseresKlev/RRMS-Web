@@ -24,6 +24,14 @@
   #anne-a {
    float: left;
  }
+
+ #pub em{
+  font-weight: bold;
+ }
+
+ #pub td{
+  padding-left: 10px;
+ }
  /*.annebooks {
   text-align: right;
   margin-right: 32%;
