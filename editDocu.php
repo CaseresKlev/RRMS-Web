@@ -125,7 +125,7 @@
 								Status:<br/>
 								<select name="status" id="status" style= "width: 100%; font-family: Century Gothic; font-size: 15px; font-style: italic; font-weight: bold;">
                   <option></option>
-									<option> Unpublish </option>
+									<option> Unpublished </option>
 									<option> Proposed </option>
 									<option> Completed </option>
 									<option> Disseminated / Presented </option>
@@ -224,16 +224,16 @@
     </div>
 
     <!-- jQuery -->
-    <script src="js/jquery.min.js"></script>
+    <!--<script src="js/jquery.min.js"></script>-->
     <!-- Bootstrap -->
-    <script src="js/bootstrap.min.js"></script>
-  <script src="js/jquery.form.min.js"></script>
+    
   <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
-  <script src="js/jquery.form.min.js"></script>
+  <!--<script src="js/jquery.form.min.js"></script>-->
+  <!--<script src="js/bootstrap.min.js"></script>-->
 
 
     <!-- Custom Theme Scripts -->
-    <script src="js/custom.min.js"></script>
+    <!--<script src="js/custom.min.js"></script>-->
     <script type="text/javascript" src="js/editdocu.js"></script>
 
   </body>

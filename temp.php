@@ -115,11 +115,13 @@
 
 
                     ///-----------INSERT TO HISTORY-----------////
-                    if($stat==="Unpublished"){
+                    if($stat==="Unpublished" || $stat === "Proposed"){
                             $query = "INSERT INTO `bookhistory` (`id`, `book_id`, `book_stat`, `dis_type`, `dis_convension`, `dis_location`, `pub_issn`, `pub_journal`, `pub_type`, `date`) VALUES (NULL, '$book_id', '$stat', '', '', '', '', '', '', '$pubdate')";
                             $dbconfig = new dbconfig();
                             $conn = $dbconfig->getCon();
                             $result20 = $conn ->query($query);
+                    }else if($stat==="Published"){
+                        
                     }
                 }
             }

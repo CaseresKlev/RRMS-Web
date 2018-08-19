@@ -113,10 +113,7 @@ if(isset($_SESSION['uid'])){
                               <option>Utilized</option>";
                           }else {
                             echo
-                            "<option>Unpublished</option>
-                            <option>Published</option>
-                            <option>Dissiminated</option>
-                            <option>Utilized</option>";
+                            "<option>Proposed</option>";
 
                           }
 
@@ -251,7 +248,7 @@ if(isset($_SESSION['uid'])){
                       <center> <input type="checkbox" id="download" name="vehicle3" value="Boat" checked> I want others download my file.</center><br><br>
                     </p>
     </div> -->
-
+    <br>
     <span style="float: right">
         <button type="button" id="prev">Previous</button>
         <button type="button" id="next">Next</button>
