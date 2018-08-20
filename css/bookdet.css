@@ -22,7 +22,7 @@ td #booktitle {
 }
 
 .wrapper {
-  margin-left: auto;
+  margin-left: 10px;
   margin-right: auto;
   padding-top: 3%;
   overflow: hidden;

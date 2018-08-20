@@ -84,6 +84,8 @@
                             $yr = explode("-", $d);
 
 
+
+
                             $yr = explode("-", $d);
 
 
@@ -112,10 +114,12 @@
                 input.value= input.value.replace(regex,"");
               }
               </script>
+              <br/><br/><br/>
 <div class="form">
      <!-- adding department for any changes  -->
 
   <form class="login-form">
+
     <fieldset>
       <legend>ADD DEPARTMENT</legend>
       <input style="text-transform:capitalize"type="text"name="department" id="department"onkeyup="lettersonly(this)" placeholder="Department" required/>
@@ -149,13 +153,16 @@
 
       if ($result->num_rows>0) {
         while ($row=$result->fetch_assoc()) {
+
           echo "<option>". $row['cat_name']. "</option>";
         }
       }
 
         ?>
+
         </select>
 
+          <br/><br/>
             <button id="btn-del" style="background-color:red; font:12pt;">DELETE</button>
       </fieldset>
   </form>
