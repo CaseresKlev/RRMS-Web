@@ -77,7 +77,7 @@ if(isset($_SESSION['uid'])){
                 <p id="para">
                 <br/>&ensp;Title: (APA Format) <br/>
                     <!--<textarea style="text-transform: capitalize"rows="1" cols="102" id="reftitle" placeholder="Input reference title (Ex. Satalkar, B. (2010, July 15). Water aerobics)"></textarea>-->
-                    <input type="text" id="reftitle" placeholder="Input reference title (Ex. Satalkar, B. (2010, July 15). Water aerobics)">
+                    <input style="text-transform: capitalize;" type="text" id="reftitle" placeholder="Input reference title (Ex. Satalkar, B. (2010, July 15). Water aerobics)">
                 </p>
 
                 <p id="para">
@@ -134,14 +134,14 @@ if(isset($_SESSION['uid'])){
             <input type="text/number" placeholder="serial number" id="isdn" name="serial" style= "width: 100%; font-family: Century Gothic; font-size: 15px; font-style: italic; font-weight: bold;"></br></br>
 
             Name of Journal:
-            <input type="text" placeholder="journal name" id="journal" name="journal"
+            <input type="text" placeholder="journal name" id="journal" name="journal">
   style= "width: 100%; font-family: Century Gothic; font-size: 15px; font-style: italic; font-weight: bold;">
 
   Type of Journal:
             <input type="text" placeholder="journal type" name="type" id="type"
   style= "width: 100%; font-family: Century Gothic; font-size: 15px; font-style: italic; font-weight: bold;">
 
-  
+
 </form>
 
 </fieldset>
