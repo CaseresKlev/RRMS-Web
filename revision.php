@@ -20,7 +20,7 @@
     include_once 'connection.php';
 
     $bookid = $_GET['book_id'];
-    $revision = $_GET['revison'];
+    //$revision = $_GET['revison'];
     //echo $revision;
     //echo $bookid;
     $dbconfig = new dbconfig();

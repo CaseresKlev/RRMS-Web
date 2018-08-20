@@ -21,7 +21,8 @@
     ?>
 </header>
 <body id="annebody">
-<div class="anneauthor">
+<div class="fullauthor">
+  <div class="anneauthor">
     <?php
           include_once 'connection.php';
           $dbconfig = new dbconfig();
@@ -43,9 +44,9 @@
   </div>
   <div class="annebooks" >
               <h3> AUTHORED RESEARCH PAPER </h3>
-                  <hr>
-  </div>
 
+  </div>
+          <hr>
             <div class="annelist">
                       <ul>
                         <?php
@@ -73,10 +74,10 @@
                   <hr>
 
 
-
+</div>
 </body>
 <footer style="padding-top: 5px;">
   <?php include_once 'footer.php' ?>
-  
+
 </footer>
 </html>

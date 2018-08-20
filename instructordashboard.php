@@ -76,7 +76,7 @@ session_start();
         </div>
 
         <!-- page content -->
-        <div class="right_col" role="main" style= "min-height: 700px;>
+        <div class="right_col" role="main" style= "min-height: 700px;">
 			<div id= "instructor-frm-search" class= "frm-search" style= "font-size: 18px">
 
 				<b style="font-size:3em;"> My Research </b>
@@ -106,7 +106,7 @@ session_start();
 						</table>
 					</form></br></br>
 					<hr>
-				<button type="submit" id= "instructor-btn-addnew" class="btn-addnew" onclick="location.href='add-research.php'" 
+				<button type="submit" id= "instructor-btn-addnew" class="btn-addnew" onclick="location.href='add-research.php'"
 				style= "padding: 1% 2% 1% 2%; border-radius: 5%; font-weight: bold;"> ADD NEW </button>
 
 			</div>
