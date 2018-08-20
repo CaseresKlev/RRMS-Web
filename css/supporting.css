@@ -5,7 +5,12 @@
 }
 
 #supportbody {
-  background-color: #d3d3d3;
+  background-image: url("../img/BukSU-0014.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  background-attachment: fixed;
   max-width: 70%;
   margin: auto;
 }
@@ -19,19 +24,21 @@
     text-align: left;
     width: 100%;
     display: inline-block;
+    background-color: white;
  }
 
 
 .annedocument {
   display: block;
   width: 100%;
-  margin-top: 9%;
+  background-color: white;
 }
 
 
 .supportdocu {
   float: left;
   margin-right: 75%;
+  background-color: white;
 }
 
 .anneul {

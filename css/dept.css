@@ -16,12 +16,12 @@
   background: #c8bbbb;
   max-width: 360px;
   margin: 0 auto 100px;
-  margin-right: 45%;
+  margin-right: 26%;
   padding: 19px;
   text-align: center;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
   margin-bottom: 40%
-  
+
 }
 .form input {
   font-family: "Roboto", sans-serif;
