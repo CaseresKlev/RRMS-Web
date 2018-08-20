@@ -4,6 +4,7 @@ $("#status").change(function(){
 	if($("#status").val()==="Disseminated / Presented"){
 		$(".fieldset-published").hide();
 		$(".fieldset-disseminated").slideDown("slow");
+		//$(".fieldset-disseminated").css("background-color","red");
 	}else if($("#status").val()==="Published"){
 		$(".fieldset-disseminated").hide();
 		$(".fieldset-published").slideDown("slow");

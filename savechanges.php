@@ -20,7 +20,7 @@
 
 			if($result){
 				$conn = $dbconfig->getCon();
-        		$query = "INSERT INTO `bookhistory` (`id`, `book_id`, `book_stat`, `date`) VALUES (NULL, '1', '$status', '$date')";
+        		$query = "INSERT INTO `bookhistory` (`id`, `book_id`, `book_stat`, `date`) VALUES (NULL, '$book_id', '$status', '$date')";
         		$result = $conn->query($query);
 
 				echo "Save Changes Done.";
