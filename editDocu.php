@@ -12,11 +12,11 @@
   $acctype = $_SESSION['type'];
 
   if($acctype==="admin"){
-    echo "Admin ANG NAKALOGIN";
+    //echo "Admin ANG NAKALOGIN";
   }else if($acctype==="instructor"){
-    echo "Instructor ang naka login";
+    //echo "Instructor ang naka login";
   }else if($acctype==="student"){
-    echo "student ang naka login";
+    //echo "student ang naka login";
   }
 
   if(isset($_GET['book_id'])){
@@ -164,22 +164,6 @@
                     <br>
                     <br>
 
-                    <!--<input type="radio" name="loc" id="btn-radio-institutional" value="Institutional" class="btn-radio">
-                    <label class="tbl-radiocontainer" id="institutional" style="font-size: 12pt"> Institutional
-                      <span class="tbl-radiocheckmark"></span>
-                    </label>
-
-					<input type="radio" name="loc" id="btn-radio-national" value="National" class="btn-radio">
-                    <label class="tbl-radiocontainer" id="national" style="font-size: 12pt"> National
-                      <span class="tbl-radiocheckmark"></span>
-                    </label>
-
-                    <input type="radio" name="loc" id="btn-radio-intl" value="International" class="btn-radio">
-                    <label class="tbl-radiocontainer" id="international" style="font-size: 12pt"> International
-                      <span class="tbl-radiocheckmark"></span>
-                    </label>
-                    <textarea rows="4" cols="102" placeholder="Description 160 Character maximum" name="disseminated-desc" id="disseminated-desc"
-            style= "width: 100%; font-family: Century Gothic; font-size: 15px; font-style: italic; font-weight: bold; resize: none;"></textarea> -->
 					Name of Conference:
                     <input type="text" placeholder="conference name" id="dis-con" name="dis-con"
 					style= "width: 100%; font-family: Century Gothic; font-size: 15px; font-style: italic; font-weight: bold;">
