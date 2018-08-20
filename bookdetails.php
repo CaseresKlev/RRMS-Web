@@ -75,7 +75,115 @@
 =======
         </tr> -->
         <tr class"det">
-          <td><strong>Status:</strong><?php echo $row['status']; ?></td>
+          <td><strong>Status:</strong><?php echo $row['status'];
+
+          
+
+                            if($row['status']==="Disseminated / Presented"){
+                              //echo "fccgvhbnjffffffffffff";
+                                    include_once 'connection.php';
+                                    $dbconfig = new dbconfig();
+                                    $conn = $dbconfig->getCon();
+                                    $query = "SELECT * FROM `disseminated` WHERE book_id = $id ORDER BY id DESC";
+                                    //echo $query;
+                                    //`id`, `book_id`, `type`, `convension`, `location`, `date`
+                                    $resultpub = $conn->query($query);
+                                    if($resultpub->num_rows>0){
+                                      //print_r($resultpub);
+                                      $rowpub = $resultpub->fetch_assoc();
+
+                                           echo "<table id=\"pub\" style=\"padding-left:60px;\">
+                                            <tr>
+                                              
+                                            </tr>
+                                            <tr>
+                                              <td>Date:</td>
+                                              <td><em>". $rowpub['date'] ."</em></td>
+                                            </tr>
+                                              <td>Convention:</td>
+                                              <td><em>". $rowpub['convension'] ."</em></td>
+                                            <tr>
+                                            <tr>
+                                              <td>Convention Type:</td>
+                                              <td><em>". $rowpub['type'] ."</em></td>
+                                            </tr>
+                                            <tr>
+                                              <td>Location:</td>
+                                              <td><em>". $rowpub['location'] ."</em></td>
+                                            </tr>
+
+                                            </tr>
+                                          </table>
+
+                                          ";
+                                    
+                                  }
+                            }else if($row['status']==="Published"){
+                              //<!--- FOR PUBLISHED ---->
+
+                                   $dbconfig = new dbconfig();
+                                    $conn = $dbconfig->getCon();
+                                    $query = "SELECT * FROM `published` WHERE book_id = $id ORDER BY id DESC";
+                                    //`id`, `book_id`, `issn`, `journal`, `type`, `date`
+                                    $resultpub = $conn->query($query);
+                                    if($resultpub->num_rows>0){
+                                     $rowpub = $resultpub->fetch_assoc();
+
+                                     echo "<table id=\"pub\" style=\"padding-left:60px\">
+                                    
+                                      <tr>
+                                        <td>Date:</td>
+                                        <td><em>" . $rowpub['date'] ."</em></td>
+                                      </tr>
+                                        <td>Journal Name:</td>
+                                        <td><em>". $rowpub['journal'] ."</em></td>
+                                      <tr>
+                                      <tr>
+                                        <td>ISSN:</td>
+                                        <td><em>". $rowpub['issn'] ."</em></td>
+                                      </tr>
+                                      <tr>
+                                        <td>Journal Type:</td>
+                                        <td><em>". $rowpub['type'] ."</em></td>
+                                    </table>
+                                    ";
+
+                                    }
+
+                            }else if($row['status']==="Utilized"){
+                              //<!--- FOR UTILIZE ---->
+
+                                    $dbconfig = new dbconfig();
+                                    $conn = $dbconfig->getCon();
+                                    $query = "SELECT * FROM `utilize` WHERE book_id = $id ORDER BY id DESC";
+                                    //`id`, `book_id`, `orgname`, `orgaddress`, `date`
+                                    $resultpub = $conn->query($query);
+                                    if($resultpub->num_rows>0){
+                                      while ($rowpub = $resultpub->fetch_assoc()) {
+                                   echo "<table id=\"pub\" style=\"padding-left: 60px\">
+                                    
+                                    <tr>
+                                      <td>Date:</td>
+                                      <td><em>". $rowpub['date'] ."</em></td>
+                                    </tr>
+                                      <td>Organization / Institution Name:</td>
+                                      <td><em>". $rowpub['orgname'] ."</em></td>
+                                    <tr>
+                                    <tr>
+                                      <td>Address:</td>
+                                      <td><em>". $rowpub['orgaddress'] ."</em></td>
+                                    </tr>
+
+                                    </tr>
+                                  </table>";
+
+                            }
+                          }
+                            }
+                            
+
+
+           ?></td>
         </tr>
         <!-- <tr class"det">
            <td><strong>Views:</strong><?php //echo " " .  $row['views_count']; ?></td> -->

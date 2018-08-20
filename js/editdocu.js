@@ -124,6 +124,29 @@ $("#instructor-btn-save").click(function(){
 	}else if(status==""){
 		alert("Please choose book status.");
 	}else{
+		//alert("ggggggg");
+
+			var d = new Date();
+
+			var date = d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate();
+			//alert(date);
+		$.ajax({
+
+				url: 'savechanges.php',
+				type: 'POST',
+				cache: false,
+				data:{
+					book_id: book_id,
+					status: status,
+					cited: cited,
+					date: date
+				}, 
+				success: function(data){
+					alert(data);
+				}
+
+			})
+			
 
 	}
 	//alert(title);
