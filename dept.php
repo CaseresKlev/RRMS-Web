@@ -76,10 +76,6 @@
 					<ul><a href="accesscode.php"> ACCESS CODE </a> </ul>
 					<?php
                             $d = Date('Y-m-d');
-<<<<<<< HEAD
-
-=======
->>>>>>> 237cda6268061f93202b4221efa30cea9ee1e474
 
                             $yr = explode("-", $d);
 
@@ -88,10 +84,8 @@
                             $yr = explode("-", $d);
 
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 237cda6268061f93202b4221efa30cea9ee1e474
+
                             $yr = explode("-", $d);
 
 
