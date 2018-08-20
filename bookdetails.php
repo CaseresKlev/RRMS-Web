@@ -27,7 +27,7 @@
 <table bgcolor="#ffffff" width="100%" height="326">
   <tr >
 
-    <td width="45%"height="350px" id="col1"> <img src="<?php echo $row['cover']?>" style="display:block"; width="100%" height="100%"></td>
+    <td width="30%"height="293px" id="col1"> <img src="<?php echo $row['cover']?>" style="display:block"; width="100%" height="100%"></td>
     <td id="col2">
       <table height=100%>
         <tr>
