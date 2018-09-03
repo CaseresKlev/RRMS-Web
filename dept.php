@@ -4,7 +4,7 @@
 
 
   if(isset($_SESSION['uid'])){
-    print_r($_SESSION);
+    //print_r($_SESSION);
   }else{
     header("Location: index.php");
   }
@@ -12,13 +12,13 @@
   $accname = $_SESSION['gname'];
   $acctype = $_SESSION['type'];
   if($acctype==="admin"){
-    echo "Admin ANG NAKALOGIN";
+    //echo "Admin ANG NAKALOGIN";
   }else if($acctype==="instructor"){
     //echo "Instructor ang naka login";
 
     header("Location: instructordashboard.php");
   }else if($acctype==="student"){
-    echo "student ang naka login";
+    //echo "student ang naka login";
   }
 
 

@@ -12,7 +12,7 @@ if(isset($_POST)){
 		include_once 'connection.php';
     	$dbconfig = new dbconfig();
     	$conn = $dbconfig->getCon();
-    	$query = "INSERT INTO `published` (`id`, `book_id`, `issn`, `journal`, `type`, `date`) VALUES (NULL, '$book_id', '$issn', 'jnal', '$type', '$date')";
+    	$query = "INSERT INTO `published` (`id`, `book_id`, `issn`, `journal`, `type`, `date`) VALUES (NULL, '$book_id', '$issn', '$journal', '$type', '$date')";
 
     	//echo $query;
     	$result = $conn->query($query);

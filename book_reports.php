@@ -5,6 +5,7 @@
 		//print_r($_SESSION);
 	}else{
 		//echo "Not Login";
+		header("Location: index.php");
 	}
 
 ?>
@@ -160,7 +161,8 @@
 			margin-right: auto !important;
 		}
 		#gray{
-			background-color: rgba(214, 214, 194, .50);
+			/*background-color: rgba(214, 214, 194, .50);*/
+			background-color: rgba(214, 214, 194, .85);
 			background-attachment: fixed;
 		}
 

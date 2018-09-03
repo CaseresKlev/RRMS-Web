@@ -9,7 +9,7 @@
   <header>
     <?php include_once 'header.php';?>
   </header>
-<body>
+<body style="background-color: white">
 
   <?php
   include_once 'connection.php';
@@ -319,6 +319,7 @@
 </table>
 <br>
 <a href="history.php?book_id=<?php echo $id;?>" style="margin-left: 3%">View Research History</a>
+<br><br>
 
 </div>
 <br/>
