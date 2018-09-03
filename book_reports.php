@@ -151,8 +151,8 @@
 		}
 
 		.report-table {
-			
-			
+
+
 		}
 
 		#tbl{
@@ -161,8 +161,12 @@
 			margin-right: auto !important;
 		}
 		#gray{
+<<<<<<< HEAD
 			/*background-color: rgba(214, 214, 194, .50);*/
 			background-color: rgba(214, 214, 194, .85);
+=======
+			background-color: rgba(214, 214, 194, .80);
+>>>>>>> 43f2a9ef4e164829ee6ff0463f3d8c8063e545a0
 			background-attachment: fixed;
 		}
 
@@ -344,7 +348,7 @@ INNER JOIN bookhistory on book.book_id = bookhistory.book_id WHERE book.book_tit
               		while ($row = mysqli_fetch_array($result)){
                 			echo '
                   				<tr>
-                    				
+
                       				<td><a href="history.php?book_id=' . $row['book_id']. '">'.$row["book_title"].'</a></td>
                           			<td>'.$row["dept"].'</td>
                             		<td>'.$row["book_stat"].'</td>
