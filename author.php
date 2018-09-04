@@ -1,3 +1,50 @@
+<?php
+
+if(isset($_SESSION['uid'])){
+  $auth_id = $_GET['aut_id'];
+}else{
+  session_start();
+  $auth_id = $_GET['aut_id'];
+}
+
+
+$temp_id;
+$arrBook = array();
+                          
+include_once 'connection.php';
+$dbconfig = new dbconfig();
+$con = $dbconfig->getCon();
+$query = "SELECT book.book_id FROM book INNER JOIN junc_authorbook ON book.book_id = junc_authorbook.book_id WHERE junc_authorbook.aut_id = $auth_id";
+$result = $con->query($query);
+                              
+if ($result->num_rows>0) {
+    while ($row=$result->fetch_assoc()) {
+          $temp_id = $row['book_id'];
+          array_push($arrBook, $temp_id);
+    }
+}
+
+$allowed = 0;
+foreach ($arrBook as $key) {
+  $dbconfig = new dbconfig();
+  $con = $dbconfig->getCon();
+  $query = "SELECT `accid` FROM `groupdoc` WHERE `book_id` = $key";
+  $result = $con->query($query);
+                              
+if ($result->num_rows>0) {
+    while ($row=$result->fetch_assoc()) {
+          if($row['accid']===$_SESSION['uid']){
+            $allowed = 1;
+          }
+          
+    }
+}
+}
+//echo "allowed: " . $allowed ;
+?>
+
+
+
 <!DOCTYPE html>
 <!-- ANNE -->
 <html>
@@ -20,6 +67,14 @@
 
     ?>
 </header>
+<?php
+
+  //$accid = $_SESSION['uid'];
+  //print_r($arrBook);
+  //print_r($_SESSION);
+
+  
+?>
 <body id="annebody">
 <div class="fullauthor">
   <div class="anneauthor">
@@ -41,7 +96,56 @@
       <br> <?php echo $row['a_add']; ?> </p>
     <?php }
   } ?>
+  <br>
   </div>
+  <h3 style="padding-left: 50px"> Bibliography </h3>
+  <hr>
+
+  <?php
+   if($allowed ===1){
+
+          $dbconfig = new dbconfig();
+          $con = $dbconfig->getCon();
+          $query = "SELECT * FROM `bibliography` WHERE `aut_id` = $auth_id";
+          //echo $query;
+           $result = $con->query($query);
+          if ($result->num_rows>0) {
+            while ($row=$result->fetch_assoc()) {
+              echo '<p style="padding-left:50px; padding-right: 50px; text-align:justify">' . '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' . $row['bib'] . '</p>';
+            }
+          }else{
+             echo  '<a href="#" id="add-bib" style="padding: 50px">Add Bibliography</a>';
+          }
+
+
+    
+   }else{
+    $dbconfig = new dbconfig();
+          $con = $dbconfig->getCon();
+          $query = "SELECT * FROM `bibliography` WHERE `aut_id` = $auth_id";
+          //echo $query;
+           $result = $con->query($query);
+          if ($result->num_rows>0) {
+            while ($row=$result->fetch_assoc()) {
+              echo "hhhhhhh";
+            }
+          }else{
+             echo  '<h5 style="padding-left: 50px">No bibliography added.</h5>';
+          }
+   }
+
+  ?>
+  <br><br>
+  <div id="addbib" style="width: 100%; padding-left: 50px; height: auto; display: none;">
+    Add Bibliography<br>
+    <input type="text" id="auth_id" value="<?php echo $auth_id?>" style="display: none;">
+    <textarea id="bibText" style="width: 95%" rows="6"></textarea>
+    <button id="submitbib">Save</button><br><br>
+  </div>
+    
+  <hr>
+  <br>
+  <br>
   <div class="annebooks" >
               <h3> AUTHORED RESEARCH PAPER </h3>
 
@@ -55,10 +159,10 @@
                           $con = $dbconfig->getCon();
                           $query = "SELECT book.book_id, book.book_title FROM book INNER JOIN junc_authorbook ON book.book_id = junc_authorbook.book_id WHERE junc_authorbook.aut_id = $auth_id";
                           $result = $con->query($query);
-
+                              
                               if ($result->num_rows>0) {
                                 while ($row=$result->fetch_assoc()) {
-
+                                  $book_id = $row['book_id'];
                            ?>
 
 
@@ -71,10 +175,12 @@
                   </div>
                   <br/>
                   <br/>
-                  <hr>
+
 
 
 </div>
+<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+<script type="text/javascript" src="js/author.js"></script>
 </body>
 <footer style="padding-top: 5px;">
   <?php include_once 'footer.php' ?>

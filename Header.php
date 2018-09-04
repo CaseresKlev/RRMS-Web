@@ -1,13 +1,26 @@
 <?php
 
-session_start();
+
+
 if(isset($_SESSION['uid'])){
-   print_r($_SESSION);
-    $accname = $_SESSION['gname'];
+   //print_r($_SESSION);
+	//print_r($_SESSION);
+  $accname = $_SESSION['gname'];
   $acctype = $_SESSION['type'];
+  //echo($acctype);
 
   }else{
     //header("Location: index(loyd).php");
+    session_start();
+    if(isset($_SESSION['uid'])){
+    	$accname = $_SESSION['gname'];
+  	$acctype = $_SESSION['type'];
+    }
+    
+    //print_r($_SESSION);
+  //$accname = $_SESSION['gname'];
+  //$acctype = $_SESSION['type'];
+  //echo($acctype);
   }
 //print_r($_SESSION);
 
@@ -38,6 +51,7 @@ if(isset($_SESSION['uid'])){
 
 			<ul id= "nav-ul">
 				<li><a href="index.php">Home</a></li>
+				<li><a href="http://research.buksu.edu.ph/index.php" target="_blank">BukSU Journal</a></li>
 				<!--<li><a href="#plagiarism">Plagiarism</a></li>
 				<li style="float:right"><a class= "user-dropdown">User</a></li>-->
 				<div class="dropdown" style="float:right">

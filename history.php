@@ -45,7 +45,7 @@ if(!isset($_GET['book_id'])){
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="css/groupdoclist.css">
 </head>
-<body id="annegroupbody">
+<body id="annegroupbody" >
   <div class="historydiv" style="background-color:white;">
    <?php
         include_once 'header.php';
@@ -57,7 +57,7 @@ if(!isset($_GET['book_id'])){
 
   </div>
         <!--  <div class="annegroupbook"> -->
-		<table class="subtable" style="width:100%;">
+		<table class="subtable" style="width:100%; padding: 10px">
             <tr>
                 <td style="width:50%; text-align:left; font-family: helvetica"> <h2 style="color: darkblue"><i> <?php echo $title ?> </i></h2>
 					<h3 style="text-align:left; font-family: helvetica"> AUTHORS: </h3>
@@ -83,7 +83,7 @@ if(!isset($_GET['book_id'])){
 		</br>
         <br>
         <br>
-                 <b style="font-size: 14pt">RESEARCH HISTORY </b>
+                 <b style="font-size: 14pt; padding: 10px">RESEARCH HISTORY </b>
 
                 <hr>
       <!--    </div> -->

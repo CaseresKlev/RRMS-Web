@@ -145,7 +145,7 @@
 	position:inherit;
 	margin-top:95%;
 	border-radius: 50%;
-	border:1px solid rgba(52,73,94,.44);
+	border:1px solid rgba(52,73,94,.90);
 	padding:4px;
 	}
 .profile_info{
@@ -255,7 +255,7 @@ body .container.body .right_col{
 .nav-md .container.body .right_col{
 	background-color: gray;
 	padding:0px 20px 0;
-	background-color: rgba(214, 214, 194, .50);
+	background-color: rgba(214, 214, 194, .90);
 	opacity: 50%;
 	padding:10px 20px 0;
 	margin-left: 6%;
@@ -375,6 +375,7 @@ hr {
 	width: 80%;
 	margin: auto;
 	margin-top: 5%;
+	margin-left: 21%;
 }
 /* Access Code */
 .frm-generatepass {

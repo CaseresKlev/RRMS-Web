@@ -17,7 +17,7 @@
 </header>
 <body id="supportbody">
 <div class="annesupport">
-  <?php 
+  <?php
       $book_id = $_GET['book_id'];
 
                           include_once 'connection.php';
@@ -33,17 +33,17 @@
 
 
   ?>
-    
-  </div>
+
+
   <div class="annedocument" >
               <h3> SUPPORTING DOCUMENTS </h3>
                   <hr>
-  </div>
+
 
             <div class="supportdocu">
                       <ul class="anneul">
 
-                          <?php 
+                          <?php
                               $book_id = $_GET['book_id'];
 
                           include_once 'connection.php';
@@ -60,15 +60,16 @@
 
   ?>
 
-                      
+
                       </ul>
                   </div>
                   <br/>
                   <br/>
 
-                  <hr>
+                
 
-
+</div>
+</div>
 
 </body>
 <footer style="padding-top: 5px;">

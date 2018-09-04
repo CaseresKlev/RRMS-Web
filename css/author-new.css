@@ -54,4 +54,5 @@
 .fullauthor {
   /*background-color: rgba(214, 214, 194, .50);*/
   background-color: white;
+  height: -webkit-fill-available;
 }

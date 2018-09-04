@@ -9,7 +9,7 @@
   <header>
     <?php include_once 'header.php';?>
   </header>
-<body>
+<body style="background-color: white">
 
   <?php
   include_once 'connection.php';
@@ -273,11 +273,42 @@
         $result = $con -> query($query);
         if ($result->num_rows>0) {
           while ($row2=$result->fetch_assoc()) {
+           /* if($row['link']!==""){
+              echo "<a style=\"text-decoration: none; padding: 10px; font-size: 12pt\" <?php echo "href=" . $row2['link']  .  " target=" . "\"_blank\"";  ?> ><li><b><em><?php echo $row2['reftitle']; ?></em></em><b></br><?php echo $row2['link'];?></li></a>";
+            } */
+            $str = $row2['link'];
+            $str2 = "http";
 
-         ?>
-        <a style="text-decoration: none;" <?php echo "href=" . $row2['link']  .  " target=" . "\"_blank\"";  ?> ><li><b><em><?php echo $row2['reftitle']; ?></em></em><b></br><?php echo $row2['link'];?></li></a>
-      <?php }
+            if(strpos($row2['link'], "http")!==false){
+              echo "<li style='padding: 10px; font-size: 11pt;'><b><em>" .$row2['reftitle']."<br><a href='".$row2['link'] ."' target='_blank'>". $row2['link'] ."</a></em></b></li>";
+            }else{
+              echo "<li style='padding: 10px; font-size: 11pt;'><b><em>" .$row2['reftitle']."<br><a href='http://".$row2['link'] ."' target='_blank'>". $row2['link'] ."</a></em></b></li>";
+            }
+           /* if(strpos( $str, $str2 ) === false){
+              echo "<li style='padding: 10px; font-size: 11pt;'><b><em>" .$row2['reftitle']."<br><a href='".$row2['link'] ."' target='_blank'>". $row2['link'] ."</a></em></b> Found</li>";
+
+            }else if(strpos($str, "www") === false){
+
+             //$netEx = array("www");
+            
+                echo "<li style='padding: 10px; font-size: 11pt;'><b><em>" .$row2['reftitle']."<br><a href='http://".$row2['link'] ."' target='_blank'>". $row2['link'] ."</a></em></b></li>";
+             
+
+              
+            }*/
+            //<
+          
+            
+
+       
+
+          
+
+
+      }
     } ?>
+
+    <!--<li><b><em>Hellow<br><a href='fefsef.com' target='_blank'>fsdrgfthy</a></em></b></li>-->
 
       </ul>
       <hr>
@@ -288,6 +319,7 @@
 </table>
 <br>
 <a href="history.php?book_id=<?php echo $id;?>" style="margin-left: 3%">View Research History</a>
+<br><br>
 
 </div>
 <br/>
