@@ -52,7 +52,7 @@
                                 setPage();
                             }
                         }
-                       
+
 
                     }else if(page==2){
                       /*  if($("#title").val()==="" || $("#abstract").val()==="" || $("#pubdate").val()==="" || $("#department").val()==="" || $("#reference").val()==="" || $("#pubdate").val()===""){
@@ -84,12 +84,12 @@
                             alert("Please fill all fileds!");
                         }
 
-                        
+
                     }
 
 
                 }
-                
+
             })
 
             function checkName(values){
@@ -105,7 +105,7 @@
                     setPage();
                 }
 
-                
+
 
             })
 
@@ -398,11 +398,11 @@
                     $(".fieldset-utilized").hide();
                     $(".dot2").css("background-color", "#33ff33");
                 }else if(page==3){
-                   /* $("#next").hide();
-                    $("#submit").show();
-                    $("#page1").hide();
-                    $("#page2").hide();
-                    $("#page3").slideDown("slow"); */
+                    // $("#next").hide();
+                    // $("#submit").show();
+                    // $("#page1").hide();
+                    // $("#page2").hide();
+                    // $("#page3").slideDown("slow");
                 }
 
 
@@ -565,4 +565,3 @@
                     $(".fieldset-utilized").show();
                   }
                 })
-                
