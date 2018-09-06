@@ -59,7 +59,8 @@ session_start();
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
               <div class="menu_section">
                 <div class="nav side-menu">
-					<ul><a class= "dashboard-active" href="#documents"> MY RESEARCH </span></a></ul>
+					<ul><a class= "dashboard-active" href="instructordashboard.php"> MY FINISHED RESEARCH </span></a></ul>
+          <ul><a  href="instructor-on-process-paper.php"> MY On-Process RESEARCH </span></a></ul>
 					<ul><a href="accesscode_instruct.php"> ACCESS CODE </a> </ul>
 					 <?php
                             $d = Date('Y-m-d');
@@ -79,7 +80,7 @@ session_start();
         <div class="right_col" role="main" style= "min-height: 700px;">
 			<div id= "instructor-frm-search" class= "frm-search" style= "font-size: 18px">
 
-				<b style="font-size:3em;"> My Research </b>
+				<b style="font-size:2em;"> My Finished Research </b>
 				<hr>
 				<div id= "instructor-div-voidmain" class= "div-voidmain">
 					<form id= "instructor-frm-documents" class= "frm-documents" action="/action_page.php">
@@ -89,7 +90,7 @@ session_start();
                   include_once 'connection.php';
                   $dbconfig = new dbconfig();
                   $conn = $dbconfig->getCon();
-                  $query = "SELECT book.book_id, book.book_title FROM book INNER JOIN groupdoc on book.book_id = groupdoc.book_id WHERE groupdoc.accid = $uid";
+                  $query = "SELECT book.book_id, book.book_title FROM book INNER JOIN groupdoc on book.book_id = groupdoc.book_id WHERE groupdoc.accid = $uid and book.enabled=1";
                   $result = $conn->query($query);
                   if($result->num_rows>0){
                     while ($row=$result->fetch_assoc()) {
@@ -105,9 +106,7 @@ session_start();
 
 						</table>
 					</form></br></br>
-					<hr>
-				<button type="submit" id= "instructor-btn-addnew" class="btn-addnew" onclick="location.href='add-research.php'"
-				style= "padding: 1% 2% 1% 2%; border-radius: 5%; font-weight: bold;"> ADD NEW </button>
+					
 
 			</div>
           <!-- top tiles -->
