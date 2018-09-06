@@ -126,7 +126,7 @@ session_start();
                 ?>
             </tbody>
 						</table>
-					</form></br></br>
+					</form>
 					<hr>
 				<button type="submit" id= "instructor-btn-addnew" class="btn btn-primary" data-toggle="modal" data-target="#ModaladdNew"
 				style= "padding: 1% 2% 1% 2%; border-radius: 5%; font-weight: bold;" onclick="window.location.replace('add-new-on-process.php')"> ADD NEW </button>
