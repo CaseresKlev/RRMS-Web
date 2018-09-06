@@ -78,7 +78,7 @@ session_start();
         </div>
 
         <!-- page content -->
-        <div class="right_col" role="main" style= "min-height: 700px;">
+        <div class="right_col" role="main" style= "min-height: 700px; float: right">
 			<div id= "instructor-frm-search" class= "frm-search" style= "font-size: 18px">
 
 				<b style="font-size:2em;"> My Finished Research </b>

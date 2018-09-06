@@ -78,8 +78,6 @@ session_start();
     <div id="gray" style="width:100%; height:100%;">
       <div id="accessdiv" style="width:92%; margin-left:auto; margin-right:auto; padding-left:8%;">
         <div class="right_col" role="main" style= "min-height: 700px;">
-=======
-        <div class="right_col" role="main">
 
 			<div id= "instructor-frm-container" class="frm-container" style="margin: auto; width: 80%; margin-top: 5%">
 				<center><b> GENERATE ACCESS CODE </b></center>
@@ -147,13 +145,13 @@ session_start();
       </div>
     </div>
 
-    <!-- jQuery -->
+    <!-- jQuery --
     <script src="js/jquery.min.js"></script>
-    <!-- Bootstrap -->
+    <!-- Bootstrap --
     <script src="js/bootstrap.min.js"></script>
 
-    <!-- Custom Theme Scripts -->
-    <script src="js/custom.min.js"></script>
+    <!-- Custom Theme Scripts
+    <script src="js/custom.min.js"></script>  -->
     <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
     <script type="text/javascript" src="js/accesscode.js"></script>
     <script>
