@@ -25,6 +25,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Custom Theme Style -->
+    <link rel="stylesheet" href="css/temp.css">
     <link rel="stylesheet" type="text/css" media="screen" href="css/custom.min.css">
 
 </head>
@@ -55,8 +56,9 @@ session_start();
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
               <div class="menu_section">
                 <div class="nav side-menu">
-					<ul><a href="instructordashboard.php"> MY RESEARCH </span></a></ul>
-					<ul><a class= "dashboard-active" href="accesscode_instruct.php"> ACCESS CODE </a> </ul>
+                  <ul><a  href="instructordashboard.php"> MY FINISHED RESEARCH </span></a></ul>
+                  <ul><a href="instructor-on-process-paper.php"> MY On-Process RESEARCH </span></a></ul>
+					        <ul><a class= "dashboard-active" href="accesscode_instruct.php"> ACCESS CODE </a> </ul>
 					 <?php
                             $d = Date('Y-m-d');
                             $yr = explode("-", $d);
@@ -75,7 +77,7 @@ session_start();
 
     <div id="gray" style="width:100%; height:100%;">
       <div id="accessdiv" style="width:92%; margin-left:auto; margin-right:auto; padding-left:8%;">
-        <div class="right_col" role="main" style= "min-height: 700px;>
+        <div class="right_col" role="main" style= "min-height: 700px;">
 =======
         <div class="right_col" role="main">
 
@@ -86,7 +88,7 @@ session_start();
 					<tr>
 						<td width= "50%"> <b> Number of Access Code: </b> </td>
 						<td> <input type="number" placeholder="0" id="access-count" name="number" min="0" style= "width: 50%; font-size: 13pt; padding: 2%;" required> </td>
-						<td><button type="submit" id= "instructor-frm-generate" class="btn-generate"
+						<td><button type="button" id= "instructor-frm-generate" class="btn btn-primary"
 						style="font-size: 12pt; font-weight: bold; padding: 1% 2% 1% 2%; border-radius: 10%;"> Generate </button></td>
 					</tr>
 				</table>
@@ -127,7 +129,7 @@ session_start();
 				<br>
 				<br>
 			<hr>
-			<button type="submit" id= "instructor-btn-print" class="btn-print"
+			<button type="button" id= "instructor-btn-print" class="btn btn-primary"
 			style= "font-size: 12pt; font-weight: bold; padding: 1% 2% 1% 2%; border-radius: 10%;" onclick="printDiv()"> PRINT </button>
 
 		</div>

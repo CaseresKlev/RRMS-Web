@@ -26,6 +26,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Custom Theme Style -->
+    <link rel="stylesheet" href="css/temp.css">
     <link rel="stylesheet" type="text/css" media="screen" href="css/custom.min.css">
 
 </head>
@@ -106,7 +107,7 @@ session_start();
 
 						</table>
 					</form></br></br>
-					
+
 
 			</div>
           <!-- top tiles -->
