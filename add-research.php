@@ -255,6 +255,7 @@ if(isset($_SESSION['uid'])){
     <div style="text-align:center">
         <span class="dot1"></span>
         <span class="dot2"></span>
+          <!-- <span class="dot3"></span> -->
     </div>
     <span style="float: right">
         <button type="button" id="prev">Previous</button>

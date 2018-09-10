@@ -32,27 +32,27 @@ session_start();
 
 </head>
 
-  <body class="nav-md" style="background-color: gray">
-    <div class="container body">
-      <div class="main_container">
-        <div class="col-md-3 left_col">
-          <div class="left_col scroll-view">
-            <div class="navbar nav_title" style="border: 0;">
-              <a class="site_title"><span> Research Record Management System </span></a>
-            </div>
+<body class="nav-md" style="background-color: gray">
+  <div class="container body">
+    <div class="main_container">
+      <div class="col-md-3 left_col">
+        <div class="left_col scroll-view">
+          <div class="navbar nav_title" style="border: 0;">
+            <a class="site_title"><span> Research Record Management System </span></a>
+          </div>
 
-            <div class="clearfix"></div>
+          <div class="clearfix"></div>
 
-            <!-- menu profile quick info -->
-            <div class="profile clearfix">
-              <div class="profile_pic">
-                <img src="img/final.jpg" alt="..." class="img-circle profile_img">
-              </div>
-              <div class="profile_info">
-                <span> <?php echo strtoupper($accname) ?> </span>
-                <h2> <?php echo strtoupper($acctype) ?> </h2>
-              </div>
+          <!-- menu profile quick info -->
+          <div class="profile clearfix">
+            <div class="profile_pic">
+              <img src="img/final.jpg" alt="..." class="img-circle profile_img">
             </div>
+            <div class="profile_info">
+              <span> <?php echo strtoupper($accname) ?> </span>
+              <h2> <?php echo strtoupper($acctype) ?> </h2>
+            </div>
+          </div>
             <!--/menu profile quick info-->
 
             <br />
@@ -64,9 +64,7 @@ session_start();
 					<ul><a  href="instructordashboard.php"> MY FINISHED RESEARCH </span></a></ul>
           <ul><a  class= "dashboard-active" href="instructor-on-process-paper.php"> MY On-Process RESEARCH </span></a></ul>
 					<ul><a href="accesscode_instruct.php"> ACCESS CODE </a> </ul>
-          <table class="table">
-            
-          </table>
+
 					 <?php
                             $d = Date('Y-m-d');
                             $yr = explode("-", $d);
@@ -82,7 +80,7 @@ session_start();
         </div>
 
         <!-- page content -->
-        <div class="right_col" role="main" style= "min-height: 700px;">
+        <div class="right_col" role="main" style= "min-height: 700px; float: right">
 			<div id= "instructor-frm-search" class= "frm-search" style= "font-size: 18px">
 
 				<b style="font-size:2em;"> My On-Process Research </b>
@@ -147,8 +145,8 @@ session_start();
       <!--- -->
   <!--<div class="modal fade" id="ModaladdNew" role="dialog">
     <div class="modal-dialog">
-    
-     
+
+
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -180,24 +178,24 @@ session_start();
                   <button type="button" class="btn btn-success" id="btn_login_register">Register</button>
                   <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
                 </center>
-                
+
               </div>
               <!--<div class="form-group">
                 <fieldset>
                   <b style="color: red">For Demo Purposes</b><br>
                   Admin login:<br>Username = admin<br>Password = 1234<br><br>User login:<br>Username = loyd<br>Password = 1111
                 </fieldset>
-                
+
               </div>-->
-              
-              
+
+
           <!--</form>
         </div>
         <div class="modal-footer">
           <a href="#"><p class="text-center" style="font-weight: bold;" id="reg">Register</p></a>
         </div>
       </div>
-      
+
     </div>
   </div>-->
 

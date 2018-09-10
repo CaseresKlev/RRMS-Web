@@ -230,9 +230,9 @@
       </div>
       </div>
       </div>
-        <!--
-      <div class="tab">Birthday:
-        <p><input placeholder="dd" oninput="this.className = ''" name="dd"></p>
+
+      <!--    <div class="tab">Birthday:
+    <p><input placeholder="dd" oninput="this.className = ''" name="dd"></p>
         <p><input placeholder="mm" oninput="this.className = ''" name="nn"></p>
         <p><input type ="date"placeholder="yyyy" oninput="this.className = ''" name="yyyy"></p>
       </div>
@@ -251,9 +251,9 @@
       <div style="text-align:center;margin-top:40px;">
         <span class="step"></span>
           <span class="step"></span>
-      <!--  <span class="step"></span>
-        <span class="step"></span>
-        <span class="step"></span>-->
+           <span class="step"></span>
+        <!-- <span class="step"></span>
+        <span class="step"></span> -->
       </div>
     </form>
 

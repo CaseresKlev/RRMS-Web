@@ -26,6 +26,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Custom Theme Style -->
+    <link rel="stylesheet" href="css/temp.css">
     <link rel="stylesheet" type="text/css" media="screen" href="css/custom.min.css">
 
 </head>
@@ -77,7 +78,7 @@ session_start();
         </div>
 
         <!-- page content -->
-        <div class="right_col" role="main" style= "min-height: 700px;">
+        <div class="right_col" role="main" style= "min-height: 700px; float: right">
 			<div id= "instructor-frm-search" class= "frm-search" style= "font-size: 18px">
 
 				<b style="font-size:2em;"> My Finished Research </b>
@@ -106,7 +107,7 @@ session_start();
 
 						</table>
 					</form></br></br>
-					
+
 
 			</div>
           <!-- top tiles -->
