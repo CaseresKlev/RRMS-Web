@@ -13,7 +13,7 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <title>Create Account</title>
-      <!-- <link rel="stylesheet" href="css/create_account.css"> -->
+     
       <link rel="stylesheet" href="css/createnew.css">
 
 
@@ -27,7 +27,12 @@
     </head>
 
     <body class="createbody">
-
+        
+<!--        -->
+        
+        <div class="container">
+        
+        
       <form class="boxx">
         <h1>Create Account</h1>
 
@@ -58,8 +63,9 @@
                 </script>
 
                 <tr>
-
-                  <td>  <input style="text-transform: capitalize"class="ins"type="text"placeholder="First name"id="ins_fname" onkeyup="lettersonly(this)"></td>
+                    <div class="form-group">
+                  <td>  <input style="text-transform: capitalize"class="ins"type="text"placeholder="First name"id="ins_fname" onkeyup="lettersonly(this)" class="form-control"></td>
+                      </div>  
                   <td>  <input style="text-transform: capitalize"class="ins"type="text" placeholder="Middle name"id="ins_mname" onkeyup="lettersonly(this)"></td>
                   <td>  <input style="text-transform: capitalize"class="ins" type="text" placeholder="Last name"id="ins_lname" onkeyup="lettersonly(this)"></td>
                   <td>  <label style="text-transform: capitalize"class="saff" for="anneselects"></label>
@@ -123,6 +129,8 @@
     <script>
         $("#tblins").hide();
     </script>
+      
+</div>
     </body>
 
 
