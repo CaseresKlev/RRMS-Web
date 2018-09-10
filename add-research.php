@@ -217,40 +217,144 @@ if(isset($_SESSION['uid'])){
                     </table>
 
                 </p>
+    </fieldset><br/>
+    <fieldset>
+      <legend>Terms of Use</legend>
+      <style>
+/* The container */
+.container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+    background-color: #2196F3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+</style>
+
+
+<h3><center>Terms Conditions and Policy</center></h3>
+      <label class="container">The content of the pages of this website is for your general information and use only. It is subject to change without notice.
+          <input type="checkbox" required>
+              <span class="checkmark"></span>
+            </label>
+            <label class="container"> Your use of any information or materials on this website is entirely at your own risk, for which we shall not be liable. It shall be your own responsibility to ensure that any information available through this website meet your specific requirements.
+                <input type="checkbox">
+                <span class="checkmark"></span>
+              </label>
+                  <label class="container">The information you uploaded in this website is for reference only, it is your choice if your paper can be downloaded or not.
+          <input type="checkbox">
+          <span class="checkmark"></span>
+                </label>
+                  <label class="container">By submitting, I agree that all info entered was done accurately & truthfully.
+                      <input type="checkbox">
+                      <span class="checkmark"></span>
+                    </label>
+
+
     </fieldset>
+
+    <p>
+      <center> <input type="checkbox" id="download" name="vehicle3" value="Boat"> I want others download my file.</center><br><br>
+    </p>
     <br/>
     </div>
-    <!-- <div id = "page3" style="display:none">
-        <center><h3>Add Instructor Information</h3></center>
-                    <p>
-                        First Name:<br/>
-                        <input type="text"placeholder="First name" oninput="this.className = ''" id="adv_fname">
-                    </p>
-                    <p>
-                      Middle Name:<br/>
-                        <input type="text" placeholder="Middle name" oninput="this.className = ''" id="adv_mname">
-                    </p>
-                    <p>
-                        Last Name:<br/>
-                        <input type="text" placeholder="Last name" oninput="this.className = ''" id="adv_lname">
-                    </p>
-                    <p>
-                        Suffix:<br/>
-                        <select name="status" id="adv_suff">
-                            <option></option>
-                            <option>JR</option>
-                            <option>IV</option>
-                            <option>III</option>
-                        </select>
-                    </p>
-                    <p>
-                        Email:<br/>
-                        <input type="text" placeholder="Email" oninput="this.className = ''" id="adv_email">
-                    </p>
-                    <p>
-                      <center> <input type="checkbox" id="download" name="vehicle3" value="Boat" checked> I want others download my file.</center><br><br>
-                    </p>
-    </div> -->
+    <div id = "page3" style="display:none">
+
+
+<!-- <h3>Terms of Use</h3> -->
+<!-- <label class="container">The content of the pages of this website is for your general information and use only. It is subject to change without notice.
+    <input type="checkbox" required>
+      <span class="checkmark"></span>
+        </label>
+        <label class="container">Two
+          <input type="checkbox">
+          <span class="checkmark"></span>
+        </label>
+        <label class="container">Three
+          <input type="checkbox">
+          <span class="checkmark"></span>
+        </label>
+        <label class="container">Four
+          <input type="checkbox">
+          <span class="checkmark"></span>
+        </label> -->
+
+        <!-- <form>
+      <input type="checkbox" name="q" id="a-0" required autofocus>
+      <label for="a-0">a-1</label>
+      <br>
+
+      <input type="checkbox" name="q" id="a-1" required>
+      <label for="a-1">a-2</label>
+      <br>
+
+      <input type="checkbox" name="q" id="a-2" required>
+      <label for="a-2">a-3</label>
+      <br>
+
+      <input type="submit">
+  </form>
+
+    </fieldset> -->
+
+    </div>
     <br>
     <div style="text-align:center">
         <span class="dot1"></span>

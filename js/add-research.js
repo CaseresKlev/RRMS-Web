@@ -77,6 +77,8 @@
                         var email = $("input[name='email[]']").map(function(){return $(this).val();}).get();
                         // alert(email);
 
+                        // uncomment later
+
                         if(fname.every(checkName) && mname.every(checkName) && lname.every(checkName) && add.every(checkName) && contact.every(checkName) && email.every(checkName)){
                             page++;
                             setPage();
@@ -397,6 +399,8 @@
                     $(".fieldset-published").hide();
                     $(".fieldset-utilized").hide();
                     $(".dot2").css("background-color", "#33ff33");
+
+
                 }else if(page==3){
                     // $("#next").hide();
                     // $("#submit").show();

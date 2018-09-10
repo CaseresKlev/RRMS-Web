@@ -1,7 +1,7 @@
 <?php
         session_start();
         include_once 'connection.php';
-        
+
         $title = $_POST['title'];
         //$title = "\"". $title . "\"";
         //echo "Tittle: $title </br>";
@@ -77,13 +77,13 @@
         /*
         $adv_fname = $_POST['adv_fname'];
         //echo $adv_fname;
-        
+
         $adv_mname = $_POST['adv_mname'];
         //echo $adv_mname;
-        
+
         $adv_lname = $_POST['adv_lname'];
         //echo $adv_lname;
-        
+
         $adv_suff = $_POST['adv_suff'];
         //echo $adv_suff;
 
@@ -103,9 +103,9 @@
             while ($row=$result->fetch_assoc()) {
                 $deptid = $row['id'];
             }
-            
+
         }
-        
+
         ////--------------Book Insertion--------------------////
         //check if tittle already existed
         $query = "SELECT book_id FROM `book` WHERE book_title = '$title'";
@@ -152,7 +152,7 @@
                     $conn = $dbconfig->getCon();
                     $query = "INSERT INTO `bookhistory` (`id`, `book_id`, `book_stat`, `date`) VALUES (NULL, '$book_id', '$stat', '$pubdate')";
                     $result20 = $conn ->query($query);
-                    
+
                     echo $query;
                 }
             }
@@ -163,7 +163,7 @@
             //prepare the arrays of authors//
             $autorID = array();
             for($i=0; $i<count($fname); $i++){
-                
+
                 $query = "SELECT a_id FROM `author` WHERE a_fname = '$fname[$i]' and a_mname ='$mname[$i]' and a_lname='$lname[$i]' and a_suffix='$suf[$i]'";
 
                 $dbconfig = new dbconfig();
@@ -173,7 +173,7 @@
                     //check if author ailready existed, then get the Id
                     if($result->num_rows>0){
                         while($row=$result->fetch_assoc()){
-                    
+
                         $conn->query($query);
                         array_push($autorID, $row['a_id']);
                         }
@@ -189,17 +189,17 @@
                                 $conn = $dbconfig->getCon();
                                 $result = $conn ->query($query);
 
-                                    
+
                                 if($result->num_rows>0){
                                          while($row=$result->fetch_assoc()){
-                    
+
                                             $conn->query($query);
                                             array_push($autorID, $row['a_id']);
                                         }
                                 }
                     }else{
                         echo "Insert Author Fail";
-                    }    
+                    }
                 }
             }
 
@@ -209,7 +209,7 @@
 
             //insert junction Author Book
             foreach ($autorID as $key){
-            
+
                 $query = "INSERT INTO `junc_authorbook` (`id`, `book_id`, `aut_id`) VALUES (NULL, $book_id, $key)";
                 // echo $query;
                 $dbconfig = new dbconfig();
@@ -222,7 +222,7 @@
 
 
             ///------------START OF KEYWORDS INSERTION-------///
-            
+
             $kw = array();
             foreach ($keywordsArray as $key ) {
                 //echo "Keywords: " . $key;
@@ -232,7 +232,7 @@
                 $conn = $dbconfig->getCon();
                 $result = $conn ->query($query);
                 if($result->num_rows>0){
-                    //if found. get the keywords id and put into array. 
+                    //if found. get the keywords id and put into array.
                     while($row = $result->fetch_assoc()){
                         array_push($kw, $row['id']);
                     }
@@ -254,7 +254,7 @@
                             array_push($kw, $row1['id']);
                         }
                     }
-   
+
                 }
                 //echo "Loaded <br/>";
             }
@@ -268,11 +268,11 @@
                         $dbconfig = new dbconfig();
                         $conn = $dbconfig->getCon();
                         $result = $conn ->query($query);
-                        
+
             }
             //echo "Done setting constraint Book-Keywords <br/>";
             ///------------END OF Keywords INSERTION--------///
-            
+
             ///--------------START OF REFERENCES INSERTION------------///
             $refID = array();
             //$i=0;
@@ -315,10 +315,10 @@
                     else{
                         echo "Fail to add References";
                     }
-                    
+
                 }
                 }
-                
+
 
             }
 
@@ -330,10 +330,10 @@
                         $dbconfig = new dbconfig();
                         $conn = $dbconfig->getCon();
                         $conn ->query($query);
-                        
+
             }
             //echo "Done setting constraint Book-References <br/>";
-            
+
             ///-----------END OF REFERNCES INSERTION----------------////
 
 
@@ -341,7 +341,7 @@
 
 
             $adv_id = $_SESSION['adviser'];
-            
+
             $query = "INSERT INTO `junc_advicerbook` (`id`, `book_id`, `adv_id`) VALUES (NULL, '$book_id', '$adv_id')";
             $dbconfig = new dbconfig();
             $conn = $dbconfig->getCon();
@@ -408,14 +408,14 @@
 
 
 
-           
 
-            
-            
+
+
+
             }
         ////--------------End of Book Insertion--------------------////
-        
-        
+
+
 
 
 
@@ -431,5 +431,5 @@
 
             return $string;
         }
-    
+
 ?>
