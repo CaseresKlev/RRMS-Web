@@ -25,6 +25,7 @@
     <!-- Custom Theme Style -->
     <link rel="stylesheet" type="text/css" media="screen" href="css/custom.min.css">
 		<link rel="stylesheet" type="text/css" media="screen" href="css/button.css">
+		<link rel="stylesheet" href="css/temp.css">
 
 
 </head>
@@ -92,8 +93,8 @@
 				<table style="font-size: 15px">
 					<tr>
 						<td> <b> Number of Access Code: </b> </td>
-						<td> <input type="number" placeholder="0" name="number" min="0" value="0" id="access-count"onkeyup="numbersonly(this)" style= "width: 50%" required> </td>
-						<td> <button type="button" id="admin-btn-generate" class="btn-generate"> GENERATE </button> </td>
+						<td> <input type="number" placeholder="0"  class="form-control" name="number" min="0" value="0" id="access-count" onkeyup="numbersonly(this)" style= "width: 50%" required> </td>
+						<td> <button type="button" id="admin-btn-generate" class="btn  btn-primary"> GENERATE </button> </td>
 					</tr>
 				</table>
 			</form></br></br>
@@ -169,12 +170,12 @@
     </div>
 
     <!-- jQuery -->
-    <script src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
     <!-- Bootstrap -->
-    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
 
     <!-- Custom Theme Scripts -->
-    <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+    
     <script src="js/accesscode.js"></script>
 
   </body>

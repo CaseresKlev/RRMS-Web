@@ -396,32 +396,7 @@
                   </div><br>';
                   }
                   
-                  $con= $dbconfig -> getCon();
-                  $query= "SELECT `documents`, `orig_name` FROM `documents` WHERE `book_id` = $book_id";
-                  $result2 = $con -> query($query);
-                  if($result2->num_rows>0){
-                    echo '<br><br><div class="row">
-                      <div class="col-md-10" style="font-size: 18pt; font-weight: bold;">
-                       Files and Certificates
-                      </div>
-                      <div class="col-md-2"></div>
-                      <div class="col-md-12" style="width: 100%; height: 2px; background-color: blue;"></div>
-                        <br>
-                        <br>
-                        <div class="col-md-12">
-                          <em style="color: red;">
-                              <ul>';
-                    while ($row=$result2->fetch_assoc()) {
-                      echo '<li><a href="'. $row['documents'] .'">'. $row['orig_name'] .'</a></li>';
-                    }
-                    echo '</ul>
-                          </em>
-                        </div>
-          
-                    </div>
-                    
-                  </div><br>';
-                  }
+                 
 
 
 
@@ -494,34 +469,80 @@
                   </div><br>';
                   }
 
+                  
+                  
+                  
+                }elseif ($required==="awards") {
                   $con= $dbconfig -> getCon();
-                  $query= "SELECT `documents`, `orig_name` FROM `documents` WHERE `book_id` = $book_id";
+                  $query= "SELECT awards.id, book.book_title, awards.awards, awards.parties, awards.location, awards.description, awards.date FROM `awards` inner JOIN book on book.book_id = awards.book_id WHERE awards.book_id = $book_id";
                   $result2 = $con -> query($query);
+
+                  echo '<p id="util_book_id" style="display: none;">' . $book_id . '</p>';
+                  echo '<p id="util_trail_id" style="display: none;>' . $trail_id . '</p>';
                   if($result2->num_rows>0){
-                    echo '<br><br><div class="row">
+                      $con= $dbconfig -> getCon();
+                      $query= "UPDATE `paper_trail` SET `requirements` = '1' WHERE `paper_trail`.`id` = $trail_id";
+                      $result3 = $con -> query($query);
+                      echo '<div class="container">
+                    <div class="row">
                       <div class="col-md-10" style="font-size: 18pt; font-weight: bold;">
-                       Files and Certificates
+                        Paper Awards
                       </div>
-                      <div class="col-md-2"></div>
+                      <div class="col-md-2"><button class="btn btn-primary" style="float: right;" data-toggle="modal" data-target="#modalawards" id="btn-util-addnew">Add new Awards</button></div>
+                      <div class="col-md-12" style="width: 100%; height: 2px; background-color: blue;"></diV>
+                      <br><br>
+                        <table class="table">
+                          <thead style="font-size: 14pt; font-weight: bold">
+                            <tr>
+                              <td scope="col">Awards</td>
+                              <td scope="col">Giving Parties</td>
+                              <td scope="col">Location</td>
+                              <td scope="col">Description</td>
+                              <td scope="col">Date</td>
+                              <td scope="col" colspan="2">Action</td>
+                            </tr>
+                          </thead><tbody>';
+                          $counter=0;
+                          while ($rowdis= $result2->fetch_assoc()) {
+                            echo '   <td scope="col">'. $rowdis['awards'] .'</td>
+                              <td scope="col" id="util-orgname-td-'. $counter .'">'. $rowdis['parties'] .'</td>
+                              <td scope="col" id="util-orgadd-td-'. $counter .'">'. $rowdis['location'] .'</td>
+                              <td scope="col" id="util-orgadd-td-'. $counter .'">'. $rowdis['description'] .'</td>
+                              <td scope="col" id="util-date-td-'. $counter .'">'. $rowdis['date'] .'</td>
+                              <td><button class="btn btn-warning btn-sm" id="btn-util-edit[]" data-toggle="modal" data-target="#modalutil"  name="'. $rowdis['id'] .'-'. $counter .'">Edit</button>
+                              <td><button class="btn btn-danger btn-sm" id="btn-util-del[]" name="'. $rowdis['id'] .'">Delete</button>
+                            </tr>';
+                            $counter++;
+                          }
+                          
+                          echo '</tbody></table>
+                      </div>
+                      
+                    </div>
+                  </div>
+              <br>';
+
+
+                  }else{
+                    $con= $dbconfig -> getCon();
+                      $query= "UPDATE `paper_trail` SET `requirements` = '1' WHERE `paper_trail`.`id` = $trail_id";
+                      $result2 = $con -> query($query);
+                    echo '<div class="container">
+                    <div class="row">
+                      <div class="col-md-10" style="font-size: 18pt; font-weight: bold;">
+                        Paper Utilization Information <em style="color: red">*Required</em>
+                      </div>
+                      <div class="col-md-2"><button class="btn btn-primary" style="float: right;" data-toggle="modal" data-target="#modalutil">Add new Utilization</button></div>
                       <div class="col-md-12" style="width: 100%; height: 2px; background-color: blue;"></div>
                         <br>
                         <br>
-                        <div class="col-md-12">
-                          <em style="color: red;">
-                              <ul>';
-                    while ($row=$result2->fetch_assoc()) {
-                      echo '<li><a href="'. $row['documents'] .'">'. $row['orig_name'] .'</a></li>';
-                    }
-                    echo '</ul>
-                          </em>
-                        </div>
+                        <div class="col-md-12"><em style="color: red;">Please click the \'Add new Utilization\' button to provide utilization information.</em></div>
           
                     </div>
                     
                   </div><br>';
                   }
-                  
-                  
+
                 }
 
 
@@ -531,18 +552,19 @@
                     
                                 
                               
-              <br>
+              
               <br>
               <div class="container">
                 <div class="row">
                   <div class="col-md-7" style="font-size: 18pt; font-weight: bold;">Summary of Comments and Suggestion</div>
+                  <div class="col-md-12" style="width: 100%; height: 2px; background-color: blue;"></diV>
                 </div>
-                <hr>
+                <br>
                 <div class="row" style="">
                   <div class="col-md-6" style="font-size: 16pt; font-weight: bold;">
                     Originator: <em><?php if($origin===""){echo "Not Available";}else{echo $origin; } ?></em>
                   </div>
-                  <div class="col-md-6" style="margin-bottom: 5px">
+                  <div class="col-md-6" style="">
                     <button class="btn btn-primary" style="float: right;" data-toggle="modal" data-target="#modaladdnew"> Add new comments</button>
                   </div>
                   <div  class="container">
@@ -593,6 +615,38 @@
                     </tbody>
                    
                 </table>
+              </div>
+                <div class="container">
+                  <?php
+                    $con= $dbconfig -> getCon();
+                  $query= "SELECT `documents`, `orig_name` FROM `documents` WHERE `book_id` = $book_id";
+                  $result2 = $con -> query($query);
+                  if($result2->num_rows>0){
+                    echo '<br><br><div class="row">
+                      <div class="col-md-10" style="font-size: 18pt; font-weight: bold;">
+                       Files and Certificates
+                      </div>
+                      <div class="col-md-2"></div>
+                      <div class="col-md-12" style="width: 100%; height: 2px; background-color: blue;"></div>
+                        <br>
+                        <br>
+                        <div class="col-md-12">
+                          <em style="color: red;">
+                              <ul>';
+                    while ($row=$result2->fetch_assoc()) {
+                      echo '<li><a href="'. $row['documents'] .'">'. $row['orig_name'] .'</a></li>';
+                    }
+                    echo '</ul>
+                          </em>
+                        </div>
+          
+                    </div>
+                    
+                  </div><br>';
+                  }
+
+                  ?>
+                </div>
                 <br>
                 <br>
                 <br>
@@ -811,6 +865,66 @@
                       
                     </div>
                   </div>
+
+
+                  <!--Awards modal-->
+                  <div class="modal fade" id="modalawards" role="dialog">
+                    <div class="modal-dialog">
+                    
+                      <!-- Modal content-->
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                          <h4 class="modal-title" id="modal-title-awards">Add new awards information</h4>
+                        </div>
+                        <div class="modal-body">
+                          <form id="awards-form">
+                            <div class="form-group">
+                              <input type="text" name="util-book_id" id="util-book_id" value="<?php echo $_GET['book_id']; ?>" style="display: none;">
+                              <input type="text" name="util-trail_id" id="util-trail_id" value="<?php echo $_GET['trail']; ?>" style="display: none;">
+                            </div>
+                            <div class="form-group">
+                              <label for="awards">Awards: <em style="color: red">*</em></label>
+                              <input type="text" name="awards" id="awards" class="form-control" style= "font-size: 15px; font-weight: bold;" placeholder="Awards Information" >
+                            </select>
+                            </div>
+                            <div class="form-group">
+                              <label for="parties">Giving Parties: <em style="color: red">*</em></label>
+                              <input type="text" placeholder="Organization name , etc" id="parties" name="parties"
+                                  style= "font-size: 15px; font-weight: bold;" class="form-control">
+                            </div>
+                            
+                            <div class="form-group">
+                              <label for="awards-loc"> Location: <em style="color: red">*</em></label>
+                              <input type="text" width="100%" name="awards-loc" id="awards-loc"  class="form-control" placeholder="Location" 
+                                style= " font-size: 15px;  font-weight: bold;">
+                            </div>
+                            <div class="form-group">
+                              <label for="awards-desc"> Description: <em style="color: red">*</em></label>
+                              <textarea class="form-control" rows="2" placeholder="Description" style= " font-size: 15px;  font-weight: bold;"></textarea>
+                            </div>
+                            <div class="form-group">
+                              <label for="awards-date"> Date: <em style="color: red">*</em></label>
+                              <input type="date" width="100%" name="awards-date" id="awards-date"  class="form-control" 
+                                style= " font-size: 15px;  font-weight: bold;">
+                            </div>
+                            <div class="form-group">
+                              <label for="awards-cert">Certificates if Available: <em style="color: red">*</em></label>
+                              <input type="file" name="myFile[]" id="awards-cert" class="form-control" 
+                                style= "font-size: 15px; font-weight: bold;" multiple>
+                            </div>
+                            
+                                        
+                          </form>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" id="instructor-btn-util-save" class="btn btn-success" style="float: right">SAVE</button>
+                        </div>
+                      </div>
+                      
+                    </div>
+                  </div>
+
 
 
         
