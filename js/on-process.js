@@ -1,27 +1,28 @@
-$("#page-edit").click(function(){
+$("button[id='page-edit[]").click(function(){
 	var todo = $(this).html();
-	var trail_id = $(this).attr("name");
+	var comments_id = $(this).attr("name");
 	var book_id = $("#pageno").attr("name");
 	//alert(book_id);
 	if(todo==="Edit"){
-		$("#pageno").prop("readonly", false);
-	 	$("#pageno").attr("Placeholder", "ex: 1-3 or 1,5,8");
+		$("#pageno-" + comments_id).prop("readonly", false);
+        $("#pageno-" + comments_id).css('color', 'red');
+	 	$("#pageno-" + comments_id).attr("Placeholder", "ex: 1-3 or 1,5,8");
 	 	$(this).html('Save');
 	 	$(this).attr('class', 'btn btn-success btn-sm');
 	}else{
-		var page = $("#pageno").val();
-		if(page==""){
-			alert("Please provide valid pages.");
-		}else{
+		var page = $("#pageno-" + comments_id).val();
+
+		
 			//alert(page);
 					$.ajax({
                         url:"savepage.php",
                         type:"POST",
                         cache:false,
                         data:{           // multiple data sent using ajax
-                            trail_id: trail_id,
-                            book_id:book_id,
-                            page:page
+                            comments_id: comments_id,
+                            page:page,
+                            sender: "instructor",
+                            action: "save"
 
                         },
                         success: function (data) {
@@ -37,9 +38,11 @@ $("#page-edit").click(function(){
                     });
 		}
 		//alert(page);
-	}
+	
 	 
 })
+
+
 
 /*
 var pages = "";

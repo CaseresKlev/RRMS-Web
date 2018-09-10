@@ -1,20 +1,28 @@
 <?php
+
 date_default_timezone_set("Asia/Manila");
 
 //echo "GGGGG";
 
-if(isset($_POST['dis-type']) && isset($_GET['action'])){
+if(isset($_POST['util-book_id']) && isset($_GET['action'])){
+
 
         $action = $_GET['action'];
+
         //echo "$action";
         $error = 0;
         $error2 = 0;
-		$distype = $_POST['dis-type'];
-		$discon = $_POST['dis-con'];
-		$conven = $_POST['con-ven'];
-		$disdate = $_POST['disdate'];
 		
-		$book_id = $_POST['book_id'];
+
+		$book_id = $_POST['util-book_id'];
+		$trail_id = $_POST['util-trail_id'];
+		$orgname = $_POST['org-name'];
+		$orgadd = $_POST['util-ad'];
+		$date = $_POST['util-date'];
+		$stat = "Utilized";
+		//$trail_id = $_POST['trail_id'];
+
+		//echo "$book_id $trail_id $orgname $orgadd $date $trail_id";
 
         //echo "$distype $discon $conven $ disdate $ book_id";
 		//print_r($files);
@@ -24,7 +32,7 @@ if(isset($_POST['dis-type']) && isset($_GET['action'])){
 
             $files = $_FILES['myFile'];
             $count = count($_FILES['myFile']['tmp_name']);
-            echo "$count";
+            //echo "$count";
             
             for($i=0;$i<$count;$i++) {
                 $file_name = $_FILES['myFile']['name'][$i];
@@ -57,11 +65,12 @@ if(isset($_POST['dis-type']) && isset($_GET['action'])){
         }
 
         if($action==="save"){
+        	//echo "ggggg";
             include_once 'connection.php';
             $datenow = date('Y-m-d H:i:s');
             $dbconfig = new dbconfig();
             $conn = $dbconfig->getCon();
-            $query = "INSERT INTO `bookhistory` (`id`, `book_id`, `book_stat`, `date`) VALUES (NULL, '$book_id', 'Disseminated', '$datenow')";
+            $query = "INSERT INTO `bookhistory` (`id`, `book_id`, `book_stat`, `date`) VALUES (NULL, '$book_id', '$stat', '$datenow')";
             $result55 = $conn->query($query);
             if($result55){
                 $datenow = date('Y-m-d H:i:s');
@@ -74,7 +83,7 @@ if(isset($_POST['dis-type']) && isset($_GET['action'])){
                     $history = $row56['id'];
                     $dbconfig = new dbconfig();
                     $conn = $dbconfig->getCon();
-                    $query = "INSERT INTO `disseminated` (`id`, `book_id`, `type`, `convension`, `location`, `history`, `date`) VALUES (NULL, '$book_id', '$distype', '$discon', '$conven', '$history', '$datenow')";
+                    $query = "INSERT INTO `utilize` (`id`, `book_id`, `orgname`, `orgaddress`, `date`, `history`) VALUES (NULL, '$book_id', '$orgname', '$orgadd', '$date', '$history')";
                     $result57 = $conn->query($query);
                     //echo $query;
                     if($result57){
@@ -91,13 +100,15 @@ if(isset($_POST['dis-type']) && isset($_GET['action'])){
             echo "There is Error uploading your Files";
         }
     }else{
+    	$util_id = $_GET['util_id'];
+    	
             include_once 'connection.php';
             $datenow = date('Y-m-d H:i:s');
             $dbconfig = new dbconfig();
             $conn = $dbconfig->getCon();
-            $dis_id = $_GET['dis_id'];
+            //$dis_id = $_GET['dis_id'];
             //echo "$dis_id";
-            $query = "UPDATE `disseminated` SET `type` = '$distype', `convension` = '$discon', `location` = '$conven', `date` = '$disdate' WHERE `disseminated`.`id` = $dis_id";
+            $query = "UPDATE `utilize` SET `orgname` = '$orgname', `orgaddress` = '$orgadd', `date` = '$date' WHERE `utilize`.`id` = $util_id";
             //echo $query;
             $result55 = $conn->query($query);
             if($result55){
@@ -111,6 +122,7 @@ if(isset($_POST['dis-type']) && isset($_GET['action'])){
         }else{
             echo "There is Error uploading your Files";
         }
+        //echo "$util_id";
     }
             
 		
@@ -121,13 +133,15 @@ if(isset($_POST['dis-type']) && isset($_GET['action'])){
 }
 
 
-if(isset($_POST['dis_id'])){
-    $dis_id = $_POST['dis_id'];
+if(isset($_POST['action']) && $_GET['util_id']){
+	$util_id = $_GET['util_id'];
+	//echo "$util_id";
+    //$util_id = $_POST['dis_id'];
    //echo "$dis_id";
    include_once 'connection.php';
    $dbconfig = new dbconfig();
     $conn = $dbconfig->getCon();
-    $query = "SELECT `history` FROM `disseminated` WHERE `id` = $dis_id";
+    $query = "SELECT `history` FROM `utilize` WHERE `id` = $util_id";
 
     $result = $conn->query($query);
     if($result->num_rows>0){
@@ -136,7 +150,7 @@ if(isset($_POST['dis_id'])){
 
 
         $conn = $dbconfig->getCon();
-        $query = "DELETE FROM `disseminated` WHERE `disseminated`.`id` = $dis_id";
+        $query = "DELETE FROM `utilize` WHERE `utilize`.`id` = $util_id";
         $result22 = $conn->query($query);
         if($result22){
             $conn = $dbconfig->getCon();
@@ -148,7 +162,8 @@ if(isset($_POST['dis_id'])){
                 echo "Error: " . mysql_error();
             }
         }
-    }
+    } 
 }
+
 
 ?>

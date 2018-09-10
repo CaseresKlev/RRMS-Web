@@ -25,7 +25,7 @@ $("#submit").click(function(){
                 //$("#content").html(data);
                 //alert(data);
                 var msg = data.split("-");
-                alert(data);
+                //alert(data);
                 if(msg[0]=="#error"){
                   $(msg[0]).html(msg[1]);
                   $(msg[0]).fadeIn();

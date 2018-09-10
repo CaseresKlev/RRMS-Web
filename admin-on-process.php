@@ -43,14 +43,14 @@
 
 <body class="nav-md" >
     <div class="container body">
-		<div class="main_container">
-			<div class="col-md-3 left_col">
-				<div class="left_col scroll-view">
-					<div class="navbar nav_title" style="border: 0;">
-						<a class="site_title"><span> Research Record Management System </span></a>
-					</div>
-					<div class="clearfix"></div>
-			<!-- menu profile quick info -->
+    <div class="main_container">
+      <div class="col-md-3 left_col">
+        <div class="left_col scroll-view">
+          <div class="navbar nav_title" style="border: 0;">
+            <a class="site_title"><span> Research Record Management System </span></a>
+          </div>
+          <div class="clearfix"></div>
+      <!-- menu profile quick info -->
             <div class="profile clearfix">
               <div class="profile_pic">
                 <img src="img/final.jpg" alt="..." class="img-circle profile_img">
@@ -68,9 +68,9 @@
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
               <div class="menu_section">
                 <div class="nav side-menu">
-					<ul><a class= "dashboard-active" href="admindashboard.php"> RESEARCH </span></a></ul>
-					<ul><a href="updateAcc.php"> UPDATE ACCOUNT </a></ul>
-					<ul><a href="accesscode.php"> ACCESS CODE </a> </ul>
+          <ul><a class= "dashboard-active" href="#documents"> RESEARCH </span></a></ul>
+          <ul><a href="updateAcc.php"> UPDATE ACCOUNT </a></ul>
+          <ul><a href="accesscode.php"> ACCESS CODE </a> </ul>
                         <?php
                             $d = Date('Y-m-d');
                             $yr = explode("-", $d);
@@ -80,7 +80,7 @@
                           ?>
 
           <ul><a href="dept.php">DEPARTMENT </a> </ul> </br>
-					<ul><a href="index.php"> Back to Home </a> </ul>
+          <ul><a href="index.php"> Back to Home </a> </ul>
 
                 </div>
               </div>
@@ -91,7 +91,7 @@
 
         <!-- page content -->
         <div class="right_col" role="main" style= "min-height: 712px;">
-			<div id= "admin-frm-search" class= "frm-search" style= "font-size: 18px">
+      <div id= "admin-frm-search" class= "frm-search" style= "font-size: 18px">
         <div class="container">
           <div class="row">
             <div class="col-md-7"><b> Search Documents </b></div>
@@ -110,31 +110,15 @@
             </button></div>
           </div>
         </div>
-				<br>
-				<hr>
+        
+        <hr>
 
-				<div id= "admin-div-voidmain" class= "container">
-          
-
-          <table class="table">
-            <thead>
-              <tr>
-                <td scope="col" style="font-weight: bold; font-size: 15pt">Tittle</td>
-                <td scope="col" style="font-weight: bold; font-size: 15pt">Author</td>
-                <td scope="col" style="font-weight: bold; font-size: 15pt">Research Type</td>
-              </tr>
-              
-            </thead>
-            <tbody>
+        <div id= "admin-div-voidmain" class= "container">
+          <ul>
             <?php
               $key = "";
-             
-
-
               if(isset($_GET['search'])){
-                $key =  $_GET['search'];
-              }
-                  
+                  $key =  $_GET['search'];
 
 
                   include_once 'connection.php';
@@ -144,68 +128,65 @@
                   $result = $conn->query($query);
                   if($result->num_rows>0){
                     while ($row = $result->fetch_assoc()) {
-                      $str =  '
-                      <tr>
-                <td scope="col" style="width: 50%"><a href="view-stat.php?book_id='. $row['book_id'] .'">'. $row['book_title'] .'</a></td>';
-
-                  //for author
-                  
-                              $query = "SELECT author.a_id, CONCAT(author.a_lname, ', ' , SUBSTRING(author.a_fname, 1, 1), ';') as 'author' FROM author INNER JOIN junc_authorbook on junc_authorbook.aut_id = author.a_id WHERE junc_authorbook.book_id=" . $row['book_id'];
-                              $result2 = $conn->query($query);
-                              if($result2->num_rows>0){
-                                 $autors_all = "";
-                                while($row2=$result2->fetch_assoc()){
-                                  $autors_all .= $row2['author'] . " ";
-                                }
-                                $str .= '<td scope="col" style="width: 25%">'. $autors_all .'</td>'
-                                ;
-
-                              }
 
 
-                              $query = "SELECT `type` FROM `account` INNER JOIN groupdoc on groupdoc.accid = account.id WHERE groupdoc.book_id = " . $row['book_id'];
-                              $result2 = $conn->query($query);
-                              if($result2->num_rows>0){
-                                 $autors_all = "";
-                                while($row2=$result2->fetch_assoc()){
 
-                                  if($row2['type'] ==="INSTRUCTOR"){
-                                    $str .= '
-                                <td scope="col" style="width: 25%">Instructor Research</td>
-                          </tr>';
-                                  }else{
-                                    $str .= '
-                                <td scope="col" style="width: 25%"Student Research</td>
-                          </tr>';
-                                  }
-                                  
-                                }
-                                
-
-                              }
-
-
-                        echo $str;
-                    }
-                  }else{
-                    
-                    echo '<tr><td scope="col" style="width: 100%" colspan="3" ><center style="color:red; font-size: 18pt">No result Found</center></td></tr>';
-                  }
-
-              
-                  
             ?>
-              
-            </tbody>
-            
-          </table>
+
+          <a href="editdocu.php?book_id=<?php echo $row['book_id']?>&title=<?php echo $row['book_title']; ?>&cited=<?php echo $row['cited'];?>" ><li style= "font-size: 14pt"> <u><b><?php echo $row['book_title']; ?></b></u><i>
+            <?php
+                  $conn = $dbconfig->getCon();
+                  $query = "SELECT CONCAT(author.a_lname, ', ' , SUBSTRING(author.a_fname, 1, 1)) as 'author' FROM author INNER JOIN junc_authorbook on junc_authorbook.aut_id = author.a_id WHERE junc_authorbook.book_id=" . $row['book_id'];
+                  $result2 = $conn->query($query);
+                  if($result2->num_rows>0){
+                    $autors_all = "";
+                    while ($row2=$result2->fetch_assoc()) {
+                      $autors_all .= $row2['author'] . " ";
+                    }
+
+                    $str .= 
+                  }
+            ?>
+          </i></li></a>
+
+          <?php    }
+            }else{
+                echo "<div style='text-align:center; width 100%'><h4> No Result Found! </h4></div>";
+
+            }/// end of result outer
+          }else{
+             include_once 'connection.php';
+                  $dbconfig = new dbconfig();
+                  $conn = $dbconfig->getCon();
+                  $query = "SELECT book_id, book_title, cited FROM `book` WHERE 1";
+                  $result = $conn->query($query);
+                  if($result->num_rows>0){
+                    while ($row = $result->fetch_assoc()) {
 
 
 
+            ?>
+          <a href="editdocu.php?book_id=<?php echo $row['book_id']?>&title=<?php echo $row['book_title']; ?>&cited=<?php echo $row['cited'];?>" ><li style= "font-size: 14pt"> <u><b><?php echo $row['book_title']; ?></b></u><i>
+            <?php
+            $conn = $dbconfig->getCon();
+                  $query = "SELECT author.a_lname as `lname`, SUBSTRING(a_fname, 1, 1) as `fname` FROM author INNER JOIN junc_authorbook on junc_authorbook.aut_id = author.a_id WHERE junc_authorbook.book_id=" . $row['book_id'];
+                  $result2 = $conn->query($query);
+                  if($result2->num_rows>0){
+                    while ($row2=$result2->fetch_assoc()) {
+                      echo " - " .  $row2['lname'] . ", " . $row2['fname'] . ";";
+                    }
+                  }
+            ?>
+          </i></li></a>
+
+          <?php    }
+            }
+          }
+          ?>
 
 
-        
-			</div>
+          </ul>
+      </div>
           <!-- top tiles -->
           <div class="row tile_count"></div>
           <!-- /top tiles -->

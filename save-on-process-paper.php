@@ -98,7 +98,7 @@
                     $dateTime = date('Y-m-d H:i:s');
                    
 
-                    $query = "INSERT INTO `paper_trail` (`id`, `book_id`, `p_sat_id`, `file_loc`, `isdone`, `Date`) VALUES (NULL, '$book_id', '1', '', '1', '$dateTime')";
+                    $query = "INSERT INTO `paper_trail` (`id`, `book_id`, `p_sat_id`, `file_loc`, `requirements`, `isdone`, `Date`) VALUES (NULL, '$book_id', '1', '', '1', '1', '$dateTime')";
                     $result20 = $conn ->query($query);
                     
                     //echo $query;

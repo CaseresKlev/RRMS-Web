@@ -13,6 +13,12 @@ session_start();
   $acctype = $_SESSION['type'];
   $uid = $_SESSION['uid'];
 
+  if($acctype==="STUDENT"){
+    header("Location: index.php");
+  }elseif ($acctype==="admin") {
+    header("Location: admindashboard.php");
+  }
+
 ?>
 
 
@@ -138,12 +144,12 @@ session_start();
                     include_once 'connection.php';
                     $dbconfig = new dbconfig();
                     $conn = $dbconfig->getCon();
-                    $query = "SELECT paper_trail.id, book.book_title, p_sat_id, paper_stat.title, isdone, date FROM paper_trail INNER JOIN book on book.book_id = paper_trail.book_id INNER JOIN paper_stat on paper_stat.id = paper_trail.p_sat_id WHERE book.book_id =$book_id";
+                    $query = "SELECT paper_trail.id, paper_trail.requirements, book.book_title, p_sat_id, paper_stat.title, isdone, date FROM paper_trail INNER JOIN book on book.book_id = paper_trail.book_id INNER JOIN paper_stat on paper_stat.id = paper_trail.p_sat_id WHERE book.book_id =$book_id";
                     $result = $conn ->query($query);
                     if($result->num_rows>0){
                       while($rowDis = $result->fetch_assoc()){
 
-                        if($rowDis['isdone']==="1"){
+                        if($rowDis['requirements']==="1"){
                            echo '<tr>
                                 <th scope="row">' . $rowDis['p_sat_id'] .'</th>
                                 <th scope="row"><a href="view-full-status.php?trail=' . $rowDis['id'] . '&book_id=' . $book_id . '">' . $rowDis['title'] . '</a></th>
@@ -153,8 +159,8 @@ session_start();
                             }else{
                               echo '<tr>
                                 <th scope="row">' . $rowDis['p_sat_id'] .'</th>
-                                <th scope="row"><a href="view-full-status.phptrail=' . $rowDis['id'] . '&book_id=' . $book_id . '">' . $rowDis['title'] . '</a></th>
-                                <td style="background-color: #ffb84d">On-Going</td>
+                                <th scope="row"><a href="view-full-status.php?trail=' . $rowDis['id'] . '&book_id=' . $book_id . '">' . $rowDis['title'] . '</a></th>
+                                <td style="background-color: #ffb84d">Some requirements are missing.</td>
                                 
                               </tr>';
                             }

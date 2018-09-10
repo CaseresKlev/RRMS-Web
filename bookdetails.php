@@ -1,3 +1,19 @@
+<?php
+    include_once 'connection.php';
+    $dbconfig = new dbconfig();
+    $conn = $dbconfig->getCon();
+    $id = $_GET['book_id'];
+    $query = "select * from book where book_id = $id";
+    $result = $conn->query($query);
+    if($result->num_rows>0){
+      $row = $result->fetch_assoc();
+      if($row['enabled']==="0"){
+        header("Location: index.php");
+      }
+    }
+
+?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -12,14 +28,16 @@
 <body style="background-color: white">
 
   <?php
-  include_once 'connection.php';
-  $dbconfig = new dbconfig();
-  $conn = $dbconfig->getCon();
+    include_once 'connection.php';
+    $dbconfig = new dbconfig();
+    $conn = $dbconfig->getCon();
   $id = $_GET['book_id'];
   $query = "select * from book where book_id = $id";
   $result = $conn->query($query);
   if($result-> num_rows > 0){
     while ($row = $result->fetch_assoc()) {
+
+      
 
    ?>
 
